@@ -41,10 +41,13 @@ class HFBackend(Backend):
 
     def generate(self, system: str, user: str, schema: dict) -> str:
         msgs = [{"role": "system", "content": system}, {"role": "user", "content": user}]
-        ids = self.tok.apply_chat_template(msgs, add_generation_prompt=True, return_tensors="pt").to(self.model.device)
+        enc = self.tok.apply_chat_template(msgs, add_generation_prompt=True, return_tensors="pt", return_dict=True)
+        # transformers 5 returns a BatchEncoding here (4.x returned the tensor); ask for the dict explicitly.
+        ids = enc["input_ids"].to(self.model.device)
+        mask = enc["attention_mask"].to(self.model.device) if "attention_mask" in enc else None
         if ids.shape[1] > self.max_ctx:
             raise RuntimeError(f"prompt has {ids.shape[1]} tokens > {self.max_ctx}")
         prefix = self.build(self.tok, self.JsonSchemaParser(schema))
-        out = self.model.generate(ids, do_sample=False, max_new_tokens=self.max_new, prefix_allowed_tokens_fn=prefix,
-                                  pad_token_id=self.tok.eos_token_id)
+        out = self.model.generate(input_ids=ids, attention_mask=mask, do_sample=False, max_new_tokens=self.max_new,
+                                  prefix_allowed_tokens_fn=prefix, pad_token_id=self.tok.eos_token_id)
         return self.tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True)
