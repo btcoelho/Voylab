@@ -1,0 +1,130 @@
+{
+  "worlds": 332,
+  "model_calls": 0,
+  "seeds": [
+    91001,
+    91003,
+    91009
+  ],
+  "set_sha256": "8867de67ebb8bfdbbfff41ab92b734b78c4582d97d95ae0f24bb27bd7544342d",
+  "infeasible_cells_skipped": [
+    [
+      "facil",
+      "mixed",
+      "undetermined",
+      "stable_uninformative",
+      2
+    ],
+    [
+      "facil",
+      "pair",
+      "undetermined",
+      "stable_uninformative",
+      2
+    ],
+    [
+      "facil",
+      "single",
+      "undetermined",
+      "stable_uninformative",
+      2
+    ],
+    [
+      "medio",
+      "mixed",
+      "undetermined",
+      "stable_uninformative",
+      2
+    ],
+    [
+      "medio",
+      "pair",
+      "undetermined",
+      "stable_uninformative",
+      2
+    ],
+    [
+      "medio",
+      "pair",
+      "undetermined",
+      "stable_uninformative",
+      3
+    ],
+    [
+      "medio",
+      "single",
+      "undetermined",
+      "stable_uninformative",
+      2
+    ]
+  ],
+  "balance": {
+    "target_verdict": {
+      "rejected": 135,
+      "supported": 135,
+      "undetermined": 62
+    },
+    "max_share": 0.4066265060240964,
+    "kind": {
+      "stable_uninformative": 143,
+      "stable_informative": 108,
+      "change": 81
+    },
+    "queries_needed": {
+      "1": 174,
+      "2": 96,
+      "None": 62
+    },
+    "initial_verdict": {
+      "undetermined": 332
+    },
+    "should_revise_by_kind": {
+      "stable_uninformative": 0,
+      "stable_informative": 108,
+      "change": 81
+    }
+  },
+  "identifiability": {
+    "public_recomputation_mismatches": 0
+  },
+  "duplicate_public_states": 0,
+  "R1_state_only_rule": {
+    "accuracy_loo": 0.536144578313253,
+    "ci95": [
+      0.48239344664553285,
+      0.5890688141345493
+    ],
+    "majority_baseline": 0.4066265060240964,
+    "chance_uniform": 0.3333333333333333
+  },
+  "R4_leakage": {
+    "tests": 11,
+    "rejected_after_holm": [],
+    "smallest": [
+      {
+        "feature": "S.n_obs",
+        "p": 0.07344213612844575
+      },
+      {
+        "feature": "S.menu_len",
+        "p": 0.07344213612844575
+      },
+      {
+        "feature": "D.distinct_in",
+        "p": 0.07344213612844575
+      },
+      {
+        "feature": "D.ones",
+        "p": 0.07648533018392821
+      }
+    ],
+    "naive_bayes_SD": {
+      "accuracy": 0.43373493975903615,
+      "ci95": [
+        0.38148323130405154,
+        0.48750262393246485
+      ],
+      "majority_baseline": 0.4066265060240964
+    }
+  }
+}
