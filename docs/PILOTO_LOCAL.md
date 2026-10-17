@@ -125,3 +125,32 @@ Os 25 completos são uma subamostra selecionada (os episódios em que a carta n�
 
 ### Defeito encontrado durante a análise (não afeta resultados)
 O `world_id` **não é único**: os 48 mundos do piloto têm 20 ids, porque o id omite o alvo, o tipo e o k0. Os mundos em si são todos distintos (48 estados públicos diferentes). Verifiquei onde o id é usado: a análise do piloto (corrigida para emparelhar por ordem), a semente das políticas aleatórias (mundos com o mesmo id partilham a sequência aleatória, o que reduz a independência sem enviesar) e as chaves de ordenação, que continuam determinísticas por estabilidade. Nenhum resultado anterior usa o id como chave de dicionário. Correção no congelamento do protocolo: um id único (incluir alvo, tipo, k0, orçamento) e as sementes das políticas a partir dele. Não se corrige agora, porque isso mudaria a seleção dos mundos do piloto a meio.
+
+### Ronda 3 do piloto (`real_4`, 22:49–23:01, código b5f795c, cartas como objeto)
+Hashes do código e dos mundos verificados; a análise independente coincide com o `summary.json`. Saídas em `results/piloto_R3/`.
+
+| Previsão | Resultado | Estado |
+|---|---|---|
+| R3-a: aceites ≥ 98%, completos ≥ 98% | 192/192 aceites, **48/48 completos**, 0 terminados à força | **confirmada: elegibilidade cumprida** |
+| R3-b: `supported` ≥ 90% dos commits | 48/48 (100%) | confirmada |
+| R3-b: média de consultas ≥ 1,8 | 2,0 (orçamento sempre esgotado) | confirmada |
+| R3-b: `q1` como primeira consulta ≥ 60% | 34/48 (71%) | confirmada |
+| R3-b: `keep` ≥ 90% das revisões | 48/48 | confirmada |
+| R3-c: alcance entre 0,20 e 0,45 | 16/48 = 0,33 [0,22; 0,48] | confirmada |
+| R3-c: erro de inferência > 50% | 42/48 = 88% [75%; 94%] | confirmada |
+| R3-c: tipo I ≥ 80% (mundos de mudança) | 30/30 = 100% [89%; 100%]; tipo II 0/18 | confirmada |
+
+O alcance de 16/48 corresponde **exatamente** aos 16 mundos cujo alvo é `supported`. É o que se obtém respondendo sempre `supported`, sem olhar para a evidência. Também iguala "sem consultas" (16/48) e fica abaixo da aleatória (35/48) e do bayes_ig (48/48) nos mesmos mundos. As cartas variam de episódio para episódio (13/48 conjuntos exatos), mas o veredicto não.
+
+## 8. Decisão de fecho do piloto (17/10/2026, 23:05)
+- **Arnês: elegível.** Na ronda 3, 100% das ações foram aceites e 100% dos episódios ficaram completos. Os defeitos das rondas 1 e 2 eram do esquema e da gramática, ficaram registados e cada um foi corrigido uma só vez. A interface de ação congela no modo `state_cards_object` (código b5f795c) para a escada.
+- **Qwen2.5-0.5B (4 bits): sem capacidade mensurável nesta tarefa.** Segue uma política constante: consulta duas vezes (sobretudo a primeira posição), compromete-se com `supported` e mantém sempre. Isto é **capacidade**, por isso não se mexe mais no prompt (§6).
+- **Previsões.** M1, M2, M3 e M4 confirmadas; M5 refutada (o modelo não pára cedo, esgota o orçamento). R2-a refutada; R3-a, R3-b e R3-c confirmadas.
+- **Próximo degrau:** um modelo maior com o mesmo arnês, os mesmos 48 mundos de desenvolvimento e as mesmas regras. Nenhum destes resultados é evidência de competência, e nenhum mundo do piloto entra em validação ou cega.
+
+### Escada de modelos (previsões ex-ante, escritas antes de qualquer descarga)
+Ordem: Qwen2.5-1.5B-Instruct → Qwen2.5-3B-Instruct → Qwen2.5-7B-Instruct, todos em 4 bits (variantes `unsloth/...-bnb-4bit`; o de 7B cabe nos 12 GB). Uma corrida por degrau, em pasta nova, com o código b5f795c no modo `state_cards_object`. Cada degrau só avança se o anterior não tiver falhado por arnês.
+- **L1 (1,5B).** Elegibilidade ≥ 98%. O veredicto mais frequente aparece em ≥ 80% dos commits (ainda quase constante). Alcance ≤ 0,83.
+- **L2 (3B).** Elegibilidade ≥ 98%. O veredicto mais frequente fica em < 80% dos commits (primeiro sinal de depender da evidência). Alcance entre 0,33 e 0,73, ou seja, acima de responder sempre o mesmo e não acima da aleatória.
+- **L3 (7B).** Alcance ≥ 21/48 (≥ "sem consultas" + 0,10). Erro de inferência < 50%. Tipo I < 80%. O bayes_ig (48/48) continua fora de alcance.
+- **Regra.** O primeiro degrau que cumprir as duas condições de L3 (alcance ≥ 21/48 e erro de inferência < 50%) passa a ser o modelo de trabalho do v3. Só então se congela o protocolo para as partições VALIDAÇÃO e CEGA. Se nenhum as cumprir, a tarefa C3–C5 fica fora de alcance de modelos locais pequenos, e decide-se entre um modelo via API ou reformular a tarefa.
