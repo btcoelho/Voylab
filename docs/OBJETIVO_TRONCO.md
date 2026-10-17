@@ -1,6 +1,6 @@
 # TRONCO-01 — objetivo numa página
 
-**Versão 1 · 17 de outubro de 2026 · rascunho que segue as decisões de Bruno de 17/10/2026; falta a aprovação explícita deste texto**
+**Versão 1 · 17 de outubro de 2026 · aprovado por Bruno em 17/10/2026 (20:38, Europe/Lisbon)**
 
 ## Âmbito
 Construir e **demonstrar experimentalmente** um *tronco* de investigação geral, reutilizável e verificável. O tronco deve descobrir e enquadrar problemas, não apenas executar uma política dada. O manuscrito Voynich é uma **aplicação futura**; não é dado de treino, nem critério de sucesso, nem fonte para escolher parâmetros nesta fase.
