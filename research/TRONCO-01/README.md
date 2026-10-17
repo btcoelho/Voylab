@@ -22,4 +22,6 @@ Research and evaluation artifacts for TRONCO-01, assembled from completed develo
 
 The reports also include a 17 October survey of 30 possible components and benchmarks. Its first candidates for a controlled offline audit are MechBench (mechanism evaluation), the set-valued method in HypoSpace (underdetermination), ALF (active experiment selection), and Autonomous Science Bench (budgeted lab separation). The survey is a source and implementation triage; it does not reproduce claimed benchmark performance.
 
+`reports/RELATORIO_ESTADO_TRONCO01_VOYNICH_2026-10-17.md` consolidates the project's objective, proposed scientific loop, evidence and limits through the v2.7 assay, and the 100 source URLs found in the archived reports.
+
 Archives were checked for credential files and model-weight files before publication. This repository is private. No project-wide license has been assigned; source and data retain their applicable ownership and licensing.
