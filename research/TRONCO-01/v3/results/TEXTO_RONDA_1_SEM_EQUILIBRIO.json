@@ -1,0 +1,58 @@
+{
+  "worlds": 414,
+  "model_calls": 0,
+  "target_counts": {
+    "rejected": 162,
+    "supported": 162,
+    "undetermined": 90
+  },
+  "text_features_tests": 7,
+  "rejected_after_holm": [
+    "chars",
+    "lines"
+  ],
+  "smallest": [
+    {
+      "feature": "chars",
+      "p": 0.002849571261422886
+    },
+    {
+      "feature": "lines",
+      "p": 0.005983571249248975
+    },
+    {
+      "feature": "useful_mean_relative_position(det. targets)",
+      "p": 0.08241761021392556
+    },
+    {
+      "feature": "card_ids_sorted",
+      "p": 0.09039903763687422
+    }
+  ],
+  "menu_position_0_is_useful": {
+    "observed_share": 0.4351851851851852,
+    "ci95": [
+      0.38227146001361645,
+      0.4896178914292755
+    ],
+    "expected_share_if_uniform": 0.41585219478738,
+    "worlds": 324
+  },
+  "useful_query_count_by_menu_position": {
+    "0": 141,
+    "1": 150,
+    "2": 142,
+    "3": 128,
+    "4": 155,
+    "5": 135,
+    "6": 134,
+    "7": 111,
+    "8": 80,
+    "9": 37
+  },
+  "seeds": [
+    93001,
+    93003,
+    93009
+  ]
+}

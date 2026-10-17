@@ -28,6 +28,7 @@ DIFFICULTIES = ("facil", "medio")          # "dificil" (latent confounder) is NO
 FAMILIES = ("single", "pair", "mixed")
 VERDICTS = ("rejected", "supported", "undetermined")
 KINDS = ("stable_uninformative", "stable_informative", "change")
+KINDS_V2 = KINDS + ("change_indirect",)   # change_indirect: no block input repeats an earlier input
 BUDGET = 2
 N_HELD_OUT = 4
 RESERVED = frozenset({64001, 64003, 64007, 75011, 75013, 75017})
@@ -101,8 +102,10 @@ def make_world(seed: int, difficulty: str, family: str, index: int, target: str,
     guard_seed(seed)
     if difficulty not in DIFFICULTIES or family not in FAMILIES:
         raise ValueError("unsupported difficulty or family")
-    if kind == "change" and difficulty == "facil":
+    if kind in ("change", "change_indirect") and difficulty == "facil":
         raise ValueError("change needs difficulty medio")
+    if kind not in KINDS_V2:
+        raise ValueError("unknown kind")
     rng = random.Random(f"v3|{seed}|{difficulty}|{family}|{index}|{target}|{kind}|{budget}|{k0}")
     pool = {"single": [h for h in CARD_POOL if len(SUPPORT[h]) == 1],
             "pair": [h for h in CARD_POOL if len(SUPPORT[h]) == 2], "mixed": CARD_POOL}[family]
@@ -133,6 +136,19 @@ def make_world(seed: int, difficulty: str, family: str, index: int, target: str,
             h2 = rng.choice(cand)
             extra = rng.sample([i for i in range(N) if i not in T and i != xs], 2)
             block = [xs] + extra
+        elif kind == "change_indirect":
+            free = [i for i in range(N) if i not in T and i not in obs and i not in q]
+            if len(free) < 3:
+                continue
+            block = rng.sample(free, 3)
+            h2 = rng.choice([c for c in SPACE if c != h])
+            for hist in (list(obs), list(obs) + list(q)):
+                rows_ = [(i, h[i]) for i in hist] + [(i, h2[i]) for i in block]
+                if admissible_idx(rows_):
+                    block = []
+                    break
+            if not block:
+                continue
         else:
             if kind == "stable_informative":
                 final = admissible_idx([(i, h[i]) for i in obs])
@@ -157,7 +173,7 @@ def make_world(seed: int, difficulty: str, family: str, index: int, target: str,
             continue
         if kind == "stable_informative" and not should_revise:
             continue
-        if kind == "change" and post_v != "inconsistent":
+        if kind in ("change", "change_indirect") and post_v != "inconsistent":
             continue
         order_cards = list(cards)
         codes = rng.sample(["Ka", "Lo", "Mi", "Ne", "Os", "Pa", "Qu", "Ru"], 3)

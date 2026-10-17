@@ -1,0 +1,54 @@
+{
+  "worlds": 414,
+  "model_calls": 0,
+  "text_features_tests": 8,
+  "rejected_after_holm": [
+    "chars",
+    "lines",
+    "oracle_first_menu_rank",
+    "oracle_rank_is_first"
+  ],
+  "smallest": [
+    {
+      "feature": "oracle_first_menu_rank",
+      "p": 3.0830070680179706e-91
+    },
+    {
+      "feature": "oracle_rank_is_first",
+      "p": 5.5121360696697015e-14
+    },
+    {
+      "feature": "chars",
+      "p": 0.002849571261422886
+    },
+    {
+      "feature": "lines",
+      "p": 0.005983571249248975
+    }
+  ],
+  "oracle_first_query_at_menu_position_0": {
+    "share": 0.4351851851851852,
+    "ci95": [
+      0.38227146001361645,
+      0.4896178914292755
+    ],
+    "chance": 0.11203703703703703,
+    "worlds_with_oracle_query": 324
+  },
+  "oracle_rank_histogram": {
+    "0": 141,
+    "1": 69,
+    "2": 35,
+    "3": 27,
+    "4": 28,
+    "5": 10,
+    "6": 9,
+    "7": 4,
+    "8": 1
+  },
+  "seeds": [
+    93001,
+    93003,
+    93009
+  ]
+}

@@ -24,11 +24,11 @@ INFEASIBLE_CELLS: list = []
 INFEASIBLE = {("undetermined", "stable_informative")}
 
 
-def dev_set(seeds=DEV_SEEDS, per_cell=PER_CELL):
+def dev_set(seeds=DEV_SEEDS, per_cell=PER_CELL, with_indirect=False, balanced=False):
     worlds = []
     for seed in seeds:
         for diff, fam, target in product(g.DIFFICULTIES, g.FAMILIES, g.VERDICTS):
-            kinds = g.KINDS if diff == "medio" else g.KINDS[:2]
+            kinds = (g.KINDS_V2 if with_indirect else g.KINDS) if diff == "medio" else g.KINDS[:2]
             for kind in kinds:
                 if (target, kind) in INFEASIBLE:
                     continue
@@ -38,7 +38,23 @@ def dev_set(seeds=DEV_SEEDS, per_cell=PER_CELL):
                         worlds.append(g.make_world(seed, diff, fam, i, target, kind, k0=k0, max_tries=1500))
                     except RuntimeError:
                         INFEASIBLE_CELLS.append([diff, fam, target, kind, k0])
+    if balanced:
+        worlds = balance_trim(worlds)
     return worlds
+
+
+def balance_trim(worlds):
+    """Equalise targets inside every (difficulty, family, initial-row-count) group so that structural
+    properties of the public state cannot differ between targets. Deterministic (by world_id)."""
+    groups = defaultdict(lambda: defaultdict(list))
+    for w in worlds:
+        groups[(w["meta"]["difficulty"], w["meta"]["family"], len(w["hidden"]["obs"]))][w["reference"]["target_verdict"]].append(w)
+    keep = []
+    for g_, by_t in groups.items():
+        m = min(len(by_t[t]) for t in g.VERDICTS) if all(by_t[t] for t in g.VERDICTS) else 0
+        for t in g.VERDICTS:
+            keep += sorted(by_t[t], key=lambda w: w["world_id"] + w["reference"]["kind"])[:m]
+    return keep
 
 
 def public_state(p):

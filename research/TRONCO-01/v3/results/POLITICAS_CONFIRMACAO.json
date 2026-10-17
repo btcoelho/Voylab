@@ -1,0 +1,1402 @@
+{
+  "model_calls": 0,
+  "note": "predictions Q1-Q10 of docs/V3_PREVISOES_EXANTE_2.md; seeds 93001/93003/93009 used once",
+  "full_preregistered": {
+    "n": 414,
+    "policies": {
+      "sem_consultas": {
+        "reach": 0.21739130434782608,
+        "queries_mean": 0.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "aleatoria": {
+        "reach": 0.5632850241545894,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "simples": {
+        "reach": 0.5652173913043478,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "bayes_ig": {
+        "reach": 0.9903381642512077,
+        "queries_mean": 1.7246376811594204,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "oraculo": {
+        "reach": 1.0,
+        "queries_mean": 1.0628019323671498,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "pegajosa": {
+        "reach": 0.9903381642512077,
+        "queries_mean": 1.7246376811594204,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.39371980676328505,
+        "revision_type_II_rate": 0.0
+      },
+      "greedy_a": {
+        "reach": 0.6884057971014492,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "rival": {
+        "reach": 0.6859903381642513,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "primeiro_do_menu": {
+        "reach": 0.5845410628019324,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "cega_pegajosa": {
+        "reach": 0.21739130434782608,
+        "queries_mean": 0.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.7632850241545893,
+        "revision_type_II_rate": 0.0
+      },
+      "ignora_evidencia": {
+        "reach": 0.21739130434782608,
+        "queries_mean": 1.7246376811594204,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.39371980676328505,
+        "revision_type_II_rate": 0.0
+      }
+    },
+    "paired_reach": {
+      "bayes_ig - aleatoria": {
+        "diff": 0.4270531400966184,
+        "ci95": [
+          0.38696219896773393,
+          0.4671440812255028
+        ],
+        "n": 414
+      },
+      "bayes_ig - sem_consultas": {
+        "diff": 0.7729468599033816,
+        "ci95": [
+          0.7325433010729083,
+          0.8133504187338549
+        ],
+        "n": 414
+      },
+      "bayes_ig - simples": {
+        "diff": 0.4251207729468599,
+        "ci95": [
+          0.3760486093417114,
+          0.4741929365520084
+        ],
+        "n": 414
+      },
+      "simples - aleatoria": {
+        "diff": 0.0019323671497584486,
+        "ci95": [
+          -0.032588071341186034,
+          0.036452805640702926
+        ],
+        "n": 414
+      },
+      "oraculo - bayes_ig": {
+        "diff": 0.00966183574879227,
+        "ci95": [
+          0.00022768897851837937,
+          0.019095982519066163
+        ],
+        "n": 414
+      },
+      "aleatoria - sem_consultas": {
+        "diff": 0.34589371980676326,
+        "ci95": [
+          0.30982338028150724,
+          0.38196405933201927
+        ],
+        "n": 414
+      },
+      "greedy_a - simples": {
+        "diff": 0.12318840579710146,
+        "ci95": [
+          0.08007828004609599,
+          0.16629853154810692
+        ],
+        "n": 414
+      },
+      "bayes_ig - greedy_a": {
+        "diff": 0.30193236714975846,
+        "ci95": [
+          0.25615772255432967,
+          0.34770701174518726
+        ],
+        "n": 414
+      },
+      "rival - simples": {
+        "diff": 0.12077294685990338,
+        "ci95": [
+          0.0816967866008903,
+          0.15984910711891645
+        ],
+        "n": 414
+      },
+      "rival - aleatoria": {
+        "diff": 0.12270531400966182,
+        "ci95": [
+          0.0877424864073533,
+          0.15766814161197035
+        ],
+        "n": 414
+      },
+      "bayes_ig - rival": {
+        "diff": 0.30434782608695654,
+        "ci95": [
+          0.2579894411453296,
+          0.35070621102858346
+        ],
+        "n": 414
+      },
+      "primeiro_do_menu - aleatoria": {
+        "diff": 0.02125603864734299,
+        "ci95": [
+          -0.01667986490130982,
+          0.0591919421959958
+        ],
+        "n": 414
+      }
+    },
+    "by_family": {
+      "single": {
+        "n": 138,
+        "reach": {
+          "sem_consultas": 0.21739130434782608,
+          "aleatoria": 0.5376811594202898,
+          "simples": 0.5217391304347826,
+          "bayes_ig": 0.9782608695652174,
+          "oraculo": 1.0,
+          "pegajosa": 0.9782608695652174,
+          "greedy_a": 0.6739130434782609,
+          "rival": 0.7391304347826086,
+          "primeiro_do_menu": 0.5797101449275363,
+          "cega_pegajosa": 0.21739130434782608,
+          "ignora_evidencia": 0.21739130434782608
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.45652173913043476,
+          "ci95": [
+            0.3683741886075217,
+            0.5446692896533478
+          ],
+          "n": 138
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.4405797101449275,
+          "ci95": [
+            0.3664381051574329,
+            0.5147213151324221
+          ],
+          "n": 138
+        }
+      },
+      "pair": {
+        "n": 138,
+        "reach": {
+          "sem_consultas": 0.21739130434782608,
+          "aleatoria": 0.5623188405797102,
+          "simples": 0.6014492753623188,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 0.6956521739130435,
+          "rival": 0.6304347826086957,
+          "primeiro_do_menu": 0.5942028985507246,
+          "cega_pegajosa": 0.21739130434782608,
+          "ignora_evidencia": 0.21739130434782608
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.39855072463768115,
+          "ci95": [
+            0.31656521657784953,
+            0.4805362326975128
+          ],
+          "n": 138
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.43768115942028984,
+          "ci95": [
+            0.37247641426369327,
+            0.5028859045768864
+          ],
+          "n": 138
+        }
+      },
+      "mixed": {
+        "n": 138,
+        "reach": {
+          "sem_consultas": 0.21739130434782608,
+          "aleatoria": 0.5898550724637681,
+          "simples": 0.572463768115942,
+          "bayes_ig": 0.9927536231884058,
+          "oraculo": 1.0,
+          "pegajosa": 0.9927536231884058,
+          "greedy_a": 0.6956521739130435,
+          "rival": 0.6884057971014492,
+          "primeiro_do_menu": 0.5797101449275363,
+          "cega_pegajosa": 0.21739130434782608,
+          "ignora_evidencia": 0.21739130434782608
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.42028985507246375,
+          "ci95": [
+            0.3352108037802823,
+            0.5053689063646452
+          ],
+          "n": 138
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.4028985507246377,
+          "ci95": [
+            0.33388659942683485,
+            0.47191050202244056
+          ],
+          "n": 138
+        }
+      }
+    },
+    "by_target": {
+      "rejected": {
+        "n": 162,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.7160493827160493,
+          "simples": 0.7160493827160493,
+          "bayes_ig": 0.9753086419753086,
+          "oraculo": 1.0,
+          "pegajosa": 0.9753086419753086,
+          "greedy_a": 0.8703703703703703,
+          "rival": 0.8827160493827161,
+          "primeiro_do_menu": 0.7345679012345679,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.25925925925925924,
+          "ci95": [
+            0.18532638255983314,
+            0.33319213595868535
+          ],
+          "n": 162
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.25925925925925924,
+          "ci95": [
+            0.21158497021132566,
+            0.3069335483071928
+          ],
+          "n": 162
+        }
+      },
+      "supported": {
+        "n": 162,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.16790123456790124,
+          "simples": 0.1728395061728395,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 0.3333333333333333,
+          "rival": 0.3148148148148148,
+          "primeiro_do_menu": 0.2037037037037037,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.8271604938271605,
+          "ci95": [
+            0.7687542155055443,
+            0.8855667721487767
+          ],
+          "n": 162
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.8320987654320988,
+          "ci95": [
+            0.7966054101644009,
+            0.8675921206997967
+          ],
+          "n": 162
+        }
+      },
+      "undetermined": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 1.0,
+          "aleatoria": 1.0,
+          "simples": 1.0,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 1.0,
+          "rival": 1.0,
+          "primeiro_do_menu": 1.0,
+          "cega_pegajosa": 1.0,
+          "ignora_evidencia": 1.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        }
+      }
+    },
+    "rival_vs_bayes_by_need": {
+      "1": {
+        "diff": 0.14903846153846154,
+        "ci95": [
+          0.09365361551154594,
+          0.20442330756537713
+        ],
+        "n": 208
+      },
+      "2": {
+        "diff": 0.8189655172413793,
+        "ci95": [
+          0.7485901600775869,
+          0.8893408744051717
+        ],
+        "n": 116
+      }
+    },
+    "decomposition": {
+      "sem_consultas": {
+        "inference_error": 0.0,
+        "search_error": 0.782608695652174,
+        "evidence_ignored": 0.0,
+        "premature_stop": 1.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.6708937198067633,
+        "cards_exact": 1.0
+      },
+      "aleatoria": {
+        "inference_error": 0.0,
+        "search_error": 0.43671497584541064,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.20144927536231885,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.7596618357487923,
+        "cards_exact": 1.0
+      },
+      "simples": {
+        "inference_error": 0.0,
+        "search_error": 0.43478260869565216,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.25120772946859904,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.7759661835748792,
+        "cards_exact": 1.0
+      },
+      "bayes_ig": {
+        "inference_error": 0.0,
+        "search_error": 0.00966183574879227,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.842391304347826,
+        "cards_exact": 1.0
+      },
+      "oraculo": {
+        "inference_error": 0.0,
+        "search_error": 0.0,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.21739130434782608,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.8091787439613527,
+        "cards_exact": 1.0
+      },
+      "pegajosa": {
+        "inference_error": 0.0,
+        "search_error": 0.00966183574879227,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.842391304347826,
+        "cards_exact": 1.0
+      },
+      "greedy_a": {
+        "inference_error": 0.0,
+        "search_error": 0.3115942028985507,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.24396135265700483,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.8109903381642513,
+        "cards_exact": 1.0
+      },
+      "rival": {
+        "inference_error": 0.0,
+        "search_error": 0.3140096618357488,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.3164251207729469,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.7856280193236715,
+        "cards_exact": 1.0
+      },
+      "primeiro_do_menu": {
+        "inference_error": 0.0,
+        "search_error": 0.41545893719806765,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.20772946859903382,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.7795893719806763,
+        "cards_exact": 1.0
+      },
+      "cega_pegajosa": {
+        "inference_error": 0.0,
+        "search_error": 0.782608695652174,
+        "evidence_ignored": 0.0,
+        "premature_stop": 1.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.6708937198067633,
+        "cards_exact": 1.0
+      },
+      "ignora_evidencia": {
+        "inference_error": 0.7753623188405797,
+        "search_error": 0.007246376811594203,
+        "evidence_ignored": 0.7753623188405797,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.842391304347826,
+        "cards_exact": 1.0
+      }
+    },
+    "by_need": {
+      "1": {
+        "n": 208,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.6403846153846153,
+          "simples": 0.6538461538461539,
+          "bayes_ig": 0.9807692307692307,
+          "oraculo": 1.0,
+          "pegajosa": 0.9807692307692307,
+          "greedy_a": 0.8461538461538461,
+          "rival": 0.8317307692307693,
+          "primeiro_do_menu": 0.6682692307692307,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.3269230769230769,
+          "ci95": [
+            0.2589596784963319,
+            0.39488647534982196
+          ],
+          "n": 208
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.3403846153846154,
+          "ci95": [
+            0.2942055466541026,
+            0.3865636841151282
+          ],
+          "n": 208
+        }
+      },
+      "2": {
+        "n": 116,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.08620689655172414,
+          "simples": 0.06896551724137931,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 0.16379310344827586,
+          "rival": 0.1810344827586207,
+          "primeiro_do_menu": 0.11206896551724138,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.9310344827586207,
+          "ci95": [
+            0.8847211501319373,
+            0.977347815385304
+          ],
+          "n": 116
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.9137931034482759,
+          "ci95": [
+            0.8887493039420444,
+            0.9388369029545074
+          ],
+          "n": 116
+        }
+      },
+      "None": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 1.0,
+          "aleatoria": 1.0,
+          "simples": 1.0,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 1.0,
+          "rival": 1.0,
+          "primeiro_do_menu": 1.0,
+          "cega_pegajosa": 1.0,
+          "ignora_evidencia": 1.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        }
+      }
+    },
+    "revision_by_kind": {
+      "stable_uninformative": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.006944444444444444
+        },
+        "pegajosa": {
+          "typeI": 0.006944444444444444,
+          "typeII": 0.0,
+          "should_revise": 0.006944444444444444
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.3194444444444444
+        },
+        "cega_pegajosa": {
+          "typeI": 0.3194444444444444,
+          "typeII": 0.0,
+          "should_revise": 0.3194444444444444
+        }
+      },
+      "stable_informative": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.0
+        },
+        "pegajosa": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.0
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "cega_pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        }
+      },
+      "change": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "cega_pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        }
+      },
+      "change_indirect": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "cega_pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        }
+      }
+    },
+    "seeds": [
+      93001,
+      93003,
+      93009
+    ]
+  },
+  "balanced_sensitivity": {
+    "n": 270,
+    "policies": {
+      "sem_consultas": {
+        "reach": 0.3333333333333333,
+        "queries_mean": 0.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "aleatoria": {
+        "reach": 0.6288888888888889,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "simples": {
+        "reach": 0.6259259259259259,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "bayes_ig": {
+        "reach": 0.9925925925925926,
+        "queries_mean": 1.7703703703703704,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "oraculo": {
+        "reach": 1.0,
+        "queries_mean": 0.8962962962962963,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "pegajosa": {
+        "reach": 0.9925925925925926,
+        "queries_mean": 1.7703703703703704,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.5111111111111111,
+        "revision_type_II_rate": 0.0
+      },
+      "greedy_a": {
+        "reach": 0.7444444444444445,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "rival": {
+        "reach": 0.7296296296296296,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "primeiro_do_menu": {
+        "reach": 0.6444444444444445,
+        "queries_mean": 2.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.0,
+        "revision_type_II_rate": 0.0
+      },
+      "cega_pegajosa": {
+        "reach": 0.3333333333333333,
+        "queries_mean": 0.0,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.7925925925925926,
+        "revision_type_II_rate": 0.0
+      },
+      "ignora_evidencia": {
+        "reach": 0.3333333333333333,
+        "queries_mean": 1.7703703703703704,
+        "invalid_rate": 0.0,
+        "revision_type_I_rate": 0.5111111111111111,
+        "revision_type_II_rate": 0.0
+      }
+    },
+    "paired_reach": {
+      "bayes_ig - aleatoria": {
+        "diff": 0.3637037037037037,
+        "ci95": [
+          0.3148493502209487,
+          0.4125580571864587
+        ],
+        "n": 270
+      },
+      "bayes_ig - sem_consultas": {
+        "diff": 0.6592592592592592,
+        "ci95": [
+          0.6026196717266422,
+          0.7158988467918762
+        ],
+        "n": 270
+      },
+      "bayes_ig - simples": {
+        "diff": 0.36666666666666664,
+        "ci95": [
+          0.30816743128942536,
+          0.4251659020439079
+        ],
+        "n": 270
+      },
+      "simples - aleatoria": {
+        "diff": -0.0029629629629629685,
+        "ci95": [
+          -0.04425626378310423,
+          0.0383303378571783
+        ],
+        "n": 270
+      },
+      "oraculo - bayes_ig": {
+        "diff": 0.007407407407407408,
+        "ci95": [
+          -0.00283963567253738,
+          0.017654450487352195
+        ],
+        "n": 270
+      },
+      "aleatoria - sem_consultas": {
+        "diff": 0.29555555555555557,
+        "ci95": [
+          0.2521289144464908,
+          0.3389821966646203
+        ],
+        "n": 270
+      },
+      "greedy_a - simples": {
+        "diff": 0.11851851851851852,
+        "ci95": [
+          0.06698593126374264,
+          0.1700511057732944
+        ],
+        "n": 270
+      },
+      "bayes_ig - greedy_a": {
+        "diff": 0.24814814814814815,
+        "ci95": [
+          0.19551537798922272,
+          0.3007809183070736
+        ],
+        "n": 270
+      },
+      "rival - simples": {
+        "diff": 0.1037037037037037,
+        "ci95": [
+          0.05595978922976898,
+          0.1514476181776384
+        ],
+        "n": 270
+      },
+      "rival - aleatoria": {
+        "diff": 0.10074074074074074,
+        "ci95": [
+          0.058898871854029575,
+          0.1425826096274519
+        ],
+        "n": 270
+      },
+      "bayes_ig - rival": {
+        "diff": 0.26296296296296295,
+        "ci95": [
+          0.208378819824514,
+          0.3175471061014119
+        ],
+        "n": 270
+      },
+      "primeiro_do_menu - aleatoria": {
+        "diff": 0.01555555555555555,
+        "ci95": [
+          -0.03111178961368241,
+          0.062222900724793515
+        ],
+        "n": 270
+      }
+    },
+    "by_family": {
+      "single": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 0.3333333333333333,
+          "aleatoria": 0.6066666666666667,
+          "simples": 0.5888888888888889,
+          "bayes_ig": 0.9888888888888889,
+          "oraculo": 1.0,
+          "pegajosa": 0.9888888888888889,
+          "greedy_a": 0.7222222222222222,
+          "rival": 0.7888888888888889,
+          "primeiro_do_menu": 0.6666666666666666,
+          "cega_pegajosa": 0.3333333333333333,
+          "ignora_evidencia": 0.3333333333333333
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.4,
+          "ci95": [
+            0.2982190057696583,
+            0.5017809942303417
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.3822222222222222,
+          "ci95": [
+            0.293179859832723,
+            0.4712645846117214
+          ],
+          "n": 90
+        }
+      },
+      "pair": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 0.3333333333333333,
+          "aleatoria": 0.6311111111111112,
+          "simples": 0.6555555555555556,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 0.7222222222222222,
+          "rival": 0.6777777777777778,
+          "primeiro_do_menu": 0.6666666666666666,
+          "cega_pegajosa": 0.3333333333333333,
+          "ignora_evidencia": 0.3333333333333333
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.34444444444444444,
+          "ci95": [
+            0.2457198379564804,
+            0.4431690509324085
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.36888888888888893,
+          "ci95": [
+            0.28767378943705835,
+            0.4501039883407195
+          ],
+          "n": 90
+        }
+      },
+      "mixed": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 0.3333333333333333,
+          "aleatoria": 0.6488888888888888,
+          "simples": 0.6333333333333333,
+          "bayes_ig": 0.9888888888888889,
+          "oraculo": 1.0,
+          "pegajosa": 0.9888888888888889,
+          "greedy_a": 0.7888888888888889,
+          "rival": 0.7222222222222222,
+          "primeiro_do_menu": 0.6,
+          "cega_pegajosa": 0.3333333333333333,
+          "ignora_evidencia": 0.3333333333333333
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.35555555555555557,
+          "ci95": [
+            0.251394002788867,
+            0.45971710832224416
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.34,
+          "ci95": [
+            0.25587518220650335,
+            0.4241248177934967
+          ],
+          "n": 90
+        }
+      }
+    },
+    "by_target": {
+      "rejected": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.7088888888888889,
+          "simples": 0.7,
+          "bayes_ig": 0.9777777777777777,
+          "oraculo": 1.0,
+          "pegajosa": 0.9777777777777777,
+          "greedy_a": 0.8777777777777778,
+          "rival": 0.8555555555555555,
+          "primeiro_do_menu": 0.6888888888888889,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.2777777777777778,
+          "ci95": [
+            0.17970303862592918,
+            0.3758525169296264
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.2688888888888889,
+          "ci95": [
+            0.2050673114071772,
+            0.3327104663706006
+          ],
+          "n": 90
+        }
+      },
+      "supported": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.17777777777777778,
+          "simples": 0.17777777777777778,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 0.35555555555555557,
+          "rival": 0.3333333333333333,
+          "primeiro_do_menu": 0.24444444444444444,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.8222222222222222,
+          "ci95": [
+            0.7427904211976308,
+            0.9016540232468135
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.8222222222222222,
+          "ci95": [
+            0.7732745875592081,
+            0.8711698568852363
+          ],
+          "n": 90
+        }
+      },
+      "undetermined": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 1.0,
+          "aleatoria": 1.0,
+          "simples": 1.0,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 1.0,
+          "rival": 1.0,
+          "primeiro_do_menu": 1.0,
+          "cega_pegajosa": 1.0,
+          "ignora_evidencia": 1.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        }
+      }
+    },
+    "rival_vs_bayes_by_need": {
+      "1": {
+        "diff": 0.17796610169491525,
+        "ci95": [
+          0.10104748525615363,
+          0.25488471813367686
+        ],
+        "n": 118
+      },
+      "2": {
+        "diff": 0.8064516129032258,
+        "ci95": [
+          0.707305637544607,
+          0.9055975882618446
+        ],
+        "n": 62
+      }
+    },
+    "decomposition": {
+      "sem_consultas": {
+        "inference_error": 0.0,
+        "search_error": 0.6666666666666666,
+        "evidence_ignored": 0.0,
+        "premature_stop": 1.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.6620370370370371,
+        "cards_exact": 1.0
+      },
+      "aleatoria": {
+        "inference_error": 0.0,
+        "search_error": 0.3711111111111111,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.16666666666666666,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.7537037037037037,
+        "cards_exact": 1.0
+      },
+      "simples": {
+        "inference_error": 0.0,
+        "search_error": 0.37407407407407406,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.2111111111111111,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.7675925925925926,
+        "cards_exact": 1.0
+      },
+      "bayes_ig": {
+        "inference_error": 0.0,
+        "search_error": 0.007407407407407408,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.8296296296296296,
+        "cards_exact": 1.0
+      },
+      "oraculo": {
+        "inference_error": 0.0,
+        "search_error": 0.0,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.3333333333333333,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.774074074074074,
+        "cards_exact": 1.0
+      },
+      "pegajosa": {
+        "inference_error": 0.0,
+        "search_error": 0.007407407407407408,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.8296296296296296,
+        "cards_exact": 1.0
+      },
+      "greedy_a": {
+        "inference_error": 0.0,
+        "search_error": 0.25555555555555554,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.21481481481481482,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.8092592592592592,
+        "cards_exact": 1.0
+      },
+      "rival": {
+        "inference_error": 0.0,
+        "search_error": 0.27037037037037037,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.26296296296296295,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.7694444444444445,
+        "cards_exact": 1.0
+      },
+      "primeiro_do_menu": {
+        "inference_error": 0.0,
+        "search_error": 0.35555555555555557,
+        "evidence_ignored": 0.0,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.1814814814814815,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.762962962962963,
+        "cards_exact": 1.0
+      },
+      "cega_pegajosa": {
+        "inference_error": 0.0,
+        "search_error": 0.6666666666666666,
+        "evidence_ignored": 0.0,
+        "premature_stop": 1.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.6620370370370371,
+        "cards_exact": 1.0
+      },
+      "ignora_evidencia": {
+        "inference_error": 0.662962962962963,
+        "search_error": 0.003703703703703704,
+        "evidence_ignored": 0.662962962962963,
+        "premature_stop": 0.0,
+        "queries_after_determined": 0.0,
+        "prediction_valid": 1.0,
+        "prediction_exact": 0.8296296296296296,
+        "cards_exact": 1.0
+      }
+    },
+    "by_need": {
+      "1": {
+        "n": 118,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.6237288135593221,
+          "simples": 0.635593220338983,
+          "bayes_ig": 0.9830508474576272,
+          "oraculo": 1.0,
+          "pegajosa": 0.9830508474576272,
+          "greedy_a": 0.847457627118644,
+          "rival": 0.8050847457627118,
+          "primeiro_do_menu": 0.635593220338983,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.3474576271186441,
+          "ci95": [
+            0.2580091269323421,
+            0.43690612730494605
+          ],
+          "n": 118
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.3593220338983051,
+          "ci95": [
+            0.2969860736980396,
+            0.4216579940985706
+          ],
+          "n": 118
+        }
+      },
+      "2": {
+        "n": 62,
+        "reach": {
+          "sem_consultas": 0.0,
+          "aleatoria": 0.1,
+          "simples": 0.06451612903225806,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 0.1774193548387097,
+          "rival": 0.1935483870967742,
+          "primeiro_do_menu": 0.14516129032258066,
+          "cega_pegajosa": 0.0,
+          "ignora_evidencia": 0.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.9354838709677419,
+          "ci95": [
+            0.8738323980505391,
+            0.9971353438849446
+          ],
+          "n": 62
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.8999999999999999,
+          "ci95": [
+            0.8620213536576004,
+            0.9379786463423995
+          ],
+          "n": 62
+        }
+      },
+      "None": {
+        "n": 90,
+        "reach": {
+          "sem_consultas": 1.0,
+          "aleatoria": 1.0,
+          "simples": 1.0,
+          "bayes_ig": 1.0,
+          "oraculo": 1.0,
+          "pegajosa": 1.0,
+          "greedy_a": 1.0,
+          "rival": 1.0,
+          "primeiro_do_menu": 1.0,
+          "cega_pegajosa": 1.0,
+          "ignora_evidencia": 1.0
+        },
+        "bayes_ig_minus_simples": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        },
+        "bayes_ig_minus_aleatoria": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 90
+        }
+      }
+    },
+    "revision_by_kind": {
+      "stable_uninformative": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.0
+        },
+        "pegajosa": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.0
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.28205128205128205
+        },
+        "cega_pegajosa": {
+          "typeI": 0.28205128205128205,
+          "typeII": 0.0,
+          "should_revise": 0.28205128205128205
+        }
+      },
+      "stable_informative": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.0
+        },
+        "pegajosa": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 0.0
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "cega_pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        }
+      },
+      "change": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "cega_pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        }
+      },
+      "change_indirect": {
+        "bayes_ig": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "sem_consultas": {
+          "typeI": 0.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        },
+        "cega_pegajosa": {
+          "typeI": 1.0,
+          "typeII": 0.0,
+          "should_revise": 1.0
+        }
+      }
+    },
+    "seeds": [
+      93001,
+      93003,
+      93009
+    ]
+  }
+}

@@ -5,6 +5,7 @@ import random
 from functools import lru_cache
 
 import generator_v3 as g
+import scoring
 
 
 def view(world: dict) -> dict:
@@ -40,6 +41,16 @@ def _value(A: frozenset, w, T: tuple, menu: tuple, b: int):
 class Policy:
     name = "base"
     revises = True
+
+    def answer(self, v, rows, left):
+        """Exact answer from A(H) of the policy's own history (the same for every reference policy)."""
+        A = g.admissible_idx(rows)
+        preds = {}
+        for t in v["T"]:
+            vals = sorted({h[t] for h in A}, key=lambda y: (-sum(h[t] == y for h in A), y))
+            preds[t] = vals[0] if vals else g.D.outputs[0]
+        return {"stop": "commit", "verdict": g.verdict(A, v["w"], v["T"]),
+                "admissible_cards": [c for c in v["cards"] if c in A], "predictions": preds}
 
     def choose(self, v, rows, left, rng, hidden=None):
         return None
@@ -99,6 +110,49 @@ class GreedyA(Policy):
         return arg
 
 
+class Rival(Policy):
+    """Cheap heuristic fixed in docs/V3_PREVISOES_EXANTE_2.md: query where W and a fitting rival card differ."""
+    name = "rival"
+
+    def choose(self, v, rows, left, rng, hidden=None):
+        used = {i for i, _ in rows}
+        free = [q for q in v["menu"] if q not in used]
+        if not free:
+            return None
+        rivals = [c for c in v["cards"] if c != v["w"] and all(c[i] == y for i, y in rows)]
+        for r in rivals:
+            for q in free:
+                if r[q] != v["w"][q]:
+                    return q
+        seen = [g.INPUTS[i] for i in used]
+        dist = lambda q: min(sum(a != b for a, b in zip(g.INPUTS[q], s)) for s in seen)  # noqa: E731
+        return max(free, key=lambda q: (dist(q), -free.index(q)))
+
+
+class PrimeiroDoMenu(Policy):
+    name = "primeiro_do_menu"
+
+    def choose(self, v, rows, left, rng, hidden=None):
+        used = {i for i, _ in rows}
+        free = [q for q in v["menu"] if q not in used]
+        return free[0] if free else None
+
+
+class CegaPegajosa(Policy):
+    name = "cega_pegajosa"
+    revises = False
+
+
+class IgnoraEvidencia(BayesIG):
+    name = "ignora_evidencia"
+    revises = False
+
+    def answer(self, v, rows, left):
+        a = super().answer(v, rows, left)
+        a["verdict"] = "undetermined"
+        return a
+
+
 class Pegajosa(BayesIG):
     name = "pegajosa"
     revises = False
@@ -116,6 +170,7 @@ class Oraculo(Policy):
 
 
 POLICIES = [SemConsultas, Aleatoria, Simples, BayesIG, Oraculo, Pegajosa, GreedyA]
+POLICIES_V2 = POLICIES + [Rival, PrimeiroDoMenu, CegaPegajosa, IgnoraEvidencia]
 
 
 def run_episode(policy: Policy, world: dict, seed: int) -> dict:
@@ -133,12 +188,15 @@ def run_episode(policy: Policy, world: dict, seed: int) -> dict:
             break
         rows.append((q, hid["h"][q]))
         queried.append(q)
-    committed = g.verdict(g.admissible_idx(rows), v["w"], v["T"])
+    ans = policy.answer(v, tuple(rows), v["budget"] - len(queried))
+    committed = ans["verdict"]
+    detail = scoring.score(world, queried, ans, v["budget"] - len(queried))
     post_rows = rows + [(i, hid["h2"][i]) for i in hid["block"]]
     final = g.verdict(g.admissible_idx(post_rows), v["w"], v["T"]) if policy.revises else committed
     ref = g.revision_reference(world, queried)
     revised = final != committed
-    return {"reach": committed == world["reference"]["target_verdict"], "queries": len(queried),
+    return {**{k: x for k, x in detail.items() if k != "reference_verdict" and x is not None},
+            "reach": committed == world["reference"]["target_verdict"], "queries": len(queried),
             "invalid": invalid, "should_revise": ref["should_revise"],
             "revision_type_I": ref["should_revise"] and not revised,
             "revision_type_II": revised and not ref["should_revise"]}
