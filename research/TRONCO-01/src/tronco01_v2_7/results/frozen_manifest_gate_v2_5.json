@@ -1,0 +1,8 @@
+{
+  "manifest_status": "draft_not_frozen",
+  "internal_files_verified": 22,
+  "external_model_files_verified": 3,
+  "production_verification_blocks_draft": true,
+  "model_weights_loaded": false,
+  "model_inference": false
+}

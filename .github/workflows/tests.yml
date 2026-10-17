@@ -1,0 +1,44 @@
+name: tests
+on:
+  push:
+  pull_request:
+jobs:
+  tronco01:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Archive integrity (manifest + src equals ZIPs, read-only)
+        working-directory: research/TRONCO-01
+        run: |
+          python tools/verify_manifest.py
+          python tools/verify_src_archives.py > /dev/null
+          python -m unittest discover -s tools -p 'test_verify*.py'
+
+      # Some historical scripts write result files next to themselves.
+      # They run in a throw-away copy so tracked artefacts are never touched.
+      - name: v2.7 harness (temporary copy)
+        run: |
+          cp -r research/TRONCO-01/src/tronco01_v2_7 "$RUNNER_TEMP/v27"
+          cd "$RUNNER_TEMP/v27"
+          python -m unittest discover -s tests
+          python mutation_check.py > /dev/null
+          python replay.py --trial-dir fixtures/v23 > /dev/null
+
+      - name: Admissible hypothesis sets
+        working-directory: research/TRONCO-01/hypothesis_sets
+        run: |
+          python -m unittest discover -s tests
+          python mutation_check.py > /dev/null
+
+      - name: M17 audit (dev and substitute families only)
+        working-directory: research/TRONCO-01/src/m17_audit
+        run: python -m unittest discover -s tests
+
+      - name: Tracked files unchanged by the run
+        run: |
+          git status --porcelain --untracked-files=no
+          test -z "$(git status --porcelain --untracked-files=no)"

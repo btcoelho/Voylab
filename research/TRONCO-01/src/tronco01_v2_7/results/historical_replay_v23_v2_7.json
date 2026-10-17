@@ -1,0 +1,177 @@
+{
+  "protocol": "TRONCO-01-v2.3-pilot-v0.1",
+  "replay": "independent stdlib reference; saved data only",
+  "new_model_calls": 0,
+  "episodes": [
+    {
+      "episode_id": "pilot_01",
+      "stratum": "empty",
+      "status": "model_output_failure",
+      "calls": 1,
+      "reports_attempted": 0,
+      "illegal_actions": 0,
+      "legal_reports": 0,
+      "score": null,
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_02",
+      "stratum": "empty",
+      "status": "model_output_failure",
+      "calls": 1,
+      "reports_attempted": 0,
+      "illegal_actions": 0,
+      "legal_reports": 0,
+      "score": null,
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_03",
+      "stratum": "supported_ambiguous",
+      "status": "call_limit_no_valid_terminal_action",
+      "calls": 4,
+      "reports_attempted": 4,
+      "illegal_actions": 4,
+      "legal_reports": 0,
+      "score": null,
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_04",
+      "stratum": "supported_ambiguous",
+      "status": "model_output_failure",
+      "calls": 1,
+      "reports_attempted": 0,
+      "illegal_actions": 0,
+      "legal_reports": 0,
+      "score": null,
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_05",
+      "stratum": "supported_identified",
+      "status": "reported",
+      "calls": 1,
+      "reports_attempted": 1,
+      "illegal_actions": 0,
+      "legal_reports": 1,
+      "score": {
+        "legal": true,
+        "expected_verdict": "supported",
+        "expected_candidate_model_codes": [
+          "A"
+        ],
+        "expected_diagnosis": "identified",
+        "expected_sufficiency": "identity_resolved",
+        "verdict_correct": false,
+        "candidates_correct": true,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "evidence_certificate_sufficient": false,
+        "location_supported": null,
+        "joint_success": false
+      },
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_06",
+      "stratum": "supported_identified",
+      "status": "reported",
+      "calls": 1,
+      "reports_attempted": 1,
+      "illegal_actions": 0,
+      "legal_reports": 1,
+      "score": {
+        "legal": true,
+        "expected_verdict": "supported",
+        "expected_candidate_model_codes": [
+          "A"
+        ],
+        "expected_diagnosis": "identified",
+        "expected_sufficiency": "identity_resolved",
+        "verdict_correct": false,
+        "candidates_correct": true,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "evidence_certificate_sufficient": false,
+        "location_supported": null,
+        "joint_success": false
+      },
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_07",
+      "stratum": "rejected_identified",
+      "status": "call_limit_no_valid_terminal_action",
+      "calls": 4,
+      "reports_attempted": 4,
+      "illegal_actions": 4,
+      "legal_reports": 0,
+      "score": null,
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_08",
+      "stratum": "rejected_identified",
+      "status": "call_limit_no_valid_terminal_action",
+      "calls": 4,
+      "reports_attempted": 4,
+      "illegal_actions": 4,
+      "legal_reports": 0,
+      "score": null,
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_09",
+      "stratum": "rejected_none_fit",
+      "status": "model_output_failure",
+      "calls": 1,
+      "reports_attempted": 0,
+      "illegal_actions": 0,
+      "legal_reports": 0,
+      "score": null,
+      "distinct_prompts": 1
+    },
+    {
+      "episode_id": "pilot_10",
+      "stratum": "rejected_none_fit",
+      "status": "reported",
+      "calls": 1,
+      "reports_attempted": 1,
+      "illegal_actions": 0,
+      "legal_reports": 1,
+      "score": {
+        "legal": true,
+        "expected_verdict": "rejected",
+        "expected_candidate_model_codes": [],
+        "expected_diagnosis": "none_fit",
+        "expected_sufficiency": "no_candidate_fits",
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": true,
+        "sufficiency_correct": true,
+        "evidence_certificate_sufficient": false,
+        "location_supported": null,
+        "joint_success": false
+      },
+      "distinct_prompts": 1
+    }
+  ],
+  "summary": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed": 4,
+    "legal_reports": 3,
+    "illegal_decoded_actions": 12,
+    "accepted_queries": 0,
+    "joint_successes": 0,
+    "joint_rate_all_episodes": 0.0,
+    "status_counts": {
+      "model_output_failure": 4,
+      "call_limit_no_valid_terminal_action": 3,
+      "reported": 3
+    },
+    "malformed_at_token_limit_without_eos": 4
+  },
+  "missing_initial_preregistration": "Only its SHA-256 is retained; original contents unavailable."
+}

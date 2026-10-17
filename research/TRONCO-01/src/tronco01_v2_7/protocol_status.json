@@ -1,0 +1,25 @@
+{
+  "protocol": "TRONCO-01-v2.7-development-rerun",
+  "status": "prepared_for_mandatory_pre_model_analysis",
+  "mandatory_analysis_gate_reached": true,
+  "preregistration_frozen": false,
+  "manifest_frozen": false,
+  "model_weights_loaded": false,
+  "learned_model_inference_performed": false,
+  "new_model_calls": 0,
+  "fine_tuning_performed": false,
+  "larger_model_introduced": false,
+  "offline_tests_passed": 37,
+  "targeted_mutants_killed_with_passing_baselines": 4,
+  "full_runner_fake_output_scenarios": [
+    "ten reference reports score 10/10",
+    "ten altered verdicts score 0/10",
+    "malformed output is recorded and the fixed schedule continues",
+    "technical error records a sentinel and stops the schedule",
+    "resume identity mismatch blocks before loader invocation"
+  ],
+  "checkpoint_snapshot_artifacts_hashed": 11,
+  "runtime_packages_pinned": ["python", "transformers", "lm-format-enforcer", "unsloth", "torch", "bitsandbytes"],
+  "historical_records_modified": false,
+  "next_step": "Complete the pre-inference scientific analysis; then run final offline package checks before any inference decision."
+}

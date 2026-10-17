@@ -1,0 +1,506 @@
+[
+  {
+    "episode_id": "pilot_01",
+    "initial_stratum": "empty",
+    "calls": 1,
+    "queries": 0,
+    "status": "technical_failure",
+    "error": "JSONDecodeError('Unterminated string starting at: line 27 column 5 (char 1057)')"
+  },
+  {
+    "episode_id": "pilot_02",
+    "initial_stratum": "empty",
+    "calls": 1,
+    "queries": 0,
+    "status": "model_output_failure",
+    "error": "JSONDecodeError('Expecting value: line 22 column 31 (char 1102)')"
+  },
+  {
+    "episode_id": "pilot_03",
+    "initial_stratum": "supported_ambiguous",
+    "calls": 4,
+    "queries": 0,
+    "status": "call_limit_no_report"
+  },
+  {
+    "episode_id": "pilot_04",
+    "initial_stratum": "supported_ambiguous",
+    "calls": 1,
+    "queries": 0,
+    "status": "model_output_failure",
+    "error": "JSONDecodeError(\"Expecting ',' delimiter: line 22 column 30 (char 1055)\")"
+  },
+  {
+    "episode_id": "pilot_05",
+    "initial_stratum": "supported_identified",
+    "calls": 1,
+    "queries": 0,
+    "status": "reported",
+    "evaluation": {
+      "legal": true,
+      "legal_errors": [],
+      "expected_verdict": "supported",
+      "expected_candidate_model_codes": [
+        "A"
+      ],
+      "expected_diagnosis": "identified",
+      "expected_sufficiency": "identity_resolved",
+      "verdict_correct": false,
+      "candidates_correct": true,
+      "diagnosis_correct": false,
+      "sufficiency_correct": false,
+      "evidence_certificate_sufficient": false,
+      "location_supported": null,
+      "joint_success": false
+    },
+    "final_state": {
+      "candidate_models": [
+        {
+          "id": "A",
+          "statement": "Output depends only on glyph.",
+          "table": {
+            "g0": "0",
+            "g1": "1"
+          }
+        },
+        {
+          "id": "B",
+          "statement": "Output depends only on setting.",
+          "table": {
+            "s0": "0",
+            "s1": "1"
+          }
+        },
+        {
+          "id": "C",
+          "statement": "Output depends on glyph and phase.",
+          "table": {
+            "g0|t0": "0",
+            "g0|t1": "1",
+            "g1|t0": "1",
+            "g1|t1": "0"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "id": "o1",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s0"
+          },
+          "output": "0"
+        },
+        {
+          "id": "o2",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s1"
+          },
+          "output": "0"
+        },
+        {
+          "id": "o3",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t1",
+            "setting": "s0"
+          },
+          "output": "0"
+        }
+      ],
+      "query_menu": [
+        {
+          "id": "q0",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q1",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s1"
+          }
+        },
+        {
+          "id": "q2",
+          "input": {
+            "glyph": "g1",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q3",
+          "input": {
+            "glyph": "g1",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s1"
+          }
+        },
+        {
+          "id": "q4",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t1",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q5",
+          "input": {
+            "glyph": "g1",
+            "partner": "p1",
+            "phase": "t1",
+            "setting": "s1"
+          }
+        }
+      ],
+      "remaining_query_budget": 3,
+      "working_model": {
+        "id": "A",
+        "statement": "Output depends only on glyph.",
+        "table": {
+          "g0": "0",
+          "g1": "1"
+        }
+      }
+    }
+  },
+  {
+    "episode_id": "pilot_06",
+    "initial_stratum": "supported_identified",
+    "calls": 1,
+    "queries": 0,
+    "status": "reported",
+    "evaluation": {
+      "legal": true,
+      "legal_errors": [],
+      "expected_verdict": "supported",
+      "expected_candidate_model_codes": [
+        "A"
+      ],
+      "expected_diagnosis": "identified",
+      "expected_sufficiency": "identity_resolved",
+      "verdict_correct": false,
+      "candidates_correct": true,
+      "diagnosis_correct": false,
+      "sufficiency_correct": false,
+      "evidence_certificate_sufficient": false,
+      "location_supported": null,
+      "joint_success": false
+    },
+    "final_state": {
+      "candidate_models": [
+        {
+          "id": "A",
+          "statement": "Output depends only on glyph.",
+          "table": {
+            "g0": "0",
+            "g1": "1"
+          }
+        },
+        {
+          "id": "B",
+          "statement": "Output depends only on setting.",
+          "table": {
+            "s0": "0",
+            "s1": "1"
+          }
+        },
+        {
+          "id": "C",
+          "statement": "Output depends on glyph and phase.",
+          "table": {
+            "g0|t0": "0",
+            "g0|t1": "1",
+            "g1|t0": "1",
+            "g1|t1": "0"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "id": "o1",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s0"
+          },
+          "output": "0"
+        },
+        {
+          "id": "o2",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s1"
+          },
+          "output": "0"
+        },
+        {
+          "id": "o3",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t1",
+            "setting": "s0"
+          },
+          "output": "0"
+        }
+      ],
+      "query_menu": [
+        {
+          "id": "q0",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q1",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s1"
+          }
+        },
+        {
+          "id": "q2",
+          "input": {
+            "glyph": "g1",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q3",
+          "input": {
+            "glyph": "g1",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s1"
+          }
+        },
+        {
+          "id": "q4",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t1",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q5",
+          "input": {
+            "glyph": "g1",
+            "partner": "p0",
+            "phase": "t1",
+            "setting": "s1"
+          }
+        }
+      ],
+      "remaining_query_budget": 3,
+      "working_model": {
+        "id": "A",
+        "statement": "Output depends only on glyph.",
+        "table": {
+          "g0": "0",
+          "g1": "1"
+        }
+      }
+    }
+  },
+  {
+    "episode_id": "pilot_07",
+    "initial_stratum": "rejected_identified",
+    "calls": 4,
+    "queries": 0,
+    "status": "call_limit_no_report"
+  },
+  {
+    "episode_id": "pilot_08",
+    "initial_stratum": "rejected_identified",
+    "calls": 4,
+    "queries": 0,
+    "status": "call_limit_no_report"
+  },
+  {
+    "episode_id": "pilot_09",
+    "initial_stratum": "rejected_none_fit",
+    "calls": 1,
+    "queries": 0,
+    "status": "model_output_failure",
+    "error": "JSONDecodeError('Unterminated string starting at: line 19 column 5 (char 1119)')"
+  },
+  {
+    "episode_id": "pilot_10",
+    "initial_stratum": "rejected_none_fit",
+    "calls": 1,
+    "queries": 0,
+    "status": "reported",
+    "evaluation": {
+      "legal": true,
+      "legal_errors": [],
+      "expected_verdict": "rejected",
+      "expected_candidate_model_codes": [],
+      "expected_diagnosis": "none_fit",
+      "expected_sufficiency": "no_candidate_fits",
+      "verdict_correct": false,
+      "candidates_correct": false,
+      "diagnosis_correct": true,
+      "sufficiency_correct": true,
+      "evidence_certificate_sufficient": false,
+      "location_supported": null,
+      "joint_success": false
+    },
+    "final_state": {
+      "candidate_models": [
+        {
+          "id": "A",
+          "statement": "Output depends only on glyph.",
+          "table": {
+            "g0": "0",
+            "g1": "1"
+          }
+        },
+        {
+          "id": "B",
+          "statement": "Output depends only on setting.",
+          "table": {
+            "s0": "0",
+            "s1": "1"
+          }
+        },
+        {
+          "id": "C",
+          "statement": "Output depends on glyph and phase.",
+          "table": {
+            "g0|t0": "0",
+            "g0|t1": "1",
+            "g1|t0": "1",
+            "g1|t1": "0"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "id": "o1",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s0"
+          },
+          "output": "0"
+        },
+        {
+          "id": "o2",
+          "input": {
+            "glyph": "g0",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s1"
+          },
+          "output": "1"
+        },
+        {
+          "id": "o3",
+          "input": {
+            "glyph": "g1",
+            "partner": "p1",
+            "phase": "t0",
+            "setting": "s0"
+          },
+          "output": "1"
+        }
+      ],
+      "query_menu": [
+        {
+          "id": "q0",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q1",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s1"
+          }
+        },
+        {
+          "id": "q2",
+          "input": {
+            "glyph": "g1",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q3",
+          "input": {
+            "glyph": "g1",
+            "partner": "p0",
+            "phase": "t0",
+            "setting": "s1"
+          }
+        },
+        {
+          "id": "q4",
+          "input": {
+            "glyph": "g0",
+            "partner": "p0",
+            "phase": "t1",
+            "setting": "s0"
+          }
+        },
+        {
+          "id": "q5",
+          "input": {
+            "glyph": "g1",
+            "partner": "p0",
+            "phase": "t1",
+            "setting": "s1"
+          }
+        }
+      ],
+      "remaining_query_budget": 3,
+      "working_model": {
+        "id": "A",
+        "statement": "Output depends only on glyph.",
+        "table": {
+          "g0": "0",
+          "g1": "1"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,10 @@
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_01","expected":{"candidates":["A","B","C"],"diagnosis":"ambiguous","sufficiency":"no_observations","verdict":"undetermined"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_02","expected":{"candidates":["A","B","C"],"diagnosis":"ambiguous","sufficiency":"no_observations","verdict":"undetermined"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_03","expected":{"candidates":["A","B","C"],"diagnosis":"ambiguous","sufficiency":"identity_ambiguous","verdict":"supported"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_04","expected":{"candidates":["A","B","C"],"diagnosis":"ambiguous","sufficiency":"identity_ambiguous","verdict":"supported"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_05","expected":{"candidates":["A"],"diagnosis":"identified","sufficiency":"identity_resolved","verdict":"supported"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_06","expected":{"candidates":["A"],"diagnosis":"identified","sufficiency":"identity_resolved","verdict":"supported"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_07","expected":{"candidates":["B"],"diagnosis":"identified","sufficiency":"identity_resolved","verdict":"rejected"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_08","expected":{"candidates":["B"],"diagnosis":"identified","sufficiency":"identity_resolved","verdict":"rejected"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_09","expected":{"candidates":[],"diagnosis":"none_fit","sufficiency":"no_candidate_fits","verdict":"rejected"}}
+{"crosscheck":"independent replay matches saved expected_initial","episode_id":"pilot_10","expected":{"candidates":[],"diagnosis":"none_fit","sufficiency":"no_candidate_fits","verdict":"rejected"}}

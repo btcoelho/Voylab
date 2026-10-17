@@ -1,0 +1,26 @@
+{
+  "method": "three deliberate one-line source mutants in temporary copies; targeted unittest failures kill mutants",
+  "production_tree_modified": false,
+  "model_calls": 0,
+  "mutants": {
+    "duplicate_candidate_validator_removed": {
+      "target_test": "test_duplicate_candidate_evidence_and_location_values_are_rejected",
+      "mutant_killed": true,
+      "test_exit_code": 1,
+      "diagnostic_tail": "E\n======================================================================\nERROR: test_harness (unittest.loader._FailedTest.test_harness)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_harness\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\loader.py\", line 137, in loadTestsFromName\n    module = __import__(module_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmpii4m6nmq\\test_harness.py\", line 10, in <module>\n    import model_backend\nModuleNotFoundError: No module named 'model_backend'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    },
+    "resume_fingerprint_comparison_removed": {
+      "target_test": "test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint",
+      "mutant_killed": true,
+      "test_exit_code": 1,
+      "diagnostic_tail": "E\n======================================================================\nERROR: test_harness (unittest.loader._FailedTest.test_harness)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_harness\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\loader.py\", line 137, in loadTestsFromName\n    module = __import__(module_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmp6p25qxdt\\test_harness.py\", line 10, in <module>\n    import model_backend\nModuleNotFoundError: No module named 'model_backend'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    },
+    "entry_manifest_guard_removed": {
+      "target_test": "test_complete_resume_runs_guard_even_when_schedule_is_unchanged",
+      "mutant_killed": true,
+      "test_exit_code": 1,
+      "diagnostic_tail": "E\n======================================================================\nERROR: test_harness (unittest.loader._FailedTest.test_harness)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_harness\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\loader.py\", line 137, in loadTestsFromName\n    module = __import__(module_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmpegfcmc7m\\test_harness.py\", line 10, in <module>\n    import model_backend\nModuleNotFoundError: No module named 'model_backend'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    }
+  },
+  "all_targeted_mutants_killed": true
+}

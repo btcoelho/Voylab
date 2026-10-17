@@ -1,0 +1,11 @@
+{
+  "protocol": "TRONCO-01-v2.6-offline-preflight",
+  "adapter_call_exercised": true,
+  "fake_generate_calls": 1,
+  "checkpoint_loaded": false,
+  "learned_model_inference": false,
+  "real_tokenizer_and_lmfe_callback": true,
+  "eos_recorded": true,
+  "prompt_token_count": 517,
+  "generated_token_count": 50
+}
