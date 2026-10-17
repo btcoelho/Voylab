@@ -1,0 +1,216 @@
+{
+  "review_date": "2026-10-17",
+  "new_model_inference_executed": false,
+  "new_training_executed": false,
+  "m17_modified_by_review": false,
+  "experimental_inputs": [
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/action_utils.py",
+      "sha256": "f40c8735e3cbe992c4164c3f7824e7c50ec481e5ede2ea2d173b49951355c599"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/agents.py",
+      "sha256": "aa78e06e0a98930b4e2cfd0d0a3905fe5f202f32abeef2daad0d0f28c4bbad9f"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/audit_identifiability.py",
+      "sha256": "3553021a05764f2494d274400aecb555ef013750ea930660bce7213c1a58a007"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/environment.py",
+      "sha256": "f4b79a2f259294de9dac4ba13e43c52743c62490b4607f8f6ef345c211faa128"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/evaluate_m17.py",
+      "sha256": "0682d881d97ad45cae45356cdf8c2eec19a27f0fb656623e4bccb0def6b69bf1"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/generate_dev.py",
+      "sha256": "ab50159bffa9a3129d65f215e9f2ac189f9f1fd5e8014c37b96c217c4a059867"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/generator.py",
+      "sha256": "6b6182b4e422a1c96fe218384f717bff358b1dcc6471097edcee2e7d075f53cf"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/llm_agents.py",
+      "sha256": "9ad7ad4628132cb32743275b6299f82b225e2e42d35214ea8b536abdc404d074"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/tests/test_m17.py",
+      "sha256": "b769315568e606026dc6d0d86d12e1bf190dccbff613d9ec5f59ee656cdef595"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/PROTOCOL.md",
+      "sha256": "b89d70ccbd4ee89798be25dafb73267949f3178f3ac84e254cf6ec0246be8d12"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/M16_AUDIT.md",
+      "sha256": "8a05a03a9d372b1141a5972f814b3435f326f6974df021165aaeabd3fdc17da2"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/results/pilot_base_v012.json",
+      "sha256": "5e61fd2d907a1e2b77a44b8a202d2bddc8998bb223c6b89c8ac0f83f2b7b849e"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/results/pilot_m16_v012.json",
+      "sha256": "23516f996ee0cf5a600a0e56a9c93d68abb1971ca4e40e0471e3dbf0454dbe47"
+    },
+    {
+      "path": "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/M17_DESCOBERTA_DIAGNOSTICO/results/pilot_controls_v012.json",
+      "sha256": "f42c6435e2c815fe25c6b16840b7bf43deb62a534d5a2814e9c817c2a2e2e842"
+    }
+  ],
+  "models": {
+    "base_model": {
+      "episodes": 50,
+      "action_count": 500,
+      "invalid_actions": 500,
+      "invalid_action_rate": 1.0,
+      "forced_terminations": 50,
+      "explicit_reports": 0,
+      "query_count": 0,
+      "evidence_diagnosis_successes": 0,
+      "calibration_by_seed_as_stored": [
+        {
+          "brier": 0.0,
+          "ece10": 0.0
+        },
+        {
+          "brier": 0.0,
+          "ece10": 0.0
+        },
+        {
+          "brier": 0.0,
+          "ece10": 0.0
+        }
+      ]
+    },
+    "m16_adapter": {
+      "episodes": 50,
+      "action_count": 500,
+      "invalid_actions": 500,
+      "invalid_action_rate": 1.0,
+      "forced_terminations": 50,
+      "explicit_reports": 0,
+      "query_count": 0,
+      "evidence_diagnosis_successes": 0,
+      "calibration_by_seed_as_stored": [
+        {
+          "brier": 0.0,
+          "ece10": 0.0
+        },
+        {
+          "brier": 0.0,
+          "ece10": 0.0
+        },
+        {
+          "brier": 0.0,
+          "ece10": 0.0
+        }
+      ]
+    }
+  },
+  "controls": {
+    "statistical_detector": {
+      "episodes": 50,
+      "action_count": 50,
+      "invalid_actions": 0,
+      "invalid_action_rate": 0.0,
+      "forced_terminations": 0,
+      "explicit_reports": 50,
+      "query_count": 0,
+      "evidence_diagnosis_successes": 24,
+      "calibration_by_seed_as_stored": [
+        {
+          "brier": 0.2103947368421053,
+          "ece10": 0.3131578947368421
+        },
+        {
+          "brier": 0.27903846153846157,
+          "ece10": 0.2884615384615385
+        },
+        {
+          "brier": 0.16527777777777777,
+          "ece10": 0.18333333333333338
+        }
+      ]
+    },
+    "random_query": {
+      "episodes": 50,
+      "action_count": 200,
+      "invalid_actions": 0,
+      "invalid_action_rate": 0.0,
+      "forced_terminations": 0,
+      "explicit_reports": 50,
+      "query_count": 150,
+      "evidence_diagnosis_successes": 22,
+      "calibration_by_seed_as_stored": [
+        {
+          "brier": 0.19289473684210529,
+          "ece10": 0.29473684210526313
+        },
+        {
+          "brier": 0.20230769230769233,
+          "ece10": 0.20769230769230773
+        },
+        {
+          "brier": 0.12833333333333333,
+          "ece10": 0.14444444444444451
+        }
+      ]
+    },
+    "fixed_query": {
+      "episodes": 50,
+      "action_count": 200,
+      "invalid_actions": 0,
+      "invalid_action_rate": 0.0,
+      "forced_terminations": 0,
+      "explicit_reports": 50,
+      "query_count": 150,
+      "evidence_diagnosis_successes": 23,
+      "calibration_by_seed_as_stored": [
+        {
+          "brier": 0.19289473684210529,
+          "ece10": 0.29473684210526313
+        },
+        {
+          "brier": 0.20230769230769233,
+          "ece10": 0.20769230769230773
+        },
+        {
+          "brier": 0.10986111111111113,
+          "ece10": 0.13611111111111113
+        }
+      ]
+    },
+    "symbolic_active": {
+      "episodes": 50,
+      "action_count": 70,
+      "invalid_actions": 0,
+      "invalid_action_rate": 0.0,
+      "forced_terminations": 0,
+      "explicit_reports": 50,
+      "query_count": 20,
+      "evidence_diagnosis_successes": 50,
+      "calibration_by_seed_as_stored": [
+        {
+          "brier": 0.08105263157894738,
+          "ece10": 0.17894736842105263
+        },
+        {
+          "brier": 0.06384615384615384,
+          "ece10": 0.176923076923077
+        },
+        {
+          "brier": 0.01833333333333333,
+          "ece10": 0.07222222222222227
+        }
+      ]
+    }
+  },
+  "unit_test_definitions_in_source": 14,
+  "unit_test_status": "14 passed in the prior execution; no tests rerun by this review",
+  "source_hashes_rechecked_at_end": true,
+  "changed_experimental_inputs": []
+}

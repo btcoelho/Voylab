@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRONCO-01 proposed event memory v0.1",
+  "description": "Design only. Cross-event references, ordering, immutability, hashes and hypothesis execution require a separate verifier. No model learning or agent implementation is claimed.",
+  "type": "object",
+  "required": ["run_id", "protocol_sha256", "events"],
+  "additionalProperties": false,
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "protocol_sha256": {"$ref": "#/$defs/sha256"},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "event": {
+      "type": "object",
+      "required": ["event_id", "sequence", "timestamp", "actor", "kind", "parent_ids", "payload"],
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {"type": "string", "minLength": 1},
+        "sequence": {"type": "integer", "minimum": 0},
+        "timestamp": {"type": "string", "format": "date-time"},
+        "actor": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["observation", "hypothesis", "prediction", "experiment", "assessment", "decision", "revision", "challenge", "operational_error"]},
+        "parent_ids": {"$ref": "#/$defs/ids"},
+        "previous_event_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+        "payload": {"type": "object"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"kind": {"const": "observation"}}},
+          "then": {"properties": {"payload": {"required": ["source", "raw_ref", "raw_sha256", "input", "output"], "properties": {
+            "source": {"type": "string"}, "raw_ref": {"type": "string"},
+            "raw_sha256": {"$ref": "#/$defs/sha256"}, "input": {}, "output": {},
+            "measurement_assumptions": {"type": "array", "items": {"type": "string"}}
+          }}}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "hypothesis"}}},
+          "then": {"properties": {"payload": {"required": ["hypothesis_id", "version", "expression_dsl", "assumptions", "fit_observation_ids", "falsifying_condition"], "properties": {
+            "hypothesis_id": {"type": "string"}, "version": {"type": "integer", "minimum": 1},
+            "expression_dsl": {"type": "string"}, "assumptions": {"type": "array", "items": {"type": "string"}},
+            "fit_observation_ids": {"$ref": "#/$defs/ids"}, "falsifying_condition": {"type": "string"}
+          }}}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "prediction"}}},
+          "then": {"properties": {"payload": {"required": ["hypothesis_id", "hypothesis_version", "query_input", "forecast", "fit_observation_ids", "implementation_sha256"], "properties": {
+            "hypothesis_id": {"type": "string"}, "hypothesis_version": {"type": "integer", "minimum": 1},
+            "query_input": {}, "forecast": {"type": "object"}, "fit_observation_ids": {"$ref": "#/$defs/ids"},
+            "implementation_sha256": {"$ref": "#/$defs/sha256"}
+          }}}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "experiment"}}},
+          "then": {"properties": {"payload": {"required": ["action", "prediction_ids", "expected_cost", "budget_remaining"], "properties": {
+            "action": {"type": "object"}, "prediction_ids": {"$ref": "#/$defs/ids"},
+            "expected_cost": {"type": "number", "minimum": 0}, "budget_remaining": {"type": "number", "minimum": 0},
+            "actual_cost": {"type": "number", "minimum": 0}
+          }}}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "assessment"}}},
+          "then": {"properties": {"payload": {"required": ["prediction_ids", "observation_ids", "rule_id", "epistemic_status", "result"], "properties": {
+            "prediction_ids": {"$ref": "#/$defs/ids"}, "observation_ids": {"$ref": "#/$defs/ids"},
+            "rule_id": {"type": "string"}, "epistemic_status": {"enum": ["normal", "noise_consistent", "ambiguous", "conflict", "context_shift", "model_set_inadequate", "undetermined"]},
+            "result": {"type": "object"}
+          }}}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "decision"}}},
+          "then": {"properties": {"payload": {"required": ["triage", "evidence_ids", "reason", "next_step", "reopen_condition"], "properties": {
+            "triage": {"enum": ["REGISTER", "ESCALATE", "INVESTIGATE"]},
+            "evidence_ids": {"$ref": "#/$defs/ids"}, "reason": {"type": "string"},
+            "next_step": {"enum": ["continue", "suspend", "close"]}, "reopen_condition": {"type": "string"}
+          }}}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "revision"}}},
+          "then": {"properties": {"payload": {"required": ["old_hypothesis_id", "old_version", "new_hypothesis_id", "new_version", "evidence_ids", "affected_event_ids"], "properties": {
+            "old_hypothesis_id": {"type": "string"}, "old_version": {"type": "integer", "minimum": 1},
+            "new_hypothesis_id": {"type": "string"}, "new_version": {"type": "integer", "minimum": 1},
+            "evidence_ids": {"$ref": "#/$defs/ids"}, "affected_event_ids": {"$ref": "#/$defs/ids"}
+          }}}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "operational_error"}}},
+          "then": {"properties": {"payload": {"required": ["stage", "reason", "raw_response_ref", "input_tokens", "output_tokens", "generation_finish"], "properties": {
+            "stage": {"enum": ["load", "template", "generate", "parse", "validate", "execute", "budget"]},
+            "reason": {"type": "string"}, "raw_response_ref": {"type": ["string", "null"]},
+            "input_tokens": {"type": "integer", "minimum": 0}, "output_tokens": {"type": "integer", "minimum": 0},
+            "generation_finish": {"enum": ["eos", "token_limit", "context_limit", "exception", "timeout", "not_applicable"]}
+          }}}}
+        }
+      ]
+    }
+  }
+}

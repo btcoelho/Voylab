@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-17",
+  "scope": "Static review of selected primary sources; no repository installation, build, tests or execution",
+  "m17_modified": false,
+  "sources": [
+    {
+      "repo": "morluto/rea",
+      "commit": "f85a932d71279415dd95cc30083137d1161f83b8",
+      "commit_date": "2026-10-17T09:14:16Z",
+      "files": [
+        {
+          "path": "src/application/investigation/EvidenceLedger.ts",
+          "bytes": 17296,
+          "sha256": "e0b870721aee65397a93a3dd1ece6e9d1f1e66702cd067a9b4d5418f3b9ebf42",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/src/application/investigation/EvidenceLedger.ts"
+        },
+        {
+          "path": "src/application/investigation/UnknownEvidence.ts",
+          "bytes": 2084,
+          "sha256": "74c2d3c97c35dc42f3f49f5276bf66ca827f73843e8502c17103b2d9da899068",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/src/application/investigation/UnknownEvidence.ts"
+        },
+        {
+          "path": "src/domain/evidence.ts",
+          "bytes": 15243,
+          "sha256": "4a92eedd48d416e37f9eacfae8d1296cc8bdc1c5d4a63840ce7d097eb959fb42",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/src/domain/evidence.ts"
+        },
+        {
+          "path": "src/domain/evidenceErrors.ts",
+          "bytes": 2342,
+          "sha256": "0257a3dc1aaebbabec6694f3bebd18d35ec0864f649c8bd06c3b8dc759b2294d",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/src/domain/evidenceErrors.ts"
+        },
+        {
+          "path": "docs/reconstruction-obligation-ledgers.md",
+          "bytes": 10528,
+          "sha256": "8d13dda69fae4b14ccb10e1c0318a7bec0efe802ca69059261aa29de41639400",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/docs/reconstruction-obligation-ledgers.md"
+        },
+        {
+          "path": ".agents/skills/reverse-engineer-anything/references/evidence-workflows.md",
+          "bytes": 4363,
+          "sha256": "2bdee98a843d018cf850c706111bb74c459ba8640da00799e9208122e4d5ab80",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/.agents/skills/reverse-engineer-anything/references/evidence-workflows.md"
+        },
+        {
+          "path": "src/application/investigation/EvidenceLedger.residualUnknown.test.ts",
+          "bytes": 16175,
+          "sha256": "54cd3f732c39fe7cf1a72a0da4e027eded3c6a9427ee3cc44b345e7c77e446d4",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/src/application/investigation/EvidenceLedger.residualUnknown.test.ts"
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "bytes": 24619,
+          "sha256": "c7db9545d34eb4dac7c0e270cb1a639dfd156d4d462a41bcf65cde71369c222c",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/THIRD_PARTY_NOTICES.md"
+        },
+        {
+          "path": "src/domain/residualUnknown.ts",
+          "bytes": 13493,
+          "sha256": "c12e3ee6005f7fba3ad8ea1ea2daf1478abe417848ce7ed9a696e94e620aa7ec",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/src/domain/residualUnknown.ts"
+        },
+        {
+          "path": "src/domain/evidenceBundle.ts",
+          "bytes": 20949,
+          "sha256": "e0daab738dbbbda38d4d1f15faedb8571cd1afaccdc3972b0bddc32870bfc3e2",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/src/domain/evidenceBundle.ts"
+        },
+        {
+          "path": "README.md",
+          "bytes": 22177,
+          "sha256": "6856a965e4b6cc3ca7b4211c7cfa63fc59e6aa638b30bdb38c46a5eb3e4cfdb2",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1064,
+          "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/LICENSE"
+        },
+        {
+          "path": "package.json",
+          "bytes": 24696,
+          "sha256": "6ce1579286d682c1c85b5d3a030a442c93a76fa21b92d3f42258b29be234714a",
+          "url": "https://github.com/morluto/rea/blob/f85a932d71279415dd95cc30083137d1161f83b8/package.json"
+        }
+      ],
+      "license": "MIT"
+    },
+    {
+      "repo": "google/ax",
+      "commit": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+      "commit_date": "2026-10-16T20:29:44Z",
+      "files": [
+        {
+          "path": "DESIGN.md",
+          "bytes": 3220,
+          "sha256": "f874215ecccb1a23dd0f89b5d0b3d70595ddba8e3d6d2fd39fc715a7cb0122c8",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/DESIGN.md"
+        },
+        {
+          "path": "docs/concepts.md",
+          "bytes": 3480,
+          "sha256": "68329e00ae5ca5beed1f376c10f4642a1bb062ad0e2f5ac06b7391cf8afbc8bd",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/docs/concepts.md"
+        },
+        {
+          "path": "docs/runner.md",
+          "bytes": 10304,
+          "sha256": "5d1a4eeeda8be65efe6ed3f11de8e342c7475698f746b0a6d205f2c9adfe75b9",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/docs/runner.md"
+        },
+        {
+          "path": "docs/manifests.md",
+          "bytes": 3580,
+          "sha256": "2dc9c3c5293b46445cfb6bf8e25c586dd0c78cb7dca145d254280132fdb62df4",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/docs/manifests.md"
+        },
+        {
+          "path": "runner/runner.go",
+          "bytes": 9047,
+          "sha256": "81a21aaf64dc7a939e5b31da5a8a6214c86cac460784bd449d06693576f51e4d",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/runner/runner.go"
+        },
+        {
+          "path": "go.mod",
+          "bytes": 835,
+          "sha256": "23f2c843eb3a746d22967cccbbb9e5838e81d693261d74bc50a8f1193edcec36",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/go.mod"
+        },
+        {
+          "path": "pkg/apis/v1alpha1/types.go",
+          "bytes": 11203,
+          "sha256": "5730a051eb911ae3a7cce0a4abf4d6ff08caa5717c122a42f9638509e711a6ad",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/pkg/apis/v1alpha1/types.go"
+        },
+        {
+          "path": "pkg/apis/v1alpha1/ax.proto",
+          "bytes": 6417,
+          "sha256": "426a2577fc5ad06add7851916213f2737cb0ea5560ea7be9c382d83dcc049bde",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/pkg/apis/v1alpha1/ax.proto"
+        },
+        {
+          "path": "internal/model/client.go",
+          "bytes": 18372,
+          "sha256": "265016d471f2f4505d07171746fe1971edd94a6a23e78b30e8cef0a6e2bbfa7b",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/internal/model/client.go"
+        },
+        {
+          "path": "docs/roadmap.md",
+          "bytes": 4253,
+          "sha256": "79ef24dda7932c5ca5aa72f7a4699df67c8bc6ba8cffdc0e17bd024027c6741c",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/docs/roadmap.md"
+        },
+        {
+          "path": "README.md",
+          "bytes": 7916,
+          "sha256": "2db486ed4e7700f60f62c25887668f8cd71c27597786f1dcdad807f74728693c",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "url": "https://github.com/google/ax/blob/8d2ccf36f194f6f58c57b90753bd3986639b562f/LICENSE"
+        }
+      ],
+      "license": "Apache-2.0"
+    }
+  ]
+}
