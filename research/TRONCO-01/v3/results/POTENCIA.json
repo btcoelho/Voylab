@@ -1,0 +1,41 @@
+{
+  "worlds_used": 267,
+  "seeds": [
+    91001,
+    91003,
+    91009
+  ],
+  "z": 2.8016,
+  "pairs": {
+    "bayes_ig - rival": {
+      "observed_diff": 0.26591760299625467,
+      "sd_of_paired_diff": 0.47540979626866936,
+      "n_for_diff_0.05": 710,
+      "n_for_diff_0.10": 178,
+      "n_for_observed_diff": 26
+    },
+    "rival - aleatoria": {
+      "observed_diff": 0.051685393258426963,
+      "sd_of_paired_diff": 0.3509746985131084,
+      "n_for_diff_0.05": 387,
+      "n_for_diff_0.10": 97,
+      "n_for_observed_diff": 362
+    },
+    "bayes_ig - aleatoria": {
+      "observed_diff": 0.31760299625468164,
+      "sd_of_paired_diff": 0.41379985862552865,
+      "n_for_diff_0.05": 538,
+      "n_for_diff_0.10": 135,
+      "n_for_observed_diff": 14
+    },
+    "bayes_ig - sem_consultas": {
+      "observed_diff": 0.6404494382022472,
+      "sd_of_paired_diff": 0.4807698481290023,
+      "n_for_diff_0.05": 726,
+      "n_for_diff_0.10": 182,
+      "n_for_observed_diff": 5
+    }
+  },
+  "recommended_worlds_per_partition_for_0.10_overall": 182,
+  "recommended_worlds_per_partition_for_0.05_overall": 726
+}

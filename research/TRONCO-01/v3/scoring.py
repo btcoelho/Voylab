@@ -34,8 +34,9 @@ def score(world: dict, queried: list[int], answer: dict, left: int) -> dict:
     search_error = v_ref != target
     evidence_ignored = inference_error and v_ref in ("rejected", "supported")
     free = [q for q in menu if q not in queried]
-    premature = (answer["stop"] == "commit" and left > 0 and v_ref == "undetermined"
-                 and can_still_determine(A, w, T, free))
+    determinable = can_still_determine(A, w, T, free) if left > 0 else False
+    premature = answer["stop"] == "commit" and left > 0 and v_ref == "undetermined" and determinable
+    suspend_correct = (answer["stop"] == "suspend" and v_ref == "undetermined" and not determinable)
     # queries asked when the verdict was already determined
     wasted, seen = 0, list(hid["obs"])
     for q in queried:
@@ -53,4 +54,5 @@ def score(world: dict, queried: list[int], answer: dict, left: int) -> dict:
             "prediction_valid": (sum(valid) / len(valid)) if valid else None,
             "prediction_exact": (sum(exact) / len(exact)) if exact else None,
             "cards_exact": bool(sc.get("exact")), "reference_verdict": v_ref,
+            "suspend_used": answer["stop"] == "suspend", "suspend_correct": suspend_correct,
             "reach": answer["verdict"] == target}
