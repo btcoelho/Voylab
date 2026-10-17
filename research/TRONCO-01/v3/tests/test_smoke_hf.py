@@ -32,6 +32,41 @@ class SmokeValidator(unittest.TestCase):
                 self.assertFalse(SM.matches(value, schema))
 
 
+class StateSchema(unittest.TestCase):
+    """Round 2: with the state, the schema admits exactly the ids the environment accepts."""
+
+    def test_schema_ids_agree_with_environment(self):
+        import env_v3 as E
+        import select_worlds as S
+        for w in S.pilot_worlds()[:12]:
+            ep = E.Episode(w)
+            st = ep.state()
+            sc = H.action_schema("explore", st)
+            menu = [q["id"] for q in st["query_menu"]]
+            cards = [c["id"] for c in st["candidate_models"]]
+            self.assertFalse(SM.matches({"action": "query", "query_id": "qN"}, sc))
+            self.assertFalse(SM.matches({"action": "commit", "verdict": "supported", "admissible_cards": ["Z"],
+                                         "predictions": {"1": "0"}}, sc))
+            self.assertFalse(SM.matches({"action": "commit", "verdict": "supported", "admissible_cards": cards[:1],
+                                         "predictions": {"5": "0"}}, sc))
+            self.assertTrue(SM.matches({"action": "commit", "verdict": "supported", "admissible_cards": cards[:1],
+                                        "predictions": {"1": "0", "4": "1"}}, sc))
+            for qid in menu:
+                self.assertTrue(SM.matches({"action": "query", "query_id": qid}, sc))
+            # Spend the whole budget through the environment; the schema must follow it.
+            while ep.left > 0:
+                st = ep.state()
+                qid = st["query_menu"][0]["id"]
+                self.assertTrue(SM.matches({"action": "query", "query_id": qid}, H.action_schema("explore", st)))
+                self.assertTrue(ep.step({"action": "query", "query_id": qid})["ok"])
+                self.assertFalse(SM.matches({"action": "query", "query_id": qid}, H.action_schema("explore", ep.state())))
+            self.assertFalse(SM.matches({"action": "query", "query_id": menu[-1]}, H.action_schema("explore", ep.state())))
+
+    def test_phase_only_schema_is_unchanged_for_round_1(self):
+        sc = H.action_schema("explore")
+        self.assertTrue(SM.matches({"action": "query", "query_id": "qN"}, sc))
+
+
 class CompatShim(unittest.TestCase):
     def test_shim_reexports_only_when_missing(self):
         import hf_backend

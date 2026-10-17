@@ -26,6 +26,8 @@ def main():
     ap.add_argument("--backend", choices=["hf", "fake_random", "fake_garbage", "fake_undetermined"], required=True)
     ap.add_argument("--snapshot", help="HF snapshot directory (hf backend)")
     ap.add_argument("--limit", type=int, default=None, help="dry runs only")
+    ap.add_argument("--schema", choices=["state", "phase"], default="state",
+                    help="state: ids restricted to the shown state (round 2 on); phase: round-1 schema")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     lock = a.out / "attempt_once.lock"
@@ -41,8 +43,8 @@ def main():
     else:
         import fake_backends as F
         backend = {"fake_random": F.RandomValid(0), "fake_garbage": F.Garbage(), "fake_undetermined": F.CommitUndetermined()}[a.backend]
-    eps = [H.run_episode(w, backend, pass_state=pass_state) for w in worlds]
-    summary = {"backend": backend.name, "worlds": len(worlds), "worlds_sha256": S.worlds_sha(worlds),
+    eps = [H.run_episode(w, backend, pass_state=pass_state, state_schema=a.schema == "state") for w in worlds]
+    summary = {"backend": backend.name, "worlds": len(worlds), "schema": a.schema, "worlds_sha256": S.worlds_sha(worlds),
                "code_sha256": file_hashes(), "python": platform.python_version(), "aggregate": H.aggregate(eps)}
     (a.out / "transcripts.jsonl").write_text("\n".join(json.dumps(e, ensure_ascii=False) for e in eps) + "\n", encoding="utf-8", newline="\n")
     (a.out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")

@@ -26,18 +26,35 @@ Depois de comprometeres, chega evidência nova: mantém ou revê. Se a evidênci
 Responde SEMPRE com um único objeto JSON, sem texto adicional."""
 
 
-def action_schema(phase: str) -> dict:
-    cards = {"type": "array", "items": {"type": "string"}}
+def action_schema(phase: str, state: dict | None = None) -> dict:
+    """JSON schema of a legal action. With `state` (pilot round 2 onwards) the ids are restricted to what the state
+    shows: query ids to the current menu (and no query branch when the budget is spent), card ids to the cards,
+    prediction keys to the held-out positions. These ids are already in the prompt; the backend still never sees `state`."""
+    if state is None:
+        cards = {"type": "array", "items": {"type": "string"}}
+        qid = {"type": "string"}
+        preds = {"type": "object", "additionalProperties": {"enum": ["0", "1"]}}
+        can_query = True
+    else:
+        cards = {"type": "array", "items": {"enum": [c["id"] for c in state["candidate_models"]]}}
+        qid = {"enum": [q["id"] for q in state.get("query_menu", [])]}
+        preds = {"type": "object", "properties": {str(i): {"enum": ["0", "1"]}
+                                                  for i in range(1, len(state["held_out_inputs"]) + 1)},
+                 "additionalProperties": False}
+        can_query = state.get("remaining_query_budget", 0) > 0 and bool(qid["enum"])
     if phase == "explore":
-        return {"anyOf": [
-            {"type": "object", "properties": {"action": {"const": "query"}, "query_id": {"type": "string"}},
-             "required": ["action", "query_id"], "additionalProperties": False},
+        options = []
+        if can_query:
+            options.append({"type": "object", "properties": {"action": {"const": "query"}, "query_id": qid},
+                            "required": ["action", "query_id"], "additionalProperties": False})
+        options += [
             {"type": "object", "properties": {"action": {"const": "commit"},
                                               "verdict": {"enum": list(E.VERDICTS_ALLOWED)}, "admissible_cards": cards,
-                                              "predictions": {"type": "object", "additionalProperties": {"enum": ["0", "1"]}}},
+                                              "predictions": preds},
              "required": ["action", "verdict", "admissible_cards", "predictions"], "additionalProperties": False},
             {"type": "object", "properties": {"action": {"const": "suspend"}}, "required": ["action"],
-             "additionalProperties": False}]}
+             "additionalProperties": False}]
+        return {"anyOf": options}
     return {"anyOf": [
         {"type": "object", "properties": {"action": {"const": "keep"}}, "required": ["action"], "additionalProperties": False},
         {"type": "object", "properties": {"action": {"const": "revise"}, "verdict": {"enum": list(E.REVISION_VERDICTS)},
@@ -75,7 +92,8 @@ class Backend:
         raise NotImplementedError
 
 
-def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: bool = False) -> dict:
+def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: bool = False,
+                state_schema: bool = True) -> dict:
     ep = E.Episode(world)
     turns = []
     for t in range(max_turns):
@@ -83,7 +101,7 @@ def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: 
             break
         st = ep.state()
         user = render_state(st)
-        schema = action_schema(st["phase"])
+        schema = action_schema(st["phase"], st if state_schema else None)
         raw = backend.generate(SYSTEM_PROMPT, user, schema, st) if pass_state else backend.generate(SYSTEM_PROMPT, user, schema)
         try:
             action = json.loads(raw)

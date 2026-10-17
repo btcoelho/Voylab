@@ -61,3 +61,34 @@ Modelo esperado: Qwen2.5-0.5B-Instruct 4 bits, ação por turno, decodificação
 Decisão: não é uma ronda do piloto, porque nenhum mundo foi apresentado. Não se instalam nem atualizam pacotes, para não sair do manifesto. A correção é só de importação: `hf_backend._transformers_compat()` reexporta a classe com o nome antigo, e o resultado fica registado (`compat`). Antes do piloto corre um teste de fumo (`pilot/smoke_hf.py`) sobre texto escrito à mão, sem mundos do piloto. A tentativa válida usa uma pasta nova, `real_2`. Os prompts, o esquema, os mundos, as métricas e as previsões M1–M5 não mudam. O `code_sha256` do `summary.json` passa a incluir o novo hash do `hf_backend.py`.
 
 **17/10/2026, teste de fumo 1** (pacote 0f65beb): 44/44 testes; a importação passou e o modelo carregou; a geração falhou porque `apply_chat_template(..., return_tensors="pt")` devolve um `BatchEncoding` no transformers 5, não um tensor. Correção: pedir `return_dict=True`, passar `input_ids` e `attention_mask`. Nenhum mundo do piloto foi apresentado.
+
+**17/10/2026, teste de fumo 2** (6aee974): passou nos dois esquemas. O modelo carregou em 5 s em `cuda:0`; cada geração levou 2 a 4 s. Na fase de exploração, o modelo respondeu `"query_id": "qN"`, copiando o marcador do modelo de ação. Foi o primeiro sinal do problema da ronda 1.
+
+### Ronda 1 do piloto (`real_2`, 22:06–22:13, código 6aee974, esquema por fase)
+Hashes do código e dos 48 mundos verificados contra o repositório (`worlds_sha256` `cdf24285…`). Saídas em `research/TRONCO-01/v3/results/piloto_R1/`.
+
+| Medida | Resultado |
+|---|---|
+| JSON válido | 145/145 |
+| Ações aceites | **1/145 (0,7%)** |
+| Episódios completos | **0/48**; 48 terminados à força (3 inválidas seguidas) |
+| Saídas | 132× `query_id: "qN"`, 12× `"qNe"`, 1× `"q1"` (a única aceite) |
+
+- **M1 confirmada**: JSON 100%, ações aceites < 98%. O erro é semântico, como previsto: `query_id` fora do menu.
+- **M2–M5 não avaliáveis**: não há episódios completos.
+- **Elegibilidade falhou** (aceites 0,7% < 98%; completos 0% < 98%).
+
+**Diagnóstico.** A falha está no esquema, e não (ainda) na capacidade de investigar. O esquema da ronda 1 aceita qualquer texto em `query_id`, e o modelo de ação do prompt mostra um marcador literal (`qN`) que o modelo copia. A gramática garante a forma, mas não os ids que o ambiente aceita. Os ids válidos já estão no prompt; o esquema só não os usava. A regra §6 permite corrigir prompt, esquema ou gramática, até 3 rondas, sem mexer na tarefa, nas métricas ou nos mundos.
+
+**Correção da ronda 2 (uma só peça: esquema).** `action_schema(fase, estado)` restringe `query_id` ao menu atual (e retira a opção `query` quando o orçamento chega a 0), as cartas aos ids existentes e as previsões às posições 1–4. O prompt, os mundos, as métricas e o ambiente não mudam. O backend continua a receber só o texto e o esquema. Testes: o esquema admite exatamente os ids que o ambiente aceita, ao longo de todo o orçamento. O esquema da ronda 1 fica disponível com `--schema phase`.
+
+**Custo conhecido desta correção.** Depois dela, "ações aceites" deixa de medir se o modelo segue o formato, porque a gramática o garante. Essa capacidade ficou medida na ronda 1 (0,7%) e é reportada como tal. A partir da ronda 2, as métricas que contam são as de investigação: alcance, erro de inferência, paragem prematura e revisão.
+
+**Previsões ex-ante da ronda 2** (escritas antes de a correr):
+- **R2-a.** Ações aceites ≥ 98% e episódios completos ≥ 98%. A única falha possível são cartas repetidas. Se falhar, o defeito está na gramática ou no ambiente, não no modelo.
+- **R2-b.** M2: alcance ≤ alcance da aleatória nos mesmos 48 mundos + 0,10. Referência calculada antes (`results/PILOTO_REFERENCIAS.json`): aleatória 35/48 = 0,73, logo o limite é 0,83. Primeiro do menu dá 32/48; sem consultas, 16/48.
+- **R2-c.** M3: erro de inferência > 25% entre os completos.
+- **R2-d.** M4: tipo I na revisão ≥ 80% nos mundos de mudança.
+- **R2-e.** M5: média de consultas < 1 ou paragem prematura > 50%. Espera-se também uma preferência pela primeira posição do menu e pela primeira carta.
+
+**Regra para depois da ronda 2.** Se a elegibilidade passar, o piloto fecha, e os valores de M2–M5 caracterizam o modelo de 0,5B (não servem de evidência de competência). Se a investigação estiver ao nível de "sem consultas" ou "primeiro do menu", isso é capacidade, e sobe-se na escada de modelos sem mexer no prompt. Se a elegibilidade voltar a falhar por esquema ou gramática, há uma ronda 3, a última.
