@@ -1,0 +1,52 @@
+{
+  "protocol": "TRONCO-01-v2.6-development-rerun",
+  "mandatory_analysis_gate_reached": true,
+  "preregistration_frozen": false,
+  "manifest_frozen": false,
+  "model_weights_loaded": false,
+  "learned_model_inference_performed": false,
+  "new_model_calls": 0,
+  "offline_tests_passed": 32,
+  "mutation_baselines_passed": true,
+  "valid_mutation_kills": 3,
+  "actual_tokenizer_adapter_fake_model_smoke": {
+    "protocol": "TRONCO-01-v2.6-offline-preflight",
+    "adapter_call_exercised": true,
+    "fake_generate_calls": 1,
+    "checkpoint_loaded": false,
+    "learned_model_inference": false,
+    "real_tokenizer_and_lmfe_callback": true,
+    "eos_recorded": true,
+    "prompt_token_count": 517,
+    "generated_token_count": 50
+  },
+  "draft_manifest_check": {
+    "status": "draft_not_frozen",
+    "internal_files_verified": 20,
+    "external_files_verified": 3,
+    "all_hashes_match": true,
+    "production_guard_blocks_draft": true,
+    "weights_loaded": false,
+    "inference_performed": false
+  },
+  "candidate_manifest": {
+    "internal_hashes_match": true,
+    "internal_files": 20,
+    "external_hashes_match": true,
+    "external_files": 3,
+    "status": "draft_not_frozen"
+  },
+  "historical_v25_archive": {
+    "archive_integrity": true,
+    "disk_integrity": true,
+    "members_checked": 39
+  },
+  "historical_v23_replay": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed_outputs": 4,
+    "illegal_actions": 12,
+    "joint_successes": 0
+  },
+  "scientific_claim": "No model improvement or M17 validity claim; ten previously exposed synthetic states only."
+}

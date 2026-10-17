@@ -1,0 +1,345 @@
+{
+  "new_learned_model_calls": 0,
+  "model_weights_loaded": false,
+  "v26_original_source_unchanged": true,
+  "archive_integrity": true,
+  "archive_hashed_members": 48,
+  "full_runner_with_fake_loader": {
+    "all_correct": {
+      "episodes_attempted": 10,
+      "episodes_planned": 10,
+      "generation_calls": 10,
+      "reported": 10,
+      "model_output_failures": 0,
+      "technical_failures": 0,
+      "call_limit_no_valid_terminal_action": 0,
+      "joint_successes": 10,
+      "joint_success_rate_completed": 1.0,
+      "joint_success_rate_planned": 1.0,
+      "mean_queries": 0.0,
+      "sentinel_stop_events": 0,
+      "sentinel_stop_reasons": [],
+      "fake_generation_calls": 10,
+      "fake_loader_calls": 2
+    },
+    "all_wrong": {
+      "episodes_attempted": 10,
+      "episodes_planned": 10,
+      "generation_calls": 10,
+      "reported": 10,
+      "model_output_failures": 0,
+      "technical_failures": 0,
+      "call_limit_no_valid_terminal_action": 0,
+      "joint_successes": 0,
+      "joint_success_rate_completed": 0.0,
+      "joint_success_rate_planned": 0.0,
+      "mean_queries": 0.0,
+      "sentinel_stop_events": 0,
+      "sentinel_stop_reasons": [],
+      "fake_generation_calls": 10,
+      "fake_loader_calls": 1
+    },
+    "malformed_continues": {
+      "episodes_attempted": 10,
+      "episodes_planned": 10,
+      "generation_calls": 10,
+      "reported": 9,
+      "model_output_failures": 1,
+      "technical_failures": 0,
+      "call_limit_no_valid_terminal_action": 0,
+      "joint_successes": 9,
+      "joint_success_rate_completed": 0.9,
+      "joint_success_rate_planned": 0.9,
+      "mean_queries": 0.0,
+      "sentinel_stop_events": 0,
+      "sentinel_stop_reasons": [],
+      "fake_generation_calls": 10,
+      "fake_loader_calls": 1
+    },
+    "technical_sentinel": {
+      "episodes_attempted": 3,
+      "episodes_planned": 10,
+      "generation_calls": 3,
+      "reported": 2,
+      "model_output_failures": 0,
+      "technical_failures": 1,
+      "call_limit_no_valid_terminal_action": 0,
+      "joint_successes": 2,
+      "joint_success_rate_completed": 0.6666666666666666,
+      "joint_success_rate_planned": null,
+      "mean_queries": 0.0,
+      "sentinel_stop_events": 1,
+      "sentinel_stop_reasons": [
+        "RuntimeError('controlled infrastructure failure')"
+      ],
+      "fake_generation_calls": 3,
+      "fake_loader_calls": 1
+    },
+    "expected_answers_source": "saved development_reference_private.jsonl; not generated from replay.labels during this review",
+    "scope": "trial_runner.run plus actual guard, harness and scorer; loader and tokenizer replaced with fakes"
+  },
+  "semantic_mutation": {
+    "change": "Remove rejected-evidence certificate requirement",
+    "suite_exit_code": 0,
+    "survives_all_existing_tests": true,
+    "suite_log": "test_accepted_query_updates_public_state_and_resets_feedback (test_harness.HarnessTests.test_accepted_query_updates_public_state_and_resets_feedback) ... ok\ntest_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint) ... ok\ntest_complete_resume_checks_manifest_and_schedule_identity (test_harness.HarnessTests.test_complete_resume_checks_manifest_and_schedule_identity) ... ok\ntest_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged) ... ok\ntest_declared_external_checkpoint_hash_is_verified_without_loading_it (test_harness.HarnessTests.test_declared_external_checkpoint_hash_is_verified_without_loading_it) ... ok\ntest_draft_manifest_blocks_trial_entry_before_generation (test_harness.HarnessTests.test_draft_manifest_blocks_trial_entry_before_generation) ... ok\ntest_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) ... ok\ntest_exhausted_budget_removes_query_action_from_dynamic_schema (test_harness.HarnessTests.test_exhausted_budget_removes_query_action_from_dynamic_schema) ... ok\ntest_failed_frozen_gate_makes_zero_generation_calls (test_harness.HarnessTests.test_failed_frozen_gate_makes_zero_generation_calls) ... ok\ntest_frozen_manifest_blocks_changed_source_before_generation (test_harness.HarnessTests.test_frozen_manifest_blocks_changed_source_before_generation) ... ok\ntest_journal_rebuild_fixes_legacy_class_and_sentinel (test_harness.HarnessTests.test_journal_rebuild_fixes_legacy_class_and_sentinel) ... ok\ntest_location_values_must_come_from_public_observations (test_harness.HarnessTests.test_location_values_must_come_from_public_observations) ... ok\ntest_malformed_output_is_logged_and_not_retried (test_harness.HarnessTests.test_malformed_output_is_logged_and_not_retried) ... ok\ntest_missing_preregistration_hash_blocks_before_generation (test_harness.HarnessTests.test_missing_preregistration_hash_blocks_before_generation) ... ok\ntest_model_backend_rejects_weight_mismatch_before_importing_loader (test_harness.HarnessTests.test_model_backend_rejects_weight_mismatch_before_importing_loader) ... ok\ntest_preregistration_hash_must_match_verified_manifest (test_harness.HarnessTests.test_preregistration_hash_must_match_verified_manifest) ... ok\ntest_rates_are_calculated_for_success_empty_and_failure (test_harness.HarnessTests.test_rates_are_calculated_for_success_empty_and_failure) ... ok\ntest_rejection_feedback_changes_prompt_and_allows_recovery (test_harness.HarnessTests.test_rejection_feedback_changes_prompt_and_allows_recovery) ... ok\ntest_resume_rejects_interrupted_and_duplicate_episode (test_harness.HarnessTests.test_resume_rejects_interrupted_and_duplicate_episode) ... ok\ntest_schema_allows_semantic_choices_but_scopes_public_ids (test_harness.HarnessTests.test_schema_allows_semantic_choices_but_scopes_public_ids) ... ok\ntest_strict_json_rejects_duplicate_nonfinite_trailing_and_nonobject (test_harness.HarnessTests.test_strict_json_rejects_duplicate_nonfinite_trailing_and_nonobject) ... ok\ntest_summary_is_atomic_json (test_harness.HarnessTests.test_summary_is_atomic_json) ... ok\ntest_trial_persists_each_result_and_stops_after_infrastructure_failure (test_harness.HarnessTests.test_trial_persists_each_result_and_stops_after_infrastructure_failure) ... ok\ntest_every_initial_state_has_an_immediate_correct_report (test_replay.HistoricalReplayTests.test_every_initial_state_has_an_immediate_correct_report) ... ok\ntest_replay_reconstructs_historical_counts_without_model (test_replay.HistoricalReplayTests.test_replay_reconstructs_historical_counts_without_model) ... ok\ntest_backend_failure_is_recorded_as_technical_sentinel (test_runner.TrialRunnerTests.test_backend_failure_is_recorded_as_technical_sentinel) ... ok\ntest_draft_status_is_rejected_before_loader_import (test_runner.TrialRunnerTests.test_draft_status_is_rejected_before_loader_import) ... ok\ntest_independent_scorer_accepts_expected_reports_for_all_ten_public_cases (test_runner.TrialRunnerTests.test_independent_scorer_accepts_expected_reports_for_all_ten_public_cases) ... ok\ntest_runner_prompt_must_match_manifest_bytes (test_runner.TrialRunnerTests.test_runner_prompt_must_match_manifest_bytes) ... ok\ntest_runner_scorer_distinguishes_fixed_correct_and_incorrect_answers (test_runner.TrialRunnerTests.test_runner_scorer_distinguishes_fixed_correct_and_incorrect_answers) ... ok\ntest_same_harness_runner_records_eos_and_resumes_without_extra_call (test_runner.TrialRunnerTests.test_same_harness_runner_records_eos_and_resumes_without_extra_call) ... ok\ntest_schedule_loader_keeps_only_the_frozen_public_payload (test_runner.TrialRunnerTests.test_schedule_loader_keeps_only_the_frozen_public_payload) ... ok\n\n----------------------------------------------------------------------\nRan 32 tests in 0.310s\n\nOK\n",
+    "counterexample": {
+      "episode_id": "pilot_07",
+      "public_state": {
+        "candidate_models": [
+          {
+            "id": "A",
+            "statement": "Output depends only on glyph.",
+            "table": {
+              "g0": "0",
+              "g1": "1"
+            }
+          },
+          {
+            "id": "B",
+            "statement": "Output depends only on setting.",
+            "table": {
+              "s0": "0",
+              "s1": "1"
+            }
+          },
+          {
+            "id": "C",
+            "statement": "Output depends on glyph and phase.",
+            "table": {
+              "g0|t0": "0",
+              "g0|t1": "1",
+              "g1|t0": "1",
+              "g1|t1": "0"
+            }
+          }
+        ],
+        "observations": [
+          {
+            "id": "o1",
+            "input": {
+              "glyph": "g0",
+              "partner": "p0",
+              "phase": "t0",
+              "setting": "s0"
+            },
+            "output": "0"
+          },
+          {
+            "id": "o2",
+            "input": {
+              "glyph": "g0",
+              "partner": "p0",
+              "phase": "t0",
+              "setting": "s1"
+            },
+            "output": "1"
+          }
+        ],
+        "query_menu": [],
+        "remaining_query_budget": 0,
+        "working_model": {
+          "id": "A",
+          "statement": "Output depends only on glyph.",
+          "table": {
+            "g0": "0",
+            "g1": "1"
+          }
+        }
+      },
+      "action": {
+        "action": "report",
+        "verdict": "rejected",
+        "candidate_model_codes": [
+          "B"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved",
+        "evidence_ids": [],
+        "location": {
+          "feature": "none",
+          "values": []
+        }
+      },
+      "original_score": {
+        "legal": true,
+        "expected_verdict": "rejected",
+        "expected_candidate_model_codes": [
+          "B"
+        ],
+        "expected_diagnosis": "identified",
+        "expected_sufficiency": "identity_resolved",
+        "verdict_correct": true,
+        "candidates_correct": true,
+        "diagnosis_correct": true,
+        "sufficiency_correct": true,
+        "evidence_certificate_sufficient": false,
+        "location_supported": null,
+        "joint_success": false
+      },
+      "mutated_score": {
+        "legal": true,
+        "expected_verdict": "rejected",
+        "expected_candidate_model_codes": [
+          "B"
+        ],
+        "expected_diagnosis": "identified",
+        "expected_sufficiency": "identity_resolved",
+        "verdict_correct": true,
+        "candidates_correct": true,
+        "diagnosis_correct": true,
+        "sufficiency_correct": true,
+        "evidence_certificate_sufficient": true,
+        "location_supported": null,
+        "joint_success": true
+      }
+    },
+    "new_independent_manual_checks": [
+      {
+        "case": "refutation_with_counterexample",
+        "expected_joint_success": true,
+        "actual_joint_success": true,
+        "matches": true
+      },
+      {
+        "case": "refutation_without_citation",
+        "expected_joint_success": false,
+        "actual_joint_success": true,
+        "matches": false
+      },
+      {
+        "case": "refutation_with_nonrefuting_citation",
+        "expected_joint_success": false,
+        "actual_joint_success": true,
+        "matches": false
+      },
+      {
+        "case": "wrong_candidate_set",
+        "expected_joint_success": false,
+        "actual_joint_success": false,
+        "matches": true
+      },
+      {
+        "case": "wrong_diagnosis",
+        "expected_joint_success": false,
+        "actual_joint_success": false,
+        "matches": true
+      },
+      {
+        "case": "wrong_sufficiency",
+        "expected_joint_success": false,
+        "actual_joint_success": false,
+        "matches": true
+      },
+      {
+        "case": "supported_location",
+        "expected_joint_success": true,
+        "actual_joint_success": true,
+        "matches": true
+      },
+      {
+        "case": "location_without_cited_pair",
+        "expected_joint_success": false,
+        "actual_joint_success": false,
+        "matches": true
+      },
+      {
+        "case": "support_complete_certificate",
+        "expected_joint_success": true,
+        "actual_joint_success": true,
+        "matches": true
+      },
+      {
+        "case": "support_incomplete_certificate",
+        "expected_joint_success": false,
+        "actual_joint_success": false,
+        "matches": true
+      }
+    ]
+  },
+  "manual_semantic_checks_on_original": [
+    {
+      "case": "refutation_with_counterexample",
+      "expected_joint_success": true,
+      "actual_joint_success": true,
+      "matches": true
+    },
+    {
+      "case": "refutation_without_citation",
+      "expected_joint_success": false,
+      "actual_joint_success": false,
+      "matches": true
+    },
+    {
+      "case": "refutation_with_nonrefuting_citation",
+      "expected_joint_success": false,
+      "actual_joint_success": false,
+      "matches": true
+    },
+    {
+      "case": "wrong_candidate_set",
+      "expected_joint_success": false,
+      "actual_joint_success": false,
+      "matches": true
+    },
+    {
+      "case": "wrong_diagnosis",
+      "expected_joint_success": false,
+      "actual_joint_success": false,
+      "matches": true
+    },
+    {
+      "case": "wrong_sufficiency",
+      "expected_joint_success": false,
+      "actual_joint_success": false,
+      "matches": true
+    },
+    {
+      "case": "supported_location",
+      "expected_joint_success": true,
+      "actual_joint_success": true,
+      "matches": true
+    },
+    {
+      "case": "location_without_cited_pair",
+      "expected_joint_success": false,
+      "actual_joint_success": false,
+      "matches": true
+    },
+    {
+      "case": "support_complete_certificate",
+      "expected_joint_success": true,
+      "actual_joint_success": true,
+      "matches": true
+    },
+    {
+      "case": "support_incomplete_certificate",
+      "expected_joint_success": false,
+      "actual_joint_success": false,
+      "matches": true
+    }
+  ],
+  "existing_three_mutations_reproduced": {
+    "duplicate_candidate_check_removed": {
+      "baseline_passes": true,
+      "killed_by_assertion": true
+    },
+    "resume_fingerprint_check_removed": {
+      "baseline_passes": true,
+      "killed_by_assertion": true
+    },
+    "entry_manifest_guard_skipped_on_resume": {
+      "baseline_passes": true,
+      "killed_by_assertion": true
+    }
+  },
+  "freeze_scope": {
+    "external_filenames": [
+      "model.safetensors",
+      "tokenizer.json",
+      "tokenizer_config.json"
+    ],
+    "runtime_environment_declared_in_preregistration": false,
+    "preregistration_status": "DRAFT_AWAITING_MANDATORY_ANALYSIS"
+  }
+}

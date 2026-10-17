@@ -1,0 +1,60 @@
+{
+  "protocol": "TRONCO-01-v2.7-development-rerun",
+  "status": "prepared_for_mandatory_pre_model_analysis",
+  "mandatory_analysis_gate_reached": true,
+  "preregistration_frozen": false,
+  "manifest_frozen": false,
+  "learned_model_inference_performed": false,
+  "model_weights_loaded": false,
+  "new_model_calls": 0,
+  "fine_tuning_performed": false,
+  "larger_model_introduced": false,
+  "offline_tests": {"passed": 37, "failed": 0},
+  "targeted_mutation_testing": {"valid_baselines": true, "valid_kills": 4, "errors_counted_as_kills": false},
+  "runner_fake_output_scenarios": {
+    "reference_reports": "10/10 joint success",
+    "altered_verdicts": "0/10 joint success",
+    "malformed_output": "failure recorded; fixed schedule continues",
+    "technical_error": "sentinel recorded; schedule stops",
+    "resume_identity_mismatch": "blocked before loader invocation"
+  },
+  "adapter_fake_model_smoke": {
+    "adapter_call_exercised": true,
+    "real_tokenizer_and_lmfe_callback": true,
+    "fake_generation_calls": 1,
+    "eos_recorded": true,
+    "checkpoint_loaded": false,
+    "learned_inference": false
+  },
+  "draft_manifest": {
+    "status": "draft_not_frozen",
+    "internal_files_verified": 21,
+    "external_checkpoint_artifacts_verified": 11,
+    "hashes_match": true,
+    "production_guard_blocks_draft": true
+  },
+  "runtime_versions_match": {
+    "python": "3.12.3",
+    "transformers": "5.17.0",
+    "lm_format_enforcer": "0.11.3",
+    "unsloth": "2026.10.6",
+    "torch": "2.14.1+cu132",
+    "bitsandbytes": "0.50.2"
+  },
+  "historical_v23_replay": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed_outputs": 4,
+    "illegal_actions": 12,
+    "joint_successes": 0
+  },
+  "checkpoint_hash_transcription_correction": {
+    "file": "merges.txt",
+    "checkpoint_file_changed": false,
+    "candidate_preregistration_hash_corrected": true,
+    "subsequent_full_snapshot_verification": "passed"
+  },
+  "historical_records_modified": false,
+  "decision": "Ready for scientific review at mandatory pre-model analysis point; not confirmatory and not evidence of M17 validity or model competence.",
+  "next_step": "Review task, scorer, and use of ten previously exposed synthetic cases before freezing any protocol or running model inference."
+}

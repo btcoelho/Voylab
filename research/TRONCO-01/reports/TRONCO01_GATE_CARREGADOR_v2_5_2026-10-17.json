@@ -1,0 +1,10 @@
+{
+  "original_adapter": true,
+  "verified_manifest_status": "draft_not_frozen",
+  "guard_used": "partial(FrozenManifestGuard.verify, allow_draft=True)",
+  "loader_reached": true,
+  "actual_model_weights_loaded": false,
+  "model_inference": false,
+  "observation": "loader reached despite manifest status draft_not_frozen",
+  "scope": "Default guard rejects draft; loader does not independently check status and accepts the explicit offline guard when hashes match. This is an integration precondition gap, not evidence of a historical real model load."
+}

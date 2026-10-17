@@ -1,0 +1,17 @@
+{
+  "frozen_status": "frozen_before_inference",
+  "frozen_internal_files": 25,
+  "checkpoint_artifacts": 11,
+  "draft_source_preserved": true,
+  "source_files_identical_to_reviewed_candidate": [
+    "trial_runner.py",
+    "harness.py",
+    "model_backend.py",
+    "replay.py",
+    "runtime_environment.py",
+    "SYSTEM_PROMPT.txt",
+    "development_schedule.jsonl"
+  ],
+  "post_run_hash_verification_passed": true,
+  "new_model_calls": 0
+}

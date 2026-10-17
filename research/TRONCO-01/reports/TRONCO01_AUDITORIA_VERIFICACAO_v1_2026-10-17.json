@@ -1,0 +1,9 @@
+{
+  "archive": "TRONCO01_AUDITORIA_VALIDADE_v1_2026-10-17.zip",
+  "sha256": "a2b67d6b00d9eeaca322ab5db29e7a0343719f634c12d72c4ae57b6229fcd238",
+  "manifest_files_verified": 115,
+  "zip_files": 116,
+  "historical_sources_unchanged": true,
+  "zip_crc_and_sha256_pass": true,
+  "private_reserve_files_or_model_weights_included": false
+}

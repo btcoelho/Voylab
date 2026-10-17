@@ -1,0 +1,90 @@
+{
+  "analysis": "review_of_saved_results_only",
+  "new_model_calls": 0,
+  "checks": {
+    "contiguous_event_sequence": true,
+    "same_ten_episode_ids": true,
+    "saved_integrity_hashes_match": true,
+    "current_source_hashes_match_amended_preregistration": true,
+    "each_episode_started_once": true,
+    "all_19_prompts_match_public_state_and_system": true,
+    "all_15_decoded_actions_match_raw_json": true,
+    "strict_full_component_comparison": true,
+    "four_malformed_outputs_hit_256_without_eos": true,
+    "all_ten_have_correct_immediate_report_without_query": true,
+    "three_four_call_episodes_repeated_identical_prompt_and_output": true,
+    "archive_hashes_and_crc": true,
+    "private_oracle_not_in_archive": true
+  },
+  "all_checks_pass": true,
+  "malformed_outputs": [
+    {
+      "episode_id": "pilot_01",
+      "raw_sequence": 5,
+      "token_count": 256,
+      "eos_terminated": false
+    },
+    {
+      "episode_id": "pilot_02",
+      "raw_sequence": 14,
+      "token_count": 256,
+      "eos_terminated": false
+    },
+    {
+      "episode_id": "pilot_04",
+      "raw_sequence": 38,
+      "token_count": 256,
+      "eos_terminated": false
+    },
+    {
+      "episode_id": "pilot_09",
+      "raw_sequence": 92,
+      "token_count": 256,
+      "eos_terminated": false
+    }
+  ],
+  "repetition": [
+    {
+      "episode_id": "pilot_03",
+      "calls": 4,
+      "distinct_prompts": 1,
+      "distinct_raw_outputs": 1
+    },
+    {
+      "episode_id": "pilot_07",
+      "calls": 4,
+      "distinct_prompts": 1,
+      "distinct_raw_outputs": 1
+    },
+    {
+      "episode_id": "pilot_08",
+      "calls": 4,
+      "distinct_prompts": 1,
+      "distinct_raw_outputs": 1
+    }
+  ],
+  "counts": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed_outputs": 4,
+    "legal_terminal_reports": 3,
+    "illegal_report_attempts": 12,
+    "successful_reports": 0
+  },
+  "semantic_components_accepted_reports": {
+    "verdict_correct": 0,
+    "candidates_correct": 2,
+    "diagnosis_correct": 1,
+    "sufficiency_correct": 1,
+    "evidence_certificate_sufficient": 0
+  },
+  "review_findings": [
+    "0/10 performance alone does not show the evaluator is invalid; it rejected the observed scientific errors.",
+    "Repeated illegal actions received an identical prompt without rejection feedback; this trial does not test recovery from communicated error.",
+    "All ten states admit a correct immediate report; zero queries alone is not a failure under this contract.",
+    "The model-visible prompt omits exact query JSON syntax and does not present the complete action schema.",
+    "The existing independent analyzer is scoped to these reports: it omits full schema checks and handles only none location.",
+    "Existing analyzer uses a hardcoded zero primary rate and compares only shared score keys; future reuse requires correction.",
+    "Initial preregistration is retained only by hash; original source before amendment is not independently preserved in the bundle."
+  ]
+}

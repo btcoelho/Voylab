@@ -1,0 +1,56 @@
+{
+  "all_20_internal_hashes_match": true,
+  "all_3_external_hashes_match": true,
+  "checkpoint_metadata_files": [
+    {
+      "name": "added_tokens.json",
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "covered_by_candidate_manifest": false
+    },
+    {
+      "name": "config.json",
+      "sha256": "994325141aef76ff9fbc6be18f4dbd363dd2ecafb13a1a7746bf44c665fdfe47",
+      "covered_by_candidate_manifest": false
+    },
+    {
+      "name": "generation_config.json",
+      "sha256": "409eda00f5fe7d1c29c2c0335823449a4fda6af454b6638b96044fce19186cc5",
+      "covered_by_candidate_manifest": false
+    },
+    {
+      "name": "merges.txt",
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "covered_by_candidate_manifest": false
+    },
+    {
+      "name": "special_tokens_map.json",
+      "sha256": "b5acd1507cb3a3539e63369cb4a2b675a599cf13afe62282d371518288967797",
+      "covered_by_candidate_manifest": false
+    },
+    {
+      "name": "tokenizer.json",
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "covered_by_candidate_manifest": true
+    },
+    {
+      "name": "tokenizer_config.json",
+      "sha256": "0553ada6e92b1a29b4431c72782c6e5e6ab675ef0b20ceb2833cd1074c7fb932",
+      "covered_by_candidate_manifest": true
+    },
+    {
+      "name": "vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "covered_by_candidate_manifest": false
+    }
+  ],
+  "runtime_versions": {
+    "python": "3.12.3",
+    "transformers": "5.17.0",
+    "lm-format-enforcer": "0.11.3",
+    "unsloth": "2026.10.6",
+    "torch": "2.14.1+cu132",
+    "bitsandbytes": "0.50.2"
+  },
+  "scope": "Package metadata and bytes only; no torch/Unsloth import and no model load.",
+  "new_model_calls": 0
+}

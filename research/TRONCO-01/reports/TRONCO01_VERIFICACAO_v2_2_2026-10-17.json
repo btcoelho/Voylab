@@ -1,0 +1,71 @@
+{
+  "protocol": "TRONCO-01-v2.2",
+  "gate": "PASS_FOR_PREMODEL_REVIEW",
+  "run_id": "f7abbf69-5aec-4aae-8f53-8ad3c51dd4ef",
+  "model_inference": false,
+  "frozen_files": 57,
+  "all_frozen_hashes_match": true,
+  "pytest": "23 passed",
+  "finite_public_states": 10368,
+  "targeted_mutations_killed": "5/5",
+  "tokenizer": {
+    "vocab_size": 151665,
+    "weights_loaded": false,
+    "valid_paths_reach_eos": true,
+    "malformed_paths_blocked": true,
+    "cases": {
+      "query": {
+        "token_count": 11,
+        "all_tokens_allowed": true,
+        "eos_token_id": 151645,
+        "eos_allowed_after_complete_action": true,
+        "expected_valid": true
+      },
+      "wrong_but_structural_report": {
+        "token_count": 45,
+        "all_tokens_allowed": true,
+        "eos_token_id": 151645,
+        "eos_allowed_after_complete_action": true,
+        "expected_valid": true
+      },
+      "extra_field": {
+        "token_count": 15,
+        "all_tokens_allowed": false,
+        "eos_token_id": 151645,
+        "eos_allowed_after_complete_action": false,
+        "expected_valid": false
+      },
+      "wrong_type": {
+        "token_count": 11,
+        "all_tokens_allowed": false,
+        "eos_token_id": 151645,
+        "eos_allowed_after_complete_action": false,
+        "expected_valid": false
+      },
+      "incomplete": {
+        "token_count": 5,
+        "all_tokens_allowed": false,
+        "eos_token_id": 151645,
+        "eos_allowed_after_complete_action": false,
+        "expected_valid": false
+      }
+    }
+  },
+  "historical": {
+    "episodes": 235,
+    "reports": 178,
+    "query_replay_errors": 0
+  },
+  "stale_PASS_failure_probe": {
+    "exit_code": 1,
+    "gate_after_hash_failure": "FAIL",
+    "run_id_present": true
+  },
+  "decision": "Instrumento suficientemente controlado para submeter a revisão pré-modelo de um ensaio pequeno e delimitado; ainda não autoriza nem representa nova inferência.",
+  "limits": [
+    "enumeração limitada ao espaço descrito pelo auditor",
+    "painel de mutações direcionado, não campanha completa",
+    "tokenizer test cobre cinco trajetos representativos; não demonstra integração com geração de modelo",
+    "G1/G2 são apenas reanálises retrospectivas"
+  ]
+}

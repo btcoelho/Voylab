@@ -1,0 +1,141 @@
+{
+  "test_kind": "one-step API/adapter integration smoke test",
+  "not_a_claim_of": [
+    "scientific discovery",
+    "improved task success",
+    "valid hypothesis inference",
+    "TRONCO-01/M17 or G2 validation"
+  ],
+  "libraries": {
+    "autora_experimentalist": "model_disagreement_sample",
+    "environment": "DiscoveryWorld API v0.1"
+  },
+  "scenario": {
+    "name": "Small Skills: Instrument Measurement Test",
+    "difficulty": "Normal",
+    "seed": 0
+  },
+  "public_input": {
+    "task_description": "Your task is measure the spectrum (on channel 3) of the `seed`, and place it in a specific container depending on the measured value.\nIf the value is less than 2.5, place it in pot A.\nIf the value is between 2.5 and 5.0, place it in pot B.\nIf the value is between 5.0 and 7.5, place it in pot C.\nIf the value is greater than 7.5, place it in pot D.\n",
+    "task_object": {
+      "name": "seed",
+      "sector": "south-east",
+      "distance": 3
+    },
+    "required_instrument": {
+      "name": "spectrometer",
+      "sector": "north-east",
+      "distance": 4
+    },
+    "legal_directions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ]
+  },
+  "selection": {
+    "candidate_actions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "hypotheses": [
+      "move toward task object",
+      "move toward task instrument"
+    ],
+    "autora_selected_direction": "north"
+  },
+  "execution": {
+    "action": {
+      "action": "MOVE_DIRECTION",
+      "arg1": "north"
+    },
+    "action_result": {
+      "errors": [],
+      "success": true
+    },
+    "tick_result": {
+      "errors": [],
+      "success": true
+    },
+    "location_before": {
+      "x": 18,
+      "y": 12,
+      "faceDirection": "south",
+      "directions_you_can_move": [
+        "north",
+        "east",
+        "south",
+        "west"
+      ],
+      "directions_blocked": []
+    },
+    "location_after": {
+      "x": 18,
+      "y": 11,
+      "faceDirection": "north",
+      "directions_you_can_move": [
+        "east",
+        "south",
+        "west"
+      ],
+      "directions_blocked": [
+        "north"
+      ]
+    },
+    "task_completed": false,
+    "task_object_distance_after": 4,
+    "instrument_distance_after": 3
+  },
+  "same_seed_random_action_baseline": {
+    "direction": "west",
+    "before": {
+      "task_object_distance": 3,
+      "instrument_distance": 4,
+      "location": {
+        "x": 18,
+        "y": 12,
+        "faceDirection": "south",
+        "directions_you_can_move": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "directions_blocked": []
+      }
+    },
+    "after": {
+      "task_object_distance": 4,
+      "instrument_distance": 5,
+      "location": {
+        "x": 17,
+        "y": 12,
+        "faceDirection": "west",
+        "directions_you_can_move": [
+          "north",
+          "east",
+          "west"
+        ],
+        "directions_blocked": [
+          "south"
+        ]
+      }
+    },
+    "action_result": {
+      "errors": [],
+      "success": true
+    },
+    "tick_result": {
+      "errors": [],
+      "success": true
+    }
+  },
+  "known_library_issue": {
+    "reproducer": "api.listKnownActions(limited=True)",
+    "observed": "KeyError: 'DISCOVERY_FEED_GET_ARTICLES'",
+    "workaround": "Use limited=False for the complete action registry; movement legality comes from the public observation."
+  }
+}

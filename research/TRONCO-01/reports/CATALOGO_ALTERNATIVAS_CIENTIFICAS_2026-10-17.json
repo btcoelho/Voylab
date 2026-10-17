@@ -1,0 +1,814 @@
+{
+  "retrieved_at_utc": "2026-10-17T18:02:29.274437+00:00",
+  "scope": "Pesquisa de alternativas para TRONCO-01/M17; fontes primarias e snapshots publicos ate 17-10-2026.",
+  "counts": {
+    "repositories": 27,
+    "additional_papers": 3,
+    "candidates": 30
+  },
+  "priority_key": {
+    "A": "Primeiro bloco local de auditoria/testes sem novas inferencias",
+    "A-metodo": "Alta adequacao metodologica; reutilizacao de codigo por esclarecer",
+    "B": "Segundo bloco ou componente especializado",
+    "C": "Complementar; nao resolve diretamente o nucleo de validade",
+    "D": "Adiar por custo/escopo/requisitos"
+  },
+  "candidates": [
+    {
+      "name": "MechBench",
+      "repository": "tsinghua-fib-lab/MechBench",
+      "repository_url": "https://github.com/tsinghua-fib-lab/MechBench",
+      "role": "avaliacao",
+      "priority_for_our_project": "A",
+      "event_date": "2026-09-28",
+      "event_note": "Artigo; código MIT e avaliação sem juiz LLM.",
+      "repo_created_at": "2026-09-28T02:41:13Z",
+      "repo_last_push_observed": "2026-09-27T02:41:18Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Validação simbólica, exportação pública/privada e sondas de mecanismo após congelar a resposta.",
+      "limitations": "Sintético e filtrado para reduzir ambiguidade; acrescentar casos de insuficiência e auditar isolamento.",
+      "requirements": "Python >=3.12; CPU para núcleo; modelo só para ensaio de agente.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2609.35515",
+      "inspection_level": "metadata, README, licence/tree; selected implementation files inspected",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "HypoSpace",
+      "repository": "CTT-Pavilion/_HypoSpace",
+      "repository_url": "https://github.com/CTT-Pavilion/_HypoSpace",
+      "role": "avaliacao",
+      "priority_for_our_project": "A-metodo",
+      "event_date": "2026-05-29",
+      "event_note": "Revisão v3; original de 2025, ICML 2026.",
+      "repo_created_at": "2025-10-16T04:28:34Z",
+      "repo_last_push_observed": "2026-05-04T09:08:36Z",
+      "license_observed": null,
+      "license_paths": [],
+      "what_it_may_save": "Conjuntos admissíveis enumerados; validade, diversidade e recuperação de hipóteses.",
+      "limitations": "Sem ficheiro de licença identificado; tarefa combinatória estreita; validar enumeração independentemente.",
+      "requirements": "Geradores/validadores locais; API apenas para respostas de modelo.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2510.15614v3",
+      "inspection_level": "metadata, README, licence/tree; selected implementation files inspected",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "ALF",
+      "repository": "instadeepai/alf",
+      "repository_url": "https://github.com/instadeepai/alf",
+      "role": "desenho_experimental",
+      "priority_for_our_project": "A",
+      "event_date": "2026-09-25",
+      "event_note": "Artigo recente; alf-core 0.1.0.",
+      "repo_created_at": "2025-10-24T09:56:22Z",
+      "repo_last_push_observed": "2026-09-29T12:59:43Z",
+      "license_observed": "Apache-2.0 (ficheiro LICENSE e core/pyproject.toml lidos; API GitHub devolveu NOASSERTION)",
+      "license_paths": [
+        "LICENSE",
+        "license_header.txt"
+      ],
+      "what_it_may_save": "Ciclo modular de modelo, aquisição, oráculo e estado; núcleo sem framework de deep learning obrigatório.",
+      "limitations": "Inicial; otimiza aquisição, não certifica validade científica ou causalidade.",
+      "requirements": "Python >=3.12,<3.14.1; core CPU; tools acrescenta PyTorch.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2609.31197",
+      "inspection_level": "metadata, README, licence/tree; selected implementation files inspected",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "Autonomous Science Bench",
+      "repository": "Yibo-Wen/as-bench",
+      "repository_url": "https://github.com/Yibo-Wen/as-bench",
+      "role": "ambiente",
+      "priority_for_our_project": "A",
+      "event_date": "2026-10-13",
+      "event_note": "Artigo quatro dias antes da pesquisa; release 0.1.",
+      "repo_created_at": "2026-09-30T22:19:33Z",
+      "repo_last_push_observed": "2026-10-15T00:21:58Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE",
+        "archive/biology/dream/protein-active-learning/LICENSE.md",
+        "archive/materials/athena/sparse-defect-scan/LICENSE.md",
+        "archive/semiconductors/nanofab/inverse-lithography/LICENSE.md",
+        "tasks/biology/deepmind/nuclease-active-learning/LICENSE.md",
+        "tasks/biology/jewett-lab/biosensor-active-learning/LICENSE.md",
+        "tasks/biology/ross-lab/repressor-offstate-screen/LICENSE.md",
+        "tasks/chemistry/pfizer/suzuki-condition-screen/LICENSE.md",
+        "tasks/chemistry/sargent-lab/propylene-active-learning/LICENSE.md",
+        "tasks/materials/gregoire-lab/oer-composition-screen/LICENSE.md",
+        "tasks/materials/kusne-lab/coercivity-peak-search/LICENSE.md"
+      ],
+      "what_it_may_save": "Laboratório separado, orçamento, ledger e verificador externo; dados experimentais em replay.",
+      "limitations": "Paper tem seis campanhas, README atual sete; exemplos de thresholds divergem; congelar manifesto. Métricas de otimização/ranking.",
+      "requirements": "Dev Python >=3.13,<3.14, Deno; Harbor/Docker ou runner local.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2610.18449",
+      "inspection_level": "metadata, README, licence/tree; selected implementation files inspected",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "POPPER",
+      "repository": "snap-stanford/POPPER",
+      "repository_url": "https://github.com/snap-stanford/POPPER",
+      "role": "validacao_estatistica",
+      "priority_for_our_project": "A-metodo",
+      "event_date": "2025-02-14",
+      "event_note": "ICML 2025; relevante embora mais antigo.",
+      "repo_created_at": "2025-01-28T00:56:22Z",
+      "repo_last_push_observed": "2025-05-14T03:19:14Z",
+      "license_observed": null,
+      "license_paths": [],
+      "what_it_may_save": "Falsificações sequenciais e agregação por e-values para validação estatística.",
+      "limitations": "Garantias condicionais a implicação e validade sequencial dos testes; não localizada licença de código.",
+      "requirements": "Orquestração usa LLM; núcleo estatístico pode ser verificado sem inferência.",
+      "paper_or_primary_source": "https://proceedings.mlr.press/v267/huang25n.html",
+      "inspection_level": "metadata, README, licence/tree; selected implementation files inspected",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "StatefulDiscovery",
+      "repository": "SUSTech-GenAI/StatefulDiscovery",
+      "repository_url": "https://github.com/SUSTech-GenAI/StatefulDiscovery",
+      "role": "estado_da_evidencia",
+      "priority_for_our_project": "B",
+      "event_date": "2026-06-10",
+      "event_note": "Artigo de junho; código e esquemas MIT.",
+      "repo_created_at": "2026-06-04T08:39:42Z",
+      "repo_last_push_observed": "2026-06-11T01:52:02Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Registo de alegações, alternativas, artefactos e estados supported/refuted/inconclusive.",
+      "limitations": "Adjudicação por agente; schema exige top_supported_claim_id string mesmo sem suporte; testar recusa e calibração.",
+      "requirements": "Docker e CLI de agente; Linux/macOS documentados; Windows não verificado.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2606.11851",
+      "inspection_level": "metadata, README, licence/tree; selected implementation files inspected",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "DoWhy",
+      "repository": "py-why/dowhy",
+      "repository_url": "https://github.com/py-why/dowhy",
+      "role": "validacao_causal",
+      "priority_for_our_project": "B",
+      "event_date": null,
+      "event_note": "Biblioteca madura; push observado 2026-10-17.",
+      "repo_created_at": "2018-05-31T13:07:04Z",
+      "repo_last_push_observed": "2026-10-17T16:02:10Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE",
+        "docs/source/example_notebooks/datasets/LICENSE"
+      ],
+      "what_it_may_save": "Identificação causal, hipóteses explícitas, refutadores e modelos causais estruturais.",
+      "limitations": "Conclusões dependem dos pressupostos e do grafo; não é certificador geral de alegações.",
+      "requirements": "Python e dados numéricos; várias análises CPU sem LLM.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "BayBE",
+      "repository": "emdgroup/baybe",
+      "repository_url": "https://github.com/emdgroup/baybe",
+      "role": "desenho_experimental",
+      "priority_for_our_project": "B",
+      "event_date": null,
+      "event_note": "Push observado 2026-10-16; biblioteca já estabelecida.",
+      "repo_created_at": "2023-11-27T17:02:40Z",
+      "repo_last_push_observed": "2026-10-16T14:56:37Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE",
+        "docs/misc/license_link.md"
+      ],
+      "what_it_may_save": "Planeamento bayesiano de experiências, espaços mistos e campanhas com dados escassos.",
+      "limitations": "Objetivo de otimização deve ser definido externamente; não decide suporte/refutação/insuficiência.",
+      "requirements": "PyTorch/BoTorch e dependências conforme extras; API de LLM dispensável.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "BoFire",
+      "repository": "experimental-design/bofire",
+      "repository_url": "https://github.com/experimental-design/bofire",
+      "role": "desenho_experimental",
+      "priority_for_our_project": "B",
+      "event_date": null,
+      "event_note": "Push observado 2026-10-17.",
+      "repo_created_at": "2022-10-31T17:29:42Z",
+      "repo_last_push_observed": "2026-10-17T13:01:25Z",
+      "license_observed": "BSD-3-Clause",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Desenho de experiências com restrições e múltiplos objetivos.",
+      "limitations": "Mais próximo de otimização experimental do que de avaliação de explicações.",
+      "requirements": "Python, BoTorch e extras conforme estratégia.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "Ax da Meta",
+      "repository": "facebook/Ax",
+      "repository_url": "https://github.com/facebook/Ax",
+      "role": "desenho_experimental",
+      "priority_for_our_project": "B",
+      "event_date": null,
+      "event_note": "Push observado 2026-10-16.",
+      "repo_created_at": "2019-02-09T15:23:44Z",
+      "repo_last_push_observed": "2026-10-16T19:27:50Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Campanhas e estratégias adaptativas com base em modelos probabilísticos.",
+      "limitations": "É distinto de google/ax; precisa de objetivo e instrumento de medida corretos.",
+      "requirements": "Python e stack BoTorch; ensaios numéricos sem LLM.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "AstaBench",
+      "repository": "allenai/asta-bench",
+      "repository_url": "https://github.com/allenai/asta-bench",
+      "role": "avaliacao",
+      "priority_for_our_project": "B",
+      "event_date": "2025-10-24",
+      "event_note": "Artigo ICLR 2026; código atualizado em outubro.",
+      "repo_created_at": "2025-03-21T21:28:05Z",
+      "repo_last_push_observed": "2026-10-02T22:11:35Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Harness científico com ferramentas padronizadas, registos de uso e custos.",
+      "limitations": "Parte das tarefas usa julgamento LLM; suite grande; validar apenas subset adequado.",
+      "requirements": "InspectAI; Docker recomendado; APIs de modelo e algumas ferramentas.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "ScienceAgentBench Verified",
+      "repository": "OSU-NLP-Group/ScienceAgentBench",
+      "repository_url": "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+      "role": "avaliacao",
+      "priority_for_our_project": "B",
+      "event_date": "2026-04-30",
+      "event_note": "Split verified e artefactos corrigidos publicados.",
+      "repo_created_at": "2024-10-02T14:38:55Z",
+      "repo_last_push_observed": "2026-07-18T05:25:41Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Tarefas reais de análise científica com testes de resultados executáveis.",
+      "limitations": "Verifica análises/tarefas; não cobre por si todas as categorias epistémicas de M17.",
+      "requirements": "Datasets e ambiente de avaliação; modelo para gerar soluções.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "NewtonBench original",
+      "repository": "HKUST-KnowComp/NewtonBench",
+      "repository_url": "https://github.com/HKUST-KnowComp/NewtonBench",
+      "role": "avaliacao",
+      "priority_for_our_project": "B",
+      "event_date": "2026-02-26",
+      "event_note": "Integração NeMo Gym anunciada em fevereiro.",
+      "repo_created_at": "2025-10-08T14:10:44Z",
+      "repo_last_push_observed": "2026-02-27T01:04:09Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Leis físicas modificadas e experiências interativas; fonte original MIT.",
+      "limitations": "Precisa de auditoria própria de isolamento; fuga encontrada no wrapper AutoSciLab não prova defeito no original.",
+      "requirements": "Python; modelo/API para agente; oráculo local.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "DiscoverPhysics",
+      "repository": "SampsonML/DiscoverPhysics",
+      "repository_url": "https://github.com/SampsonML/DiscoverPhysics",
+      "role": "ambiente",
+      "priority_for_our_project": "B",
+      "event_date": "2026-05",
+      "event_note": "Artigo e implementação de maio.",
+      "repo_created_at": "2026-05-19T18:58:29Z",
+      "repo_last_push_observed": "2026-05-31T12:35:10Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Simuladores de física desconhecida, trajetórias reservadas e agente/critic.",
+      "limitations": "Parte explicativa usa juiz LLM; critic de protocolo não certifica conclusões.",
+      "requirements": "Python/JAX e API do agente; motor numérico local.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2605.26087",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "Terminal-Bench-Science",
+      "repository": "harbor-framework/terminal-bench-science",
+      "repository_url": "https://github.com/harbor-framework/terminal-bench-science",
+      "role": "avaliacao",
+      "priority_for_our_project": "B",
+      "event_date": null,
+      "event_note": "Push observado 2026-10-15; desenvolvimento v0.2.",
+      "repo_created_at": "2026-01-25T00:31:43Z",
+      "repo_last_push_observed": "2026-10-15T21:33:11Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE",
+        "tasks/life-sciences/biology/protein-active-learning/LICENSE.md",
+        "tasks/mathematical-sciences/operations-research/energy-routing/solution/oracle/sep/License.txt"
+      ],
+      "what_it_may_save": "Tarefas científicas em ambientes executáveis e verificadores por artefactos.",
+      "limitations": "Tarefas de execução não substituem avaliação da sustentação de alegações.",
+      "requirements": "Harbor e containers; recursos dependem de tarefa.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "Google DeepMind Science Skills",
+      "repository": "google-deepmind/science-skills",
+      "repository_url": "https://github.com/google-deepmind/science-skills",
+      "role": "ferramentas",
+      "priority_for_our_project": "B",
+      "event_date": null,
+      "event_note": "Repositório de maio; push observado 2026-10-15.",
+      "repo_created_at": "2026-05-13T16:17:41Z",
+      "repo_last_push_observed": "2026-10-15T14:23:06Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Instruções e scripts para bases científicas e ferramentas especializadas.",
+      "limitations": "Poupa integração de dados; não valida inferência; rever licenças por skill.",
+      "requirements": "uv; algumas fontes requerem chave de API.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "EvoScientist",
+      "repository": "EvoScientist/EvoScientist",
+      "repository_url": "https://github.com/EvoScientist/EvoScientist",
+      "role": "orquestracao",
+      "priority_for_our_project": "C",
+      "event_date": "2026-10-17",
+      "event_note": "Release 0.3.7 publicada no dia da pesquisa.",
+      "repo_created_at": "2026-01-26T11:19:26Z",
+      "repo_last_push_observed": "2026-10-17T00:57:40Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "EvoScientist/skills/skill-creator/LICENSE.txt",
+        "LICENSE"
+      ],
+      "what_it_may_save": "Memória persistente, execução, critérios de aceitação e ferramentas de investigação.",
+      "limitations": "Outra camada de agente não resolve a validade do avaliador; alegações de benchmark não reproduzidas.",
+      "requirements": "CLI multi-provider; API/modelo e ferramentas conforme tarefa.",
+      "paper_or_primary_source": "https://github.com/EvoScientist/EvoScientist/releases/tag/v0.3.7",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "Curie",
+      "repository": "Just-Curieous/Curie",
+      "repository_url": "https://github.com/Just-Curieous/Curie",
+      "role": "orquestracao",
+      "priority_for_our_project": "C",
+      "event_date": "2025-02",
+      "event_note": "Código Apache-2.0; último push observado em setembro de 2025.",
+      "repo_created_at": "2025-02-02T19:55:44Z",
+      "repo_last_push_observed": "2025-09-28T05:36:54Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE",
+        "benchmark/exp_bench/LICENSE"
+      ],
+      "what_it_may_save": "Planos de experiências, execução controlada e registos reproduzíveis.",
+      "limitations": "Mais orientado a experiências computacionais/ML; manutenção recente inferior aos novos candidatos.",
+      "requirements": "Docker e APIs de LLM.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2502.16069",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "Robin",
+      "repository": "Future-House/robin",
+      "repository_url": "https://github.com/Future-House/robin",
+      "role": "ciencia_biomedica",
+      "priority_for_our_project": "C",
+      "event_date": "2026-05-19",
+      "event_note": "Publicação Nature em maio de 2026.",
+      "repo_created_at": "2025-05-19T21:45:45Z",
+      "repo_last_push_observed": "2026-04-21T23:58:38Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Geração de hipóteses, planeamento e análise em ciclos biomédicos com trajetórias públicas.",
+      "limitations": "Parte de análise depende da plataforma Edison com créditos e API; ensaios laboratoriais não são fornecidos pelo repo.",
+      "requirements": "Python >=3.12; LLM; Edison para análise integrada.",
+      "paper_or_primary_source": "https://www.nature.com/articles/s41586-026-10652-y",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "PiEvo",
+      "repository": "amair-lab/PiEvo",
+      "repository_url": "https://github.com/amair-lab/PiEvo",
+      "role": "agente_descoberta",
+      "priority_for_our_project": "C",
+      "event_date": "2026-02",
+      "event_note": "ICML 2026; código MIT.",
+      "repo_created_at": "2026-02-13T05:21:23Z",
+      "repo_last_push_observed": "2026-07-04T07:28:11Z",
+      "license_observed": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Revisão de princípios e hipóteses com busca guiada por incerteza.",
+      "limitations": "Arquitetura mais ampla; expansão do espaço de princípios requer avaliação ainda mais cuidadosa.",
+      "requirements": "Python >=3.10, AutoGen 0.7.4 e endpoints de modelos.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2602.06448",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "ShinkaEvolve",
+      "repository": "SakanaAI/ShinkaEvolve",
+      "repository_url": "https://github.com/SakanaAI/ShinkaEvolve",
+      "role": "busca_de_programas",
+      "priority_for_our_project": "C",
+      "event_date": null,
+      "event_note": "Push observado 2026-10-05.",
+      "repo_created_at": "2025-09-17T17:47:44Z",
+      "repo_last_push_observed": "2026-10-05T04:18:29Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Busca evolutiva de programas guiada por avaliador executável.",
+      "limitations": "Útil se objetivo já tem pontuador independente; otimizar pontuação não certifica hipótese científica.",
+      "requirements": "Python; endpoints LLM; recursos conforme programa.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "OpenEvolve",
+      "repository": "algorithmicsuperintelligence/openevolve",
+      "repository_url": "https://github.com/algorithmicsuperintelligence/openevolve",
+      "role": "busca_de_programas",
+      "priority_for_our_project": "C",
+      "event_date": null,
+      "event_note": "Push observado 2026-10-13; repo mudou para algorithmicsuperintelligence.",
+      "repo_created_at": "2025-05-15T11:46:52Z",
+      "repo_last_push_observed": "2026-10-13T20:32:01Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Evolução de código, populações e objetivos numéricos.",
+      "limitations": "Precisa de avaliador robusto contra exploração da métrica.",
+      "requirements": "Python; endpoint compatível; objetivo executável.",
+      "paper_or_primary_source": null,
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "AgentDiscover",
+      "repository": "mhdfb/AgentDiscover",
+      "repository_url": "https://github.com/mhdfb/AgentDiscover",
+      "role": "busca_de_programas",
+      "priority_for_our_project": "C",
+      "event_date": "2026-10-04",
+      "event_note": "Artigo e repo publicados em outubro.",
+      "repo_created_at": "2026-10-04T03:21:22Z",
+      "repo_last_push_observed": "2026-10-06T06:16:26Z",
+      "license_observed": null,
+      "license_paths": [],
+      "what_it_may_save": "Busca por coding agents com memória de tentativas num grafo.",
+      "limitations": "Tarefas de otimização/programação; ficheiro de licença não identificado.",
+      "requirements": "Containers, Neo4j e CLI/API de modelo.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2610.05334",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "AutoDS / AutoDiscovery",
+      "repository": "allenai/autodiscovery-neurips",
+      "repository_url": "https://github.com/allenai/autodiscovery-neurips",
+      "role": "agente_descoberta",
+      "priority_for_our_project": "C",
+      "event_date": "2025-07-18",
+      "event_note": "Código NeurIPS 2025; push observado agosto de 2026.",
+      "repo_created_at": "2025-07-17T21:06:59Z",
+      "repo_last_push_observed": "2026-08-13T16:42:43Z",
+      "license_observed": null,
+      "license_paths": [],
+      "what_it_may_save": "Busca aberta de hipóteses usando surpresa bayesiana e MCTS.",
+      "limitations": "Surpresa é prioridade de exploração; não é critério de validade. Sem ficheiro de licença identificado.",
+      "requirements": "Ambiente de análise e modelos LLM.",
+      "paper_or_primary_source": "https://allenai.org/blog/autods",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "SciAgentGym",
+      "repository": "CMarsRover/SciAgentGYM",
+      "repository_url": "https://github.com/CMarsRover/SciAgentGYM",
+      "role": "ferramentas",
+      "priority_for_our_project": "C",
+      "event_date": "2026-02-13",
+      "event_note": "Benchmark de uso de ferramentas científicas.",
+      "repo_created_at": "2025-08-26T09:26:33Z",
+      "repo_last_push_observed": "2026-07-05T07:00:50Z",
+      "license_observed": "Apache-2.0",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Biblioteca de ferramentas e avaliação sequencial de execução.",
+      "limitations": "Instalação extensa e foco em tool-use; conclusões epistémicas exigem avaliador adicional.",
+      "requirements": "Conda e bibliotecas de várias disciplinas; API de modelo.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2602.12984",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "EurekaBench",
+      "repository": "EurekaBench/EurekaBench",
+      "repository_url": "https://github.com/EurekaBench/EurekaBench",
+      "role": "avaliacao",
+      "priority_for_our_project": "D",
+      "event_date": "2026-09-30",
+      "event_note": "Artigo de setembro, código inicial em 2026-10-02.",
+      "repo_created_at": "2026-09-30T07:44:44Z",
+      "repo_last_push_observed": "2026-10-02T15:53:18Z",
+      "license_observed": null,
+      "license_paths": [],
+      "what_it_may_save": "Avalia restrições científicas, previsão e consequências explicativas.",
+      "limitations": "README pede Linux/H100/Apptainer e chaves de agente e juiz; licença não identificada.",
+      "requirements": "Recursos pesados conforme documentação; fora do piloto local imediato.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2610.00492",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "AI Scientist v2",
+      "repository": "SakanaAI/AI-Scientist-v2",
+      "repository_url": "https://github.com/SakanaAI/AI-Scientist-v2",
+      "role": "agente_descoberta",
+      "priority_for_our_project": "D",
+      "event_date": "2025-04",
+      "event_note": "Licença atual personalizada com versão dezembro de 2025.",
+      "repo_created_at": "2025-04-08T06:37:25Z",
+      "repo_last_push_observed": "2025-12-19T07:46:32Z",
+      "license_observed": "The AI Scientist Source Code License 1.0 (personalizada)",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "what_it_may_save": "Ideação, experiências ML e elaboração de manuscritos.",
+      "limitations": "Não é substituto do instrumento epistémico; licença personalizada e computação de ML.",
+      "requirements": "GPU/experiências ML e APIs conforme uso.",
+      "paper_or_primary_source": "https://arxiv.org/abs/2504.08066",
+      "inspection_level": "metadata, README, licence/tree",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "MechHypoBench",
+      "role": "metodologia_benchmark",
+      "priority_for_our_project": "monitorizar",
+      "event_date": "2026-10-04",
+      "paper_or_primary_source": "https://arxiv.org/abs/2610.05197",
+      "what_it_may_save": "Hipóteses abertas avaliadas pelas suas consequências em condições reservadas.",
+      "limitations": "Não encontrei link confirmado de código/dados públicos nos materiais primários consultados; interpretação das hipóteses usa LLM.",
+      "inspection_level": "artigo primario",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "SDABench",
+      "role": "metodologia_benchmark",
+      "priority_for_our_project": "monitorizar",
+      "event_date": "2026-07-13",
+      "paper_or_primary_source": "https://arxiv.org/abs/2607.11079",
+      "what_it_may_save": "Distingue capacidades descritiva, exploratória, inferencial, preditiva, causal e mecanística.",
+      "limitations": "Código reutilizável não confirmado; benchmark de análise não oferece por si loop de experiências.",
+      "inspection_level": "artigo primario",
+      "performance_reproduced_in_this_survey": false
+    },
+    {
+      "name": "SciDisco / SciThèque",
+      "role": "metodologia_benchmark",
+      "priority_for_our_project": "monitorizar",
+      "event_date": "2026-07-31",
+      "paper_or_primary_source": "https://arxiv.org/abs/2607.28990",
+      "what_it_may_save": "Ambientes com evidência verificável por passo e grafos de evidência reservados.",
+      "limitations": "Disponibilidade pública operacional não confirmada; foco em treino/RL de 14B, fora do bloco atual.",
+      "inspection_level": "artigo primario",
+      "performance_reproduced_in_this_survey": false
+    }
+  ],
+  "source_file_snapshots": [
+    {
+      "repo": "snap-stanford/POPPER",
+      "path": "popper/agent.py",
+      "blob_sha": "7d4652f3dd5e32801530797be5643b1d6c1b8e6d",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "snap-stanford/POPPER",
+      "path": "popper/popper.py",
+      "blob_sha": "235ce4705cd7b3fa10f801fb090786b847a42a80",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "snap-stanford/POPPER",
+      "path": "popper/utils.py",
+      "blob_sha": "735b8868be3ccf4b9abe2fba1b3c50f584a85c79",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "snap-stanford/POPPER",
+      "path": "requirements.txt",
+      "blob_sha": "9320dd3bed9b32e30fad49b04f2c8617de35e539",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "CTT-Pavilion/_HypoSpace",
+      "path": "causal/generate_causal_dataset.py",
+      "blob_sha": "d2343a89e6963e80eb09fca065c3cbaf3b9da85a",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "CTT-Pavilion/_HypoSpace",
+      "path": "causal/run_causal_benchmark.py",
+      "blob_sha": "c127bccc262538615be38eae817e1928b99fb1d6",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "CTT-Pavilion/_HypoSpace",
+      "path": "boolean/boolean_dataset.py",
+      "blob_sha": "1969a12ff660ab0f207da639b19bce188e62020a",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "CTT-Pavilion/_HypoSpace",
+      "path": "boolean/boolean_benchmark.py",
+      "blob_sha": "f540facadcef7acaac06e76d4037febfb40d0b9b",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "tsinghua-fib-lab/MechBench",
+      "path": "pyproject.toml",
+      "blob_sha": "28940ea116146e449edd1c6d0493b6b23e363bd1",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "tsinghua-fib-lab/MechBench",
+      "path": "src/evaluate.py",
+      "blob_sha": "6af79b833ab89a8f8c475a9833bd9a6bb563f6df",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "tsinghua-fib-lab/MechBench",
+      "path": "src/scoring.py",
+      "blob_sha": "e3dd90c8a3533efbb59aa0779f15531c9fa75ec9",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "tsinghua-fib-lab/MechBench",
+      "path": "src/export_problems.py",
+      "blob_sha": "193c23ff7912d96dac1b59739d9993e5db171e5a",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "tsinghua-fib-lab/MechBench",
+      "path": "src/feedback_server.py",
+      "blob_sha": "d2df72eba7b0008913d0094af4e07705a09e6024",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "tsinghua-fib-lab/MechBench",
+      "path": "src/algorithms/dummy.py",
+      "blob_sha": "c1f9c97107c3d508bda2f80e3243f8f7c0720a56",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "tsinghua-fib-lab/MechBench",
+      "path": "src/algorithms/codex.py",
+      "blob_sha": "afc643b3ee153fbe351edaabb12c7cc7a1f66425",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "Yibo-Wen/as-bench",
+      "path": "pyproject.toml",
+      "blob_sha": "420ecf442d890151bd7c67901a17951804bf513f",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "Yibo-Wen/as-bench",
+      "path": "docs/ARCHITECTURE.md",
+      "blob_sha": "c056f367ec6f92ab91057465ed21b417e4ce0645",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "Yibo-Wen/as-bench",
+      "path": "runtime/asb_lab/ledger.py",
+      "blob_sha": "f0996be2f200fcf5b2332501d72a6abf4280c362",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "Yibo-Wen/as-bench",
+      "path": "runtime/asb_verify/ledger_check.py",
+      "blob_sha": "97807b48052cd4515497110179d86479f2fe26e3",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "Yibo-Wen/as-bench",
+      "path": "runtime/asb_lab/server.py",
+      "blob_sha": "5f1f7347a54a9c5b1b288cf977d166b28f7e73a7",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "Yibo-Wen/as-bench",
+      "path": "tools/run_local.py",
+      "blob_sha": "f9eb913159dc6f684c2729b3178e1d6576d7ccff",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "SUSTech-GenAI/StatefulDiscovery",
+      "path": "scripts/run_claude_task.sh",
+      "blob_sha": "60318ab8d1a7763f966977ce3447cf88c0c8ead6",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "SUSTech-GenAI/StatefulDiscovery",
+      "path": "dockerfiles/Dockerfile.claude",
+      "blob_sha": "37eafd9dc24c56ba9a1b3e2ded9ea7a5e9870ba2",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "SUSTech-GenAI/StatefulDiscovery",
+      "path": "container/schemas/CLAIMS_SCHEMA.json",
+      "blob_sha": "bd001662992ebdc55603016a555d62e7801dbb00",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "SUSTech-GenAI/StatefulDiscovery",
+      "path": "container/schemas/EPISTEMIC_STATE_SCHEMA.json",
+      "blob_sha": "583a30808296dcf199201a1981ec227bcd50a85f",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "SUSTech-GenAI/StatefulDiscovery",
+      "path": "claude_skills/evidence-strength-judge/SKILL.md",
+      "blob_sha": "8536409d6309ade8237d6e04ba97893e1ae7e808",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "instadeepai/alf",
+      "path": "core/pyproject.toml",
+      "blob_sha": "80a70a0ba10ae7bf5099b88789c5dbba64939a0b",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "instadeepai/alf",
+      "path": "core/alf_core/tasks/design_task.py",
+      "blob_sha": "e77864217948804c19b3329d3cf5164d902bfbfa",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "instadeepai/alf",
+      "path": "core/alf_core/oracle/oracle.py",
+      "blob_sha": "3547848ac365630aebb532c4fa2ff6b267c5abf4",
+      "content_matches_tree_blob": true
+    },
+    {
+      "repo": "instadeepai/alf",
+      "path": "core/tests/tasks/test_design_task.py",
+      "blob_sha": "47d707afdf25770fe3c786c17a2da4ee328bd944",
+      "content_matches_tree_blob": true
+    }
+  ],
+  "caveats": [
+    "Triagem e inspecao dirigida, nao auditoria completa nem comparacao de desempenho.",
+    "Ultimo push/criacao de repositorio nao sao datas de publicacao.",
+    "Existencia de testes ou CI nao demonstra validade cientifica.",
+    "Nenhum modelo foi executado, treinado ou ampliado nesta pesquisa.",
+    "Licencas de dados e componentes terceiros devem ser verificadas em cada campanha."
+  ]
+}

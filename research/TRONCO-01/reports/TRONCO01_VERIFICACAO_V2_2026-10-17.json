@@ -1,0 +1,98 @@
+{
+  "tests_exit_code": 0,
+  "tests_output": ".........                                                                [100%]\n9 passed in 0.53s",
+  "replay_exit_code": 0,
+  "replay_stderr": "",
+  "derived_results_identical": {
+    "retrospective_v2_summary.json": true,
+    "retrospective_v2_episodes.json": true
+  },
+  "probes": {
+    "valid_minimal_refutation": {
+      "expected_status": "rejected",
+      "status_correct": true,
+      "expected_compatible_models": [
+        "C"
+      ],
+      "declared_compatible_models_correct": true,
+      "no_duplicate_ids": true,
+      "expected_diagnosis": "identified",
+      "certificate_sufficient": true,
+      "science_supported": true,
+      "unobserved_evidence_ids": []
+    },
+    "refutation_with_unobserved_citation": {
+      "expected_status": "rejected",
+      "status_correct": true,
+      "expected_compatible_models": [
+        "C"
+      ],
+      "declared_compatible_models_correct": true,
+      "no_duplicate_ids": true,
+      "expected_diagnosis": "identified",
+      "certificate_sufficient": true,
+      "science_supported": true,
+      "unobserved_evidence_ids": [
+        "invented"
+      ]
+    },
+    "support_with_subset_of_fitting_rows": {
+      "expected_status": "supported",
+      "status_correct": true,
+      "expected_compatible_models": [
+        "A",
+        "C"
+      ],
+      "declared_compatible_models_correct": true,
+      "no_duplicate_ids": true,
+      "expected_diagnosis": "ambiguous",
+      "certificate_sufficient": false,
+      "science_supported": false,
+      "unobserved_evidence_ids": []
+    },
+    "controlled_phase_contrast": true,
+    "invented_location_rejected": true,
+    "redundant_row_certificate_policy": {
+      "before": {
+        "expected_status": "supported",
+        "status_correct": true,
+        "expected_compatible_models": [
+          "A",
+          "C"
+        ],
+        "declared_compatible_models_correct": true,
+        "no_duplicate_ids": true,
+        "expected_diagnosis": "ambiguous",
+        "certificate_sufficient": true,
+        "science_supported": true,
+        "unobserved_evidence_ids": []
+      },
+      "after": {
+        "expected_status": "supported",
+        "status_correct": true,
+        "expected_compatible_models": [
+          "A",
+          "C"
+        ],
+        "declared_compatible_models_correct": true,
+        "no_duplicate_ids": true,
+        "expected_diagnosis": "ambiguous",
+        "certificate_sufficient": false,
+        "science_supported": false,
+        "unobserved_evidence_ids": []
+      },
+      "classification": "explicit all-row citation policy changes score although semantic evidence is unchanged"
+    },
+    "hidden_category_does_not_change_assessment": true
+  },
+  "v2_sources_and_results_unchanged": true,
+  "source_sha256": {
+    "work/TRONCO01_VALIDITY_AUDIT_v1/reference_core_v2.py": "c6f8aff11249795c0e981e32c4200bc6f1ae6e4f7188a990fb32a5225490cc26",
+    "work/TRONCO01_VALIDITY_AUDIT_v1/SPEC_V2.md": "d61766e694a24323c43129a5bb609b111061ec5cdf38f035797259e233c8474f",
+    "work/TRONCO01_VALIDITY_AUDIT_v1/reanalyze_v2.py": "2e54c45c1e497b1dab00d5969ce93ae4e712cb01cae61a74af8a662a3ca8bb08",
+    "work/TRONCO01_VALIDITY_AUDIT_v1/results/retrospective_v2_episodes.json": "254fd9a680a88f578b4d3d88b6c15da4a873a0292b05931312f276a7d694aa5b",
+    "work/TRONCO01_VALIDITY_AUDIT_v1/results/retrospective_v2_summary.json": "ba40ab7d2a1e8eefbd8625da5a3e40d821371b75050a3fcc64126aaa221dd653"
+  },
+  "no_model_inference": true,
+  "historic_reports_with_unobserved_evidence_ids": 0
+}

@@ -1,0 +1,144 @@
+{
+  "protocol": "TRONCO-01-v2.7-result-review",
+  "new_model_calls": 0,
+  "weights_loaded": false,
+  "archive_integrity": {
+    "crc_pass": true,
+    "members_hashed_and_matching_disk": 49,
+    "sha256": "c32889f843397cc634e0d1a096bf7f0a2cacba1877905cb9a633662a92393ce6"
+  },
+  "manifest_internal_check": {
+    "files_verified": 21,
+    "status": "draft_not_frozen"
+  },
+  "scorer_unchanged_from_v26": true,
+  "unit_suite": {
+    "tests": 37,
+    "failures": 0,
+    "errors": 0,
+    "log": "test_accepted_query_updates_public_state_and_resets_feedback (test_harness.HarnessTests.test_accepted_query_updates_public_state_and_resets_feedback) ... ok\ntest_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint) ... ok\ntest_complete_resume_checks_manifest_and_schedule_identity (test_harness.HarnessTests.test_complete_resume_checks_manifest_and_schedule_identity) ... ok\ntest_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged) ... ok\ntest_declared_external_checkpoint_hash_is_verified_without_loading_it (test_harness.HarnessTests.test_declared_external_checkpoint_hash_is_verified_without_loading_it) ... ok\ntest_draft_manifest_blocks_trial_entry_before_generation (test_harness.HarnessTests.test_draft_manifest_blocks_trial_entry_before_generation) ... ok\ntest_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) ... ok\ntest_exhausted_budget_removes_query_action_from_dynamic_schema (test_harness.HarnessTests.test_exhausted_budget_removes_query_action_from_dynamic_schema) ... ok\ntest_failed_frozen_gate_makes_zero_generation_calls (test_harness.HarnessTests.test_failed_frozen_gate_makes_zero_generation_calls) ... ok\ntest_frozen_manifest_blocks_changed_source_before_generation (test_harness.HarnessTests.test_frozen_manifest_blocks_changed_source_before_generation) ... ok\ntest_journal_rebuild_fixes_legacy_class_and_sentinel (test_harness.HarnessTests.test_journal_rebuild_fixes_legacy_class_and_sentinel) ... ok\ntest_location_values_must_come_from_public_observations (test_harness.HarnessTests.test_location_values_must_come_from_public_observations) ... ok\ntest_malformed_output_is_logged_and_not_retried (test_harness.HarnessTests.test_malformed_output_is_logged_and_not_retried) ... ok\ntest_missing_preregistration_hash_blocks_before_generation (test_harness.HarnessTests.test_missing_preregistration_hash_blocks_before_generation) ... ok\ntest_model_backend_rejects_weight_mismatch_before_importing_loader (test_harness.HarnessTests.test_model_backend_rejects_weight_mismatch_before_importing_loader) ... ok\ntest_preregistration_hash_must_match_verified_manifest (test_harness.HarnessTests.test_preregistration_hash_must_match_verified_manifest) ... ok\ntest_rates_are_calculated_for_success_empty_and_failure (test_harness.HarnessTests.test_rates_are_calculated_for_success_empty_and_failure) ... ok\ntest_rejection_feedback_changes_prompt_and_allows_recovery (test_harness.HarnessTests.test_rejection_feedback_changes_prompt_and_allows_recovery) ... ok\ntest_resume_rejects_interrupted_and_duplicate_episode (test_harness.HarnessTests.test_resume_rejects_interrupted_and_duplicate_episode) ... ok\ntest_schema_allows_semantic_choices_but_scopes_public_ids (test_harness.HarnessTests.test_schema_allows_semantic_choices_but_scopes_public_ids) ... ok\ntest_strict_json_rejects_duplicate_nonfinite_trailing_and_nonobject (test_harness.HarnessTests.test_strict_json_rejects_duplicate_nonfinite_trailing_and_nonobject) ... ok\ntest_summary_is_atomic_json (test_harness.HarnessTests.test_summary_is_atomic_json) ... ok\ntest_trial_persists_each_result_and_stops_after_infrastructure_failure (test_harness.HarnessTests.test_trial_persists_each_result_and_stops_after_infrastructure_failure) ... ok\ntest_every_initial_state_has_an_immediate_correct_report (test_replay.HistoricalReplayTests.test_every_initial_state_has_an_immediate_correct_report) ... ok\ntest_replay_reconstructs_historical_counts_without_model (test_replay.HistoricalReplayTests.test_replay_reconstructs_historical_counts_without_model) ... ok\ntest_backend_failure_is_recorded_as_technical_sentinel (test_runner.TrialRunnerTests.test_backend_failure_is_recorded_as_technical_sentinel) ... ok\ntest_checkpoint_extra_or_changed_artifact_is_rejected_before_loader (test_runner.TrialRunnerTests.test_checkpoint_extra_or_changed_artifact_is_rejected_before_loader) ... ok\ntest_draft_status_is_rejected_before_loader_import (test_runner.TrialRunnerTests.test_draft_status_is_rejected_before_loader_import) ... ok\ntest_full_trial_runner_with_fixed_outputs_and_failure_policy (test_runner.TrialRunnerTests.test_full_trial_runner_with_fixed_outputs_and_failure_policy) ... ok\ntest_independent_scorer_accepts_expected_reports_for_all_ten_public_cases (test_runner.TrialRunnerTests.test_independent_scorer_accepts_expected_reports_for_all_ten_public_cases) ... ok\ntest_manual_semantic_certificate_and_component_cases (test_runner.TrialRunnerTests.test_manual_semantic_certificate_and_component_cases) ... ok\ntest_resume_identity_is_checked_before_model_loader (test_runner.TrialRunnerTests.test_resume_identity_is_checked_before_model_loader) ... ok\ntest_runner_prompt_must_match_manifest_bytes (test_runner.TrialRunnerTests.test_runner_prompt_must_match_manifest_bytes) ... ok\ntest_runner_scorer_distinguishes_fixed_correct_and_incorrect_answers (test_runner.TrialRunnerTests.test_runner_scorer_distinguishes_fixed_correct_and_incorrect_answers) ... ok\ntest_runtime_versions_are_a_preregistered_gate (test_runner.TrialRunnerTests.test_runtime_versions_are_a_preregistered_gate) ... ok\ntest_same_harness_runner_records_eos_and_resumes_without_extra_call (test_runner.TrialRunnerTests.test_same_harness_runner_records_eos_and_resumes_without_extra_call) ... ok\ntest_schedule_loader_keeps_only_the_frozen_public_payload (test_runner.TrialRunnerTests.test_schedule_loader_keeps_only_the_frozen_public_payload) ... ok\n\n----------------------------------------------------------------------\nRan 37 tests in 1.292s\n\nOK\n"
+  },
+  "mutation_check": {
+    "protocol": "TRONCO-01-v2.7-offline-preflight",
+    "original_v25_result_valid": false,
+    "original_error": "The archived v2.5 mutation runs failed to import model_backend and were incorrectly counted as kills.",
+    "method": "Copy required dependencies; verify each unmodified target passes; count a kill only for an assertion failure with zero errors.",
+    "new_model_calls": 0,
+    "model_weights_loaded": false,
+    "baselines_pass": true,
+    "valid_kills": 3,
+    "cases": {
+      "duplicate_candidate_check_removed": {
+        "test": "test_duplicate_candidate_evidence_and_location_values_are_rejected",
+        "baseline": {
+          "tests_run": 1,
+          "failures": 0,
+          "errors": 0,
+          "successful": true,
+          "log": "test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+        },
+        "mutant": {
+          "tests_run": 1,
+          "failures": 1,
+          "errors": 0,
+          "successful": false,
+          "log": "test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) ... \n  test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) (field='candidate_model_codes') ... FAIL\n\n======================================================================\nFAIL: test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) (field='candidate_model_codes')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmp7opc3mf1\\test_harness.py\", line 81, in test_duplicate_candidate_evidence_and_location_values_are_rejected\n    with self.subTest(field=field), self.assertRaises(harness.ModelOutputError):\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ModelOutputError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n"
+        },
+        "killed_by_assertion": true
+      },
+      "resume_fingerprint_check_removed": {
+        "test": "test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint",
+        "baseline": {
+          "tests_run": 1,
+          "failures": 0,
+          "errors": 0,
+          "successful": true,
+          "log": "test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.028s\n\nOK\n"
+        },
+        "mutant": {
+          "tests_run": 1,
+          "failures": 1,
+          "errors": 0,
+          "successful": false,
+          "log": "test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint) ... FAIL\n\n======================================================================\nFAIL: test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmp9g3f5syf\\test_harness.py\", line 338, in test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint\n    with self.assertRaises(harness.ResumeIntegrityError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ResumeIntegrityError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.028s\n\nFAILED (failures=1)\n"
+        },
+        "killed_by_assertion": true
+      },
+      "entry_manifest_guard_skipped_on_resume": {
+        "test": "test_complete_resume_runs_guard_even_when_schedule_is_unchanged",
+        "baseline": {
+          "tests_run": 1,
+          "failures": 0,
+          "errors": 0,
+          "successful": true,
+          "log": "test_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.035s\n\nOK\n"
+        },
+        "mutant": {
+          "tests_run": 1,
+          "failures": 1,
+          "errors": 0,
+          "successful": false,
+          "log": "test_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged) ... FAIL\n\n======================================================================\nFAIL: test_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmpiu3dsbwo\\test_harness.py\", line 259, in test_complete_resume_runs_guard_even_when_schedule_is_unchanged\n    with self.assertRaises(harness.ResumeIntegrityError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ResumeIntegrityError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.033s\n\nFAILED (failures=1)\n"
+        },
+        "killed_by_assertion": true
+      }
+    },
+    "semantic_refutation_certificate_mutation": {
+      "test": "test_manual_semantic_certificate_and_component_cases",
+      "baseline": {
+        "exit_code": 0,
+        "log": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.978s\n\nOK\n"
+      },
+      "mutant": {
+        "exit_code": 1,
+        "failures_are_assertions": true,
+        "errors": false,
+        "log": ".....FF......\n======================================================================\nFAIL: test_manual_semantic_certificate_and_component_cases (test_runner.TrialRunnerTests.test_manual_semantic_certificate_and_component_cases) (action={'action': 'report', 'verdict': 'rejected', 'candidate_model_codes': ['B'], 'diagnosis': 'identified', 'sufficiency': 'identity_resolved', 'evidence_ids': [], 'location': {'feature': 'none', 'values': []}})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmpgsm7_ocj\\package\\tests\\test_runner.py\", line 167, in test_manual_semantic_certificate_and_component_cases\n    self.assertEqual(replay.score(current,action)[\"joint_success\"],expected)\nAssertionError: True != False\n\n======================================================================\nFAIL: test_manual_semantic_certificate_and_component_cases (test_runner.TrialRunnerTests.test_manual_semantic_certificate_and_component_cases) (action={'action': 'report', 'verdict': 'rejected', 'candidate_model_codes': ['B'], 'diagnosis': 'identified', 'sufficiency': 'identity_resolved', 'evidence_ids': ['o1'], 'location': {'feature': 'none', 'values': []}})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmpgsm7_ocj\\package\\tests\\test_runner.py\", line 167, in test_manual_semantic_certificate_and_component_cases\n    self.assertEqual(replay.score(current,action)[\"joint_success\"],expected)\nAssertionError: True != False\n\n----------------------------------------------------------------------\nRan 12 tests in 1.027s\n\nFAILED (failures=2)\n"
+      },
+      "killed_by_assertion": true
+    },
+    "total_valid_kills": 4
+  },
+  "historical_v23_replay": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed": 4,
+    "legal_reports": 3,
+    "illegal_decoded_actions": 12,
+    "accepted_queries": 0,
+    "joint_successes": 0,
+    "joint_rate_all_episodes": 0.0,
+    "status_counts": {
+      "model_output_failure": 4,
+      "call_limit_no_valid_terminal_action": 3,
+      "reported": 3
+    },
+    "malformed_at_token_limit_without_eos": 4
+  },
+  "schedule": {
+    "episodes": 10,
+    "distinct_public_states": 9,
+    "duplicates": [
+      [
+        "pilot_01",
+        "pilot_02"
+      ]
+    ],
+    "previously_exposed": true,
+    "query_budget": 0
+  },
+  "finite_semantic_check": {
+    "states": 1587,
+    "altered_reports_rejected": 6345,
+    "domain": "all histories of up to two distinct observations among 32 binary input/output rows; three working cards",
+    "scope": "literal deterministic public tables; labels, verdict, candidate set, missing certificate, observation order",
+    "not_covered": [
+      "learned generation",
+      "noise",
+      "generalization",
+      "information acquisition",
+      "all possible location claims"
+    ]
+  },
+  "decision": "Suitable for one small development model trial under this observational contract; no generalization, information-seeking, or M17 validity claim."
+}

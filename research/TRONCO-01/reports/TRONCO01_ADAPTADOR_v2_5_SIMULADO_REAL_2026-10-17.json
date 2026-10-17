@@ -1,0 +1,11 @@
+{
+  "actual_original_adapter_call_exercised": true,
+  "fake_generate_calls": 1,
+  "checkpoint_loaded": false,
+  "model_inference_performed": false,
+  "raw_output_matches_script": true,
+  "eos_recorded": true,
+  "prompt_token_count": 509,
+  "generated_token_count": 46,
+  "scope": "Original __call__, actual Transformers LMFE callback, actual tokenizer/tensors; no learned model or Unsloth loader execution."
+}

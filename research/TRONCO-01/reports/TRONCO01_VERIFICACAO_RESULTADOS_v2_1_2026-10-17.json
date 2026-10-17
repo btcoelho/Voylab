@@ -1,0 +1,35 @@
+{
+  "frozen_source_files_verified": 57,
+  "sources_unchanged": true,
+  "repeated_preflight_exit_code": 0,
+  "repeated_preflight_gate": "PASS_FOR_PREMODEL_REVIEW",
+  "pytest_stdout": "......................                                                   [100%]\n22 passed in 1.28s",
+  "derived_results_identical": {
+    "finite_audit_v2_1.json": true,
+    "mutation_audit_v2_1.json": true,
+    "grammar_preflight_v2_1.json": true,
+    "retrospective_v2_1_episodes.json": true,
+    "retrospective_v2_1_summary.json": true
+  },
+  "mutation_laws_pass_against_unmutated_baseline": {
+    "ignore_unobserved_ids": "baseline_law_passed",
+    "accept_partial_support_certificate": "baseline_law_passed",
+    "depend_on_first_observation": "baseline_law_passed",
+    "score_duplicate_by_id": "baseline_law_passed",
+    "accept_fabricated_location_values": "baseline_law_passed"
+  },
+  "stale_gate_result_probe": {
+    "frozen_source_modified_only_in_temporary_copy": true,
+    "preflight_after_change_exit_code": 1,
+    "hash_mismatch_detected": true,
+    "saved_gate_after_failed_run": "PASS_FOR_PREMODEL_REVIEW",
+    "previous_pass_left_in_place": true
+  },
+  "post_terminal_generation_probe": {
+    "episode_was_terminal_before_step": true,
+    "stub_generation_calls_after_terminal": 1,
+    "environment_rejected_after_generation": "episode already terminated",
+    "real_model_calls": 0
+  },
+  "model_inference": false
+}

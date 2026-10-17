@@ -1,0 +1,20 @@
+{
+  "archive_integrity_ok": true,
+  "archive_entries": 67,
+  "frozen_hashes_verified_in_source_and_archive": 57,
+  "archived_gate": "PASS_FOR_PREMODEL_REVIEW",
+  "archived_stage_exit_codes_all_zero": true,
+  "repeated_tests_from_extracted_archive": "........................                                                 [100%]\n24 passed in 0.31s",
+  "dependency_consistency": "No broken requirements found.",
+  "torch_absent_in_verification_environment": true,
+  "derived_source_and_archive_results_identical": {
+    "finite_audit_v2_3.json": true,
+    "mutation_audit_v2_3.json": true,
+    "grammar_preflight_v2_3.json": true,
+    "retrospective_v2_3_episodes.json": true,
+    "retrospective_v2_3_summary.json": true
+  },
+  "model_inference": false,
+  "source_modified": false,
+  "scope": "integrity, dependencies and regression reproduction; not external scientific replication or model evaluation"
+}

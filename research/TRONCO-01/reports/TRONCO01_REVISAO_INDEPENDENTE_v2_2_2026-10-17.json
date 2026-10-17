@@ -1,0 +1,16 @@
+{
+  "archive_integrity_ok": true,
+  "frozen_files_verified": 57,
+  "clean_extracted_preflight_exit_code": 0,
+  "clean_extracted_gate": "PASS_FOR_PREMODEL_REVIEW",
+  "tests": ".......................                                                  [100%]\n23 passed in 1.05s",
+  "initialization_failure_probe": {
+    "exit_code": 1,
+    "saved_gate": "PASS_FOR_PREMODEL_REVIEW",
+    "run_id_unchanged": true,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/tronco-v22-review-l_i6nxwg/TRONCO01_VALIDITY_AUDIT_v2_2/preflight.py\", line 14, in <module>\n    from instrument import FrozenRunGuard\n  File \"/tmp/tronco-v22-review-l_i6nxwg/TRONCO01_VALIDITY_AUDIT_v2_2/instrument.py\", line 1, in <module>\n    raise RuntimeError('injected import failure')\nRuntimeError: injected import failure\n",
+    "scope": "temporary extracted copy; original package unchanged"
+  },
+  "model_inference": false,
+  "portability_limit": "clean extraction used existing environment; requirements omits torch/transformers required by tokenizer check"
+}

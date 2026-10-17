@@ -1,0 +1,136 @@
+{
+  "analysis": "post-run offline grammar counterexamples",
+  "lm_format_enforcer_version": "0.11.3",
+  "learned_model_calls": 0,
+  "model_weights_loaded": false,
+  "real_tokenizer_and_callback": true,
+  "source_sha256": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+  "saved_output_replay": [
+    {
+      "episode_id": "pilot_01",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": false
+    },
+    {
+      "episode_id": "pilot_02",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": false
+    },
+    {
+      "episode_id": "pilot_03",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": false
+    },
+    {
+      "episode_id": "pilot_04",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": false
+    },
+    {
+      "episode_id": "pilot_05",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": false
+    },
+    {
+      "episode_id": "pilot_06",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": false
+    },
+    {
+      "episode_id": "pilot_07",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": false
+    },
+    {
+      "episode_id": "pilot_08",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": true
+    },
+    {
+      "episode_id": "pilot_09",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": true
+    },
+    {
+      "episode_id": "pilot_10",
+      "saved_tokens_all_allowed_by_real_callback": true,
+      "final_validator_accepts": true
+    }
+  ],
+  "minimal_cases": [
+    {
+      "name": "empty_array_allowed",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "o1"
+          ]
+        },
+        "maxItems": 0
+      },
+      "text": "[]",
+      "contract_would_allow": true,
+      "lmfe_actual": {
+        "accepted": true
+      },
+      "mismatch": false
+    },
+    {
+      "name": "zero_max_items_permits_first_item",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "o1"
+          ]
+        },
+        "maxItems": 0
+      },
+      "text": "[\"o1\"]",
+      "contract_would_allow": false,
+      "lmfe_actual": {
+        "accepted": true
+      },
+      "mismatch": true
+    },
+    {
+      "name": "empty_enum_does_not_block_unknown_string",
+      "schema": {
+        "type": "string",
+        "enum": []
+      },
+      "text": "\"A\"",
+      "contract_would_allow": false,
+      "lmfe_actual": {
+        "accepted": true
+      },
+      "mismatch": true
+    },
+    {
+      "name": "duplicate_items_not_enforced",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "A",
+            "B"
+          ]
+        },
+        "uniqueItems": true,
+        "maxItems": 3
+      },
+      "text": "[\"A\",\"A\"]",
+      "contract_would_allow": false,
+      "lmfe_actual": {
+        "accepted": true
+      },
+      "mismatch": true
+    }
+  ],
+  "eos_metadata_independently_verified_against_tokenizer": true,
+  "interpretation": "The integration cannot assume empty enum, maxItems zero, or uniqueItems are enforced by this installed parser. The final validator correctly rejected the affected outputs."
+}

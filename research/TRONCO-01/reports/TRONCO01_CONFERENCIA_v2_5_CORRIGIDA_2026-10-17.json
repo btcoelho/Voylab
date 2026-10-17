@@ -1,0 +1,68 @@
+{
+  "new_model_calls": 0,
+  "real_model_weights_loaded": false,
+  "original_v25_files_modified": false,
+  "archive_integrity": {
+    "checked_members": 39,
+    "all_hashes_match": true,
+    "disk_matches_archive": true
+  },
+  "unit_test_review": {
+    "tests": 25,
+    "exit_code": 0,
+    "basis": "Executed original unittest discovery in this review; all 25 passed."
+  },
+  "original_mutation_claim": {
+    "valid": false,
+    "invalid_runs_due_to_import_error": 3
+  },
+  "corrected_mutation_evidence": {
+    "baseline_tests_pass": true,
+    "valid_assertion_kills": 3
+  },
+  "actual_adapter_fake_model_check": {
+    "actual_original_adapter_call_exercised": true,
+    "fake_generate_calls": 1,
+    "checkpoint_loaded": false,
+    "model_inference_performed": false,
+    "raw_output_matches_script": true,
+    "eos_recorded": true,
+    "prompt_token_count": 509,
+    "generated_token_count": 46,
+    "scope": "Original __call__, actual Transformers LMFE callback, actual tokenizer/tensors; no learned model or Unsloth loader execution."
+  },
+  "draft_loader_gate_check": {
+    "original_adapter": true,
+    "verified_manifest_status": "draft_not_frozen",
+    "guard_used": "partial(FrozenManifestGuard.verify, allow_draft=True)",
+    "loader_reached": true,
+    "actual_model_weights_loaded": false,
+    "model_inference": false,
+    "observation": "loader reached despite manifest status draft_not_frozen",
+    "scope": "Default guard rejects draft; loader does not independently check status and accepts the explicit offline guard when hashes match. This is an integration precondition gap, not evidence of a historical real model load."
+  },
+  "historical_replay": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed": 4,
+    "legal_reports": 3,
+    "illegal_decoded_actions": 12,
+    "accepted_queries": 0,
+    "joint_successes": 0,
+    "joint_rate_all_episodes": 0.0,
+    "status_counts": {
+      "model_output_failure": 4,
+      "call_limit_no_valid_terminal_action": 3,
+      "reported": 3
+    },
+    "malformed_at_token_limit_without_eos": 4
+  },
+  "decision": "technical improvements confirmed; patch verification/reporting and loader status check, then finish one frozen production runner before any learned-model inference",
+  "experiment_scope": "Ten exposed development cases are acceptable for regression; changed query budget and call limit prevent attributing differences solely to the prompt/grammar.",
+  "review_source_sha256": {
+    "build_review_package.py": "54080e1b6f2c713d133a036c7160c9c61eac5e3aa8dfff6c927c7041a7c3987e",
+    "verify_actual_adapter_fake_model.py": "2dd7941f0effd082d7ec0738b5f333ade9552a94f2c284103a6093d4d7173499",
+    "verify_draft_loader_gate.py": "222527d101f04b23411d5438247e59c989c2ee3e6f3669353ce12b7f9f7ee17e",
+    "verify_mutations_corrected.py": "eb786eadf2ea56885d69ebb6b78a96b433139fc9f9b34ebd545620854e26ba43"
+  }
+}

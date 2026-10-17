@@ -1,0 +1,34 @@
+{
+  "repo": "C:\\Users\\Bruno\\Documents\\Codex\\2026-10-17\\files-pasted-by-the-user-projeto\\work\\AutoSciLab",
+  "commit": "351aae73e6c6c279e67943b77143b0f118d1e289",
+  "tests": {
+    "python_compile": true,
+    "grn_oracle_determinism_and_observation_projection": {
+      "passed": true,
+      "measurement": 19.572301438094573,
+      "public_table_has_marker_panel": true,
+      "oracle_result_also_contains_hidden_truth_metadata": true
+    },
+    "grn_ground_truth_score_reaches_llm_prompt": {
+      "passed": true,
+      "minimal_counterexample": "[h1] mechanism candidate | exact=fit candidate A edge_f1=0.000 | best=fit candidate B edge_f1=1.000 | drift=0 (no drift)",
+      "prompt_contains_oracle_derived_edge_f1": true
+    },
+    "newton_ground_truth_used_during_inference": {
+      "passed": true,
+      "evidence": [
+        "mid_run_gt_eval defaults true",
+        "evaluate_law is called before the run ends",
+        "GT RMSLE is inserted in validation prompt passed back to LLM",
+        "GT metrics select/cap candidate and confidence; final equation can be replaced by GT-best"
+      ]
+    },
+    "license_file_present": false,
+    "tracked_test_files": []
+  },
+  "credentials_present": {
+    "OPENAI_API_KEY": false,
+    "TOGETHER_API_KEY": false
+  },
+  "decision": "not_valid_for_unbiased_scientific_performance_claims_without_repair"
+}

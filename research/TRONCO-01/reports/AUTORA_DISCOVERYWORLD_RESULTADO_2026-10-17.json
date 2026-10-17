@@ -1,0 +1,393 @@
+{
+  "test_kind": "five-seed AutoRA condition selection followed by DiscoveryWorld soil assays",
+  "claim_scope": "repeated adapter and public measurement pathway only; no claim that active selection improves scientific inference",
+  "successful_runs": 5,
+  "total_runs": 5,
+  "runs": [
+    {
+      "test_kind": "AutoRA condition selection followed by a real DiscoveryWorld soil assay",
+      "claim_scope": "adapter and public measurement pathway only; no claim that active selection improves scientific inference",
+      "versions": {
+        "autora": "4.2.0",
+        "discoveryworld_api": "DiscoveryWorld API v0.1"
+      },
+      "scenario": {
+        "name": "Plant Nutrients",
+        "difficulty": "Easy",
+        "seed": 0
+      },
+      "selection": {
+        "sampler": "autora.experimentalist.random.random_pool",
+        "candidate_count_before_deduplication": 6,
+        "candidate_conditions": [
+          {
+            "sample_id": 56968
+          },
+          {
+            "sample_id": 36757
+          },
+          {
+            "sample_id": 1787
+          },
+          {
+            "sample_id": 24902
+          },
+          {
+            "sample_id": 40815
+          },
+          {
+            "sample_id": 41671
+          }
+        ],
+        "selected_public_sample": {
+          "name": "soil",
+          "description": "soil",
+          "distance": 1,
+          "uuid": 41671,
+          "sector": "west"
+        }
+      },
+      "setup": {
+        "meter_uuid_from_public_accessible_objects": 14424,
+        "meter_pickup": {
+          "errors": [],
+          "success": true
+        },
+        "positioning_action": "TELEPORT_TO_OBJECT (harness setup shortcut; excluded from evaluated agent capability)",
+        "positioning_result": {
+          "errors": [],
+          "success": true
+        }
+      },
+      "assay": {
+        "action": {
+          "action": "USE",
+          "arg1": 14424,
+          "arg2": 41671
+        },
+        "result": {
+          "errors": [],
+          "success": true
+        },
+        "public_readout": "You use the soil nutrient meter to investigate the soil.\nThe results are as follows:\n- titanium: zero\n- potassium: high\n- barium: zero\n- lithium: zero\n- thorium: zero\n",
+        "parsed_nutrient_levels": {
+          "titanium": "zero",
+          "potassium": "high",
+          "barium": "zero",
+          "lithium": "zero",
+          "thorium": "zero"
+        },
+        "task_completed": false
+      },
+      "oracle_access": false
+    },
+    {
+      "test_kind": "AutoRA condition selection followed by a real DiscoveryWorld soil assay",
+      "claim_scope": "adapter and public measurement pathway only; no claim that active selection improves scientific inference",
+      "versions": {
+        "autora": "4.2.0",
+        "discoveryworld_api": "DiscoveryWorld API v0.1"
+      },
+      "scenario": {
+        "name": "Plant Nutrients",
+        "difficulty": "Easy",
+        "seed": 1
+      },
+      "selection": {
+        "sampler": "autora.experimentalist.random.random_pool",
+        "candidate_count_before_deduplication": 6,
+        "candidate_conditions": [
+          {
+            "sample_id": 56968
+          },
+          {
+            "sample_id": 36757
+          },
+          {
+            "sample_id": 1787
+          },
+          {
+            "sample_id": 24902
+          },
+          {
+            "sample_id": 40815
+          },
+          {
+            "sample_id": 41671
+          }
+        ],
+        "selected_public_sample": {
+          "name": "soil",
+          "description": "soil",
+          "distance": 3,
+          "uuid": 1787,
+          "sector": "south-west"
+        }
+      },
+      "setup": {
+        "meter_uuid_from_public_accessible_objects": 14424,
+        "meter_pickup": {
+          "errors": [],
+          "success": true
+        },
+        "positioning_action": "TELEPORT_TO_OBJECT (harness setup shortcut; excluded from evaluated agent capability)",
+        "positioning_result": {
+          "errors": [],
+          "success": true
+        }
+      },
+      "assay": {
+        "action": {
+          "action": "USE",
+          "arg1": 14424,
+          "arg2": 1787
+        },
+        "result": {
+          "errors": [],
+          "success": true
+        },
+        "public_readout": "You use the soil nutrient meter to investigate the soil.\nThe results are as follows:\n- titanium: zero\n- potassium: zero\n- barium: zero\n- lithium: zero\n- thorium: high\n",
+        "parsed_nutrient_levels": {
+          "titanium": "zero",
+          "potassium": "zero",
+          "barium": "zero",
+          "lithium": "zero",
+          "thorium": "high"
+        },
+        "task_completed": false
+      },
+      "oracle_access": false
+    },
+    {
+      "test_kind": "AutoRA condition selection followed by a real DiscoveryWorld soil assay",
+      "claim_scope": "adapter and public measurement pathway only; no claim that active selection improves scientific inference",
+      "versions": {
+        "autora": "4.2.0",
+        "discoveryworld_api": "DiscoveryWorld API v0.1"
+      },
+      "scenario": {
+        "name": "Plant Nutrients",
+        "difficulty": "Easy",
+        "seed": 2
+      },
+      "selection": {
+        "sampler": "autora.experimentalist.random.random_pool",
+        "candidate_count_before_deduplication": 6,
+        "candidate_conditions": [
+          {
+            "sample_id": 56968
+          },
+          {
+            "sample_id": 36757
+          },
+          {
+            "sample_id": 1787
+          },
+          {
+            "sample_id": 24902
+          },
+          {
+            "sample_id": 40815
+          },
+          {
+            "sample_id": 41671
+          }
+        ],
+        "selected_public_sample": {
+          "name": "soil",
+          "description": "soil",
+          "distance": 1,
+          "uuid": 41671,
+          "sector": "west"
+        }
+      },
+      "setup": {
+        "meter_uuid_from_public_accessible_objects": 14424,
+        "meter_pickup": {
+          "errors": [],
+          "success": true
+        },
+        "positioning_action": "TELEPORT_TO_OBJECT (harness setup shortcut; excluded from evaluated agent capability)",
+        "positioning_result": {
+          "errors": [],
+          "success": true
+        }
+      },
+      "assay": {
+        "action": {
+          "action": "USE",
+          "arg1": 14424,
+          "arg2": 41671
+        },
+        "result": {
+          "errors": [],
+          "success": true
+        },
+        "public_readout": "You use the soil nutrient meter to investigate the soil.\nThe results are as follows:\n- titanium: zero\n- potassium: zero\n- barium: zero\n- lithium: zero\n- thorium: high\n",
+        "parsed_nutrient_levels": {
+          "titanium": "zero",
+          "potassium": "zero",
+          "barium": "zero",
+          "lithium": "zero",
+          "thorium": "high"
+        },
+        "task_completed": false
+      },
+      "oracle_access": false
+    },
+    {
+      "test_kind": "AutoRA condition selection followed by a real DiscoveryWorld soil assay",
+      "claim_scope": "adapter and public measurement pathway only; no claim that active selection improves scientific inference",
+      "versions": {
+        "autora": "4.2.0",
+        "discoveryworld_api": "DiscoveryWorld API v0.1"
+      },
+      "scenario": {
+        "name": "Plant Nutrients",
+        "difficulty": "Easy",
+        "seed": 3
+      },
+      "selection": {
+        "sampler": "autora.experimentalist.random.random_pool",
+        "candidate_count_before_deduplication": 6,
+        "candidate_conditions": [
+          {
+            "sample_id": 56968
+          },
+          {
+            "sample_id": 36757
+          },
+          {
+            "sample_id": 1787
+          },
+          {
+            "sample_id": 24902
+          },
+          {
+            "sample_id": 40815
+          },
+          {
+            "sample_id": 41671
+          }
+        ],
+        "selected_public_sample": {
+          "name": "soil",
+          "description": "soil",
+          "distance": 2,
+          "uuid": 40815,
+          "sector": "west"
+        }
+      },
+      "setup": {
+        "meter_uuid_from_public_accessible_objects": 14424,
+        "meter_pickup": {
+          "errors": [],
+          "success": true
+        },
+        "positioning_action": "TELEPORT_TO_OBJECT (harness setup shortcut; excluded from evaluated agent capability)",
+        "positioning_result": {
+          "errors": [],
+          "success": true
+        }
+      },
+      "assay": {
+        "action": {
+          "action": "USE",
+          "arg1": 14424,
+          "arg2": 40815
+        },
+        "result": {
+          "errors": [],
+          "success": true
+        },
+        "public_readout": "You use the soil nutrient meter to investigate the soil.\nThe results are as follows:\n- titanium: zero\n- potassium: high\n- barium: zero\n- lithium: zero\n- thorium: zero\n",
+        "parsed_nutrient_levels": {
+          "titanium": "zero",
+          "potassium": "high",
+          "barium": "zero",
+          "lithium": "zero",
+          "thorium": "zero"
+        },
+        "task_completed": false
+      },
+      "oracle_access": false
+    },
+    {
+      "test_kind": "AutoRA condition selection followed by a real DiscoveryWorld soil assay",
+      "claim_scope": "adapter and public measurement pathway only; no claim that active selection improves scientific inference",
+      "versions": {
+        "autora": "4.2.0",
+        "discoveryworld_api": "DiscoveryWorld API v0.1"
+      },
+      "scenario": {
+        "name": "Plant Nutrients",
+        "difficulty": "Easy",
+        "seed": 4
+      },
+      "selection": {
+        "sampler": "autora.experimentalist.random.random_pool",
+        "candidate_count_before_deduplication": 6,
+        "candidate_conditions": [
+          {
+            "sample_id": 56968
+          },
+          {
+            "sample_id": 36757
+          },
+          {
+            "sample_id": 1787
+          },
+          {
+            "sample_id": 24902
+          },
+          {
+            "sample_id": 40815
+          },
+          {
+            "sample_id": 41671
+          }
+        ],
+        "selected_public_sample": {
+          "name": "soil",
+          "description": "soil",
+          "distance": 2,
+          "uuid": 40815,
+          "sector": "west"
+        }
+      },
+      "setup": {
+        "meter_uuid_from_public_accessible_objects": 14424,
+        "meter_pickup": {
+          "errors": [],
+          "success": true
+        },
+        "positioning_action": "TELEPORT_TO_OBJECT (harness setup shortcut; excluded from evaluated agent capability)",
+        "positioning_result": {
+          "errors": [],
+          "success": true
+        }
+      },
+      "assay": {
+        "action": {
+          "action": "USE",
+          "arg1": 14424,
+          "arg2": 40815
+        },
+        "result": {
+          "errors": [],
+          "success": true
+        },
+        "public_readout": "You use the soil nutrient meter to investigate the soil.\nThe results are as follows:\n- titanium: zero\n- potassium: high\n- barium: zero\n- lithium: zero\n- thorium: zero\n",
+        "parsed_nutrient_levels": {
+          "titanium": "zero",
+          "potassium": "high",
+          "barium": "zero",
+          "lithium": "zero",
+          "thorium": "zero"
+        },
+        "task_completed": false
+      },
+      "oracle_access": false
+    }
+  ]
+}

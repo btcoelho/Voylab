@@ -1,0 +1,689 @@
+{
+  "protocol": "TRONCO-01-v2.7-development-rerun",
+  "execution_record": {
+    "started_at_utc": "2026-10-17T16:19:44.837809+00:00",
+    "argv": [
+      "/home/bcoelho/voynich-lab/.venv/bin/python",
+      "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/TRONCO01_TRIAL_v2_7_FROZEN/trial_runner.py",
+      "--schedule",
+      "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/TRONCO01_TRIAL_v2_7_FROZEN/development_schedule.jsonl",
+      "--system-prompt",
+      "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/TRONCO01_TRIAL_v2_7_FROZEN/SYSTEM_PROMPT.txt",
+      "--model-path",
+      "/home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-0.5B-Instruct-bnb-4bit/snapshots/216d96b52c97a3c8294776df8477592f6828981c",
+      "--manifest",
+      "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/TRONCO01_TRIAL_v2_7_FROZEN/frozen_manifest.json",
+      "--preregistration",
+      "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/TRONCO01_TRIAL_v2_7_FROZEN/preregistration_draft.json",
+      "--output-dir",
+      "/mnt/c/Users/Bruno/Documents/Codex/2026-10-17/files-pasted-by-the-user-projeto/work/TRONCO01_TRIAL_v2_7_FROZEN/run_20261017",
+      "--weights-sha256",
+      "fa6ed98084afb0497d9075a82ab17fdfc0b5d99fb6b37d8f761463e67c100f45",
+      "--tokenizer-sha256",
+      "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "--tokenizer-config-sha256",
+      "0553ada6e92b1a29b4431c72782c6e5e6ab675ef0b20ceb2833cd1074c7fb932",
+      "--max-calls",
+      "1"
+    ],
+    "manifest_sha256": "3486e64c702a1d71ca936cc9855c99c07f60bb80c6ff9683b81f73b38e4f5216",
+    "preregistration_sha256": "8a4b547767c82b6c074029e217bbce6fde073071e447643c9d68e0ecb4f9977b",
+    "runtime": {
+      "python": "3.12.3",
+      "transformers": "5.17.0",
+      "lm_format_enforcer": "0.11.3",
+      "unsloth": "2026.10.6",
+      "torch": "2.14.1+cu132",
+      "bitsandbytes": "0.50.2"
+    },
+    "launch_attempt": 1,
+    "retry_permitted": false,
+    "gpu": "NVIDIA GeForce RTX 4070, 6848 MiB, 617.42",
+    "finished_at_utc": "2026-10-17T16:20:49.896119+00:00",
+    "exit_code": 0,
+    "summary": {
+      "episodes_attempted": 10,
+      "episodes_planned": 10,
+      "generation_calls": 10,
+      "reported": 3,
+      "model_output_failures": 7,
+      "technical_failures": 0,
+      "call_limit_no_valid_terminal_action": 0,
+      "joint_successes": 0,
+      "joint_success_rate_completed": 0.0,
+      "joint_success_rate_planned": 0.0,
+      "mean_queries": 0.0,
+      "sentinel_stop_events": 0,
+      "sentinel_stop_reasons": []
+    },
+    "event_journal_exists": true
+  },
+  "summary": {
+    "episodes_attempted": 10,
+    "episodes_planned": 10,
+    "generation_calls": 10,
+    "reported": 3,
+    "model_output_failures": 7,
+    "technical_failures": 0,
+    "call_limit_no_valid_terminal_action": 0,
+    "joint_successes": 0,
+    "joint_success_rate_completed": 0.0,
+    "joint_success_rate_planned": 0.0,
+    "mean_queries": 0.0,
+    "sentinel_stop_events": 0,
+    "sentinel_stop_reasons": []
+  },
+  "learned_model_calls_in_trial": 10,
+  "model_weights_loaded_in_trial": true,
+  "independent_checks_passed": true,
+  "frozen_internal_hashes_verified": 25,
+  "primary_scorer_semantics_imported": false,
+  "private_labels_present_in_saved_prompts": false,
+  "calls_made_by_this_analysis": 0,
+  "component_counts": {
+    "eos_terminated": 10,
+    "at_token_limit_without_eos": 0,
+    "json_valid": 10,
+    "action_shape_valid": 3,
+    "verdict_correct": 0,
+    "candidates_correct": 0,
+    "diagnosis_correct": 2,
+    "sufficiency_correct": 0,
+    "evidence_certificate_sufficient": 3,
+    "joint_success": 0,
+    "location_claims": 0,
+    "location_claims_supported": 0
+  },
+  "exploratory_counts_among_all_parsed_actions": {
+    "verdict_correct": 4,
+    "candidates_correct": 2,
+    "diagnosis_correct": 2,
+    "sufficiency_correct": 2,
+    "all_four_core_fields_correct": 0
+  },
+  "episodes": [
+    {
+      "episode_id": "pilot_01",
+      "stratum": "empty",
+      "expected": {
+        "verdict": "undetermined",
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "no_observations"
+      },
+      "status": "model_output_failure",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 48,
+      "prompt_tokens": 630,
+      "elapsed_seconds": 3.4105,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"A\"],\"location\":{\"feature\":\"none\",\"values\":[\"none\"]}}",
+      "json_valid": true,
+      "action_shape_valid": false,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "A"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "none"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": false,
+        "sufficiency_correct": true,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "evidence ID not present in observations",
+        "location value not present in observations",
+        "location none with nonempty values"
+      ]
+    },
+    {
+      "episode_id": "pilot_02",
+      "stratum": "empty",
+      "expected": {
+        "verdict": "undetermined",
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "no_observations"
+      },
+      "status": "model_output_failure",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 48,
+      "prompt_tokens": 630,
+      "elapsed_seconds": 1.7265,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"A\"],\"location\":{\"feature\":\"none\",\"values\":[\"none\"]}}",
+      "json_valid": true,
+      "action_shape_valid": false,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "A"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "none"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": false,
+        "sufficiency_correct": true,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "evidence ID not present in observations",
+        "location value not present in observations",
+        "location none with nonempty values"
+      ]
+    },
+    {
+      "episode_id": "pilot_03",
+      "stratum": "supported_ambiguous",
+      "expected": {
+        "verdict": "supported",
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "identity_ambiguous"
+      },
+      "status": "model_output_failure",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 92,
+      "prompt_tokens": 661,
+      "elapsed_seconds": 2.9198,
+      "raw": "{\n  \"action\": \"report\",\n  \"verdict\": \"supported\",\n  \"candidate_model_codes\": [\"A\"],\n  \"diagnosis\": \"none_fit\",\n  \"sufficiency\": \"no_observations\",\n  \"evidence_ids\": [\n    \"o1\"\n  ],\n  \"location\": {\n    \"feature\": \"none\",\n    \"values\": [\n      \"g0\",\n      \"g0\"\n    ]\n  }\n}",
+      "json_valid": true,
+      "action_shape_valid": false,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "g0",
+            "g0"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": true,
+        "candidates_correct": false,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "duplicate location values",
+        "location none with nonempty values"
+      ]
+    },
+    {
+      "episode_id": "pilot_04",
+      "stratum": "supported_ambiguous",
+      "expected": {
+        "verdict": "supported",
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "identity_ambiguous"
+      },
+      "status": "model_output_failure",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 92,
+      "prompt_tokens": 661,
+      "elapsed_seconds": 3.1106,
+      "raw": "{\n  \"action\": \"report\",\n  \"verdict\": \"supported\",\n  \"candidate_model_codes\": [\"A\"],\n  \"diagnosis\": \"none_fit\",\n  \"sufficiency\": \"no_observations\",\n  \"evidence_ids\": [\n    \"o1\"\n  ],\n  \"location\": {\n    \"feature\": \"none\",\n    \"values\": [\n      \"g0\",\n      \"g0\"\n    ]\n  }\n}",
+      "json_valid": true,
+      "action_shape_valid": false,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "g0",
+            "g0"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": true,
+        "candidates_correct": false,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "duplicate location values",
+        "location none with nonempty values"
+      ]
+    },
+    {
+      "episode_id": "pilot_05",
+      "stratum": "supported_identified",
+      "expected": {
+        "verdict": "supported",
+        "candidates": [
+          "A"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved"
+      },
+      "status": "model_output_failure",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 59,
+      "prompt_tokens": 723,
+      "elapsed_seconds": 1.8183,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"o1\",\"o2\",\"o3\"],\"location\":{\"feature\":\"none\",\"values\":[\"g0\",\"g0\"]}}",
+      "json_valid": true,
+      "action_shape_valid": false,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "g0",
+            "g0"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": true,
+        "candidates_correct": true,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "duplicate location values",
+        "location none with nonempty values"
+      ]
+    },
+    {
+      "episode_id": "pilot_06",
+      "stratum": "supported_identified",
+      "expected": {
+        "verdict": "supported",
+        "candidates": [
+          "A"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved"
+      },
+      "status": "model_output_failure",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 59,
+      "prompt_tokens": 723,
+      "elapsed_seconds": 1.7464,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"o1\",\"o2\",\"o3\"],\"location\":{\"feature\":\"none\",\"values\":[\"g0\",\"g0\"]}}",
+      "json_valid": true,
+      "action_shape_valid": false,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "g0",
+            "g0"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": true,
+        "candidates_correct": true,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "duplicate location values",
+        "location none with nonempty values"
+      ]
+    },
+    {
+      "episode_id": "pilot_07",
+      "stratum": "rejected_identified",
+      "expected": {
+        "verdict": "rejected",
+        "candidates": [
+          "B"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved"
+      },
+      "status": "model_output_failure",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 56,
+      "prompt_tokens": 692,
+      "elapsed_seconds": 1.5849,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"o1\",\"o2\"],\"location\":{\"feature\":\"none\",\"values\":[\"g0\",\"g0\"]}}",
+      "json_valid": true,
+      "action_shape_valid": false,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1",
+          "o2"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "g0",
+            "g0"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "duplicate location values",
+        "location none with nonempty values"
+      ]
+    },
+    {
+      "episode_id": "pilot_08",
+      "stratum": "rejected_identified",
+      "expected": {
+        "verdict": "rejected",
+        "candidates": [
+          "B"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved"
+      },
+      "status": "reported",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 51,
+      "prompt_tokens": 692,
+      "elapsed_seconds": 1.614,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"o1\",\"o2\"],\"location\":{\"feature\":\"none\",\"values\":[]}}",
+      "json_valid": true,
+      "action_shape_valid": true,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1",
+          "o2"
+        ],
+        "location": {
+          "feature": "none",
+          "values": []
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [],
+      "independent_evaluation": {
+        "legal": true,
+        "expected_verdict": "rejected",
+        "expected_candidate_model_codes": [
+          "B"
+        ],
+        "expected_diagnosis": "identified",
+        "expected_sufficiency": "identity_resolved",
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "evidence_certificate_sufficient": true,
+        "location_supported": null,
+        "joint_success": false
+      }
+    },
+    {
+      "episode_id": "pilot_09",
+      "stratum": "rejected_none_fit",
+      "expected": {
+        "verdict": "rejected",
+        "candidates": [],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_candidate_fits"
+      },
+      "status": "reported",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 59,
+      "prompt_tokens": 723,
+      "elapsed_seconds": 1.8577,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"o1\",\"o2\",\"o3\"],\"location\":{\"feature\":\"none\",\"values\":[\"g0\",\"g1\"]}}",
+      "json_valid": true,
+      "action_shape_valid": true,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "g0",
+            "g1"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": true,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "location none with nonempty values"
+      ],
+      "independent_evaluation": {
+        "legal": true,
+        "expected_verdict": "rejected",
+        "expected_candidate_model_codes": [],
+        "expected_diagnosis": "none_fit",
+        "expected_sufficiency": "no_candidate_fits",
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": true,
+        "sufficiency_correct": false,
+        "evidence_certificate_sufficient": true,
+        "location_supported": false,
+        "joint_success": false
+      }
+    },
+    {
+      "episode_id": "pilot_10",
+      "stratum": "rejected_none_fit",
+      "expected": {
+        "verdict": "rejected",
+        "candidates": [],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_candidate_fits"
+      },
+      "status": "reported",
+      "generation_attempts": 1,
+      "eos_terminated": true,
+      "generated_tokens": 59,
+      "prompt_tokens": 723,
+      "elapsed_seconds": 2.1058,
+      "raw": "{\"action\":\"report\",\"verdict\":\"supported\",\"candidate_model_codes\":[\"A\"],\"diagnosis\":\"none_fit\",\"sufficiency\":\"no_observations\",\"evidence_ids\":[\"o1\",\"o2\",\"o3\"],\"location\":{\"feature\":\"none\",\"values\":[\"g0\",\"g1\"]}}",
+      "json_valid": true,
+      "action_shape_valid": true,
+      "action": {
+        "action": "report",
+        "verdict": "supported",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_observations",
+        "evidence_ids": [
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "location": {
+          "feature": "none",
+          "values": [
+            "g0",
+            "g1"
+          ]
+        }
+      },
+      "exploratory_parsed_field_diagnostics": {
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": true,
+        "sufficiency_correct": false,
+        "all_four_core_fields_correct": false
+      },
+      "observed_interface_issues": [
+        "location none with nonempty values"
+      ],
+      "independent_evaluation": {
+        "legal": true,
+        "expected_verdict": "rejected",
+        "expected_candidate_model_codes": [],
+        "expected_diagnosis": "none_fit",
+        "expected_sufficiency": "no_candidate_fits",
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": true,
+        "sufficiency_correct": false,
+        "evidence_certificate_sufficient": true,
+        "location_supported": false,
+        "joint_success": false
+      }
+    }
+  ],
+  "distinct_public_states": 9,
+  "identical_empty_episodes": [
+    "pilot_01",
+    "pilot_02"
+  ],
+  "identical_empty_raw_outputs": true,
+  "missing_episodes": [],
+  "historical_v23": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed_outputs": 4,
+    "illegal_decoded_actions": 12,
+    "joint_successes": 0
+  },
+  "limits": "Previously exposed development states; one response, no queries; comparison of whole configurations; no generalization or M17 claim.",
+  "artifact_sha256": {
+    "attempt_once.lock": "af032b418ed32e32119b1fb1294a6ef7d2cb3f9d0ad76d773c51591f61b2b029",
+    "events.jsonl": "37689f790fcda40036fc3be61835c6a17e10b5e542f14f87855e66d6ab068d53",
+    "execution_record.json": "0c69ad049da6d456e532362ecc7f1424dbec716bcf53a29325af3ad43db42a2a",
+    "outcomes.json": "332325b3d3908785afe327738840b9e76011a6f712396cb95292a89e5090f1cd",
+    "process.log": "ef2ef9a5525a1e0ee5ca62bcf8cfd06a0109cfa4920f88f65b421869b1a1b87a",
+    "summary.json": "a87a108c158995c5e972764476224ce90b30e57012350bec2276d96fa7c9b04c"
+  }
+}

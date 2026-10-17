@@ -1,0 +1,273 @@
+{
+  "gate": "PASS_FOR_PREMODEL_REVIEW",
+  "protocol": "TRONCO-01-v2.1",
+  "model_inference": false,
+  "frozen_sources_verified_at_start_and_end": true,
+  "synthetic_schedule_sha256": "4abe782743a57d9cf0303206804075ef5faa0f2905b0162d5342ead8d45886d4",
+  "finite": {
+    "table_triples": 128,
+    "partial_consistent_histories_per_triple": 81,
+    "public_states": 10368,
+    "compatibility_set_checks": 10368,
+    "working_fit_checks": 10368,
+    "expected_independently_indexed": true
+  },
+  "mutations": {
+    "targeted_mutations": 5,
+    "killed": 5,
+    "results": [
+      {
+        "mutation": "ignore_unobserved_ids",
+        "outcome": "killed_by_contract_assertion",
+        "killed": true,
+        "detail": ""
+      },
+      {
+        "mutation": "accept_partial_support_certificate",
+        "outcome": "killed_by_contract_assertion",
+        "killed": true,
+        "detail": ""
+      },
+      {
+        "mutation": "depend_on_first_observation",
+        "outcome": "killed_by_contract_assertion",
+        "killed": true,
+        "detail": ""
+      },
+      {
+        "mutation": "score_duplicate_by_id",
+        "outcome": "killed_by_contract_assertion",
+        "killed": true,
+        "detail": ""
+      },
+      {
+        "mutation": "accept_fabricated_location_values",
+        "outcome": "killed_by_contract_assertion",
+        "killed": true,
+        "detail": ""
+      }
+    ],
+    "scope": "five selected regressions; not a full mutation campaign"
+  },
+  "grammar": {
+    "parser": "lm-format-enforcer JsonSchemaParser (character-level)",
+    "tokenizer_checked": false,
+    "weights_loaded": false,
+    "valid_action_paths": 7,
+    "valid_action_probes": {
+      "{\"action\":\"query\",\"query_id\":\"q0\"}": {
+        "character_path": true,
+        "can_end": true
+      },
+      "{\"action\":\"query\",\"query_id\":\"q1\"}": {
+        "character_path": true,
+        "can_end": true
+      },
+      "{\"action\":\"query\",\"query_id\":\"q2\"}": {
+        "character_path": true,
+        "can_end": true
+      },
+      "{\"action\":\"query\",\"query_id\":\"q3\"}": {
+        "character_path": true,
+        "can_end": true
+      },
+      "{\"action\":\"report\",\"verdict\":\"supported\",\"diagnosis\":\"ambiguous\",\"sufficiency\":\"identity_ambiguous\",\"candidate_model_codes\":[\"A\",\"C\"],\"evidence_ids\":[\"a\"],\"location\":{\"feature\":\"none\",\"values\":[]}}": {
+        "character_path": true,
+        "can_end": true
+      },
+      "{\"action\":\"report\",\"verdict\":\"rejected\",\"diagnosis\":\"ambiguous\",\"sufficiency\":\"identity_ambiguous\",\"candidate_model_codes\":[\"A\",\"C\"],\"evidence_ids\":[\"a\"],\"location\":{\"feature\":\"none\",\"values\":[]}}": {
+        "character_path": true,
+        "can_end": true
+      },
+      "{\"action\":\"report\",\"verdict\":\"supported\",\"diagnosis\":\"ambiguous\",\"sufficiency\":\"identity_ambiguous\",\"candidate_model_codes\":[\"A\",\"C\"],\"evidence_ids\":[\"a\"],\"location\":{\"feature\":\"phase\",\"values\":[\"t0\",\"t1\"]}}": {
+        "character_path": true,
+        "can_end": true
+      }
+    },
+    "all_valid_actions_can_end": true,
+    "wrong_but_well_formed_report_can_end": true,
+    "malformed_actions_cannot_end": true,
+    "malformed_probes": {
+      "extra_field": {
+        "character_path": false,
+        "can_end": false
+      },
+      "incomplete_report": {
+        "character_path": false,
+        "can_end": false
+      },
+      "wrong_type": {
+        "character_path": false,
+        "can_end": false
+      }
+    },
+    "incomplete_prefix": {
+      "character_path": true,
+      "can_end": false
+    },
+    "incomplete_prefix_cannot_end": true,
+    "strict_decoder_rejects_duplicate_keys": true
+  },
+  "pytest_stdout": "......................                                                   [100%]\n22 passed in 1.46s",
+  "historical_reanalysis": {
+    "contract": "SPEC.md",
+    "episodes": 235,
+    "explicit_reports": 178,
+    "query_replay_errors": 0,
+    "interpretation": "component-wise retrospective; reports predate v2.1 fields and schema",
+    "conditions": {
+      "G1v02": {
+        "base_native": {
+          "episodes": 25,
+          "explicit_reports": 0,
+          "historical_decisions_correct": 0
+        },
+        "base_schema": {
+          "episodes": 25,
+          "explicit_reports": 25,
+          "historical_decisions_correct": 9,
+          "target_verdict_correct": 9,
+          "candidate_set_exact": 3,
+          "certificate_sufficient": 14,
+          "all_evidence_ids_known": 25,
+          "all_candidate_ids_known": 25,
+          "full_v21_structure_valid": 0
+        },
+        "control_fixed_query": {
+          "episodes": 25,
+          "explicit_reports": 25,
+          "historical_decisions_correct": 19,
+          "target_verdict_correct": 25,
+          "candidate_set_exact": 14,
+          "certificate_sufficient": 14,
+          "all_evidence_ids_known": 25,
+          "all_candidate_ids_known": 25,
+          "full_v21_structure_valid": 0
+        },
+        "control_random_query": {
+          "episodes": 25,
+          "explicit_reports": 25,
+          "historical_decisions_correct": 19,
+          "target_verdict_correct": 25,
+          "candidate_set_exact": 14,
+          "certificate_sufficient": 14,
+          "all_evidence_ids_known": 25,
+          "all_candidate_ids_known": 25,
+          "full_v21_structure_valid": 0
+        },
+        "control_statistical_detector": {
+          "episodes": 25,
+          "explicit_reports": 25,
+          "historical_decisions_correct": 15,
+          "target_verdict_correct": 25,
+          "candidate_set_exact": 10,
+          "certificate_sufficient": 10,
+          "all_evidence_ids_known": 25,
+          "all_candidate_ids_known": 25,
+          "full_v21_structure_valid": 0
+        },
+        "control_symbolic_active": {
+          "episodes": 25,
+          "explicit_reports": 25,
+          "historical_decisions_correct": 25,
+          "target_verdict_correct": 20,
+          "candidate_set_exact": 25,
+          "certificate_sufficient": 20,
+          "all_evidence_ids_known": 25,
+          "all_candidate_ids_known": 25,
+          "full_v21_structure_valid": 0
+        },
+        "m16_native": {
+          "episodes": 25,
+          "explicit_reports": 0,
+          "historical_decisions_correct": 0
+        },
+        "m16_schema": {
+          "episodes": 25,
+          "explicit_reports": 24,
+          "historical_decisions_correct": 4,
+          "target_verdict_correct": 12,
+          "candidate_set_exact": 3,
+          "certificate_sufficient": 10,
+          "all_evidence_ids_known": 24,
+          "all_candidate_ids_known": 24,
+          "full_v21_structure_valid": 0
+        }
+      },
+      "G2": {
+        "base_g1_bridge": {
+          "episodes": 5,
+          "explicit_reports": 5,
+          "historical_decisions_correct": 2,
+          "target_verdict_correct": 3,
+          "candidate_set_exact": 1,
+          "certificate_sufficient": 3,
+          "all_evidence_ids_known": 5,
+          "all_candidate_ids_known": 5,
+          "full_v21_structure_valid": 0
+        },
+        "base_g2_free": {
+          "episodes": 5,
+          "explicit_reports": 0,
+          "historical_decisions_correct": 0
+        },
+        "base_g2_schema": {
+          "episodes": 5,
+          "explicit_reports": 4,
+          "historical_decisions_correct": 0,
+          "target_verdict_correct": 2,
+          "candidate_set_exact": 0,
+          "certificate_sufficient": 0,
+          "all_evidence_ids_known": 4,
+          "all_candidate_ids_known": 4,
+          "full_v21_structure_valid": 0
+        },
+        "control_fixed_query": {
+          "episodes": 5,
+          "explicit_reports": 5,
+          "historical_decisions_correct": 4,
+          "target_verdict_correct": 5,
+          "candidate_set_exact": 3,
+          "certificate_sufficient": 3,
+          "all_evidence_ids_known": 5,
+          "all_candidate_ids_known": 5,
+          "full_v21_structure_valid": 0
+        },
+        "control_random_query": {
+          "episodes": 5,
+          "explicit_reports": 5,
+          "historical_decisions_correct": 4,
+          "target_verdict_correct": 5,
+          "candidate_set_exact": 2,
+          "certificate_sufficient": 3,
+          "all_evidence_ids_known": 5,
+          "all_candidate_ids_known": 5,
+          "full_v21_structure_valid": 0
+        },
+        "control_statistical_detector": {
+          "episodes": 5,
+          "explicit_reports": 5,
+          "historical_decisions_correct": 3,
+          "target_verdict_correct": 5,
+          "candidate_set_exact": 2,
+          "certificate_sufficient": 2,
+          "all_evidence_ids_known": 5,
+          "all_candidate_ids_known": 5,
+          "full_v21_structure_valid": 0
+        },
+        "control_symbolic_active": {
+          "episodes": 5,
+          "explicit_reports": 5,
+          "historical_decisions_correct": 5,
+          "target_verdict_correct": 4,
+          "candidate_set_exact": 5,
+          "certificate_sufficient": 4,
+          "all_evidence_ids_known": 5,
+          "all_candidate_ids_known": 5,
+          "full_v21_structure_valid": 0
+        }
+      }
+    }
+  },
+  "review_boundary": "human analysis required before any new model inference"
+}

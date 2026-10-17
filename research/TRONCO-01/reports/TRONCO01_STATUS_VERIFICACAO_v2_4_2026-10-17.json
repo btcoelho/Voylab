@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-17",
+  "checkpoint": "mandatory_pre_model_analysis_reached",
+  "decision": "offline_preparation_passed; not ready for another inference",
+  "new_model_calls": 0,
+  "model_weights_loaded": false,
+  "model_inference_performed": false,
+  "fine_tuning_performed": false,
+  "larger_model_introduced": false,
+  "offline_verification": {
+    "unit_tests": "Ran 16 tests in 0.116s",
+    "unit_test_exit_code": 0,
+    "python_compile_exit_code": 0,
+    "tokenizer_gate": {
+      "transformers": "5.17.0",
+      "lm_format_enforcer": "0.11.3",
+      "weights_loaded": false,
+      "valid_paths_eos_allowed": true,
+      "invalid_payloads_blocked": true,
+      "wrong_semantic_report_allowed": true,
+      "largest_bounded_report_tokens": 70,
+      "case_count": 11
+    }
+  },
+  "historical_v23_replay": {
+    "episodes": 10,
+    "generation_calls": 19,
+    "malformed": 4,
+    "legal_reports": 3,
+    "illegal_decoded_actions": 12,
+    "accepted_queries": 0,
+    "joint_successes": 0,
+    "joint_rate_all_episodes": 0.0,
+    "status_counts": {
+      "model_output_failure": 4,
+      "call_limit_no_valid_terminal_action": 3,
+      "reported": 3
+    },
+    "malformed_at_token_limit_without_eos": 4
+  },
+  "limitations": [
+    "Model generation adapter is not integrated or tested.",
+    "No model, generation parameters, or new episode schedule is frozen in a new preregistration.",
+    "The original v2.3 preregistration contents are unavailable; only its hash is retained.",
+    "Offline tests establish the implemented interface behavior for tested cases, not scientific validity outside the audited synthetic contract."
+  ],
+  "source_sha256": {
+    "work/TRONCO01_TRIAL_v2_4/harness.py": "1be2e3a21b2117fe0c54dfe46c7b75f1b875fe66f0cea891b6455c80bc88b712",
+    "work/TRONCO01_TRIAL_v2_4/replay.py": "88aa99c0ad1c3e79f2a80227abe90f0afb97af7e689e781625dc5b92e7d96102",
+    "work/TRONCO01_TRIAL_v2_4/grammar_preflight.py": "22a14e6992d6c577978e752154fe69913bb5bdab73ec44330e94dc9d091ce383",
+    "work/TRONCO01_TRIAL_v2_4/SYSTEM_PROMPT.txt": "6f5279b86c7f1eee2ea53200c08f57dad4c5677a55c070537aff7784ee32e733",
+    "work/TRONCO01_TRIAL_v2_4/protocol_status.json": "c2bba7bceb0a78ba3f56ac900e991bc81a849e88501df12f7e90beae254e0f38"
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "protocol": "TRONCO-01-v2.3-pilot-v0.1",
+  "analysis": "post-hoc independent replay; no model inference; no import of instrument.py",
+  "episodes": [
+    {
+      "episode_id": "pilot_01",
+      "stratum": "empty",
+      "calls": 1,
+      "attempted_reports": 0,
+      "rejected_reports": 0,
+      "accepted_report": false,
+      "report_fields": null,
+      "independent_score": null,
+      "recorded_status": "technical_failure",
+      "retrospective_status": "model_output_failure",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "no_observations",
+        "verdict": "undetermined"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": null
+    },
+    {
+      "episode_id": "pilot_02",
+      "stratum": "empty",
+      "calls": 1,
+      "attempted_reports": 0,
+      "rejected_reports": 0,
+      "accepted_report": false,
+      "report_fields": null,
+      "independent_score": null,
+      "recorded_status": "model_output_failure",
+      "retrospective_status": "model_output_failure",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "no_observations",
+        "verdict": "undetermined"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": null
+    },
+    {
+      "episode_id": "pilot_03",
+      "stratum": "supported_ambiguous",
+      "calls": 4,
+      "attempted_reports": 4,
+      "rejected_reports": 4,
+      "accepted_report": false,
+      "report_fields": null,
+      "independent_score": null,
+      "recorded_status": "call_limit_no_report",
+      "retrospective_status": "call_limit_no_report",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "identity_ambiguous",
+        "verdict": "supported"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": null
+    },
+    {
+      "episode_id": "pilot_04",
+      "stratum": "supported_ambiguous",
+      "calls": 1,
+      "attempted_reports": 0,
+      "rejected_reports": 0,
+      "accepted_report": false,
+      "report_fields": null,
+      "independent_score": null,
+      "recorded_status": "model_output_failure",
+      "retrospective_status": "model_output_failure",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "A",
+          "B",
+          "C"
+        ],
+        "diagnosis": "ambiguous",
+        "sufficiency": "identity_ambiguous",
+        "verdict": "supported"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": null
+    },
+    {
+      "episode_id": "pilot_05",
+      "stratum": "supported_identified",
+      "calls": 1,
+      "attempted_reports": 1,
+      "rejected_reports": 0,
+      "accepted_report": true,
+      "report_fields": {
+        "verdict": "undetermined",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_candidate_fits",
+        "evidence_ids": [
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "location": {
+          "feature": "none",
+          "values": []
+        }
+      },
+      "independent_score": {
+        "legal": true,
+        "legal_errors": [],
+        "expected_verdict": "supported",
+        "expected_candidate_model_codes": [
+          "A"
+        ],
+        "expected_diagnosis": "identified",
+        "expected_sufficiency": "identity_resolved",
+        "verdict_correct": false,
+        "candidates_correct": true,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "evidence_certificate_sufficient": false,
+        "location_supported": null,
+        "joint_success": false
+      },
+      "recorded_status": "reported",
+      "retrospective_status": "reported",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "A"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved",
+        "verdict": "supported"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": true
+    },
+    {
+      "episode_id": "pilot_06",
+      "stratum": "supported_identified",
+      "calls": 1,
+      "attempted_reports": 1,
+      "rejected_reports": 0,
+      "accepted_report": true,
+      "report_fields": {
+        "verdict": "undetermined",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_candidate_fits",
+        "evidence_ids": [
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "location": {
+          "feature": "none",
+          "values": []
+        }
+      },
+      "independent_score": {
+        "legal": true,
+        "legal_errors": [],
+        "expected_verdict": "supported",
+        "expected_candidate_model_codes": [
+          "A"
+        ],
+        "expected_diagnosis": "identified",
+        "expected_sufficiency": "identity_resolved",
+        "verdict_correct": false,
+        "candidates_correct": true,
+        "diagnosis_correct": false,
+        "sufficiency_correct": false,
+        "evidence_certificate_sufficient": false,
+        "location_supported": null,
+        "joint_success": false
+      },
+      "recorded_status": "reported",
+      "retrospective_status": "reported",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "A"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved",
+        "verdict": "supported"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": true
+    },
+    {
+      "episode_id": "pilot_07",
+      "stratum": "rejected_identified",
+      "calls": 4,
+      "attempted_reports": 4,
+      "rejected_reports": 4,
+      "accepted_report": false,
+      "report_fields": null,
+      "independent_score": null,
+      "recorded_status": "call_limit_no_report",
+      "retrospective_status": "call_limit_no_report",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "B"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved",
+        "verdict": "rejected"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": null
+    },
+    {
+      "episode_id": "pilot_08",
+      "stratum": "rejected_identified",
+      "calls": 4,
+      "attempted_reports": 4,
+      "rejected_reports": 4,
+      "accepted_report": false,
+      "report_fields": null,
+      "independent_score": null,
+      "recorded_status": "call_limit_no_report",
+      "retrospective_status": "call_limit_no_report",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [
+          "B"
+        ],
+        "diagnosis": "identified",
+        "sufficiency": "identity_resolved",
+        "verdict": "rejected"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": null
+    },
+    {
+      "episode_id": "pilot_09",
+      "stratum": "rejected_none_fit",
+      "calls": 1,
+      "attempted_reports": 0,
+      "rejected_reports": 0,
+      "accepted_report": false,
+      "report_fields": null,
+      "independent_score": null,
+      "recorded_status": "model_output_failure",
+      "retrospective_status": "model_output_failure",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_candidate_fits",
+        "verdict": "rejected"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": null
+    },
+    {
+      "episode_id": "pilot_10",
+      "stratum": "rejected_none_fit",
+      "calls": 1,
+      "attempted_reports": 1,
+      "rejected_reports": 0,
+      "accepted_report": true,
+      "report_fields": {
+        "verdict": "undetermined",
+        "candidate_model_codes": [
+          "A"
+        ],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_candidate_fits",
+        "evidence_ids": [
+          "o1",
+          "o2",
+          "o3"
+        ],
+        "location": {
+          "feature": "none",
+          "values": []
+        }
+      },
+      "independent_score": {
+        "legal": true,
+        "legal_errors": [],
+        "expected_verdict": "rejected",
+        "expected_candidate_model_codes": [],
+        "expected_diagnosis": "none_fit",
+        "expected_sufficiency": "no_candidate_fits",
+        "verdict_correct": false,
+        "candidates_correct": false,
+        "diagnosis_correct": true,
+        "sufficiency_correct": true,
+        "evidence_certificate_sufficient": false,
+        "location_supported": null,
+        "joint_success": false
+      },
+      "recorded_status": "reported",
+      "retrospective_status": "reported",
+      "independent_truth_matches_schedule": true,
+      "independent_expected_initial": {
+        "candidates": [],
+        "diagnosis": "none_fit",
+        "sufficiency": "no_candidate_fits",
+        "verdict": "rejected"
+      },
+      "action_acceptance_matches_reference": true,
+      "runner_score_agrees": true
+    }
+  ],
+  "counts": {
+    "episodes": 10,
+    "episodes_by_retrospective_status": {
+      "model_output_failure": 4,
+      "call_limit_no_report": 3,
+      "reported": 3
+    },
+    "generated_calls": 19,
+    "action_results": 15,
+    "attempted_reports": 15,
+    "rejected_report_actions": 12,
+    "accepted_reports": 3,
+    "queries": 0,
+    "joint_successes": 0,
+    "joint_success_rate_all_episodes": 0.0,
+    "score_disagreements_with_runner": [],
+    "initial_label_disagreements": [],
+    "action_acceptance_disagreements": []
+  },
+  "runner_summary_as_written": {
+    "protocol": "TRONCO-01-v2.3-pilot-v0.1",
+    "episodes_attempted": 10,
+    "episodes_planned": 10,
+    "reported": 3,
+    "technical_failures": 1,
+    "model_output_failures": 3,
+    "no_report": 3,
+    "joint_successes": 0,
+    "primary_rate_all_episodes": 0.0,
+    "mean_queries": 0.0,
+    "model_inference": true,
+    "model_sha256": "fa6ed98084afb0497d9075a82ab17fdfc0b5d99fb6b37d8f761463e67c100f45",
+    "tokenizer_json_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+    "prereg_sha256": "68646f11cf5bcebd1db4805903dd4e31100621848eea60c1b0d806edb74b6c48",
+    "sentinel_technical_failure": false
+  },
+  "integrity": {
+    "events_sha256": "b3da44c24d960961d05f063968a0d1f00f8471ad0dc44c349becce27fbe1a5dc",
+    "outcomes_sha256": "cbb7b3d11fdb5cb542b179451e470ac97ad5ff73833b64588e68ad08c5c7ed9a",
+    "summary_sha256": "0b34c9ce38e6ae0fef4bc18f55a54d26e5c2366e3f2dc9118cd4221f39d495ce",
+    "preregistration_sha256": "68646f11cf5bcebd1db4805903dd4e31100621848eea60c1b0d806edb74b6c48",
+    "public_schedule_sha256": "ad540a77f578a04ee41b9ca3b79a4e09771eff5717138931859a1c4b461520fc",
+    "private_oracle_included": false
+  },
+  "notes": [
+    "pilot_01 is stored as technical_failure, but its durable journal contains a model generation and a JSONDecodeError; retrospective classification is model_output_failure. The original outcome is preserved.",
+    "The resumed-run summary says sentinel_technical_failure=false despite an earlier sentinel_stop event for pilot_01; this is a reporting-state defect, not a model score.",
+    "call_limit_no_report means no legal terminal report; those episodes each attempted four report actions and made zero queries.",
+    "This is a ten-case synthetic development panel and gives no general model-performance estimate or evidence about the Voynich manuscript."
+  ]
+}
