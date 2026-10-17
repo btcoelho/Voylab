@@ -1,0 +1,131 @@
+"""Model-facing harness for the v3 pilot (no training). A backend turns text into text; everything else is deterministic.
+
+The backend receives only the system prompt, the user text and a JSON schema. `state` is passed to fake backends for tests;
+real backends MUST ignore it (the real backend in hf_backend.py does not accept it).
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
+import env_v3 as E  # noqa: E402
+import generator_v3 as g  # noqa: E402
+
+SYSTEM_PROMPT = """Investigas um sistema com quatro atributos (glyph, setting, partner, phase), cada um com dois valores. A saída é sempre 0 ou 1.
+Tens observações, três cartas que descrevem possíveis regras, e uma carta de trabalho W.
+Uma carta é admissível se reproduz todas as observações. Veredictos sobre W:
+- rejected: W não reproduz as observações.
+- supported: W reproduz as observações e todas as regras admissíveis dão a W a mesma saída nas entradas retidas.
+- undetermined: W reproduz as observações mas há regras admissíveis que discordam de W nas entradas retidas.
+Podes consultar entradas do menu (cada consulta revela a saída) até esgotar o orçamento, depois comprometes-te.
+Depois de comprometeres, chega evidência nova: mantém ou revê. Se a evidência nova contradiz as observações anteriores, o veredicto de revisão é inconsistent.
+Responde SEMPRE com um único objeto JSON, sem texto adicional."""
+
+
+def action_schema(phase: str) -> dict:
+    cards = {"type": "array", "items": {"type": "string"}}
+    if phase == "explore":
+        return {"anyOf": [
+            {"type": "object", "properties": {"action": {"const": "query"}, "query_id": {"type": "string"}},
+             "required": ["action", "query_id"], "additionalProperties": False},
+            {"type": "object", "properties": {"action": {"const": "commit"},
+                                              "verdict": {"enum": list(E.VERDICTS_ALLOWED)}, "admissible_cards": cards,
+                                              "predictions": {"type": "object", "additionalProperties": {"enum": ["0", "1"]}}},
+             "required": ["action", "verdict", "admissible_cards", "predictions"], "additionalProperties": False},
+            {"type": "object", "properties": {"action": {"const": "suspend"}}, "required": ["action"],
+             "additionalProperties": False}]}
+    return {"anyOf": [
+        {"type": "object", "properties": {"action": {"const": "keep"}}, "required": ["action"], "additionalProperties": False},
+        {"type": "object", "properties": {"action": {"const": "revise"}, "verdict": {"enum": list(E.REVISION_VERDICTS)},
+                                          "admissible_cards": cards},
+         "required": ["action", "verdict", "admissible_cards"], "additionalProperties": False}]}
+
+
+def render_state(s: dict) -> str:
+    L = ["OBSERVAÇÕES"]
+    L += [f"- {o['id']}: " + ", ".join(f"{k}={v}" for k, v in o["input"].items()) + f" -> {o['output']}" for o in s["observations"]]
+    if s.get("new_evidence"):
+        L.append("EVIDÊNCIA NOVA")
+        L += [f"- {o['id']}: " + ", ".join(f"{k}={v}" for k, v in o["input"].items()) + f" -> {o['output']}" for o in s["new_evidence"]]
+    L.append("CARTAS")
+    for c in s["candidate_models"]:
+        L.append(f"- {c['id']} ({c['statement']})")
+        L += [f"    {k} -> {v}" for k, v in c["table"].items()]
+    L.append(f"CARTA DE TRABALHO: {s['working_model_id']}")
+    L.append("ENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)")
+    L += [f"- {i}: " + ", ".join(f"{k}={v}" for k, v in x.items()) for i, x in enumerate(s["held_out_inputs"], 1)]
+    if s["phase"] == "explore":
+        L.append(f"CONSULTAS DISPONÍVEIS (orçamento restante {s['remaining_query_budget']})")
+        L += [f"- {q['id']}: " + ", ".join(f"{k}={v}" for k, v in q["input"].items()) for q in s["query_menu"]]
+        L.append('AÇÕES: {"action":"query","query_id":"qN"} | {"action":"commit","verdict":"rejected|supported|undetermined",'
+                 '"admissible_cards":["ids"],"predictions":{"1":"0|1","2":"0|1","3":"0|1","4":"0|1"}} | {"action":"suspend"}')
+    else:
+        L.append('AÇÕES: {"action":"keep"} | {"action":"revise","verdict":"rejected|supported|undetermined|inconsistent","admissible_cards":["ids"]}')
+    return "\n".join(L)
+
+
+class Backend:
+    name = "base"
+
+    def generate(self, system: str, user: str, schema: dict, state: dict | None = None) -> str:
+        raise NotImplementedError
+
+
+def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: bool = False) -> dict:
+    ep = E.Episode(world)
+    turns = []
+    for t in range(max_turns):
+        if ep.done:
+            break
+        st = ep.state()
+        user = render_state(st)
+        schema = action_schema(st["phase"])
+        raw = backend.generate(SYSTEM_PROMPT, user, schema, st) if pass_state else backend.generate(SYSTEM_PROMPT, user, schema)
+        try:
+            action = json.loads(raw)
+            parsed = True
+        except (ValueError, TypeError):
+            action, parsed = None, False
+        out = ep.step(action if parsed else {"action": "__unparseable__"})
+        turns.append({"turn": t, "phase": st["phase"], "prompt_sha256": hashlib.sha256(user.encode()).hexdigest(),
+                      "output": raw, "parsed": parsed, "accepted": out["ok"], "error": out.get("error")})
+    res = ep.result()
+    res["turns"] = len(turns)
+    res["hit_turn_limit"] = not ep.done
+    return {"world_id": world["world_id"], "result": res, "transcript": turns}
+
+
+def wilson(k, n, z=1.96):
+    if n == 0:
+        return [None, None]
+    p = k / n
+    d = 1 + z * z / n
+    c = (p + z * z / (2 * n)) / d
+    h = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / d
+    return [c - h, c + h]
+
+
+def aggregate(episodes: list[dict]) -> dict:
+    n = len(episodes)
+    R = [e["result"] for e in episodes]
+    done = [r for r in R if r.get("complete")]
+    turns = [t for e in episodes for t in e["transcript"]]
+    parsed = sum(t["parsed"] for t in turns)
+    accepted = sum(t["accepted"] for t in turns)
+
+    def rate(key, pool):
+        k = sum(bool(r.get(key)) for r in pool)
+        return {"k": k, "n": len(pool), "rate": k / len(pool) if pool else None, "ci95": wilson(k, len(pool))}
+    return {"episodes": n, "complete": rate("complete", R), "forced_termination": rate("forced_termination", R),
+            "turn_limit": rate("hit_turn_limit", R),
+            "outputs_parseable_json": {"k": parsed, "n": len(turns), "rate": parsed / len(turns) if turns else None},
+            "actions_accepted": {"k": accepted, "n": len(turns), "rate": accepted / len(turns) if turns else None,
+                                 "invalid_rate": 1 - accepted / len(turns) if turns else None},
+            "among_complete": {k: rate(k, done) for k in ("reach", "inference_error", "search_error", "evidence_ignored",
+                                                         "premature_stop", "suspend_used", "suspend_correct",
+                                                         "revision_type_I", "revision_type_II", "cards_exact")},
+            "queries_mean": (sum(r["queries"] for r in done) / len(done)) if done else None}
