@@ -76,12 +76,14 @@ def main():
                           "cuda": torch.cuda.is_available(), "device": str(backend.model.device)}
     toy = {"candidate_models": [{"id": "A"}], "query_menu": [{"id": "q1"}], "held_out_inputs": [{}],
            "remaining_query_budget": 1}
-    for phase, user, st in (("explore", USER_EXPLORE, None), ("revision", USER_REVISION, None),
-                            ("explore", USER_EXPLORE, toy), ("revision", USER_REVISION, toy)):
-        schema = H.action_schema(phase, st)
+    for phase, user, st, obj in (("explore", USER_EXPLORE, None, False), ("revision", USER_REVISION, None, False),
+                                 ("explore", USER_EXPLORE, toy, False), ("revision", USER_REVISION, toy, False),
+                                 ("explore", USER_EXPLORE.replace('["ids"]', '{"A":true|false}'), toy, True),
+                                 ("revision", USER_REVISION.replace('["ids"]', '{"A":true|false}'), toy, True)):
+        schema = H.action_schema(phase, st, cards_object=obj)
         t0 = time.time()
         raw = backend.generate(H.SYSTEM_PROMPT, user, schema)
-        case = {"phase": phase, "state_schema": st is not None, "seconds": round(time.time() - t0, 1), "raw": raw}
+        case = {"phase": phase, "state_schema": st is not None, "cards_object": obj, "seconds": round(time.time() - t0, 1), "raw": raw}
         try:
             case["parsed"] = json.loads(raw)
             case["matches_schema"] = matches(case["parsed"], schema)

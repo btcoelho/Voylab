@@ -62,6 +62,30 @@ class StateSchema(unittest.TestCase):
                 self.assertFalse(SM.matches({"action": "query", "query_id": qid}, H.action_schema("explore", ep.state())))
             self.assertFalse(SM.matches({"action": "query", "query_id": menu[-1]}, H.action_schema("explore", ep.state())))
 
+    def test_cards_object_schema_and_conversion(self):
+        import env_v3 as E
+        import select_worlds as S
+        for w in S.pilot_worlds()[:12]:
+            ep = E.Episode(w)
+            st = ep.state()
+            ids = [c["id"] for c in st["candidate_models"]]
+            for phase in ("explore", "revision"):
+                sc = H.action_schema(phase, st, cards_object=True)
+                branch = next(o for o in sc["anyOf"] if o["properties"]["action"]["const"] in ("commit", "revise"))
+                cards = branch["properties"]["admissible_cards"]
+                self.assertEqual(cards["required"], ids)
+                self.assertTrue(SM.matches({i: n % 2 == 0 for n, i in enumerate(ids)}, cards))
+                self.assertFalse(SM.matches({ids[0]: True}, cards))            # every card must be answered
+                self.assertFalse(SM.matches(ids[:1] * 2, cards))               # the round-2 failure is not expressible
+            a = {"action": "commit", "verdict": "supported", "admissible_cards": {ids[2]: True, ids[0]: True, ids[1]: False},
+                 "predictions": {"1": "0"}}
+            env_a = H.to_env_action(a, st, "state_cards_object")
+            self.assertEqual(env_a["admissible_cards"], [ids[0], ids[2]])    # shown order, only true
+            self.assertTrue(ep.step(env_a)["ok"])
+            self.assertIs(H.to_env_action(a, st, "state"), a)
+            self.assertIn('"' + ids[0] + '":true|false', H.render_state(ep.state(), cards_object=True))
+            self.assertIn('"admissible_cards":["ids"]', H.render_state(ep.state()))
+
     def test_phase_only_schema_is_unchanged_for_round_1(self):
         sc = H.action_schema("explore")
         self.assertTrue(SM.matches({"action": "query", "query_id": "qN"}, sc))

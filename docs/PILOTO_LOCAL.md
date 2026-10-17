@@ -92,3 +92,36 @@ Hashes do código e dos 48 mundos verificados contra o repositório (`worlds_sha
 - **R2-e.** M5: média de consultas < 1 ou paragem prematura > 50%. Espera-se também uma preferência pela primeira posição do menu e pela primeira carta.
 
 **Regra para depois da ronda 2.** Se a elegibilidade passar, o piloto fecha, e os valores de M2–M5 caracterizam o modelo de 0,5B (não servem de evidência de competência). Se a investigação estiver ao nível de "sem consultas" ou "primeiro do menu", isso é capacidade, e sobe-se na escada de modelos sem mexer no prompt. Se a elegibilidade voltar a falhar por esquema ou gramática, há uma ronda 3, a última.
+
+### Ronda 2 do piloto (`real_3`, 22:22–22:38, código 98eba84, esquema por estado)
+Hashes do código e dos mundos verificados. Os números foram recalculados de forma independente a partir das transcrições, repetindo cada saída num `Episode` novo e confirmando o hash de cada prompt (`pilot/analyse_pilot.py`): coincidem com o `summary.json`. Saídas em `results/piloto_R2/`.
+
+| Medida | Resultado | Previsão |
+|---|---|---|
+| JSON válido | 215/215 | — |
+| Ações aceites | 146/215 (67,9%) | R2-a ≥ 98%: **refutada** |
+| Episódios completos | 25/48 (52%); 23 terminados à força | R2-a ≥ 98%: **refutada** |
+| Causa das 69 inválidas | **69/69 por cartas repetidas** (`["Qu","Qu","Qu","Qu"]`) | era o único modo de falha previsto em R2-a |
+
+Os 25 completos são uma subamostra selecionada (os episódios em que a carta não saiu repetida), por isso os valores abaixo são descritivos:
+- **Comportamento constante.** 100% dos commits (94, válidos e inválidos) com `supported`; 2,0 consultas em todos os completos (orçamento esgotado); a primeira consulta foi `q1` em 36 de 48 episódios (75%; das 145 consultas aceites, 47 foram à posição 1); `keep` em 25/25 revisões; 0 suspensões.
+- **M2 / R2-b**: alcance 7/25 = 0,28 [0,14; 0,48] ≤ 0,83, **confirmada**. Fica ao nível de responder sempre `supported`: 16/48 = 0,33 nos 48 mundos, porque os alvos estão equilibrados.
+- **M3 / R2-c**: erro de inferência 22/25 = 88% [70%; 96%] > 25%, **confirmada**.
+- **M4 / R2-d**: tipo I 14/14 = 100% [78%; 100%] nos mundos de mudança, **confirmada**. Tipo II 0/11.
+- **M5 / R2-e**: média de consultas 2,0 (não < 1) e paragem prematura 0%, **refutada**. O modelo não pára cedo: consulta sempre até ao fim do orçamento e escolhe a primeira posição. A preferência pela primeira posição, essa, confirma-se.
+
+**Diagnóstico.** A elegibilidade voltou a falhar por **gramática**. O lm-format-enforcer não impede ids repetidos num array, e com descodificação gananciosa a mesma saída inválida repete-se três vezes, o que termina o episódio. O comportamento de investigação já é claro: uma política constante (consulta, consulta, `supported`, `keep`), que não depende da evidência. Isto é **capacidade**, e o prompt não se mexe para o salvar.
+
+**Porque fazer a ronda 3, a última, mesmo assim.** A escada de modelos usa este mesmo arnês. Ele tem de passar a elegibilidade de forma independente do modelo; caso contrário, um modelo maior pode falhar por gramática e não por raciocínio.
+
+**Correção da ronda 3 (esquema e o texto do modelo de ação que o descreve).** As cartas passam a ser um objeto com um `true`/`false` obrigatório por carta (`{"Qu":true,"Ne":false,"Ka":false}`). Assim, repetir uma carta deixa de ser expressável. O arnês converte o objeto na lista que o ambiente sempre recebeu, pela ordem em que as cartas são mostradas, e regista a ação convertida (`env_action`). O ambiente, os mundos, as métricas e o resto do prompt não mudam. As rondas 1 e 2 continuam reproduzíveis (`--schema phase` / `state`): os hashes dos prompts de R1 e R2 foram confirmados com o código novo.
+
+**Previsões ex-ante da ronda 3:**
+- **R3-a.** Ações aceites ≥ 98% e completos ≥ 98%, ou seja, elegibilidade cumprida. Se falhar, o piloto **suspende-se**: as 3 rondas esgotaram-se, e reformula-se a interface de ação antes de qualquer modelo.
+- **R3-b.** Mantém-se a política constante: `supported` em ≥ 90% dos commits, média de consultas ≥ 1,8, `q1` como primeira consulta em ≥ 60% dos episódios, `keep` em ≥ 90% das revisões.
+- **R3-c.** Alcance entre 0,20 e 0,45, perto de 1/3, que é o nível de responder sempre o mesmo. Erro de inferência > 50%. Tipo I ≥ 80%.
+
+**Decisão já fixada para depois da ronda 3.** Se R3-a passar, o arnês fica elegível e o piloto fecha. O modelo de 0,5B fica classificado como **sem capacidade mensurável** nesta tarefa (política constante), e o passo seguinte é o degrau seguinte da escada (modelo maior), com o mesmo arnês e as mesmas previsões M1–M5. Nada disto é evidência de competência, e nenhum destes mundos entra em validação ou cega.
+
+### Defeito encontrado durante a análise (não afeta resultados)
+O `world_id` **não é único**: os 48 mundos do piloto têm 20 ids, porque o id omite o alvo, o tipo e o k0. Os mundos em si são todos distintos (48 estados públicos diferentes). Verifiquei onde o id é usado: a análise do piloto (corrigida para emparelhar por ordem), a semente das políticas aleatórias (mundos com o mesmo id partilham a sequência aleatória, o que reduz a independência sem enviesar) e as chaves de ordenação, que continuam determinísticas por estabilidade. Nenhum resultado anterior usa o id como chave de dicionário. Correção no congelamento do protocolo: um id único (incluir alvo, tipo, k0, orçamento) e as sementes das políticas a partir dele. Não se corrige agora, porque isso mudaria a seleção dos mundos do piloto a meio.

@@ -1,0 +1,215 @@
+{
+  "replay_matches_summary": true,
+  "aggregate": {
+    "episodes": 48,
+    "complete": {
+      "k": 25,
+      "n": 48,
+      "rate": 0.5208333333333334,
+      "ci95": [
+        0.3832899563598438,
+        0.6552890998421255
+      ]
+    },
+    "forced_termination": {
+      "k": 23,
+      "n": 48,
+      "rate": 0.4791666666666667,
+      "ci95": [
+        0.34471090015787464,
+        0.6167100436401562
+      ]
+    },
+    "turn_limit": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "outputs_parseable_json": {
+      "k": 215,
+      "n": 215,
+      "rate": 1.0
+    },
+    "actions_accepted": {
+      "k": 146,
+      "n": 215,
+      "rate": 0.6790697674418604,
+      "invalid_rate": 0.32093023255813957
+    },
+    "among_complete": {
+      "reach": {
+        "k": 7,
+        "n": 25,
+        "rate": 0.28,
+        "ci95": [
+          0.1428367383738157,
+          0.47576971896558296
+        ]
+      },
+      "inference_error": {
+        "k": 22,
+        "n": 25,
+        "rate": 0.88,
+        "ci95": [
+          0.7004380781662651,
+          0.9583325864293191
+        ]
+      },
+      "search_error": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "evidence_ignored": {
+        "k": 7,
+        "n": 25,
+        "rate": 0.28,
+        "ci95": [
+          0.1428367383738157,
+          0.47576971896558296
+        ]
+      },
+      "premature_stop": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "suspend_used": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "suspend_correct": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "revision_type_I": {
+        "k": 14,
+        "n": 25,
+        "rate": 0.56,
+        "ci95": [
+          0.37067017019564436,
+          0.7333462505299744
+        ]
+      },
+      "revision_type_II": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "cards_exact": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      }
+    },
+    "queries_mean": 2.0
+  },
+  "revision_among_should_revise": {
+    "n": 14,
+    "type_I": 14,
+    "ci95": [
+      0.7846829880728186,
+      1.0
+    ]
+  },
+  "revision_among_should_keep": {
+    "n": 11,
+    "type_II": 0
+  },
+  "final_action": {
+    "keep": 25
+  },
+  "query_menu_positions": {
+    "1": 47,
+    "2": 9,
+    "3": 6,
+    "4": 5,
+    "5": 8,
+    "6": 4,
+    "7": 2,
+    "9": 7,
+    "10": 8
+  },
+  "cards_given": {
+    "Qu,Qu,Qu,Qu": 39,
+    "Qu,Qu,Qu,Qu,Qu": 15,
+    "Ne,Ne": 6,
+    "Ka,Ka,Ka,Ka": 3,
+    "Qu,Qu,Qu": 3,
+    "Ne,Ne,Lo,Ru": 3,
+    "Ne,Mi": 3,
+    "Ru,Ne": 2,
+    "Ru,Pa": 2,
+    "Mi,Pa": 2,
+    "Ru,Ka,Lo": 1,
+    "Ne,Pa": 1,
+    "Ru,Mi": 1,
+    "Ne,Os": 1,
+    "Ru,Ka,Pa": 1,
+    "Ru,Os": 1,
+    "Lo,Ka,Pa": 1,
+    "Mi,Pa,Lo": 1,
+    "Qu,Lo": 1,
+    "Ru,Pa,Os": 1,
+    "Ne,Lo,Ka": 1,
+    "Ka,Mi": 1,
+    "Ru,Os,Ka": 1,
+    "Os,Mi,Ka": 1,
+    "Lo,Mi,Os": 1,
+    "Ne,Pa,Ru": 1
+  },
+  "commit_verdict__ref_from_own_history__target": {
+    "supported|None|supported": 27,
+    "supported|None|rejected": 24,
+    "supported|None|undetermined": 18,
+    "supported|undetermined|undetermined": 10,
+    "supported|rejected|rejected": 7,
+    "supported|undetermined|supported": 4,
+    "supported|supported|supported": 3,
+    "supported|undetermined|rejected": 1
+  },
+  "suspend": 0,
+  "reach_vs_references": {
+    "sem_consultas": 16,
+    "aleatoria": 35,
+    "simples": 37,
+    "bayes_ig": 48,
+    "oraculo": 48,
+    "pegajosa": 48,
+    "greedy_a": 35,
+    "rival": 34,
+    "primeiro_do_menu": 32,
+    "cega_pegajosa": 16,
+    "ignora_evidencia": 16
+  }
+}

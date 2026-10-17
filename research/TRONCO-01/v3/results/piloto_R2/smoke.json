@@ -1,0 +1,57 @@
+{
+  "python": "3.12.3",
+  "cases": [
+    {
+      "phase": "explore",
+      "state_schema": false,
+      "seconds": 5.6,
+      "raw": "{\n  \"action\": \"query\",\n  \"query_id\": \"qN\"\n}",
+      "parsed": {
+        "action": "query",
+        "query_id": "qN"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": false,
+      "seconds": 2.8,
+      "raw": "{\n  \"action\": \"keep\"\n}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "explore",
+      "state_schema": true,
+      "seconds": 3.6,
+      "raw": "{\n  \"action\": \"query\",\n  \"query_id\": \"q1\"\n}",
+      "parsed": {
+        "action": "query",
+        "query_id": "q1"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": true,
+      "seconds": 2.2,
+      "raw": "{\n  \"action\": \"keep\"\n}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    }
+  ],
+  "load_seconds": 7.5,
+  "compat": "reexported PreTrainedTokenizerBase",
+  "versions": {
+    "torch": "2.14.1+cu132",
+    "transformers": "5.17.0",
+    "lm-format-enforcer": "?",
+    "cuda": true,
+    "device": "cuda:0"
+  },
+  "ok": true
+}

@@ -1,0 +1,151 @@
+{
+  "backend": "hf:/home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-0.5B-Instruct-bnb-4bit/snapshots/216d96b52c97a3c8294776df8477592f6828981c",
+  "worlds": 48,
+  "schema": "state",
+  "worlds_sha256": "cdf242859c37a6ab330e374d8873122d89d6f120e1f2f263a49271d2639cc452",
+  "code_sha256": {
+    "pilot_harness.py": "13e976e03e053a7f674f50ddde6a69d9399ba401b9c022130727909560bc0dd8",
+    "select_worlds.py": "94cf8abad21e8f98ad2b8bf2c4565c40366384954f3c2d6ccc23d0b1e3228202",
+    "run_pilot.py": "d0556598719ca920216865e85d04f1504fb59a13e2729844d97c40d4c8a2c27f",
+    "hf_backend.py": "254fa8f5f4e357e1dc694d3193b973aef3104fcb278434155dcd3c8c84ad3f95",
+    "../env_v3.py": "24f388464499fdf070cec18ad45d6445b6d2bb9403ada4a8a43a143f207ba743",
+    "../generator_v3.py": "db010e03abd61038ecb891424cc463feb25a114a70354817b004eb184048f9c6",
+    "../scoring.py": "4166d4613aed586ac03f6662b861c72d1b3828fee2face5ed474f9dbcf94c0fd",
+    "../audit_v3.py": "041812be994cb6e7b49c42f1705757d7628486fbcbeae930435203b5dd2d4a24"
+  },
+  "python": "3.12.3",
+  "aggregate": {
+    "episodes": 48,
+    "complete": {
+      "k": 25,
+      "n": 48,
+      "rate": 0.5208333333333334,
+      "ci95": [
+        0.3832899563598438,
+        0.6552890998421255
+      ]
+    },
+    "forced_termination": {
+      "k": 23,
+      "n": 48,
+      "rate": 0.4791666666666667,
+      "ci95": [
+        0.34471090015787464,
+        0.6167100436401562
+      ]
+    },
+    "turn_limit": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "outputs_parseable_json": {
+      "k": 215,
+      "n": 215,
+      "rate": 1.0
+    },
+    "actions_accepted": {
+      "k": 146,
+      "n": 215,
+      "rate": 0.6790697674418604,
+      "invalid_rate": 0.32093023255813957
+    },
+    "among_complete": {
+      "reach": {
+        "k": 7,
+        "n": 25,
+        "rate": 0.28,
+        "ci95": [
+          0.1428367383738157,
+          0.47576971896558296
+        ]
+      },
+      "inference_error": {
+        "k": 22,
+        "n": 25,
+        "rate": 0.88,
+        "ci95": [
+          0.7004380781662651,
+          0.9583325864293191
+        ]
+      },
+      "search_error": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "evidence_ignored": {
+        "k": 7,
+        "n": 25,
+        "rate": 0.28,
+        "ci95": [
+          0.1428367383738157,
+          0.47576971896558296
+        ]
+      },
+      "premature_stop": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "suspend_used": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "suspend_correct": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "revision_type_I": {
+        "k": 14,
+        "n": 25,
+        "rate": 0.56,
+        "ci95": [
+          0.37067017019564436,
+          0.7333462505299744
+        ]
+      },
+      "revision_type_II": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      },
+      "cards_exact": {
+        "k": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.13319649395317873
+        ]
+      }
+    },
+    "queries_mean": 2.0
+  }
+}
