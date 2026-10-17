@@ -1,0 +1,1163 @@
+{
+  "round": 2,
+  "audit": "M17 v2, alternative (a): dev + substitute families, reserved seeds never generated",
+  "model_calls": 0,
+  "reserved_seeds_never_requested": true,
+  "seeds_requested": [
+    53001,
+    53003,
+    53009,
+    200003,
+    200009,
+    200017,
+    200023
+  ],
+  "sets": {
+    "dev": {
+      "hashes": {
+        "worlds": 300,
+        "public_states_sha256": "7903a750b874dd90611da7a636efe59edb00c3cca7b0a12b806e781022209152",
+        "world_ids_sha256": "3469f01445249e36bb5816ac52de644236c728b8695902d62a45abd54bf6ac04",
+        "canonical_public_sha256": "206661b63c19b2ff1a54e578d14a07c76625355e9c402204502b4280c8c113bd"
+      },
+      "public_has_no_hidden_fields": true,
+      "worlds_by_category": {
+        "NORMAL": 60,
+        "CONTRADICTION": 60,
+        "INSUFFICIENCY": 60,
+        "CHANGE": 60,
+        "HYPOTHESIS_ABSENT": 60
+      },
+      "families": [
+        "dev_table"
+      ],
+      "identifiability": {
+        "NORMAL": {
+          "n": 60,
+          "self_consistent": 60,
+          "ambiguous_at_start": 14,
+          "verdict_ambiguous_at_start": 14,
+          "non_identifiable": 0,
+          "budget_identifiable": 60,
+          "min_queries": {
+            "0": 46,
+            "1": 14
+          },
+          "support_sets": {
+            "NORMAL": 46,
+            "CHANGE+NORMAL": 14
+          }
+        },
+        "CONTRADICTION": {
+          "n": 60,
+          "self_consistent": 60,
+          "ambiguous_at_start": 0,
+          "verdict_ambiguous_at_start": 0,
+          "non_identifiable": 0,
+          "budget_identifiable": 60,
+          "min_queries": {
+            "0": 60
+          },
+          "support_sets": {
+            "CONTRADICTION": 60
+          }
+        },
+        "INSUFFICIENCY": {
+          "n": 60,
+          "self_consistent": 60,
+          "ambiguous_at_start": 0,
+          "verdict_ambiguous_at_start": 0,
+          "non_identifiable": 0,
+          "budget_identifiable": 60,
+          "min_queries": {
+            "0": 60
+          },
+          "support_sets": {
+            "INSUFFICIENCY": 60
+          }
+        },
+        "CHANGE": {
+          "n": 60,
+          "self_consistent": 60,
+          "ambiguous_at_start": 60,
+          "verdict_ambiguous_at_start": 60,
+          "non_identifiable": 0,
+          "budget_identifiable": 60,
+          "min_queries": {
+            "1": 60
+          },
+          "support_sets": {
+            "CHANGE+NORMAL": 60
+          }
+        },
+        "HYPOTHESIS_ABSENT": {
+          "n": 60,
+          "self_consistent": 60,
+          "ambiguous_at_start": 0,
+          "verdict_ambiguous_at_start": 0,
+          "non_identifiable": 0,
+          "budget_identifiable": 60,
+          "min_queries": {
+            "0": 60
+          },
+          "support_sets": {
+            "HYPOTHESIS_ABSENT": 60
+          }
+        }
+      },
+      "state_only_rule": {
+        "rule": {
+          "NORMAL": "NORMAL",
+          "CHANGE+NORMAL": "CHANGE",
+          "CONTRADICTION": "CONTRADICTION",
+          "INSUFFICIENCY": "INSUFFICIENCY",
+          "HYPOTHESIS_ABSENT": "HYPOTHESIS_ABSENT"
+        },
+        "accuracy_same_set": {
+          "n": 300,
+          "category_accuracy": 0.9533333333333334,
+          "category_ci95": [
+            0.9232019646862172,
+            0.9720013254491692
+          ],
+          "verdict_accuracy": 0.9533333333333334,
+          "verdict_ci95": [
+            0.9232019646862172,
+            0.9720013254491692
+          ]
+        }
+      },
+      "leakage_association": {
+        "tests": 506,
+        "rejected_after_holm": [
+          "D.cards_output_entropy@ALL",
+          "D.cards_output_entropy@CONTRADICTION|INSUFFICIENCY",
+          "D.cards_output_entropy@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_distinct_outputs@ALL",
+          "D.rows_distinct_outputs@CHANGE|HYPOTHESIS_ABSENT",
+          "D.rows_distinct_outputs@CHANGE|NORMAL",
+          "D.rows_distinct_outputs@CONTRADICTION|HYPOTHESIS_ABSENT",
+          "D.rows_distinct_outputs@CONTRADICTION|NORMAL",
+          "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|NORMAL",
+          "D.rows_distinct_outputs@INSUFFICIENCY|NORMAL",
+          "D.rows_output_entropy@ALL",
+          "D.rows_output_entropy@CHANGE|HYPOTHESIS_ABSENT",
+          "D.rows_output_entropy@CONTRADICTION|HYPOTHESIS_ABSENT",
+          "D.rows_output_entropy@CONTRADICTION|NORMAL",
+          "D.rows_output_entropy@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_output_entropy@HYPOTHESIS_ABSENT|NORMAL",
+          "D.rows_output_entropy@INSUFFICIENCY|NORMAL",
+          "D.rows_top_output_frac@ALL",
+          "D.rows_top_output_frac@CHANGE|HYPOTHESIS_ABSENT",
+          "D.rows_top_output_frac@CONTRADICTION|HYPOTHESIS_ABSENT",
+          "D.rows_top_output_frac@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_top_output_frac@HYPOTHESIS_ABSENT|NORMAL",
+          "D.rows_top_output_frac@INSUFFICIENCY|NORMAL",
+          "S.json_length@ALL",
+          "S.json_length@CHANGE|CONTRADICTION",
+          "S.json_length@CHANGE|NORMAL",
+          "S.json_length@CONTRADICTION|HYPOTHESIS_ABSENT",
+          "S.json_length@CONTRADICTION|INSUFFICIENCY",
+          "S.json_length@HYPOTHESIS_ABSENT|NORMAL",
+          "S.json_length@INSUFFICIENCY|NORMAL"
+        ],
+        "smallest": [
+          {
+            "test": "D.rows_distinct_outputs@ALL",
+            "p": 6.644903505040865e-40,
+            "p_holm": 3.3623211735506777e-37,
+            "cramers_v": 0.4919840740484337,
+            "n": 300
+          },
+          {
+            "test": "S.json_length@ALL",
+            "p": 1.0067047758105228e-30,
+            "p_holm": 5.08385911784314e-28,
+            "cramers_v": 0.5179467913161856,
+            "n": 300
+          },
+          {
+            "test": "D.rows_output_entropy@ALL",
+            "p": 7.448064141044295e-25,
+            "p_holm": 3.7538243270863245e-22,
+            "cramers_v": 0.4006655314823169,
+            "n": 300
+          },
+          {
+            "test": "D.rows_output_entropy@HYPOTHESIS_ABSENT|NORMAL",
+            "p": 3.4212181844999244e-18,
+            "p_holm": 1.720872746803462e-15,
+            "cramers_v": 0.838852471765897,
+            "n": 120
+          },
+          {
+            "test": "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|NORMAL",
+            "p": 7.791470050734039e-18,
+            "p_holm": 3.911317965468487e-15,
+            "cramers_v": 0.8305384276444285,
+            "n": 120
+          }
+        ]
+      },
+      "leakage_null_calibration": {
+        "permutations": 100,
+        "family": "5-way tests, S+D features",
+        "share_with_any_rejection": 0.04
+      },
+      "classifiers": {
+        "surface_and_distribution": {
+          "accuracy": 0.5166666666666667,
+          "ci95": [
+            0.46026528666991656,
+            0.5726465989968257
+          ],
+          "n": 300,
+          "chance": 0.2,
+          "pairwise": {
+            "CHANGE|CONTRADICTION": {
+              "accuracy": 0.7416666666666667,
+              "ci95": [
+                0.6567130404034741,
+                0.8116271619194934
+              ]
+            },
+            "CHANGE|HYPOTHESIS_ABSENT": {
+              "accuracy": 0.8333333333333334,
+              "ci95": [
+                0.7565456060897621,
+                0.8894408798729517
+              ]
+            },
+            "CHANGE|INSUFFICIENCY": {
+              "accuracy": 0.65,
+              "ci95": [
+                0.5612115776488139,
+                0.7294823410344073
+              ]
+            },
+            "CHANGE|NORMAL": {
+              "accuracy": 0.75,
+              "ci95": [
+                0.6655869783172575,
+                0.8189028861547777
+              ]
+            },
+            "CONTRADICTION|HYPOTHESIS_ABSENT": {
+              "accuracy": 0.8083333333333333,
+              "ci95": [
+                0.7287868300416362,
+                0.8687506694738739
+              ]
+            },
+            "CONTRADICTION|INSUFFICIENCY": {
+              "accuracy": 0.8,
+              "ci95": [
+                0.7196316465662728,
+                0.8617561908001696
+              ]
+            },
+            "CONTRADICTION|NORMAL": {
+              "accuracy": 0.6833333333333333,
+              "ci95": [
+                0.595519646541652,
+                0.7597729207378405
+              ]
+            },
+            "HYPOTHESIS_ABSENT|INSUFFICIENCY": {
+              "accuracy": 0.7583333333333333,
+              "ci95": [
+                0.6744968590361364,
+                0.8261426675849666
+              ]
+            },
+            "HYPOTHESIS_ABSENT|NORMAL": {
+              "accuracy": 0.9,
+              "ci95": [
+                0.8333168001483641,
+                0.9418669830068924
+              ]
+            },
+            "INSUFFICIENCY|NORMAL": {
+              "accuracy": 0.8,
+              "ci95": [
+                0.7196316465662728,
+                0.8617561908001696
+              ]
+            }
+          }
+        },
+        "evidence_positive_control": {
+          "accuracy": 0.9933333333333333,
+          "ci95": [
+            0.9760219257685385,
+            0.9981698899670289
+          ],
+          "n": 300,
+          "chance": 0.2
+        }
+      },
+      "evidence_ambiguous_subset": {
+        "n": 74,
+        "by_category": {
+          "NORMAL": 14,
+          "CHANGE": 60
+        },
+        "association": {
+          "tests": 92,
+          "rejected_after_holm": [],
+          "smallest": [
+            {
+              "test": "D.has_state_s5@ALL",
+              "p": 0.01807563539873064,
+              "p_holm": 1.0,
+              "cramers_v": 0.2748169871336806,
+              "n": 74
+            },
+            {
+              "test": "D.has_state_s5@CHANGE|NORMAL",
+              "p": 0.01807563539873064,
+              "p_holm": 1.0,
+              "cramers_v": 0.2748169871336806,
+              "n": 74
+            },
+            {
+              "test": "D.has_mark_a9@ALL",
+              "p": 0.02068080185643698,
+              "p_holm": 1.0,
+              "cramers_v": 0.26896932465925455,
+              "n": 74
+            },
+            {
+              "test": "D.has_mark_a9@CHANGE|NORMAL",
+              "p": 0.02068080185643698,
+              "p_holm": 1.0,
+              "cramers_v": 0.26896932465925455,
+              "n": 74
+            },
+            {
+              "test": "D.has_glyph_t8@ALL",
+              "p": 0.040148459812264566,
+              "p_holm": 1.0,
+              "cramers_v": 0.23856552194407102,
+              "n": 74
+            }
+          ]
+        },
+        "naive_bayes_surface_and_distribution": {
+          "accuracy": 0.8108108108108109,
+          "ci95": [
+            0.707122301658184,
+            0.8838213582871409
+          ],
+          "n": 74,
+          "chance": 0.5
+        },
+        "majority_baseline": 0.8108108108108109
+      }
+    },
+    "substitute": {
+      "hashes": {
+        "worlds": 400,
+        "public_states_sha256": "ef7d0b472a641b12a5c9e2633336ceb3a33e65bdebde3e29aaeb654084b81680",
+        "world_ids_sha256": "f2811c089db6e8e5282957cd89e4e651506aecffaebca51ecae9be945469ce73",
+        "canonical_public_sha256": "059ba630b11ba6bc0f45aaca0f3a8b5ae3133fd9464e83b527a5a611e102f53b"
+      },
+      "public_has_no_hidden_fields": true,
+      "worlds_by_category": {
+        "NORMAL": 80,
+        "CONTRADICTION": 80,
+        "INSUFFICIENCY": 80,
+        "CHANGE": 80,
+        "HYPOTHESIS_ABSENT": 80
+      },
+      "families": [
+        "compositional",
+        "dev_table",
+        "multiphase",
+        "relational"
+      ],
+      "identifiability": {
+        "NORMAL": {
+          "n": 80,
+          "self_consistent": 80,
+          "ambiguous_at_start": 23,
+          "verdict_ambiguous_at_start": 23,
+          "non_identifiable": 0,
+          "budget_identifiable": 80,
+          "min_queries": {
+            "0": 57,
+            "1": 23
+          },
+          "support_sets": {
+            "NORMAL": 57,
+            "CHANGE+NORMAL": 23
+          }
+        },
+        "CONTRADICTION": {
+          "n": 80,
+          "self_consistent": 80,
+          "ambiguous_at_start": 0,
+          "verdict_ambiguous_at_start": 0,
+          "non_identifiable": 0,
+          "budget_identifiable": 80,
+          "min_queries": {
+            "0": 80
+          },
+          "support_sets": {
+            "CONTRADICTION": 80
+          }
+        },
+        "INSUFFICIENCY": {
+          "n": 80,
+          "self_consistent": 80,
+          "ambiguous_at_start": 0,
+          "verdict_ambiguous_at_start": 0,
+          "non_identifiable": 0,
+          "budget_identifiable": 80,
+          "min_queries": {
+            "0": 80
+          },
+          "support_sets": {
+            "INSUFFICIENCY": 80
+          }
+        },
+        "CHANGE": {
+          "n": 80,
+          "self_consistent": 80,
+          "ambiguous_at_start": 80,
+          "verdict_ambiguous_at_start": 80,
+          "non_identifiable": 0,
+          "budget_identifiable": 80,
+          "min_queries": {
+            "1": 80
+          },
+          "support_sets": {
+            "CHANGE+NORMAL": 80
+          }
+        },
+        "HYPOTHESIS_ABSENT": {
+          "n": 80,
+          "self_consistent": 80,
+          "ambiguous_at_start": 0,
+          "verdict_ambiguous_at_start": 0,
+          "non_identifiable": 0,
+          "budget_identifiable": 80,
+          "min_queries": {
+            "0": 80
+          },
+          "support_sets": {
+            "HYPOTHESIS_ABSENT": 80
+          }
+        }
+      },
+      "state_only_rule": {
+        "rule": {
+          "NORMAL": "NORMAL",
+          "CHANGE+NORMAL": "CHANGE",
+          "CONTRADICTION": "CONTRADICTION",
+          "INSUFFICIENCY": "INSUFFICIENCY",
+          "HYPOTHESIS_ABSENT": "HYPOTHESIS_ABSENT"
+        },
+        "accuracy_same_set": {
+          "n": 400,
+          "category_accuracy": 0.9425,
+          "category_ci95": [
+            0.9151985747985072,
+            0.9613827382707755
+          ],
+          "verdict_accuracy": 0.9425,
+          "verdict_ci95": [
+            0.9151985747985072,
+            0.9613827382707755
+          ]
+        }
+      },
+      "leakage_association": {
+        "tests": 506,
+        "rejected_after_holm": [
+          "D.cards_output_entropy@ALL",
+          "D.cards_output_entropy@CONTRADICTION|INSUFFICIENCY",
+          "D.cards_output_entropy@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_distinct_outputs@ALL",
+          "D.rows_distinct_outputs@CHANGE|CONTRADICTION",
+          "D.rows_distinct_outputs@CHANGE|HYPOTHESIS_ABSENT",
+          "D.rows_distinct_outputs@CHANGE|NORMAL",
+          "D.rows_distinct_outputs@CONTRADICTION|HYPOTHESIS_ABSENT",
+          "D.rows_distinct_outputs@CONTRADICTION|INSUFFICIENCY",
+          "D.rows_distinct_outputs@CONTRADICTION|NORMAL",
+          "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|NORMAL",
+          "D.rows_distinct_outputs@INSUFFICIENCY|NORMAL",
+          "D.rows_output_entropy@ALL",
+          "D.rows_output_entropy@CHANGE|HYPOTHESIS_ABSENT",
+          "D.rows_output_entropy@CHANGE|NORMAL",
+          "D.rows_output_entropy@CONTRADICTION|HYPOTHESIS_ABSENT",
+          "D.rows_output_entropy@CONTRADICTION|NORMAL",
+          "D.rows_output_entropy@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_output_entropy@HYPOTHESIS_ABSENT|NORMAL",
+          "D.rows_output_entropy@INSUFFICIENCY|NORMAL",
+          "D.rows_top_output_frac@ALL",
+          "D.rows_top_output_frac@CHANGE|HYPOTHESIS_ABSENT",
+          "D.rows_top_output_frac@CHANGE|NORMAL",
+          "D.rows_top_output_frac@CONTRADICTION|NORMAL",
+          "D.rows_top_output_frac@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+          "D.rows_top_output_frac@HYPOTHESIS_ABSENT|NORMAL",
+          "S.json_length@ALL",
+          "S.json_length@CHANGE|CONTRADICTION",
+          "S.json_length@CHANGE|NORMAL",
+          "S.json_length@CONTRADICTION|HYPOTHESIS_ABSENT",
+          "S.json_length@CONTRADICTION|INSUFFICIENCY",
+          "S.json_length@HYPOTHESIS_ABSENT|NORMAL",
+          "S.json_length@INSUFFICIENCY|NORMAL"
+        ],
+        "smallest": [
+          {
+            "test": "D.rows_distinct_outputs@ALL",
+            "p": 1.2850587920050273e-46,
+            "p_holm": 6.502397487545438e-44,
+            "cramers_v": 0.45655458897046763,
+            "n": 400
+          },
+          {
+            "test": "S.json_length@ALL",
+            "p": 1.3543342868689111e-32,
+            "p_holm": 6.839388148688001e-30,
+            "cramers_v": 0.4608398221901318,
+            "n": 400
+          },
+          {
+            "test": "D.rows_output_entropy@ALL",
+            "p": 2.943981183638349e-31,
+            "p_holm": 1.4837665165537279e-28,
+            "cramers_v": 0.38287251640494463,
+            "n": 400
+          },
+          {
+            "test": "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|NORMAL",
+            "p": 3.4469231983140675e-24,
+            "p_holm": 1.733802368751976e-21,
+            "cramers_v": 0.8379163492579723,
+            "n": 160
+          },
+          {
+            "test": "D.rows_output_entropy@HYPOTHESIS_ABSENT|NORMAL",
+            "p": 2.6310397839891136e-22,
+            "p_holm": 1.320781971562535e-19,
+            "cramers_v": 0.8046227721771494,
+            "n": 160
+          }
+        ]
+      },
+      "leakage_null_calibration": {
+        "permutations": 100,
+        "family": "5-way tests, S+D features",
+        "share_with_any_rejection": 0.05
+      },
+      "classifiers": {
+        "surface_and_distribution": {
+          "accuracy": 0.465,
+          "ci95": [
+            0.4166850440507483,
+            0.5139808407912294
+          ],
+          "n": 400,
+          "chance": 0.2,
+          "pairwise": {
+            "CHANGE|CONTRADICTION": {
+              "accuracy": 0.7,
+              "ci95": [
+                0.6249837255592399,
+                0.7656374597807469
+              ]
+            },
+            "CHANGE|HYPOTHESIS_ABSENT": {
+              "accuracy": 0.7125,
+              "ci95": [
+                0.6380351028170257,
+                0.7769999066067104
+              ]
+            },
+            "CHANGE|INSUFFICIENCY": {
+              "accuracy": 0.5,
+              "ci95": [
+                0.42343787383759396,
+                0.576562126162406
+              ]
+            },
+            "CHANGE|NORMAL": {
+              "accuracy": 0.7625,
+              "ci95": [
+                0.6908929265121889,
+                0.8217973792465438
+              ]
+            },
+            "CONTRADICTION|HYPOTHESIS_ABSENT": {
+              "accuracy": 0.725,
+              "ci95": [
+                0.651149022400604,
+                0.7882998111068811
+              ]
+            },
+            "CONTRADICTION|INSUFFICIENCY": {
+              "accuracy": 0.74375,
+              "ci95": [
+                0.6709427648280609,
+                0.8051268048050482
+              ]
+            },
+            "CONTRADICTION|NORMAL": {
+              "accuracy": 0.7875,
+              "ci95": [
+                0.7177577354595728,
+                0.8437602184666583
+              ]
+            },
+            "HYPOTHESIS_ABSENT|INSUFFICIENCY": {
+              "accuracy": 0.76875,
+              "ci95": [
+                0.6975797578679621,
+                0.8273174599326454
+              ]
+            },
+            "HYPOTHESIS_ABSENT|NORMAL": {
+              "accuracy": 0.9125,
+              "ci95": [
+                0.8584925018317755,
+                0.9471636929319475
+              ]
+            },
+            "INSUFFICIENCY|NORMAL": {
+              "accuracy": 0.79375,
+              "ci95": [
+                0.7245248445564205,
+                0.8492000214116852
+              ]
+            }
+          }
+        },
+        "evidence_positive_control": {
+          "accuracy": 0.9775,
+          "ci95": [
+            0.9577968763972684,
+            0.9881185518300367
+          ],
+          "n": 400,
+          "chance": 0.2
+        }
+      },
+      "evidence_ambiguous_subset": {
+        "n": 103,
+        "by_category": {
+          "NORMAL": 23,
+          "CHANGE": 80
+        },
+        "association": {
+          "tests": 92,
+          "rejected_after_holm": [],
+          "smallest": [
+            {
+              "test": "D.has_glyph_k2@ALL",
+              "p": 0.035435037540270754,
+              "p_holm": 1.0,
+              "cramers_v": 0.20724940088091426,
+              "n": 103
+            },
+            {
+              "test": "D.has_glyph_k2@CHANGE|NORMAL",
+              "p": 0.035435037540270754,
+              "p_holm": 1.0,
+              "cramers_v": 0.20724940088091426,
+              "n": 103
+            },
+            {
+              "test": "D.has_state_j1@ALL",
+              "p": 0.061843673772239115,
+              "p_holm": 1.0,
+              "cramers_v": 0.1840018553431629,
+              "n": 103
+            },
+            {
+              "test": "D.has_state_j1@CHANGE|NORMAL",
+              "p": 0.061843673772239115,
+              "p_holm": 1.0,
+              "cramers_v": 0.1840018553431629,
+              "n": 103
+            },
+            {
+              "test": "D.rows_top_output_frac@ALL",
+              "p": 0.09454459437807083,
+              "p_holm": 1.0,
+              "cramers_v": 0.21400860420098286,
+              "n": 103
+            }
+          ]
+        },
+        "naive_bayes_surface_and_distribution": {
+          "accuracy": 0.7669902912621359,
+          "ci95": [
+            0.6766557331631357,
+            0.8381250263911952
+          ],
+          "n": 103,
+          "chance": 0.5
+        },
+        "majority_baseline": 0.7766990291262136
+      }
+    }
+  },
+  "limits": [
+    "Substitute families are fresh seeds of the same generator, not the reserved seeds; findings about generator logic transfer, distributional claims about the reserved sets do not.",
+    "Identifiability is evaluated at listed-account level, using the generator's own support conditions; mechanisms outside the three listed accounts are covered only for HYPOTHESIS_ABSENT.",
+    "Association tests have power only for leaks of about 20% prevalence or more at these sample sizes (see power); weaker leaks are not excluded.",
+    "Query analysis is non-adaptive; an adaptive policy can only need fewer queries."
+  ],
+  "family_effect_on_surface_and_distribution": {
+    "tests": 46,
+    "rejected_after_holm": [],
+    "smallest": [
+      {
+        "feature": "D.has_state_u3",
+        "p": 0.0271355461568705
+      },
+      {
+        "feature": "D.has_state_s5",
+        "p": 0.03602674552488586
+      },
+      {
+        "feature": "D.has_mark_w4",
+        "p": 0.06922129427697044
+      },
+      {
+        "feature": "D.has_mark_p6",
+        "p": 0.07886025226626138
+      },
+      {
+        "feature": "S.card_working_position",
+        "p": 0.08729948383974495
+      }
+    ]
+  },
+  "leakage_by_family": {
+    "compositional": {
+      "n": 100,
+      "tests": 506,
+      "rejected_after_holm": [
+        "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+        "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|NORMAL",
+        "D.rows_output_entropy@ALL",
+        "D.rows_output_entropy@HYPOTHESIS_ABSENT|NORMAL",
+        "D.rows_top_output_frac@ALL",
+        "D.rows_top_output_frac@CONTRADICTION|NORMAL",
+        "D.rows_top_output_frac@HYPOTHESIS_ABSENT|NORMAL",
+        "S.json_length@ALL",
+        "S.json_length@CHANGE|CONTRADICTION",
+        "S.json_length@CONTRADICTION|HYPOTHESIS_ABSENT",
+        "S.json_length@CONTRADICTION|INSUFFICIENCY"
+      ]
+    },
+    "dev_table": {
+      "n": 100,
+      "tests": 506,
+      "rejected_after_holm": [
+        "D.rows_distinct_outputs@CHANGE|HYPOTHESIS_ABSENT",
+        "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|NORMAL",
+        "D.rows_output_entropy@ALL",
+        "D.rows_output_entropy@CHANGE|HYPOTHESIS_ABSENT",
+        "D.rows_output_entropy@HYPOTHESIS_ABSENT|NORMAL",
+        "S.json_length@ALL",
+        "S.json_length@CHANGE|CONTRADICTION",
+        "S.json_length@CONTRADICTION|HYPOTHESIS_ABSENT",
+        "S.json_length@CONTRADICTION|INSUFFICIENCY"
+      ]
+    },
+    "multiphase": {
+      "n": 100,
+      "tests": 506,
+      "rejected_after_holm": [
+        "S.json_length@ALL",
+        "S.json_length@CHANGE|CONTRADICTION",
+        "S.json_length@CONTRADICTION|HYPOTHESIS_ABSENT",
+        "S.json_length@CONTRADICTION|INSUFFICIENCY"
+      ]
+    },
+    "relational": {
+      "n": 100,
+      "tests": 506,
+      "rejected_after_holm": [
+        "D.rows_distinct_outputs@ALL",
+        "D.rows_distinct_outputs@CHANGE|HYPOTHESIS_ABSENT",
+        "D.rows_distinct_outputs@CONTRADICTION|NORMAL",
+        "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+        "D.rows_distinct_outputs@HYPOTHESIS_ABSENT|NORMAL",
+        "D.rows_output_entropy@ALL",
+        "D.rows_output_entropy@CHANGE|HYPOTHESIS_ABSENT",
+        "D.rows_output_entropy@CONTRADICTION|NORMAL",
+        "D.rows_output_entropy@HYPOTHESIS_ABSENT|INSUFFICIENCY",
+        "D.rows_output_entropy@HYPOTHESIS_ABSENT|NORMAL",
+        "D.rows_top_output_frac@ALL",
+        "D.rows_top_output_frac@CONTRADICTION|NORMAL",
+        "D.rows_top_output_frac@HYPOTHESIS_ABSENT|NORMAL",
+        "S.json_length@ALL",
+        "S.json_length@CHANGE|NORMAL",
+        "S.json_length@HYPOTHESIS_ABSENT|NORMAL",
+        "S.json_length@INSUFFICIENCY|NORMAL"
+      ]
+    }
+  },
+  "transfer_dev_to_substitute_family": {
+    "compositional": {
+      "surface_and_distribution": {
+        "accuracy": 0.48,
+        "ci95": [
+          0.38464384320080547,
+          0.5768359490982345
+        ],
+        "n": 100,
+        "chance": 0.2
+      },
+      "evidence_positive_control": {
+        "accuracy": 0.98,
+        "ci95": [
+          0.9299868370580062,
+          0.9944981477650318
+        ],
+        "n": 100,
+        "chance": 0.2
+      }
+    },
+    "dev_table": {
+      "surface_and_distribution": {
+        "accuracy": 0.48,
+        "ci95": [
+          0.38464384320080547,
+          0.5768359490982345
+        ],
+        "n": 100,
+        "chance": 0.2
+      },
+      "evidence_positive_control": {
+        "accuracy": 0.97,
+        "ci95": [
+          0.915479219195973,
+          0.9897456617765852
+        ],
+        "n": 100,
+        "chance": 0.2
+      }
+    },
+    "multiphase": {
+      "surface_and_distribution": {
+        "accuracy": 0.36,
+        "ci95": [
+          0.2727107459049014,
+          0.4576478001883791
+        ],
+        "n": 100,
+        "chance": 0.2
+      },
+      "evidence_positive_control": {
+        "accuracy": 0.99,
+        "ci95": [
+          0.9455124752390653,
+          0.9982326134344527
+        ],
+        "n": 100,
+        "chance": 0.2
+      }
+    },
+    "relational": {
+      "surface_and_distribution": {
+        "accuracy": 0.52,
+        "ci95": [
+          0.42316405090176545,
+          0.6153561567991945
+        ],
+        "n": 100,
+        "chance": 0.2
+      },
+      "evidence_positive_control": {
+        "accuracy": 0.99,
+        "ci95": [
+          0.9455124752390653,
+          0.9982326134344527
+        ],
+        "n": 100,
+        "chance": 0.2
+      }
+    }
+  },
+  "state_only_rule_dev_to_substitute": {
+    "compositional": {
+      "n": 100,
+      "category_accuracy": 0.96,
+      "category_ci95": [
+        0.9016278276739262,
+        0.9843369494481519
+      ],
+      "verdict_accuracy": 0.96,
+      "verdict_ci95": [
+        0.9016278276739262,
+        0.9843369494481519
+      ]
+    },
+    "dev_table": {
+      "n": 100,
+      "category_accuracy": 0.92,
+      "category_ci95": [
+        0.8500173312059693,
+        0.9589070305141891
+      ],
+      "verdict_accuracy": 0.92,
+      "verdict_ci95": [
+        0.8500173312059693,
+        0.9589070305141891
+      ]
+    },
+    "multiphase": {
+      "n": 100,
+      "category_accuracy": 0.93,
+      "category_ci95": [
+        0.8625032899347025,
+        0.9656811756359358
+      ],
+      "verdict_accuracy": 0.93,
+      "verdict_ci95": [
+        0.8625032899347025,
+        0.9656811756359358
+      ]
+    },
+    "relational": {
+      "n": 100,
+      "category_accuracy": 0.96,
+      "category_ci95": [
+        0.9016278276739262,
+        0.9843369494481519
+      ],
+      "verdict_accuracy": 0.96,
+      "verdict_ci95": [
+        0.9016278276739262,
+        0.9843369494481519
+      ]
+    }
+  },
+  "duplicate_public_states": {
+    "within_dev": 0,
+    "within_substitute": 0,
+    "across_dev_and_substitute": 0
+  },
+  "power": {
+    "synthetic": {
+      "0.1": 0.06,
+      "0.2": 0.87,
+      "0.3": 1.0,
+      "0.4": 1.0
+    },
+    "end_to_end_on_dev": [
+      {
+        "strength": 0.0,
+        "detected": false,
+        "rejected_tests": 45
+      },
+      {
+        "strength": 0.1,
+        "detected": false,
+        "rejected_tests": 45
+      },
+      {
+        "strength": 0.2,
+        "detected": true,
+        "rejected_tests": 46
+      },
+      {
+        "strength": 0.3,
+        "detected": true,
+        "rejected_tests": 51
+      },
+      {
+        "strength": 0.5,
+        "detected": true,
+        "rejected_tests": 54
+      }
+    ],
+    "note": "synthetic: share of simulated planted leaks rejected by Holm over all tests (60 worlds per category)"
+  },
+  "symbolic_reference_probe": {
+    "dev": {
+      "NORMAL": {
+        "n": 60,
+        "decision_correct": 60,
+        "diagnosis_correct": 60,
+        "localized_correct": 60,
+        "queries_1": 60,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ],
+        "localized_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ]
+      },
+      "CONTRADICTION": {
+        "n": 60,
+        "decision_correct": 60,
+        "diagnosis_correct": 60,
+        "localized_correct": 60,
+        "queries_0": 60,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ],
+        "localized_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ]
+      },
+      "INSUFFICIENCY": {
+        "n": 60,
+        "decision_correct": 60,
+        "diagnosis_correct": 60,
+        "localized_correct": 60,
+        "queries_0": 60,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ],
+        "localized_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ]
+      },
+      "CHANGE": {
+        "n": 60,
+        "decision_correct": 60,
+        "diagnosis_correct": 59,
+        "localized_correct": 59,
+        "queries_1": 60,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ],
+        "localized_ci95": [
+          0.911446617732205,
+          0.9970519161391264
+        ]
+      },
+      "HYPOTHESIS_ABSENT": {
+        "n": 60,
+        "decision_correct": 60,
+        "diagnosis_correct": 60,
+        "localized_correct": 60,
+        "queries_0": 60,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ],
+        "localized_ci95": [
+          0.939826069522067,
+          0.9999999999999998
+        ]
+      }
+    },
+    "substitute": {
+      "NORMAL": {
+        "n": 80,
+        "decision_correct": 80,
+        "diagnosis_correct": 80,
+        "localized_correct": 80,
+        "queries_1": 79,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "queries_2": 1,
+        "decision_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ],
+        "localized_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ]
+      },
+      "CONTRADICTION": {
+        "n": 80,
+        "decision_correct": 80,
+        "diagnosis_correct": 80,
+        "localized_correct": 80,
+        "queries_0": 80,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ],
+        "localized_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ]
+      },
+      "INSUFFICIENCY": {
+        "n": 80,
+        "decision_correct": 80,
+        "diagnosis_correct": 80,
+        "localized_correct": 80,
+        "queries_0": 80,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ],
+        "localized_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ]
+      },
+      "CHANGE": {
+        "n": 80,
+        "decision_correct": 80,
+        "diagnosis_correct": 80,
+        "localized_correct": 80,
+        "queries_1": 80,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ],
+        "localized_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ]
+      },
+      "HYPOTHESIS_ABSENT": {
+        "n": 80,
+        "decision_correct": 80,
+        "diagnosis_correct": 80,
+        "localized_correct": 80,
+        "queries_0": 80,
+        "invalid_actions": 0,
+        "forced_termination": 0,
+        "decision_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ],
+        "localized_ci95": [
+          0.954180263735425,
+          1.0000000000000002
+        ]
+      }
+    }
+  },
+  "seconds": 25.2
+}
