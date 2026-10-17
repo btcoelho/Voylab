@@ -26,18 +26,40 @@ Depois de comprometeres, chega evidência nova: mantém ou revê. Se a evidênci
 Responde SEMPRE com um único objeto JSON, sem texto adicional."""
 
 
-def action_schema(phase: str) -> dict:
-    cards = {"type": "array", "items": {"type": "string"}}
+def action_schema(phase: str, state: dict | None = None, cards_object: bool = False) -> dict:
+    """JSON schema of a legal action. With `state` (pilot round 2 onwards) the ids are restricted to what the state
+    shows: query ids to the current menu (and no query branch when the budget is spent), card ids to the cards,
+    prediction keys to the held-out positions. These ids are already in the prompt; the backend still never sees `state`."""
+    if state is None:
+        cards = {"type": "array", "items": {"type": "string"}}
+        qid = {"type": "string"}
+        preds = {"type": "object", "additionalProperties": {"enum": ["0", "1"]}}
+        can_query = True
+    else:
+        ids = [c["id"] for c in state["candidate_models"]]
+        if cards_object:   # round 3: one required true/false per card, so a card cannot be repeated
+            cards = {"type": "object", "properties": {i: {"type": "boolean"} for i in ids}, "required": ids,
+                     "additionalProperties": False}
+        else:
+            cards = {"type": "array", "items": {"enum": ids}}
+        qid = {"enum": [q["id"] for q in state.get("query_menu", [])]}
+        preds = {"type": "object", "properties": {str(i): {"enum": ["0", "1"]}
+                                                  for i in range(1, len(state["held_out_inputs"]) + 1)},
+                 "additionalProperties": False}
+        can_query = state.get("remaining_query_budget", 0) > 0 and bool(qid["enum"])
     if phase == "explore":
-        return {"anyOf": [
-            {"type": "object", "properties": {"action": {"const": "query"}, "query_id": {"type": "string"}},
-             "required": ["action", "query_id"], "additionalProperties": False},
+        options = []
+        if can_query:
+            options.append({"type": "object", "properties": {"action": {"const": "query"}, "query_id": qid},
+                            "required": ["action", "query_id"], "additionalProperties": False})
+        options += [
             {"type": "object", "properties": {"action": {"const": "commit"},
                                               "verdict": {"enum": list(E.VERDICTS_ALLOWED)}, "admissible_cards": cards,
-                                              "predictions": {"type": "object", "additionalProperties": {"enum": ["0", "1"]}}},
+                                              "predictions": preds},
              "required": ["action", "verdict", "admissible_cards", "predictions"], "additionalProperties": False},
             {"type": "object", "properties": {"action": {"const": "suspend"}}, "required": ["action"],
-             "additionalProperties": False}]}
+             "additionalProperties": False}]
+        return {"anyOf": options}
     return {"anyOf": [
         {"type": "object", "properties": {"action": {"const": "keep"}}, "required": ["action"], "additionalProperties": False},
         {"type": "object", "properties": {"action": {"const": "revise"}, "verdict": {"enum": list(E.REVISION_VERDICTS)},
@@ -45,7 +67,7 @@ def action_schema(phase: str) -> dict:
          "required": ["action", "verdict", "admissible_cards"], "additionalProperties": False}]}
 
 
-def render_state(s: dict) -> str:
+def render_state(s: dict, cards_object: bool = False) -> str:
     L = ["OBSERVAÇÕES"]
     L += [f"- {o['id']}: " + ", ".join(f"{k}={v}" for k, v in o["input"].items()) + f" -> {o['output']}" for o in s["observations"]]
     if s.get("new_evidence"):
@@ -58,13 +80,16 @@ def render_state(s: dict) -> str:
     L.append(f"CARTA DE TRABALHO: {s['working_model_id']}")
     L.append("ENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)")
     L += [f"- {i}: " + ", ".join(f"{k}={v}" for k, v in x.items()) for i, x in enumerate(s["held_out_inputs"], 1)]
+    cards_tpl = ("{" + ",".join(f'"{c["id"]}":true|false' for c in s["candidate_models"]) + "}"
+                 if cards_object else '["ids"]')
     if s["phase"] == "explore":
         L.append(f"CONSULTAS DISPONÍVEIS (orçamento restante {s['remaining_query_budget']})")
         L += [f"- {q['id']}: " + ", ".join(f"{k}={v}" for k, v in q["input"].items()) for q in s["query_menu"]]
         L.append('AÇÕES: {"action":"query","query_id":"qN"} | {"action":"commit","verdict":"rejected|supported|undetermined",'
-                 '"admissible_cards":["ids"],"predictions":{"1":"0|1","2":"0|1","3":"0|1","4":"0|1"}} | {"action":"suspend"}')
+                 '"admissible_cards":' + cards_tpl + ',"predictions":{"1":"0|1","2":"0|1","3":"0|1","4":"0|1"}} | {"action":"suspend"}')
     else:
-        L.append('AÇÕES: {"action":"keep"} | {"action":"revise","verdict":"rejected|supported|undetermined|inconsistent","admissible_cards":["ids"]}')
+        L.append('AÇÕES: {"action":"keep"} | {"action":"revise","verdict":"rejected|supported|undetermined|inconsistent",'
+                 '"admissible_cards":' + cards_tpl + '}')
     return "\n".join(L)
 
 
@@ -75,24 +100,40 @@ class Backend:
         raise NotImplementedError
 
 
-def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: bool = False) -> dict:
+MODES = ("phase", "state", "state_cards_object")   # pilot rounds 1, 2, 3
+
+
+def to_env_action(action, state: dict, mode: str):
+    """Round 3 only: {"A": true, "B": false, ...} -> ["A"], in the order the cards are shown. Anything else unchanged."""
+    if mode == "state_cards_object" and isinstance(action, dict) and isinstance(action.get("admissible_cards"), dict):
+        chosen = action["admissible_cards"]
+        action = {**action, "admissible_cards": [c["id"] for c in state["candidate_models"] if chosen.get(c["id"]) is True]}
+    return action
+
+
+def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: bool = False,
+                mode: str = "state_cards_object") -> dict:
+    assert mode in MODES
     ep = E.Episode(world)
     turns = []
     for t in range(max_turns):
         if ep.done:
             break
         st = ep.state()
-        user = render_state(st)
-        schema = action_schema(st["phase"])
+        obj = mode == "state_cards_object"
+        user = render_state(st, cards_object=obj)
+        schema = action_schema(st["phase"], st if mode != "phase" else None, cards_object=obj)
         raw = backend.generate(SYSTEM_PROMPT, user, schema, st) if pass_state else backend.generate(SYSTEM_PROMPT, user, schema)
         try:
             action = json.loads(raw)
             parsed = True
         except (ValueError, TypeError):
             action, parsed = None, False
-        out = ep.step(action if parsed else {"action": "__unparseable__"})
+        env_action = to_env_action(action, st, mode) if parsed else {"action": "__unparseable__"}
+        out = ep.step(env_action)
         turns.append({"turn": t, "phase": st["phase"], "prompt_sha256": hashlib.sha256(user.encode()).hexdigest(),
-                      "output": raw, "parsed": parsed, "accepted": out["ok"], "error": out.get("error")})
+                      "output": raw, "parsed": parsed, "accepted": out["ok"], "error": out.get("error"),
+                      **({"env_action": env_action} if mode == "state_cards_object" else {})})
     res = ep.result()
     res["turns"] = len(turns)
     res["hit_turn_limit"] = not ep.done
