@@ -1,0 +1,49 @@
+{
+  "mutants": 6,
+  "killed": 6,
+  "survivors": [],
+  "results": {
+    "leaky_public_view": {
+      "description": "Public evidence also reveals the hidden output at one unobserved input.",
+      "tests": 20,
+      "failures": 2,
+      "errors": 0,
+      "killed": true
+    },
+    "drop_last_observation": {
+      "description": "Evidence silently ignores the last public row.",
+      "tests": 20,
+      "failures": 10,
+      "errors": 0,
+      "killed": true
+    },
+    "syntactic_identity": {
+      "description": "Hypotheses counted per (support, table) description instead of by extension.",
+      "tests": 20,
+      "failures": 8,
+      "errors": 1,
+      "killed": true
+    },
+    "wildcard_missing_key": {
+      "description": "A card with a missing table key is completed with a default output.",
+      "tests": 20,
+      "failures": 1,
+      "errors": 0,
+      "killed": true
+    },
+    "ignore_conflicts": {
+      "description": "Contradictory rows are reduced to the first output seen.",
+      "tests": 20,
+      "failures": 1,
+      "errors": 0,
+      "killed": true
+    },
+    "statement_trusted_over_keys": {
+      "description": "Card features taken from the statement text without checking the keys.",
+      "tests": 20,
+      "failures": 1,
+      "errors": 0,
+      "killed": true
+    }
+  }
+}

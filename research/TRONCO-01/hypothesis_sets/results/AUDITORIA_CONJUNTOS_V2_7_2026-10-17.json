@@ -1,0 +1,662 @@
+{
+  "audit": "TRONCO-01 step 4 — admissible hypothesis sets on the v2.7 exposed states",
+  "package": "TRONCO01_ENSAIO_MODELO_V2_7_REPRODUCIBLE_2026-10-17.zip",
+  "package_sha256": "f8591cfdb1dbf97881a0cd654102e4002fa044f38ca7558920f022c648d6515f",
+  "hypothesis_space": {
+    "domain_inputs": 16,
+    "max_essential_support": 2,
+    "size": 70
+  },
+  "model_calls": 0,
+  "summary": {
+    "episodes": 10,
+    "distinct_public_states": 9,
+    "duplicate_public_state_groups": [
+      [
+        "pilot_01",
+        "pilot_02"
+      ]
+    ],
+    "duplicates_with_different_private_labels": [],
+    "declared_labels_match_private_reference": 10,
+    "declared_identified_but_mechanism_open_in_space": [
+      "pilot_05",
+      "pilot_06",
+      "pilot_07",
+      "pilot_08"
+    ],
+    "declared_none_fit_but_some_mechanism_in_space_fits": [
+      "pilot_09",
+      "pilot_10"
+    ],
+    "hidden_mechanism_identifiable_episodes": 2
+  },
+  "episodes": [
+    {
+      "episode_id": "pilot_01",
+      "stratum": "empty",
+      "observations": 0,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "diagnosis": "ambiguous",
+          "sufficiency": "no_observations",
+          "verdict": "undetermined"
+        },
+        "space_size": 70,
+        "admissible_count": 70,
+        "admissible_digest": "db3b5b1e316a022dd6f464573bb293a32e1bce0df1ab2767803ebf2f1deb1fce",
+        "admissible_declared_cards": [
+          "A",
+          "B",
+          "C"
+        ],
+        "admissible_supports": [
+          [],
+          [
+            "glyph"
+          ],
+          [
+            "glyph",
+            "partner"
+          ],
+          [
+            "glyph",
+            "phase"
+          ],
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner"
+          ],
+          [
+            "partner",
+            "phase"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase"
+          ],
+          [
+            "phase",
+            "setting"
+          ],
+          [
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 16,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 4
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_02",
+      "stratum": "empty",
+      "observations": 0,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "diagnosis": "ambiguous",
+          "sufficiency": "no_observations",
+          "verdict": "undetermined"
+        },
+        "space_size": 70,
+        "admissible_count": 70,
+        "admissible_digest": "db3b5b1e316a022dd6f464573bb293a32e1bce0df1ab2767803ebf2f1deb1fce",
+        "admissible_declared_cards": [
+          "A",
+          "B",
+          "C"
+        ],
+        "admissible_supports": [
+          [],
+          [
+            "glyph"
+          ],
+          [
+            "glyph",
+            "partner"
+          ],
+          [
+            "glyph",
+            "phase"
+          ],
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner"
+          ],
+          [
+            "partner",
+            "phase"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase"
+          ],
+          [
+            "phase",
+            "setting"
+          ],
+          [
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 16,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 4
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_03",
+      "stratum": "supported_ambiguous",
+      "observations": 1,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "diagnosis": "ambiguous",
+          "sufficiency": "identity_ambiguous",
+          "verdict": "supported"
+        },
+        "space_size": 70,
+        "admissible_count": 35,
+        "admissible_digest": "45d549634f5c50e0a6e614fae6897cbeaf5e7b043bca1b055758a2182cfef63c",
+        "admissible_declared_cards": [
+          "A",
+          "B",
+          "C"
+        ],
+        "admissible_supports": [
+          [],
+          [
+            "glyph"
+          ],
+          [
+            "glyph",
+            "partner"
+          ],
+          [
+            "glyph",
+            "phase"
+          ],
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner"
+          ],
+          [
+            "partner",
+            "phase"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase"
+          ],
+          [
+            "phase",
+            "setting"
+          ],
+          [
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 15,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 4
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_04",
+      "stratum": "supported_ambiguous",
+      "observations": 1,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "diagnosis": "ambiguous",
+          "sufficiency": "identity_ambiguous",
+          "verdict": "supported"
+        },
+        "space_size": 70,
+        "admissible_count": 35,
+        "admissible_digest": "ef37d53720cba58949d8c730329301a3468108b44db4ab659fc2962e62a0ebdf",
+        "admissible_declared_cards": [
+          "A",
+          "B",
+          "C"
+        ],
+        "admissible_supports": [
+          [],
+          [
+            "glyph"
+          ],
+          [
+            "glyph",
+            "partner"
+          ],
+          [
+            "glyph",
+            "phase"
+          ],
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner"
+          ],
+          [
+            "partner",
+            "phase"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase"
+          ],
+          [
+            "phase",
+            "setting"
+          ],
+          [
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 15,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 4
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_05",
+      "stratum": "supported_identified",
+      "observations": 3,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "A"
+          ],
+          "diagnosis": "identified",
+          "sufficiency": "identity_resolved",
+          "verdict": "supported"
+        },
+        "space_size": 70,
+        "admissible_count": 17,
+        "admissible_digest": "1ba1a4dd43433a1e17e22ab3b2c1735ce2d1bc71d66f135045daa79692735a69",
+        "admissible_declared_cards": [
+          "A"
+        ],
+        "admissible_supports": [
+          [],
+          [
+            "glyph"
+          ],
+          [
+            "glyph",
+            "partner"
+          ],
+          [
+            "glyph",
+            "phase"
+          ],
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner"
+          ],
+          [
+            "partner",
+            "phase"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase",
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 13,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_06",
+      "stratum": "supported_identified",
+      "observations": 3,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "A"
+          ],
+          "diagnosis": "identified",
+          "sufficiency": "identity_resolved",
+          "verdict": "supported"
+        },
+        "space_size": 70,
+        "admissible_count": 17,
+        "admissible_digest": "04e86a976e3d23ecf4ca0d6c55da07537d5f18e7c4aed87d4668c60397c6f9b1",
+        "admissible_declared_cards": [
+          "A"
+        ],
+        "admissible_supports": [
+          [],
+          [
+            "glyph"
+          ],
+          [
+            "glyph",
+            "partner"
+          ],
+          [
+            "glyph",
+            "phase"
+          ],
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner"
+          ],
+          [
+            "partner",
+            "phase"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase",
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 13,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_07",
+      "stratum": "rejected_identified",
+      "observations": 2,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "B"
+          ],
+          "diagnosis": "identified",
+          "sufficiency": "identity_resolved",
+          "verdict": "rejected"
+        },
+        "space_size": 70,
+        "admissible_count": 10,
+        "admissible_digest": "4f5c1ef5d70f895e04e88f1b414cec0e036d02c6b7484e5c0cb90a0f4766fccf",
+        "admissible_declared_cards": [
+          "B"
+        ],
+        "admissible_supports": [
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase",
+            "setting"
+          ],
+          [
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 14,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": true,
+          "possible_answers": 1
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_08",
+      "stratum": "rejected_identified",
+      "observations": 2,
+      "conclusions": {
+        "declared": {
+          "candidates": [
+            "B"
+          ],
+          "diagnosis": "identified",
+          "sufficiency": "identity_resolved",
+          "verdict": "rejected"
+        },
+        "space_size": 70,
+        "admissible_count": 10,
+        "admissible_digest": "ce56ff116c22d6936e6dc630e4db7f0c12ede33f844be76c75145123b1ff8ee8",
+        "admissible_declared_cards": [
+          "B"
+        ],
+        "admissible_supports": [
+          [
+            "glyph",
+            "setting"
+          ],
+          [
+            "partner",
+            "setting"
+          ],
+          [
+            "phase",
+            "setting"
+          ],
+          [
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 14,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": true,
+          "possible_answers": 1
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": false,
+          "possible_answers": 2
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_09",
+      "stratum": "rejected_none_fit",
+      "observations": 3,
+      "conclusions": {
+        "declared": {
+          "candidates": [],
+          "diagnosis": "none_fit",
+          "sufficiency": "no_candidate_fits",
+          "verdict": "rejected"
+        },
+        "space_size": 70,
+        "admissible_count": 2,
+        "admissible_digest": "8c0c4b4cb6c17bd362a40446dec317bd480953d45a5de0ff6014660bf98be2ff",
+        "admissible_declared_cards": [],
+        "admissible_supports": [
+          [
+            "glyph",
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 4,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": true,
+          "possible_answers": 1
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": true,
+          "possible_answers": 1
+        }
+      },
+      "declared_labels_match_private_reference": true
+    },
+    {
+      "episode_id": "pilot_10",
+      "stratum": "rejected_none_fit",
+      "observations": 3,
+      "conclusions": {
+        "declared": {
+          "candidates": [],
+          "diagnosis": "none_fit",
+          "sufficiency": "no_candidate_fits",
+          "verdict": "rejected"
+        },
+        "space_size": 70,
+        "admissible_count": 2,
+        "admissible_digest": "8c0c4b4cb6c17bd362a40446dec317bd480953d45a5de0ff6014660bf98be2ff",
+        "admissible_declared_cards": [],
+        "admissible_supports": [
+          [
+            "glyph",
+            "setting"
+          ]
+        ],
+        "undetermined_input_count": 4,
+        "conflicting_inputs": [],
+        "status": "mechanism_underdetermined_in_space"
+      },
+      "hidden_mechanism_questions": {
+        "working_model_is_hidden_mechanism": {
+          "identifiable": true,
+          "possible_answers": 1
+        },
+        "declared_card_equal_to_hidden_mechanism": {
+          "identifiable": true,
+          "possible_answers": 1
+        }
+      },
+      "declared_labels_match_private_reference": true
+    }
+  ]
+}
