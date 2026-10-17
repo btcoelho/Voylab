@@ -1,0 +1,86 @@
+{
+  "worlds": 351,
+  "model_calls": 0,
+  "seeds": [
+    91001,
+    91003,
+    91009
+  ],
+  "set_sha256": "393d7a64d1509bf46bacc803afdd1ea47e0f8d0d8c5f1eb24ac76636b334a88f",
+  "balance": {
+    "target_verdict": {
+      "rejected": 135,
+      "supported": 135,
+      "undetermined": 81
+    },
+    "max_share": 0.38461538461538464,
+    "kind": {
+      "stable_uninformative": 162,
+      "stable_informative": 108,
+      "change": 81
+    },
+    "queries_needed": {
+      "1": 212,
+      "2": 58,
+      "None": 81
+    },
+    "initial_verdict": {
+      "undetermined": 351
+    },
+    "should_revise_by_kind": {
+      "stable_uninformative": 0,
+      "stable_informative": 108,
+      "change": 81
+    }
+  },
+  "identifiability": {
+    "public_recomputation_mismatches": 0
+  },
+  "duplicate_public_states": 0,
+  "R1_state_only_rule": {
+    "accuracy_loo": 0.6068376068376068,
+    "ci95": [
+      0.5548447109613369,
+      0.6565172037634303
+    ],
+    "majority_baseline": 0.38461538461538464,
+    "chance_uniform": 0.3333333333333333
+  },
+  "R4_leakage": {
+    "tests": 11,
+    "rejected_after_holm": [
+      "D.cards_support",
+      "D.distinct_in",
+      "S.json_len",
+      "S.menu_len",
+      "S.n_obs",
+      "S.obs_id_sorted"
+    ],
+    "smallest": [
+      {
+        "feature": "S.n_obs",
+        "p": 7.125678642067611e-12
+      },
+      {
+        "feature": "S.menu_len",
+        "p": 7.125678642067611e-12
+      },
+      {
+        "feature": "D.distinct_in",
+        "p": 7.125678642067611e-12
+      },
+      {
+        "feature": "S.json_len",
+        "p": 2.81423106343777e-05
+      }
+    ],
+    "naive_bayes_SD": {
+      "accuracy": 0.47863247863247865,
+      "ci95": [
+        0.42688621394036247,
+        0.5308414031146841
+      ],
+      "majority_baseline": 0.38461538461538464
+    }
+  }
+}

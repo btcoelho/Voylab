@@ -38,6 +38,10 @@ jobs:
         working-directory: research/TRONCO-01/src/m17_audit
         run: python -m unittest discover -s tests
 
+      - name: Task v3 generator and round-0/1 audit (dev only)
+        working-directory: research/TRONCO-01/v3
+        run: python -m unittest discover -s tests
+
       - name: Tracked files unchanged by the run
         run: |
           git status --porcelain --untracked-files=no
