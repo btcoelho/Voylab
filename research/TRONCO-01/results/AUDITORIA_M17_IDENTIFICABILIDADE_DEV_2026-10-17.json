@@ -1,0 +1,81 @@
+{
+  "audit": "M17 expected verdict vs what the agent can see (dev split only, aggregate-only)",
+  "split": "dev",
+  "seeds": [
+    53001,
+    53003,
+    53009
+  ],
+  "worlds": 300,
+  "model_calls": 0,
+  "query_budget": 3,
+  "signature_fields": [
+    "working_model_fits_all_rows",
+    "fitting_cards(0,1,2+)",
+    "same_input_conflict",
+    "some_menu_query_separates_fitting_cards"
+  ],
+  "by_category": {
+    "NORMAL": {
+      "worlds": 60,
+      "initial_verdict_supported": 60,
+      "initial_matches_expected": 60,
+      "reachable_within_budget": 60,
+      "menu_queries_contradicting_working_model": 0,
+      "menu_queries_total": 720
+    },
+    "CONTRADICTION": {
+      "worlds": 60,
+      "initial_verdict_rejected": 60,
+      "initial_matches_expected": 60,
+      "reachable_within_budget": 60,
+      "menu_queries_contradicting_working_model": 0,
+      "menu_queries_total": 720
+    },
+    "INSUFFICIENCY": {
+      "worlds": 60,
+      "initial_verdict_supported": 60,
+      "initial_matches_expected": 0,
+      "reachable_within_budget": 0,
+      "menu_queries_contradicting_working_model": 0,
+      "menu_queries_total": 720
+    },
+    "CHANGE": {
+      "worlds": 60,
+      "initial_verdict_supported": 60,
+      "initial_matches_expected": 0,
+      "reachable_within_budget": 60,
+      "menu_queries_contradicting_working_model": 257,
+      "menu_queries_total": 720
+    },
+    "HYPOTHESIS_ABSENT": {
+      "worlds": 60,
+      "initial_verdict_rejected": 60,
+      "initial_matches_expected": 60,
+      "reachable_within_budget": 60,
+      "menu_queries_contradicting_working_model": 543,
+      "menu_queries_total": 720
+    }
+  },
+  "public_signatures": {
+    "(True, 2, False, True)": {
+      "supported": 60,
+      "rejected": 60
+    },
+    "(False, 0, True, False)": {
+      "rejected": 60
+    },
+    "(True, 2, False, False)": {
+      "undetermined": 60
+    },
+    "(False, 0, False, False)": {
+      "rejected": 60
+    }
+  },
+  "signatures_with_conflicting_expected_verdicts": {
+    "(True, 2, False, True)": {
+      "supported": 60,
+      "rejected": 60
+    }
+  }
+}

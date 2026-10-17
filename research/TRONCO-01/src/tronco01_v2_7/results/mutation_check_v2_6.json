@@ -1,0 +1,66 @@
+{
+  "protocol": "TRONCO-01-v2.6-offline-preflight",
+  "original_v25_result_valid": false,
+  "original_error": "The archived v2.5 mutation runs failed to import model_backend and were incorrectly counted as kills.",
+  "method": "Copy required dependencies; verify each unmodified target passes; count a kill only for an assertion failure with zero errors.",
+  "new_model_calls": 0,
+  "model_weights_loaded": false,
+  "baselines_pass": true,
+  "valid_kills": 3,
+  "cases": {
+    "duplicate_candidate_check_removed": {
+      "test": "test_duplicate_candidate_evidence_and_location_values_are_rejected",
+      "baseline": {
+        "tests_run": 1,
+        "failures": 0,
+        "errors": 0,
+        "successful": true,
+        "log": "test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      },
+      "mutant": {
+        "tests_run": 1,
+        "failures": 1,
+        "errors": 0,
+        "successful": false,
+        "log": "test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) ... \n  test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) (field='candidate_model_codes') ... FAIL\n\n======================================================================\nFAIL: test_duplicate_candidate_evidence_and_location_values_are_rejected (test_harness.HarnessTests.test_duplicate_candidate_evidence_and_location_values_are_rejected) (field='candidate_model_codes')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmpn7qd6ek8\\test_harness.py\", line 81, in test_duplicate_candidate_evidence_and_location_values_are_rejected\n    with self.subTest(field=field), self.assertRaises(harness.ModelOutputError):\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ModelOutputError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n"
+      },
+      "killed_by_assertion": true
+    },
+    "resume_fingerprint_check_removed": {
+      "test": "test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint",
+      "baseline": {
+        "tests_run": 1,
+        "failures": 0,
+        "errors": 0,
+        "successful": true,
+        "log": "test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.029s\n\nOK\n"
+      },
+      "mutant": {
+        "tests_run": 1,
+        "failures": 1,
+        "errors": 0,
+        "successful": false,
+        "log": "test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint) ... FAIL\n\n======================================================================\nFAIL: test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint (test_harness.HarnessTests.test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmp5hxismz0\\test_harness.py\", line 338, in test_changed_in_memory_schedule_is_blocked_by_journal_fingerprint\n    with self.assertRaises(harness.ResumeIntegrityError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ResumeIntegrityError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.032s\n\nFAILED (failures=1)\n"
+      },
+      "killed_by_assertion": true
+    },
+    "entry_manifest_guard_skipped_on_resume": {
+      "test": "test_complete_resume_runs_guard_even_when_schedule_is_unchanged",
+      "baseline": {
+        "tests_run": 1,
+        "failures": 0,
+        "errors": 0,
+        "successful": true,
+        "log": "test_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.035s\n\nOK\n"
+      },
+      "mutant": {
+        "tests_run": 1,
+        "failures": 1,
+        "errors": 0,
+        "successful": false,
+        "log": "test_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged) ... FAIL\n\n======================================================================\nFAIL: test_complete_resume_runs_guard_even_when_schedule_is_unchanged (test_harness.HarnessTests.test_complete_resume_runs_guard_even_when_schedule_is_unchanged)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Bruno\\AppData\\Local\\Temp\\tmpwi14klgm\\test_harness.py\", line 259, in test_complete_resume_runs_guard_even_when_schedule_is_unchanged\n    with self.assertRaises(harness.ResumeIntegrityError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ResumeIntegrityError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.036s\n\nFAILED (failures=1)\n"
+      },
+      "killed_by_assertion": true
+    }
+  }
+}

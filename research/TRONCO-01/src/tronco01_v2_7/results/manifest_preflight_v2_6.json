@@ -1,0 +1,9 @@
+{
+  "status": "draft_not_frozen",
+  "internal_files_verified": 20,
+  "external_files_verified": 3,
+  "all_hashes_match": true,
+  "production_guard_blocks_draft": true,
+  "weights_loaded": false,
+  "inference_performed": false
+}

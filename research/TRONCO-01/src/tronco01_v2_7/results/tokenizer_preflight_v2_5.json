@@ -1,0 +1,95 @@
+{
+  "tokenizer_path": "/home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-0.5B-Instruct-bnb-4bit/snapshots/216d96b52c97a3c8294776df8477592f6828981c",
+  "tokenizer_name": "/home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-0.5B-Instruct-bnb-4bit/snapshots/216d96b52c97a3c8294776df8477592f6828981c",
+  "tokenizer_sha256": {
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+    "tokenizer_config.json": "0553ada6e92b1a29b4431c72782c6e5e6ab675ef0b20ceb2833cd1074c7fb932"
+  },
+  "python": "3.12.3",
+  "transformers": "5.17.0",
+  "lm_format_enforcer": "0.11.3",
+  "vocabulary_size": 151665,
+  "model_weights_loaded": false,
+  "model_inference": false,
+  "cases": {
+    "query": {
+      "tokens": 11,
+      "all_payload_tokens_allowed": true,
+      "eos_allowed": true
+    },
+    "wrong_but_structural_report": {
+      "tokens": 45,
+      "all_payload_tokens_allowed": true,
+      "eos_allowed": true
+    },
+    "unknown_query_id": {
+      "tokens": 11,
+      "all_payload_tokens_allowed": false,
+      "eos_allowed": false
+    },
+    "unknown_evidence_id": {
+      "tokens": 45,
+      "all_payload_tokens_allowed": false,
+      "eos_allowed": false
+    },
+    "missing_required_key": {
+      "tokens": 5,
+      "all_payload_tokens_allowed": false,
+      "eos_allowed": false
+    },
+    "extra_key": {
+      "tokens": 15,
+      "all_payload_tokens_allowed": false,
+      "eos_allowed": false
+    },
+    "wrong_type": {
+      "tokens": 11,
+      "all_payload_tokens_allowed": false,
+      "eos_allowed": false
+    },
+    "unknown_location_value": {
+      "tokens": 51,
+      "all_payload_tokens_allowed": false,
+      "eos_allowed": false
+    },
+    "duplicate_candidate_ids": {
+      "tokens": 48,
+      "all_payload_tokens_allowed": true,
+      "eos_allowed": true
+    },
+    "duplicate_evidence_ids": {
+      "tokens": 49,
+      "all_payload_tokens_allowed": true,
+      "eos_allowed": true
+    },
+    "duplicate_location_values": {
+      "tokens": 51,
+      "all_payload_tokens_allowed": true,
+      "eos_allowed": true
+    },
+    "empty_history_report": {
+      "tokens": 49,
+      "all_payload_tokens_allowed": true,
+      "eos_allowed": true
+    },
+    "query_at_zero_budget": {
+      "tokens": 11,
+      "all_payload_tokens_allowed": false,
+      "eos_allowed": false
+    },
+    "largest_bounded_report": {
+      "tokens": 70,
+      "all_payload_tokens_allowed": true,
+      "eos_allowed": true
+    }
+  },
+  "duplicate_cases_final_validator_rejects": {
+    "duplicate_candidate_ids": true,
+    "duplicate_evidence_ids": true,
+    "duplicate_location_values": true
+  },
+  "valid_payloads_complete_and_eos_allowed": true,
+  "invalid_payloads_blocked": true,
+  "largest_bounded_report_below_256_tokens": true,
+  "wrong_semantic_report_remains_structurally_allowed": true
+}

@@ -1,0 +1,60 @@
+{
+  "protocol": "TRONCO-01-v2.3-pilot-v0.1",
+  "status": "amended_after_sentinel_output_failure",
+  "inference_started": true,
+  "purpose": "small intentional development panel; not confirmatory",
+  "model": {
+    "repo_id": "unsloth/Qwen2.5-0.5B-Instruct-bnb-4bit",
+    "revision": "216d96b52c97a3c8294776df8477592f6828981c",
+    "weights_sha256": "fa6ed98084afb0497d9075a82ab17fdfc0b5d99fb6b37d8f761463e67c100f45",
+    "adapter": null
+  },
+  "n_episodes": 10,
+  "strata_counts": {
+    "empty": 2,
+    "supported_ambiguous": 2,
+    "supported_identified": 2,
+    "rejected_identified": 2,
+    "rejected_none_fit": 2
+  },
+  "query_budget": 3,
+  "max_calls_per_episode": 4,
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "max_length": null,
+    "grammar_constrained": true
+  },
+  "primary_outcome": "joint_success from the independent TRONCO-01 v2.3 evaluator",
+  "failure_policy": "no retries; technical failures count as operational failures; continue subsequent episodes",
+  "source_files": [
+    "work/prepare_trial_v23.py",
+    "work/audit_trial_v23.py",
+    "work/TRONCO01_TRIAL_v2_3/run_trial.py"
+  ],
+  "sha256": {
+    "public_schedule.jsonl": "ad540a77f578a04ee41b9ca3b79a4e09771eff5717138931859a1c4b461520fc",
+    "private_oracle.jsonl": "9f6b5e76303d93eb774c5803f6ceca5d55ef5e59a758f2e04f7e3ac248ed28e7",
+    "system_prompt.txt": "850a80b06dc93a66e5bd573217cc482435ac584fa4e3574ccec2e92be58b83ab",
+    "inference_environment.json": "0d4548cd2945a75a899db3234524cf90dd80b1c504168a62dfd42831ed2ceb68",
+    "instrument.py": "3ed01823a6f202ee323f7ce4e1a93417e6fc289816484c70f6d596098d8fe22a",
+    "prepare_trial_v23.py": "b49909348e3b75cab934c4564c6cdcb28234cca82190d30a335bdd7bd953b6e8",
+    "audit_trial_v23.py": "55578ea114aa8b1edf00286a394aacae34589c89d7d9bfb22fef01189c7afb07",
+    "run_trial.py": "c324eb1b521a21916d3d76d1507ab8bcfba37c1a992db6c2bf7716ea519c87df",
+    "weights": "fa6ed98084afb0497d9075a82ab17fdfc0b5d99fb6b37d8f761463e67c100f45"
+  },
+  "limits": [
+    "intentional synthetic cases",
+    "not a general performance estimate",
+    "no inference on manuscript evidence"
+  ],
+  "initial_preregistration_sha256": "5480b65f747e2d0ef2892aef27669e7d8b21f68a9c13597e9df6fb62e128c39c",
+  "amendment": {
+    "after_episode": "pilot_01",
+    "observed_event": "The model generated 256 tokens without a complete JSON object; the full raw output and generated token IDs are preserved.",
+    "classification": "model_output_failure, not infrastructure or evaluator failure",
+    "handling": "count pilot_01 as one failed episode, do not retry it, continue the remaining nine under unchanged weights, prompt, schedule, grammar and generation settings",
+    "reason": "the original preregistered policy says no retries and continue subsequent episodes; correcting the harness to implement that policy",
+    "no_scoring_or_prompt_change": true
+  }
+}

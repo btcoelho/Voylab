@@ -1,0 +1,12 @@
+{
+  "initial_preregistration_sha256": "5480b65f747e2d0ef2892aef27669e7d8b21f68a9c13597e9df6fb62e128c39c",
+  "amended_preregistration_sha256": "68646f11cf5bcebd1db4805903dd4e31100621848eea60c1b0d806edb74b6c48",
+  "amendment": {
+    "after_episode": "pilot_01",
+    "observed_event": "The model generated 256 tokens without a complete JSON object; the full raw output and generated token IDs are preserved.",
+    "classification": "model_output_failure, not infrastructure or evaluator failure",
+    "handling": "count pilot_01 as one failed episode, do not retry it, continue the remaining nine under unchanged weights, prompt, schedule, grammar and generation settings",
+    "reason": "the original preregistered policy says no retries and continue subsequent episodes; correcting the harness to implement that policy",
+    "no_scoring_or_prompt_change": true
+  }
+}

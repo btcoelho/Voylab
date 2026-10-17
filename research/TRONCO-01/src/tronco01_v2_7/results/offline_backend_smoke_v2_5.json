@@ -1,0 +1,28 @@
+{
+  "episodes_attempted": 1,
+  "generation_calls": 2,
+  "queries": 1.0,
+  "model_weights_loaded": false,
+  "model_inference": false,
+  "tokenizer": "/home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-0.5B-Instruct-bnb-4bit/snapshots/216d96b52c97a3c8294776df8477592f6828981c",
+  "transformers": "5.17.0",
+  "lm_format_enforcer": "0.11.3",
+  "event_kinds": [
+    "trial_start",
+    "episode_start",
+    "prompt",
+    "generation_attempt",
+    "generation",
+    "raw_action",
+    "action_result",
+    "prompt",
+    "generation_attempt",
+    "generation",
+    "raw_action",
+    "action_result",
+    "episode_outcome"
+  ],
+  "query_was_recorded": true,
+  "report_was_recorded": true,
+  "all_generation_records_marked_simulated": true
+}
