@@ -50,3 +50,12 @@ Modelo esperado: Qwen2.5-0.5B-Instruct 4 bits, ação por turno, decodificação
 - Se a elegibilidade falhar por **prompt, esquema ou gramática**, é permitido corrigir só essas peças e repetir o piloto (máximo 3 rondas, cada uma registada com falhas, correções e critérios; a tarefa, as métricas e os mundos não mudam).
 - Se falhar por **capacidade** do modelo, não se mexe no prompt para o salvar: regista-se e sobe-se na escada (modelo maior).
 - Nada do piloto serve de evidência de competência, e nenhum mundo do piloto entra em validação ou cega.
+
+## 7. Registo de execução
+**17/10/2026, ambiente** (`Codex/pilot_v3/env_local.json`): WSL2, Python 3.12.3, RTX 4070 12 GB. Pacotes só no venv `~/voynich-lab/.venv`, com as versões do manifesto v2.7. Snapshot `216d96b5…` presente (o `model.safetensors` não tem hash). Pacote do piloto = `git archive` de 31d906e (sha256 `b2acdfea…`).
+
+**17/10/2026, testes e ensaio:** 41/41 testes no venv; `fake_random` com 12 mundos correu até ao fim.
+
+**17/10/2026, arranque real abortado (`real_1`), 0 chamadas ao modelo.** O `lm-format-enforcer` 0.11.3 importa `PreTrainedTokenizerBase` de `transformers.tokenization_utils`, que o transformers 5.17 já não expõe. O manifesto fixa duas versões que, juntas, não funcionam. A falha ocorreu ao construir o backend, antes de qualquer mundo ser apresentado, por isso não há saídas nem transcrições. O `attempt_once.lock` de `real_1` fica onde está, como registo; não se apaga.
+
+Decisão: não é uma ronda do piloto, porque nenhum mundo foi apresentado. Não se instalam nem atualizam pacotes, para não sair do manifesto. A correção é só de importação: `hf_backend._transformers_compat()` reexporta a classe com o nome antigo, e o resultado fica registado (`compat`). Antes do piloto corre um teste de fumo (`pilot/smoke_hf.py`) sobre texto escrito à mão, sem mundos do piloto. A tentativa válida usa uma pasta nova, `real_2`. Os prompts, o esquema, os mundos, as métricas e as previsões M1–M5 não mudam. O `code_sha256` do `summary.json` passa a incluir o novo hash do `hf_backend.py`.

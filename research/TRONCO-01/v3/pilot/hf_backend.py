@@ -1,6 +1,6 @@
 """Local Hugging Face backend (transformers + lm-format-enforcer), greedy decoding, schema-constrained.
 
-NOT EXECUTED where this file was written (no torch there). It mirrors the stack recorded in the frozen v2.7 manifest:
+First real start failed on an import incompatibility (see _transformers_compat); smoke-tested with smoke_hf.py. It mirrors the stack recorded in the frozen v2.7 manifest:
 transformers 5.17.0, lm-format-enforcer 0.11.3. It deliberately accepts NO `state` argument.
 """
 from __future__ import annotations
@@ -8,9 +8,28 @@ from __future__ import annotations
 from pilot_harness import Backend
 
 
+def _transformers_compat():
+    """lm-format-enforcer 0.11.3 imports PreTrainedTokenizerBase from transformers.tokenization_utils, which
+    transformers 5.x no longer exposes there (found on the first real start, 17/10/2026, 0 model calls).
+    Re-export the class under the old name instead of changing installed packages. Returns what was done."""
+    import transformers
+    try:
+        import transformers.tokenization_utils as tu
+    except ImportError:
+        import sys, types
+        tu = types.ModuleType("transformers.tokenization_utils")
+        sys.modules["transformers.tokenization_utils"] = tu
+        transformers.tokenization_utils = tu
+    if hasattr(tu, "PreTrainedTokenizerBase"):
+        return "none"
+    tu.PreTrainedTokenizerBase = transformers.PreTrainedTokenizerBase
+    return "reexported PreTrainedTokenizerBase"
+
+
 class HFBackend(Backend):
     def __init__(self, snapshot_dir: str, max_new_tokens: int = 256, max_context_tokens: int = 4096):
         import torch
+        self.compat = _transformers_compat()
         from lmformatenforcer import JsonSchemaParser
         from lmformatenforcer.integrations.transformers import build_transformers_prefix_allowed_tokens_fn
         from transformers import AutoModelForCausalLM, AutoTokenizer
