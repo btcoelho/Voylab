@@ -50,3 +50,10 @@ Duas partições novas, geradas só depois do congelamento deste documento e do 
 
 ## 10. Fora de âmbito
 Treino, modelos, Voynich, benchmarks externos (passo 9), ruído nas respostas, dinâmicas contínuas.
+
+## 11. Pistas de avaliação (decisão de 17/10/2026, ver `docs/DECISOES_2026-10-17.md`)
+- **sem_ferramentas** e **com_codigo**, reportadas separadamente, nunca agregadas.
+- Pista com código: interpretador isolado, sem rede, tempo e memória limitados; o registo de execução faz parte da memória verificável.
+- A v3 cobre C3–C5. C1–C2 (enquadramento) ficam numa tarefa separada, a especificar.
+- Métricas adicionais (secção 5) com decomposição obrigatória: **erro de procura** (o histórico não chega ao alvo), **erro de inferência**
+  (a resposta não é a que o próprio histórico implica) e **evidência obtida e ignorada** (inferência errada com veredicto do histórico já determinado).
