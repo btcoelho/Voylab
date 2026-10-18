@@ -412,3 +412,24 @@ Mais a frase "não inventes resultados". Nada sobre prudência.
   - **R-e:** fundamentado acima da constante `undetermined` nos mesmos 45 (15/45), com pelo menos um acerto em `rejected` ou `supported`.
   - **R-f:** revisão final correta ≥ 0,80.
 - Com 15 mundos por alvo, os IC são largos; o resultado serve para decidir a direção, não para confirmar. Esta é a última ronda desta fase; a seguir decide-se avançar, reformular ou suspender.
+
+## 21. Resultados de M1-DS-R (raciocínio ligado; ronda 3 de 3; `results/modelos_v4/M1-DS-R/`)
+
+**Execução.** 45/45 episódios, 138 chamadas (sem duplicados), 1 falha de rede repetida com sucesso (falha de execução); a paragem por saldo não disparou (saldo final 6,26 USD). Mediana de 4 788 tokens de saída por chamada. **7 das 138 respostas foram cortadas pelo limite de 32 000 tokens** (sem resposta final): contam como falhas do modelo, como pré-registado; o ambiente aceitou a ação seguinte e os 45 episódios terminaram.
+
+**Elegibilidade (regra do §15.3 / §4 do plano): falhada.** Respostas JSON válidas e ações aceites: 131/138 = 0,949 [0,90; 0,98], abaixo de 0,98. Pela regra pré-registada, **M1-DS-R não é avaliado formalmente em desempenho**; os números abaixo são **descritivos**.
+
+| Nos mesmos 45 mundos | M1-DS (sem raciocínio) | M1-DS-R (com raciocínio) | Constante `undetermined` | Consulta ao acaso + leitura correta |
+|---|---|---|---|---|
+| Fundamentado | 15/45 [0,21; 0,48] | 37/45 [0,69; 0,91] | 15/45 | 24/45 |
+| … `rejected` / `supported` / `undetermined` (de 15) | 0 / 0 / 15 | 8 / 14 / 15 | 0 / 0 / 15 | — |
+| Concordância com o próprio histórico | 38/45 | 45/45 | — | 45/45 |
+| Revisão final correta | 25/45 [0,41; 0,69] | 45/45 [0,92; 1] | — | 45/45 |
+
+Categorias de M1-DS-R: fundamentado 37, pesquisa 4, prematura 4 (comprometeu sem consultar quando uma consulta ainda decidia). Escolha de consulta: diferença pareada de v2 (M1-DS-R − M1-DS, consulta em falta = 0) = **+0,298 [+0,186; +0,410]**, n = 45.
+
+**Previsões do §20:** R-a **refutada** (0,949 < 0,98, por respostas cortadas). R-b **confirmada** (45/45). R-c **confirmada** (8/8). R-d **confirmada**. R-e **confirmada** (37 > 15, com acertos em `rejected` e `supported`). R-f **confirmada** (45/45).
+
+**Leitura.** Com raciocínio, o mesmo modelo deixa de se comportar como a constante: lê corretamente o histórico em todos os casos, revê corretamente em todos e escolhe consultas muito melhores, ficando acima da referência "consulta ao acaso + leitura correta" (37 contra 24). O que faltava nas rondas 1 e 2 não era texto na prompt, era espaço de raciocínio. Ressalvas: exploratório (mundos já vistos), 45 mundos, elegibilidade formal falhada por truncagem, e desempenho não é validade.
+
+**Decisão proposta para a fase (3 rondas esgotadas): avançar, com uma correção de execução.** (1) O limite de tokens é uma condição de execução, não da tarefa: propor, com aprovação, subir o limite ou impor um orçamento de raciocínio, para eliminar as respostas cortadas; (2) confirmar o efeito do raciocínio na partição de validação (uma vez, pré-registado, com aprovação), que é o primeiro teste não exploratório; (3) tornar obrigatórias as referências constante e "consulta ao acaso + leitura correta" e reportar sempre por veredicto alvo.
