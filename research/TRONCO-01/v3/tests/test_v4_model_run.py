@@ -108,17 +108,46 @@ class Backend(unittest.TestCase):
             self.assertEqual(s.seen, [])
 
 
+class DeepSeek(unittest.TestCase):
+    OKD = Resp(200, {"model": "deepseek-served", "id": "r1", "usage": {"prompt_tokens": 3},
+                     "choices": [{"finish_reason": "stop", "message": {"content": '{"action":"keep"}', "reasoning_content": "x"}}]})
+
+    @mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": "sk-test-SECRET"})
+    def test_retry_content_only_and_key_never_recorded(self):
+        from deepseek_backend import DeepSeekBackend
+        s = Session([Resp(503), self.OKD])
+        b = DeepSeekBackend("deepseek-x", session=s, sleep=lambda _: None)
+        self.assertEqual(b.generate("sys", "user", {}), '{"action":"keep"}')
+        self.assertEqual(b.last_meta["model_served"], "deepseek-served")
+        self.assertTrue(b.last_meta["reasoning_present"])
+        self.assertEqual(s.seen[0][1]["messages"][0], {"role": "system", "content": "sys"})
+        self.assertEqual(s.seen[0][1]["temperature"], 0.0)
+        self.assertNotIn("SECRET", json.dumps([b.execution_log, b.last_meta, b.name]))
+
+    def test_missing_key_and_fatal_status(self):
+        from deepseek_backend import DeepSeekBackend
+        with mock.patch.dict(os.environ, {}, clear=True):
+            s = Session([self.OKD])
+            with self.assertRaises(ExecutionError):
+                DeepSeekBackend("d", session=s).generate("s", "u", {})
+            self.assertEqual(s.seen, [])
+        with mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": "k"}):
+            with self.assertRaises(ExecutionError):
+                DeepSeekBackend("d", session=Session([Resp(401)]), sleep=lambda _: None).generate("s", "u", {})
+
+
 class Frozen(unittest.TestCase):
     def test_refuses_when_section15_or_model_differ(self):
-        if not R.FROZEN.exists():
+        p = R.FROZEN_DIR / R.PROVIDERS["deepseek"]
+        if not p.exists():
             self.skipTest("not frozen yet")
-        f = json.loads(R.FROZEN.read_text())
-        R.check_frozen(f["model_requested"])            # passes as is
+        f = json.loads(p.read_text())
+        R.check_frozen(f["model_requested"], "deepseek")            # passes as is
         with self.assertRaises(SystemExit):
-            R.check_frozen("other-model")
-        with mock.patch.object(R, "section15", lambda: "changed"):
+            R.check_frozen("other-model", "deepseek")
+        with mock.patch.object(R, "section", lambda n=15: "changed"):
             with self.assertRaises(SystemExit):
-                R.check_frozen(f["model_requested"])
+                R.check_frozen(f["model_requested"], "deepseek")
 
 
 if __name__ == "__main__":

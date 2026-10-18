@@ -22,8 +22,10 @@ REPO = V3.parent.parent.parent
 sys.path[:0] = [str(HERE), str(V3), str(V3 / "instrument")]
 import pilot_harness as H  # noqa: E402
 
-FROZEN = V3 / "results" / "modelos_v4" / "PREREGISTO_CONGELADO.json"
-CODE = ["pilot/pilot_harness.py", "pilot/anthropic_backend.py", "pilot/run_v4_models.py", "env_v3.py", "generator_v3.py",
+FROZEN_DIR = V3 / "results" / "modelos_v4"
+FROZEN = FROZEN_DIR / "PREREGISTO_CONGELADO.json"            # Claude M1 (§15); kept as it was frozen
+PROVIDERS = {"anthropic": "PREREGISTO_CONGELADO.json", "deepseek": "PREREGISTO_CONGELADO_DEEPSEEK.json"}
+CODE = ["pilot/pilot_harness.py", "pilot/anthropic_backend.py", "pilot/deepseek_backend.py", "pilot/run_v4_models.py", "env_v3.py", "generator_v3.py",
         "scoring.py", "instrument/variants.py", "instrument/grid.py"]
 DEV_SEED_RANGE = range(91000, 92000)
 
@@ -32,32 +34,44 @@ def sha(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
 
-def section15() -> str:
+def section(n: int = 15) -> str:
     t = (REPO / "docs" / "V3_CONSULTAS.md").read_text(encoding="utf-8")
-    i = t.index("## 15. ")
-    j = t.find("\n## 16. ", i)
+    i = t.index(f"## {n}. ")
+    j = t.find(f"\n## {n + 1}. ", i)
     return t[i:] if j < 0 else t[i:j]
+
+
+def section15() -> str:
+    return section(15)
+
+
+def prereg_text(provider: str) -> str:
+    """Claude: §15. DeepSeek: §15 plus the deviation §16 (both frozen together)."""
+    return section15() if provider == "anthropic" else section15() + section(16)
 
 
 def code_hashes() -> dict:
     return {n: sha((V3 / n).read_bytes()) for n in CODE}
 
 
-def freeze(model: str, commit: str) -> dict:
-    d = {"preregisto": "docs/V3_CONSULTAS.md §15", "section15_sha256": sha(section15().encode()), "commit": commit,
+def freeze(model: str, commit: str, provider: str = "anthropic") -> dict:
+    d = {"preregisto": "docs/V3_CONSULTAS.md §15" + (" + §16" if provider != "anthropic" else ""), "provider": provider,
+         "section15_sha256": sha(prereg_text(provider).encode()), "commit": commit,
          "model_requested": model, "temperature": 0.0, "max_tokens": 1024, "prompt": "v3.1", "mode": "state_cards_object",
          "worlds": "variants.build('V4'), 225 development worlds", "code_sha256": code_hashes()}
-    FROZEN.parent.mkdir(parents=True, exist_ok=True)
-    FROZEN.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    path = FROZEN_DIR / PROVIDERS[provider]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return d
 
 
-def check_frozen(model: str) -> dict:
-    if not FROZEN.exists():
+def check_frozen(model: str, provider: str = "anthropic") -> dict:
+    path = FROZEN_DIR / PROVIDERS[provider]
+    if not path.exists():
         sys.exit("pre-registration not frozen; refusing to run")
-    f = json.loads(FROZEN.read_text(encoding="utf-8"))
+    f = json.loads(path.read_text(encoding="utf-8"))
     problems = []
-    if f["section15_sha256"] != sha(section15().encode()):
+    if f["section15_sha256"] != sha(prereg_text(provider).encode()):
         problems.append("§15 changed after freezing")
     if f["model_requested"] != model:
         problems.append(f"model {model} differs from frozen {f['model_requested']}")
@@ -134,14 +148,19 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--model", required=True)
+    ap.add_argument("--provider", choices=list(PROVIDERS), default="anthropic")
     ap.add_argument("--freeze", metavar="COMMIT", help="write the frozen pre-registration (no calls) and exit")
     a = ap.parse_args()
     if a.freeze:
-        print(json.dumps(freeze(a.model, a.freeze), indent=1))
+        print(json.dumps(freeze(a.model, a.freeze, a.provider), indent=1))
         return
-    f = check_frozen(a.model)
-    from anthropic_backend import AnthropicBackend
-    b = AnthropicBackend(a.model, temperature=f["temperature"], max_tokens=f["max_tokens"])
+    f = check_frozen(a.model, a.provider)
+    if a.provider == "anthropic":
+        from anthropic_backend import AnthropicBackend
+        b = AnthropicBackend(a.model, temperature=f["temperature"], max_tokens=f["max_tokens"])
+    else:
+        from deepseek_backend import DeepSeekBackend
+        b = DeepSeekBackend(a.model, temperature=f["temperature"], max_tokens=f["max_tokens"])
     res = run(a.out, b)
     served = sorted({json.loads(l)["meta"].get("model_served") for l in (a.out / "calls.jsonl").read_text().splitlines() if l.strip()} - {None})
     res.update({"model_requested": a.model, "models_served": served, "frozen": f, "execution_log": b.execution_log})
