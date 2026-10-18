@@ -65,3 +65,12 @@ class FrozenReference(unittest.TestCase):
     def test_reference_artifacts_and_recomputed_summary_unchanged(self):
         import reference_manifest as RM
         self.assertEqual(RM.check(), [])
+
+
+class V4Task(unittest.TestCase):
+    def test_planted_policies_on_v4_worlds(self):
+        import variants as VA
+        ws, _ = VA.build("V4")
+        conf, rev, _ = planted.run(ws[:90])
+        self.assertEqual({k: v for k, v in conf.items() if k[1] != k[2]}, {})
+        self.assertTrue(all(ok for (_, ok) in rev))

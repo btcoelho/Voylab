@@ -54,8 +54,8 @@ def canon(x):
     return json.dumps(x, sort_keys=True, separators=(",", ":"))
 
 
-def main(out_dir: Path):
-    worlds = a.dev_set(seeds=a.DEV_SEEDS, with_indirect=True, balanced=True)
+def main(out_dir: Path, worlds=None):
+    worlds = worlds if worlds is not None else a.dev_set(seeds=a.DEV_SEEDS, with_indirect=True, balanced=True)
     by_public = collections.defaultdict(set)     # canonical public state -> verdicts (70) seen
     stats = collections.Counter()
     div = collections.Counter()

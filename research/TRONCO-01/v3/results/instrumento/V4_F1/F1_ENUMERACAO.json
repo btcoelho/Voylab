@@ -1,0 +1,2047 @@
+{
+ "worlds": 225,
+ "states": 6418,
+ "distinct_public_states": 6418,
+ "public_state_collisions_with_different_v70": 0,
+ "divergence_v70_vs_cards": {
+  "rejected->inconsistent": 2271,
+  "rejected->rejected": 322,
+  "supported->supported": 208,
+  "undetermined->supported": 3175,
+  "undetermined->undetermined": 442
+ },
+ "share_divergent": 0.8485509504518541,
+ "undetermined_states_with_budget": 225,
+ "decisive_1_vs_k_disagreements": 0,
+ "revision_states": 6418,
+ "revision_inconsistent": 4034,
+ "revision_inconsistent_without_direct_conflict": 1863,
+ "roots_with_more_than_one_possible_target": 225,
+ "roots": [
+  {
+   "uid": "v3u-b8293cd907fba3c5",
+   "target": "rejected",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-a7d44e618d587279",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-6f5c3bee4dfe4d43",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-d27a8244d80a5d7b",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 3
+   }
+  },
+  {
+   "uid": "v3u-1d556d99f8401852",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 4,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-2865a1b9c58aa0ee",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-de79074ebeb4872b",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-15c1f7c52e08c87d",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-0ba452fff5696717",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-20f84ed09c12bb13",
+   "target": "rejected",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-2552e1405ff4aaec",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-68913b80c720eab0",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-353b3467468b5ba0",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-bf6158a5d36c1b48",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 5
+   }
+  },
+  {
+   "uid": "v3u-62e476679027424b",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-e05188522b31327d",
+   "target": "rejected",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-0fe95b26138b2b66",
+   "target": "rejected",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-168a069e032663cd",
+   "target": "supported",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "supported": 2,
+    "rejected": 1
+   }
+  },
+  {
+   "uid": "v3u-ae04b767e7740985",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-5dcac9207dad7fb9",
+   "target": "undetermined",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-a4d1212c3f950a2d",
+   "target": "undetermined",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "rejected": 2,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-edefb112ec37b8ce",
+   "target": "rejected",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-465a61449fe9391e",
+   "target": "rejected",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-67c6dc322c4c77a0",
+   "target": "rejected",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-d12d2da159ae8e37",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-d3138bd5c58dde8f",
+   "target": "supported",
+   "admissible_at_root": 2,
+   "possible_targets": {
+    "rejected": 1,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-8e532896dc1db346",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-ba6a225db2b2a2f6",
+   "target": "undetermined",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-4e7dfd6e0b94aecf",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 5
+   }
+  },
+  {
+   "uid": "v3u-e147776179a29da7",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-0fd16d6e9b358645",
+   "target": "rejected",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-324ae60b7519a9e9",
+   "target": "rejected",
+   "admissible_at_root": 2,
+   "possible_targets": {
+    "rejected": 1,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-78fcecca1a62ecf2",
+   "target": "supported",
+   "admissible_at_root": 2,
+   "possible_targets": {
+    "rejected": 1,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-5b09e899959ec296",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 3
+   }
+  },
+  {
+   "uid": "v3u-40c09a5a801170e7",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-b0bbab99a2605aec",
+   "target": "undetermined",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-e6c807ca3403d22a",
+   "target": "rejected",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-de4cba31a38dba6e",
+   "target": "rejected",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-96ff86c6bb78c52d",
+   "target": "rejected",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-0f2744d181bec01e",
+   "target": "rejected",
+   "admissible_at_root": 19,
+   "possible_targets": {
+    "rejected": 18,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-8379da3974186077",
+   "target": "rejected",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-c2714f22f14fc078",
+   "target": "rejected",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-307fc7d4b0492ac8",
+   "target": "supported",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 14,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-f6269ea0c73a47bf",
+   "target": "supported",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-90ae85756ce1aed2",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 8,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-8c438cda3ad5025d",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 9
+   }
+  },
+  {
+   "uid": "v3u-e3531a5f6087f1ab",
+   "target": "supported",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 15,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-35a88848dc6a516e",
+   "target": "supported",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-bdc0ed716e1e805a",
+   "target": "undetermined",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-931c5b1062501083",
+   "target": "undetermined",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-d021e0a14955d0d8",
+   "target": "undetermined",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-c6f6963666a5ca57",
+   "target": "undetermined",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-1ec18c0c937fb12f",
+   "target": "undetermined",
+   "admissible_at_root": 18,
+   "possible_targets": {
+    "rejected": 17,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-1e882b9baaa93b5d",
+   "target": "undetermined",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-19459cc53e057de0",
+   "target": "rejected",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-25496a73b14f4290",
+   "target": "rejected",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-1ca678fa182f73e4",
+   "target": "rejected",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-e7677a2070c4b30c",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 7
+   }
+  },
+  {
+   "uid": "v3u-0fcaaee17866420b",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-5d429564867446c4",
+   "target": "rejected",
+   "admissible_at_root": 11,
+   "possible_targets": {
+    "rejected": 10,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-ae48dd29e8f68aa8",
+   "target": "rejected",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-8f68a8bee41acf32",
+   "target": "rejected",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-c8a15fe5763da777",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 3
+   }
+  },
+  {
+   "uid": "v3u-39586330061e4a0f",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-1c15bf74139c20ba",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-e9e68974b38df745",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-94b5afabb1800062",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-d25abfd15ac8e0b3",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-56cddffa2e87c783",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-21116e8e944ecb79",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 4
+   }
+  },
+  {
+   "uid": "v3u-b197a888f7dc47b8",
+   "target": "undetermined",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-669e70e7bd196d7c",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 5
+   }
+  },
+  {
+   "uid": "v3u-fedcdf30ee5f7c33",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-43ddbbf83ae6b855",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-912bbb2512772886",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-fc19479d8d975c50",
+   "target": "undetermined",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-4871927f553205a7",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-93879e39c73faa12",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-e69798d5ffb57c80",
+   "target": "rejected",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-6667d3fdc260fd69",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 7
+   }
+  },
+  {
+   "uid": "v3u-df6ac496041400af",
+   "target": "rejected",
+   "admissible_at_root": 11,
+   "possible_targets": {
+    "rejected": 10,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-3ed8cef74dd6b0c4",
+   "target": "rejected",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-88dc2fb17edce4fa",
+   "target": "rejected",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-40ce378faacb26ca",
+   "target": "rejected",
+   "admissible_at_root": 11,
+   "possible_targets": {
+    "rejected": 10,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-17fc9b814b8aa8d5",
+   "target": "rejected",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-a8142064c982b125",
+   "target": "rejected",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-0e5f9600019de541",
+   "target": "supported",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 2
+   }
+  },
+  {
+   "uid": "v3u-fce5613b57fe4cc1",
+   "target": "supported",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-0c72f69455a415a4",
+   "target": "supported",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "supported": 2,
+    "rejected": 1
+   }
+  },
+  {
+   "uid": "v3u-475e3fe65ebc557f",
+   "target": "supported",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 8
+   }
+  },
+  {
+   "uid": "v3u-b354a075780b9389",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-f5d822e7b6782927",
+   "target": "supported",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-4c03431bd1c31eac",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 3
+   }
+  },
+  {
+   "uid": "v3u-6df426bc8ef3284d",
+   "target": "supported",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-815b3c531662cd75",
+   "target": "undetermined",
+   "admissible_at_root": 11,
+   "possible_targets": {
+    "rejected": 10,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-692b473ff4c4f663",
+   "target": "undetermined",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-f711d3db285cda50",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-76e336cf8fd2952e",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-f88ea4c1fc327f9e",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 5
+   }
+  },
+  {
+   "uid": "v3u-776caad05103613f",
+   "target": "undetermined",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-a19a15093c9cb31e",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-dc12c07c534812fb",
+   "target": "undetermined",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-c95e0bd36a864c3a",
+   "target": "rejected",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-62cdf84dba088a5e",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-482f33acd2a7a318",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-90f47f32a159ebb1",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-c06831278bfa113f",
+   "target": "rejected",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-28c925d3c5ea47d2",
+   "target": "rejected",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-396b72d59b610480",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-4acd650d89d6dd27",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 3
+   }
+  },
+  {
+   "uid": "v3u-68931bfa1a48245a",
+   "target": "supported",
+   "admissible_at_root": 19,
+   "possible_targets": {
+    "rejected": 18,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-f01ad919c65802f8",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-1fe1c7a91561ac45",
+   "target": "supported",
+   "admissible_at_root": 19,
+   "possible_targets": {
+    "rejected": 18,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-ea10adac093fccc7",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-4b68fe00cf5c374d",
+   "target": "undetermined",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-1dbf56382cc5a58e",
+   "target": "undetermined",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-bbfd582099cfff74",
+   "target": "undetermined",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-5cf297a21fa18b77",
+   "target": "undetermined",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-24d7d13746a50cbf",
+   "target": "undetermined",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-da3922d588b495e0",
+   "target": "undetermined",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-4968b02f6d61cda5",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 7
+   }
+  },
+  {
+   "uid": "v3u-dfeab645f799546d",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-bc89dd03f1935678",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-375728c0c7d73857",
+   "target": "rejected",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 8
+   }
+  },
+  {
+   "uid": "v3u-2e4656b30bc20cb1",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-ef0cf573e9dbc3f5",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-af545a3c5a829a7b",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-7ae193b53a3f6a56",
+   "target": "rejected",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-f9ab4bf12a5a6aa1",
+   "target": "rejected",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-b1c81d930c95c079",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 4
+   }
+  },
+  {
+   "uid": "v3u-bb16b1de01142fca",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-abd7232e616588be",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-f255bd1fbddd22f7",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-366f3f580463248e",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-6c1b52acfa07ea03",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-2ff01bc285f8e346",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-01b48c9ddf1982bb",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-f528f7ae8de8a588",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-83e69cec646bf6ae",
+   "target": "undetermined",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-1e0f535f1aa2e277",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-60977ef11a9b2b88",
+   "target": "undetermined",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 3
+   }
+  },
+  {
+   "uid": "v3u-799eeda8439af6d2",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-2b76600250aac749",
+   "target": "undetermined",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-e7a6592efc82f491",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-5422c72a7c89bb4e",
+   "target": "undetermined",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-08e09b7c58faed86",
+   "target": "undetermined",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-1301f75ead0b511b",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-d84fc66566be4711",
+   "target": "rejected",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-5c29799854ddb232",
+   "target": "rejected",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-370953c1df849f69",
+   "target": "rejected",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-1292ffef690cf73e",
+   "target": "rejected",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-b791f4498777acc0",
+   "target": "rejected",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 5
+   }
+  },
+  {
+   "uid": "v3u-a9a972b3dc2897eb",
+   "target": "rejected",
+   "admissible_at_root": 7,
+   "possible_targets": {
+    "rejected": 6,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-3653f7f409acf372",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-fa4f2e484563ff0f",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-e7405d85a66f93f5",
+   "target": "supported",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "supported": 2,
+    "rejected": 3
+   }
+  },
+  {
+   "uid": "v3u-2cafe73be7f6f01d",
+   "target": "supported",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-49af58a8571f111b",
+   "target": "supported",
+   "admissible_at_root": 7,
+   "possible_targets": {
+    "rejected": 6,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-cabc49fc6a4f5d86",
+   "target": "supported",
+   "admissible_at_root": 2,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 1
+   }
+  },
+  {
+   "uid": "v3u-0826fde705b770bb",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-367eba5c3871563f",
+   "target": "undetermined",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-7966853368d139eb",
+   "target": "undetermined",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-a8245bdf897c5bd8",
+   "target": "undetermined",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "rejected": 2,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-d0135c664c385bc6",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-eb000ab54880e8e5",
+   "target": "undetermined",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 2
+   }
+  },
+  {
+   "uid": "v3u-46cef0d3b217086a",
+   "target": "rejected",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-d5a34ae023ae6b99",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-ad5da67f66b45bb2",
+   "target": "rejected",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-617be428b7d8b5fc",
+   "target": "rejected",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-bf3efcde3c814cfd",
+   "target": "rejected",
+   "admissible_at_root": 19,
+   "possible_targets": {
+    "rejected": 18,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-2fc79c70e7cad23d",
+   "target": "rejected",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-601ceec7073553a9",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-6b8043858992c886",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-721134cfc58101ba",
+   "target": "supported",
+   "admissible_at_root": 19,
+   "possible_targets": {
+    "rejected": 18,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-20006938d321589f",
+   "target": "supported",
+   "admissible_at_root": 19,
+   "possible_targets": {
+    "rejected": 18,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-6085c9b9ee93aa88",
+   "target": "supported",
+   "admissible_at_root": 19,
+   "possible_targets": {
+    "rejected": 18,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-97f89657d7eed643",
+   "target": "supported",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-be227704105b6ea7",
+   "target": "undetermined",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-578de381913e0370",
+   "target": "undetermined",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-9b2a41e193b30bc0",
+   "target": "undetermined",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "rejected": 15,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-907f82a8a7f0bce3",
+   "target": "undetermined",
+   "admissible_at_root": 10,
+   "possible_targets": {
+    "rejected": 9,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-d234e0f92c3dabf9",
+   "target": "undetermined",
+   "admissible_at_root": 25,
+   "possible_targets": {
+    "rejected": 24,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-a5f0cfe57a9526f4",
+   "target": "undetermined",
+   "admissible_at_root": 16,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 15
+   }
+  },
+  {
+   "uid": "v3u-6515eb1c60e07687",
+   "target": "rejected",
+   "admissible_at_root": 11,
+   "possible_targets": {
+    "rejected": 10,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-0838880a6e6773bd",
+   "target": "rejected",
+   "admissible_at_root": 9,
+   "possible_targets": {
+    "rejected": 8,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-a042d11ad2637dce",
+   "target": "rejected",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-9977719361b4b8f8",
+   "target": "rejected",
+   "admissible_at_root": 12,
+   "possible_targets": {
+    "rejected": 11,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-7c9829d4f8bc8593",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 7
+   }
+  },
+  {
+   "uid": "v3u-a32b0cf66e8023fd",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-84ef9774d27d689e",
+   "target": "rejected",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-e7148cbb738b54e2",
+   "target": "rejected",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-6a0b1aa4ae86a77b",
+   "target": "rejected",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-338e2ac7b923bcb0",
+   "target": "supported",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-f0c70262774c5dd0",
+   "target": "supported",
+   "admissible_at_root": 2,
+   "possible_targets": {
+    "rejected": 1,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-86edd257721038da",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "supported": 2,
+    "rejected": 2
+   }
+  },
+  {
+   "uid": "v3u-42a09e7ea84e7afc",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 2,
+    "supported": 2
+   }
+  },
+  {
+   "uid": "v3u-4891ffa00fe9a123",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-4047263f522dd5db",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-793fc5a9ef97da4a",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-229994fcac1ce32c",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-eecc71164af18e3c",
+   "target": "supported",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-6754f869e94ab8cb",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-b74cc0c5817b32d1",
+   "target": "undetermined",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-8c90e16ff3e7298a",
+   "target": "undetermined",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-bf99f9c2552fd96e",
+   "target": "undetermined",
+   "admissible_at_root": 17,
+   "possible_targets": {
+    "rejected": 16,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-e126198128a1733e",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "undetermined": 1,
+    "rejected": 7
+   }
+  },
+  {
+   "uid": "v3u-a17eb15d9ddb1c28",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-696713ef88d130f9",
+   "target": "undetermined",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-856758a238a45b42",
+   "target": "undetermined",
+   "admissible_at_root": 13,
+   "possible_targets": {
+    "rejected": 12,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-762a0a41c6194cb6",
+   "target": "undetermined",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-f3b64faf759f04a0",
+   "target": "rejected",
+   "admissible_at_root": 2,
+   "possible_targets": {
+    "rejected": 1,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-587e708a7dbc4c52",
+   "target": "rejected",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-b436ebbaa0d69f86",
+   "target": "rejected",
+   "admissible_at_root": 11,
+   "possible_targets": {
+    "rejected": 10,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-5a6b7ee9739bf530",
+   "target": "rejected",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-66c308df82190188",
+   "target": "rejected",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-1884808e8d710979",
+   "target": "supported",
+   "admissible_at_root": 3,
+   "possible_targets": {
+    "supported": 1,
+    "rejected": 2
+   }
+  },
+  {
+   "uid": "v3u-79e1ac643fae9469",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-79a047b12f44eb2f",
+   "target": "supported",
+   "admissible_at_root": 7,
+   "possible_targets": {
+    "rejected": 6,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-24c0870c67b8f8f9",
+   "target": "supported",
+   "admissible_at_root": 4,
+   "possible_targets": {
+    "rejected": 3,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-b8427f51170fcb24",
+   "target": "supported",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "supported": 1
+   }
+  },
+  {
+   "uid": "v3u-e11a7647ef5d4826",
+   "target": "undetermined",
+   "admissible_at_root": 6,
+   "possible_targets": {
+    "rejected": 5,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-33d0a4f5311e12c3",
+   "target": "undetermined",
+   "admissible_at_root": 7,
+   "possible_targets": {
+    "rejected": 6,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-807bf11803641213",
+   "target": "undetermined",
+   "admissible_at_root": 5,
+   "possible_targets": {
+    "rejected": 4,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-d32c0038dbf0abbf",
+   "target": "undetermined",
+   "admissible_at_root": 8,
+   "possible_targets": {
+    "rejected": 7,
+    "undetermined": 1
+   }
+  },
+  {
+   "uid": "v3u-0855566f144141e9",
+   "target": "undetermined",
+   "admissible_at_root": 7,
+   "possible_targets": {
+    "rejected": 6,
+    "undetermined": 1
+   }
+  }
+ ]
+}

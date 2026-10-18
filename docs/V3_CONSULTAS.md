@@ -164,3 +164,45 @@ Todas usam os mundos de desenvolvimento (sementes 91xxx), a mesma grelha de cél
 1. Implementar a V4 como tarefa completa no ambiente (orçamento 1, menu de 16; consultar uma entrada já observada é uma ação válida que não traz informação). Repetir sobre ela as validações das fases 1 e 2: verificador independente, políticas plantadas e mutação.
 2. Piloto humano sobre a V4.
 3. Modelo de fronteira, só depois.
+
+## 10. V4 como tarefa completa: validação (pré-registo, 18/10 13:05, antes de correr)
+O que se repete sobre os 225 mundos V4 de desenvolvimento, com o mesmo ambiente (`env_v3.Episode`, orçamento 1, menu de 16 entradas):
+1. **Verificador independente** (Node.js): árvore completa (todas as consultas do menu e todas as respostas possíveis, mais o estado de revisão de cada uma). Veredicto da leitura 70 recalculado só a partir da vista pública.
+2. **Políticas com defeitos plantados** (as 10 da fase 2), jogadas pelo ambiente nos mundos V4. A grelha classifica cada uma no rótulo que a construção implica.
+3. **Mutação** da grelha e da pontuação, com os testes estendidos aos mundos V4.
+
+**Previsões:**
+- **E-a.** 0 divergências no verificador.
+- **E-b.** 0 erros nas políticas plantadas, com todas as categorias exercitadas.
+- **E-c.** ≥ 90% de mutantes mortos.
+- **E-d.** Consultar uma entrada já observada é aceite pelo ambiente e não altera o veredicto do próprio histórico, o que é verificado à parte.
+
+**Critério:** E-a, E-b e E-c cumpridos. Caso contrário, há ronda de correção (máximo 3), sem tocar no gerador nem nos critérios da §8.
+
+## 11. Piloto humano sobre a V4: protocolo (pré-registo; aprovado pelo Bruno a 18/10, 11:21, como piloto e não como amostra representativa)
+- **Participantes:** 2 a 3 pessoas (o Bruno e uma ou duas que não conheçam o projeto). Sem treino prévio além do enunciado.
+- **Episódios:** 20 mundos V4 de desenvolvimento, iguais para todos e na mesma ordem, escolhidos de forma determinística (semente fixa) e estratificados assim:
+  - alvo: 7 `supported`, 7 `rejected`, 6 `undetermined`;
+  - qualidade da melhor consulta (o ponto fraco da §9): 10 com max v2 ≥ 0,80 e 10 com < 0,80;
+  - pelo menos 8 com mudança na revisão.
+- **Interface:** uma página privada que mostra exatamente o prompt v3.1 (com orçamento 1) e o estado como o modelo o vê:
+  1. escolher 1 das 16 consultas;
+  2. ver a resposta;
+  3. comprometer-se com um veredicto, as cartas admissíveis e as 4 previsões;
+  4. ver a evidência nova;
+  5. manter ou rever.
+  - Tudo é registado: a ação, o momento e o participante.
+  - As respostas ocultas estão no código da página. Num piloto de pessoas colaborativas isto é aceitável, mas fica dito.
+- **Medidas** (com o código de análise já existente):
+  - grelha ITT;
+  - revisão final correta;
+  - valor v2 da consulta escolhida, comparado com a melhor e com a média do menu;
+  - **kappa de Cohen** entre pessoas e de cada pessoa contra a referência (o veredicto do próprio histórico);
+  - tempo por episódio;
+  - tudo também separado por estrato de qualidade.
+- **Critério (da fase 4.1):** macro fundamentado ≥ 0,80 e kappa contra a referência ≥ 0,70 significam que o enunciado está bem posto. Abaixo disso, volta-se ao enunciado e não aos modelos.
+- **Previsões:**
+  - H-a: as pessoas escolhem uma consulta de valor acima da média do menu em ≥ 70% dos episódios;
+  - H-b: o macro fundamentado fica entre 0,6 e 0,9, com mais erros no estrato de qualidade baixa e em `undetermined`;
+  - H-c: kappa contra a referência ≥ 0,6;
+  - H-d: tempo mediano por episódio entre 2 e 6 minutos.
