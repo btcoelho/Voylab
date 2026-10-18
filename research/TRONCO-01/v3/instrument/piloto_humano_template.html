@@ -38,6 +38,7 @@ label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
 input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);width:12ch}
 .pred{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;font-variant-numeric:tabular-nums}
 .badge{font-size:.8rem;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.guide{display:grid;gap:8px;max-width:72ch}.guide ul,.guide ol{margin:0;padding-left:22px;display:grid;gap:4px}.mono{font-family:var(--mono);font-size:.9em}
 .done{text-align:center;padding:32px 16px;justify-items:center}
 </style>
 <div class="wrap">
@@ -47,7 +48,31 @@ input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);borde
   </div>
   <div class="panel" id="intro">
     <h2>Antes de começar</h2>
-    <p>Começas com 2 episódios de treino, que não contam e que mostram no fim a resposta de referência. Seguem-se 20 episódios curtos, sempre pela mesma ordem, alternando sem ajuda e com ajuda (a ajuda calcula as regras ainda admissíveis); cada episódio diz qual é. Por favor não abras o código da página nem os dados guardados: os resultados só valem se não o fizeres. Em cada um escolhes uma consulta, comprometes-te com um veredicto sobre a carta W, vês evidência nova e decides se manténs ou revês. Não há tempo limite, mas o tempo de cada episódio é registado. Não voltes atrás nem peças ajuda a ninguém.</p>
+    <div class="guide">
+      <p><b>A ideia.</b> Há uma máquina escondida com 4 interruptores: <span class="mono">glyph</span>, <span class="mono">setting</span>, <span class="mono">partner</span> e <span class="mono">phase</span>. Cada um tem 2 posições (por exemplo <span class="mono">g0</span> ou <span class="mono">g1</span>). Para cada combinação, a máquina dá <b>1</b> (acende) ou <b>0</b> (não acende).</p>
+      <p><b>A máquina é simples:</b> o resultado depende, no máximo, de 2 dos 4 interruptores; os outros não contam. Há 70 máquinas possíveis deste tipo.</p>
+      <p><b>O que vês em cada episódio.</b></p>
+      <ul>
+        <li><b>Observações:</b> combinações já testadas e o resultado. Ex.: <span class="mono">glyph=g1, setting=s1, partner=p0, phase=t0 -&gt; 1</span>.</li>
+        <li><b>Cartas:</b> três palpites sobre como a máquina funciona. Uma carta diz de que interruptores depende e dá uma tabela. Ex.: <span class="mono">g1|s1 -&gt; 1</span> quer dizer "quando glyph=g1 e setting=s1, dá 1", seja qual for a posição dos outros.</li>
+        <li><b>Carta de trabalho (W):</b> o palpite que vais avaliar.</li>
+        <li><b>Entradas retidas:</b> 4 combinações de teste, nunca vistas. Vais prever o resultado de cada uma.</li>
+      </ul>
+      <p><b>O que fazes, em 3 passos.</b></p>
+      <ol>
+        <li><b>Uma pergunta:</b> escolhes uma combinação do menu e vês o resultado. Escolhe a que mais te ajuda a decidir sobre W.</li>
+        <li><b>Veredicto sobre W:</b>
+          <ul>
+            <li><b>rejected</b>: W contradiz alguma observação. W está errada.</li>
+            <li><b>supported</b>: W bate com tudo o que viste <i>e</i> qualquer máquina possível que também bata dá os mesmos resultados que W nas 4 entradas retidas.</li>
+            <li><b>undetermined</b>: W bate com tudo o que viste, mas ainda há outra máquina possível que daria um resultado diferente numa entrada retida. Ainda não dá para concluir.</li>
+          </ul>
+          Indicas também que cartas batem com as observações e as tuas previsões (0 ou 1) para as 4 entradas retidas.</li>
+        <li><b>Evidência nova:</b> chegam mais observações. Manténs o veredicto ou revês. Se <i>nenhuma</i> das 70 máquinas consegue explicar todas as observações juntas, o veredicto é <b>inconsistent</b>.</li>
+      </ol>
+      <p><b>Exemplo rápido.</b> W diz "depende só de glyph: g0 -&gt; 0, g1 -&gt; 1". Se uma observação mostra <span class="mono">glyph=g1, … -&gt; 0</span>, W contradiz-a: <b>rejected</b>. Se todas as observações batem com W, mas ainda é possível uma máquina que dependa, por exemplo, de glyph <i>e</i> phase e que dê outro resultado numa entrada retida, então <b>undetermined</b>.</p>
+      <p><b>Como corre.</b> Primeiro 2 episódios de treino, que não contam e mostram no fim a resposta certa. Depois 20 episódios, alternando <b>sem ajuda</b> e <b>com ajuda</b> (a ajuda faz a conta das máquinas ainda possíveis por ti). Não há tempo limite, mas o tempo é registado. Não voltes atrás, não peças ajuda e não abras o código da página nem os dados guardados.</p>
+    </div>
     <div class="row"><label for="code">Código de participante</label><input type="text" id="code" maxlength="8" placeholder="P1" pattern="[Pp][0-9]+"><button class="btn" id="start" type="button">Começar</button></div>
     <p class="status" id="savestate">A ligar ao armazenamento…</p>
   </div>
@@ -56,6 +81,7 @@ input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);borde
       <h2>Regras</h2>
       <details id="rulesbox"><summary>Ver as regras completas</summary><pre id="rules"></pre></details>
       <div class="row"><span class="badge" id="cond"></span></div>
+      <details><summary>Como ler o estado</summary><p class="note">OBSERVAÇÕES: combinações testadas e o resultado (0 ou 1). CARTAS: cada palpite diz de que interruptores depende; numa linha como <span class="mono">g1|t0 -&gt; 1</span>, "quando glyph=g1 e phase=t0, dá 1". CARTA DE TRABALHO: a carta W que avalias. ENTRADAS RETIDAS: as 4 combinações de teste para as tuas previsões.</p></details>
       <h2>Estado</h2>
       <pre id="state"></pre>
       <div id="helpbox" class="result" hidden></div>
@@ -64,11 +90,13 @@ input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);borde
       <div class="step" id="s1"><h2>1 · Escolhe uma consulta</h2><div class="menu" id="menu"></div><div class="result" id="qres" hidden></div></div>
       <div class="step" id="s2" aria-disabled="true"><h2>2 · Compromete-te</h2>
         <div class="row" id="verdict"></div>
+        <div class="note">rejected: W contradiz uma observação · supported: todas as máquinas possíveis concordam com W nas retidas · undetermined: alguma máquina possível discorda de W numa retida</div>
         <div class="note">Cartas admissíveis (das três)</div><div class="row" id="cards"></div>
         <div class="note">Previsões para as entradas retidas</div><div class="pred" id="preds"></div>
         <div><button class="btn" id="commit" type="button" disabled>Comprometer</button></div></div>
       <div class="step" id="s3" aria-disabled="true"><h2>3 · Evidência nova</h2><div class="result" id="ev"></div>
         <div class="row"><button class="btn secondary" id="keep" type="button">Manter o veredicto</button></div>
+        <div class="note">inconsistent: nenhuma das 70 máquinas explica todas as observações juntas</div>
         <div class="note">Ou rever para:</div><div class="row" id="rv"></div>
         <div class="note">Cartas admissíveis depois da revisão</div><div class="row" id="rcards"></div>
         <div><button class="btn" id="revise" type="button" disabled>Rever</button></div></div>
