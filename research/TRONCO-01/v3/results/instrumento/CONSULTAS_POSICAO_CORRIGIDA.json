@@ -1,0 +1,26 @@
+{
+ "linha_de_base": {
+  "mundos_melhor_unica": 0,
+  "pos_media_unica": null,
+  "primeira_entre_unicas": null,
+  "pos_media_empates": 0.5
+ },
+ "V1": {
+  "mundos_melhor_unica": 0,
+  "pos_media_unica": null,
+  "primeira_entre_unicas": null,
+  "pos_media_empates": 0.5
+ },
+ "V2": {
+  "mundos_melhor_unica": 140,
+  "pos_media_unica": 0.441,
+  "primeira_entre_unicas": 0.171,
+  "pos_media_empates": 0.473
+ },
+ "V3": {
+  "mundos_melhor_unica": 0,
+  "pos_media_unica": null,
+  "primeira_entre_unicas": null,
+  "pos_media_empates": 0.506
+ }
+}

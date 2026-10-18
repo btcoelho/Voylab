@@ -26,6 +26,8 @@ def values(world):
     W, T, menu = hid["w"], hid["T"], hid["menu"]
     A0 = g.admissible_idx([(i, hid["h"][i]) for i in hid["obs"]])
     out = {}
+    if world["public"]["remaining_query_budget"] == 1:      # same definition with no second query
+        return {i: p_det(A0, i, W, T) for i in menu}
     for i in menu:
         tot = 0.0
         for y in {h[i] for h in A0}:
@@ -38,8 +40,14 @@ def values(world):
     return out
 
 
+def hamming_min(world, i):
+    return min(sum(a != b for a, b in zip(g.INPUTS[i], g.INPUTS[o])) for o in world["hidden"]["obs"])
+
+
 def leverage(worlds, threshold=0.25):
     gaps, best, mean, pos = [], [], [], []
+    cue_hits = {"max_hamming": [], "min_hamming": []}
+    menu_sizes, targets = [], {}
     for w in worlds:
         v = values(w)
         menu = w["hidden"]["menu"]
@@ -48,6 +56,13 @@ def leverage(worlds, threshold=0.25):
         gaps.append(b - m); best.append(b); mean.append(m)
         firsts = [k for k, q in enumerate(menu) if v[q] == b]
         pos.append(firsts[0] / max(1, len(menu) - 1))
+        menu_sizes.append(len(menu))
+        targets[w["reference"]["target_verdict"]] = targets.get(w["reference"]["target_verdict"], 0) + 1
+        bests = {q for q in menu if v[q] == b}
+        for name, f in (("max_hamming", max), ("min_hamming", min)):
+            hv = {q: hamming_min(w, q) for q in menu}
+            pick = f(menu, key=lambda q: hv[q])
+            cue_hits[name].append((pick in bests, len(bests) / len(menu)))
     q = sorted(gaps)
     return {"worlds": len(worlds), "gap_mean": round(st.mean(gaps), 4), "gap_median": round(st.median(gaps), 4),
             "gap_quartiles": [round(q[len(q) // 4], 4), round(q[3 * len(q) // 4], 4)],
@@ -56,7 +71,10 @@ def leverage(worlds, threshold=0.25):
             "histogram_gap_0.05": {f"{k*0.05:.2f}": sum(k * 0.05 <= x < (k + 1) * 0.05 for x in gaps) for k in range(20)},
             "evidence_quality_best_mean": round(st.mean(best), 4), "difficulty_1_minus_uniform_mean": round(1 - st.mean(mean), 4),
             "best_query_position_normalised_mean": round(st.mean(pos), 4),
-            "best_query_first_in_menu": round(sum(p == 0 for p in pos) / len(pos), 4)}
+            "best_query_first_in_menu": round(sum(p == 0 for p in pos) / len(pos), 4),
+            "menu_size_mean": round(st.mean(menu_sizes), 2), "targets": targets,
+            "surface_cue_hit_rate_vs_chance": {k: [round(st.mean(h for h, _ in v), 4), round(st.mean(c for _, c in v), 4)]
+                                               for k, v in cue_hits.items()}}
 
 
 if __name__ == "__main__":

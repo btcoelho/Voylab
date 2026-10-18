@@ -27,7 +27,7 @@ Decisão do Bruno, 18/10/2026, 12:10. Meta inicial de discriminação **0,25**, 
 | posição normalizada média da melhor | 0,12 |
 | **melhor consulta é a primeira do menu** | **58%** |
 
-**Achado: pista de posição no gerador.** O menu é ordenado pelo índice das entradas, e a melhor consulta (o primeiro empate) aparece em primeiro lugar em 58% dos mundos. Escolher sempre `q1`, como fizeram os quatro modelos na fase 3, é uma heurística razoável nesta tarefa. A leitura "escolha puramente posicional" da fase 3 continua certa quanto ao comportamento, mas o instrumento não penalizava esse comportamento. Fica corrigido em qualquer variante.
+~~**Achado: pista de posição no gerador.**~~ **Retirado na §7.** O valor de 58% vinha de um defeito da medição: com empates, contava-se a posição do primeiro empate. Não há mundos com uma melhor consulta única no gerador atual, e com a posição média dos empates a melhor fica a 0,50.
 
 ## 4. Critérios de aceitação de uma variante (fixados antes de desenhar e de medir variantes)
 Todos medidos nos mundos de desenvolvimento (sementes 91xxx), com a métrica da §2:
@@ -52,3 +52,46 @@ Todos medidos nos mundos de desenvolvimento (sementes 91xxx), com a métrica da 
 - **C-c.** V3 cumpre os critérios 1 a 4 por construção; o risco está no critério 6 (pistas de superfície), porque as consultas de valor baixo podem ter um padrão reconhecível.
 - **C-d.** Com o menu baralhado, a posição normalizada da melhor fica em [0,40; 0,60] nas três variantes.
 - **C-e.** A primeira variante a cumprir tudo será a V2 ou a V3, e não a V1.
+
+## 7. Resultados das variantes (ronda 1; `results/instrumento/CONSULTAS_VARIANTES.json`)
+
+| | V1 (k₀ 5–7) | V2 (orçamento 1) | V3 (menu curto) | critério |
+|---|---|---|---|---|
+| mundos (equilibrados) | 324 | 270 | 324 | |
+| gap mediana | 0,000 | **0,346** | 0,083 | ≥ 0,25 |
+| mundos com gap ≥ 0,25 | 4% | **74%** | 5% | ≥ 50% |
+| qualidade da evidência | 0,780 | **0,783** | 0,875 | ≥ 0,80 |
+| valor médio do menu | 0,748 | 0,406 | 0,774 | ≤ 0,60 |
+| alvos equilibrados | sim | sim | sim | sim |
+| pista de superfície (melhor preditor / acaso) | 1,03× | 1,39× | 1,31× | ≤ 2× |
+| células inviáveis | 0 | 24 | 19 | |
+
+**Defeito da medição de posição, encontrado e corrigido** (`results/instrumento/CONSULTAS_POSICAO_CORRIGIDA.json`). A posição da melhor consulta era a do *primeiro* empate. Na linha de base, na V1 e na V3, **nenhum mundo tem uma melhor consulta única**: há sempre vários empates. Por isso "a melhor está em primeiro" valia 58% (linha de base) e 92% (V1) mesmo com o menu baralhado. A correção é uma definição, não um limiar, e aplica-se a todos por igual:
+- posição média dos empates;
+- e, nos mundos com melhor única, a posição dessa.
+
+| | mundos com melhor única | posição (média dos empates) | posição (melhor única) | melhor única em 1.º lugar |
+|---|---|---|---|---|
+| linha de base | 0 | 0,50 | — | — |
+| V1 | 0 | 0,50 | — | — |
+| V2 | 140/270 | 0,47 | 0,44 | 0,171 (limite: 1,5/8,8 = 0,170) |
+| V3 | 0 | 0,51 | — | — |
+
+**Consequência:** a pista de posição de 58% anunciada na §3 é retirada. Não existe no gerador. Em ~60% dos mundos `q1` está entre as melhores, mas isso é o acaso de acertar numa das melhores com tantos empates (0,596). A conclusão da fase 3 de que os modelos escolhem pela posição mantém-se; a de que o instrumento os favorecia por posição, não.
+
+**Critérios:**
+- **V1:** falha 1, 3 e 4.
+- **V3:** falha 1 e 4.
+- **V2:** cumpre 1 (mediana 0,346; 74% ≥ 0,25), 2 (posição 0,44–0,47; a taxa em 1.º lugar fica no limite, 0,171 contra 0,170), 4, 5 e 6. **Falha o 3: qualidade 0,783 < 0,80.**
+- Nenhuma variante cumpre todos.
+
+**Previsões:**
+- C-a confirmada quanto ao falhanço da V1, mas a mediana (0,000) ficou abaixo do intervalo previsto.
+- **C-b confirmada exatamente:** a V2 cumpre o critério 1 e falha o 3.
+- **C-c refutada:** a V3 não cumpre o critério 1. Ao reduzir o menu, a segunda consulta continua a compensar uma má primeira escolha.
+- **C-d:** com a medição corrigida, a posição fica em [0,40; 0,60] em todas (confirmada).
+- **C-e refutada:** nenhuma cumpre tudo.
+
+**Achado estrutural:** com orçamento 2, a segunda consulta neutraliza a escolha da primeira (V1 e V3 têm gap ≈ 0). A alavanca só aparece quando a escolha não pode ser corrigida depois (V2).
+
+**Decisão: segundo a regra da §5, registar o falhanço e decidir com o Bruno.** Não se mexe nos critérios nem se afina nenhuma variante sem essa decisão.
