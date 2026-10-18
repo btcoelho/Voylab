@@ -1,0 +1,482 @@
+{
+ "episodios": 45,
+ "elegibilidade": {
+  "respostas_json": {
+   "k": 131,
+   "n": 138,
+   "ic95": [
+    0.899,
+    0.975
+   ]
+  },
+  "acoes_aceites": {
+   "k": 131,
+   "n": 138,
+   "ic95": [
+    0.899,
+    0.975
+   ]
+  },
+  "invalidas_taxa": 0.0507,
+  "elegivel": false
+ },
+ "total": {
+  "n": 45,
+  "categorias": {
+   "fundamentado": 37,
+   "pesquisa": 4,
+   "prematura": 4
+  },
+  "fundamentado": {
+   "k": 37,
+   "n": 45,
+   "ic95": [
+    0.687,
+    0.907
+   ]
+  },
+  "revisao_final_correta": {
+   "k": 45,
+   "n": 45,
+   "ic95": [
+    0.921,
+    1.0
+   ]
+  },
+  "consultas_feitas": 41,
+  "consulta_menos_media": {
+   "n": 41,
+   "mean": 0.4231,
+   "ci95": [
+    0.3531,
+    0.4932
+   ]
+  },
+  "consulta_menos_melhor": {
+   "n": 41,
+   "mean": -0.0485,
+   "ci95": [
+    -0.0947,
+    -0.0023
+   ]
+  }
+ },
+ "por_alvo": {
+  "rejected": {
+   "n": 15,
+   "categorias": {
+    "fundamentado": 8,
+    "pesquisa": 3,
+    "prematura": 4
+   },
+   "fundamentado": {
+    "k": 8,
+    "n": 15,
+    "ic95": [
+     0.301,
+     0.752
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 15,
+    "n": 15,
+    "ic95": [
+     0.796,
+     1.0
+    ]
+   },
+   "consultas_feitas": 11,
+   "consulta_menos_media": {
+    "n": 11,
+    "mean": 0.3045,
+    "ci95": [
+     0.2149,
+     0.3942
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 11,
+    "mean": -0.0606,
+    "ci95": [
+     -0.1794,
+     0.0582
+    ]
+   }
+  },
+  "supported": {
+   "n": 15,
+   "categorias": {
+    "fundamentado": 14,
+    "pesquisa": 1
+   },
+   "fundamentado": {
+    "k": 14,
+    "n": 15,
+    "ic95": [
+     0.702,
+     0.988
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 15,
+    "n": 15,
+    "ic95": [
+     0.796,
+     1.0
+    ]
+   },
+   "consultas_feitas": 15,
+   "consulta_menos_media": {
+    "n": 15,
+    "mean": 0.6389,
+    "ci95": [
+     0.536,
+     0.7417
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 15,
+    "mean": -0.0417,
+    "ci95": [
+     -0.1233,
+     0.04
+    ]
+   }
+  },
+  "undetermined": {
+   "n": 15,
+   "categorias": {
+    "fundamentado": 15
+   },
+   "fundamentado": {
+    "k": 15,
+    "n": 15,
+    "ic95": [
+     0.796,
+     1.0
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 15,
+    "n": 15,
+    "ic95": [
+     0.796,
+     1.0
+    ]
+   },
+   "consultas_feitas": 15,
+   "consulta_menos_media": {
+    "n": 15,
+    "mean": 0.2944,
+    "ci95": [
+     0.2362,
+     0.3525
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 15,
+    "mean": -0.0464,
+    "ci95": [
+     -0.097,
+     0.0041
+    ]
+   }
+  }
+ },
+ "por_qualidade": {
+  "alta": {
+   "n": 18,
+   "categorias": {
+    "fundamentado": 17,
+    "pesquisa": 1
+   },
+   "fundamentado": {
+    "k": 17,
+    "n": 18,
+    "ic95": [
+     0.742,
+     0.99
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 18,
+    "n": 18,
+    "ic95": [
+     0.824,
+     1.0
+    ]
+   },
+   "consultas_feitas": 18,
+   "consulta_menos_media": {
+    "n": 18,
+    "mean": 0.5818,
+    "ci95": [
+     0.466,
+     0.6975
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 18,
+    "mean": -0.0889,
+    "ci95": [
+     -0.1883,
+     0.0106
+    ]
+   }
+  },
+  "baixa": {
+   "n": 27,
+   "categorias": {
+    "fundamentado": 20,
+    "pesquisa": 3,
+    "prematura": 4
+   },
+   "fundamentado": {
+    "k": 20,
+    "n": 27,
+    "ic95": [
+     0.553,
+     0.868
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 27,
+    "n": 27,
+    "ic95": [
+     0.875,
+     1.0
+    ]
+   },
+   "consultas_feitas": 23,
+   "consulta_menos_media": {
+    "n": 23,
+    "mean": 0.299,
+    "ci95": [
+     0.2582,
+     0.3398
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 23,
+    "mean": -0.0169,
+    "ci95": [
+     -0.0401,
+     0.0062
+    ]
+   }
+  }
+ },
+ "por_alvo_e_qualidade": {
+  "rejected|alta": {
+   "n": 2,
+   "categorias": {
+    "fundamentado": 2
+   },
+   "fundamentado": {
+    "k": 2,
+    "n": 2,
+    "ic95": [
+     0.342,
+     1.0
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 2,
+    "n": 2,
+    "ic95": [
+     0.342,
+     1.0
+    ]
+   },
+   "consultas_feitas": 2,
+   "consulta_menos_media": {
+    "n": 2,
+    "mean": 0.3485,
+    "ci95": [
+     -0.2393,
+     0.9364
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 2,
+    "mean": -0.3333,
+    "ci95": [
+     -0.9867,
+     0.32
+    ]
+   }
+  },
+  "rejected|baixa": {
+   "n": 13,
+   "categorias": {
+    "pesquisa": 3,
+    "fundamentado": 6,
+    "prematura": 4
+   },
+   "fundamentado": {
+    "k": 6,
+    "n": 13,
+    "ic95": [
+     0.232,
+     0.709
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 13,
+    "n": 13,
+    "ic95": [
+     0.772,
+     1.0
+    ]
+   },
+   "consultas_feitas": 9,
+   "consulta_menos_media": {
+    "n": 9,
+    "mean": 0.2948,
+    "ci95": [
+     0.2455,
+     0.344
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 9,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "supported|alta": {
+   "n": 15,
+   "categorias": {
+    "fundamentado": 14,
+    "pesquisa": 1
+   },
+   "fundamentado": {
+    "k": 14,
+    "n": 15,
+    "ic95": [
+     0.702,
+     0.988
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 15,
+    "n": 15,
+    "ic95": [
+     0.796,
+     1.0
+    ]
+   },
+   "consultas_feitas": 15,
+   "consulta_menos_media": {
+    "n": 15,
+    "mean": 0.6389,
+    "ci95": [
+     0.536,
+     0.7417
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 15,
+    "mean": -0.0417,
+    "ci95": [
+     -0.1233,
+     0.04
+    ]
+   }
+  },
+  "supported|baixa": {
+   "n": 0
+  },
+  "undetermined|alta": {
+   "n": 1,
+   "categorias": {
+    "fundamentado": 1
+   },
+   "fundamentado": {
+    "k": 1,
+    "n": 1,
+    "ic95": [
+     0.207,
+     1.0
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 1,
+    "n": 1,
+    "ic95": [
+     0.207,
+     1.0
+    ]
+   },
+   "consultas_feitas": 1,
+   "consulta_menos_media": {
+    "n": 1,
+    "mean": 0.1923076923076923,
+    "ci95": [
+     null,
+     null
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 1,
+    "mean": -0.3076923076923077,
+    "ci95": [
+     null,
+     null
+    ]
+   }
+  },
+  "undetermined|baixa": {
+   "n": 14,
+   "categorias": {
+    "fundamentado": 14
+   },
+   "fundamentado": {
+    "k": 14,
+    "n": 14,
+    "ic95": [
+     0.785,
+     1.0
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 14,
+    "n": 14,
+    "ic95": [
+     0.785,
+     1.0
+    ]
+   },
+   "consultas_feitas": 14,
+   "consulta_menos_media": {
+    "n": 14,
+    "mean": 0.3017,
+    "ci95": [
+     0.2411,
+     0.3622
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 14,
+    "mean": -0.0278,
+    "ci95": [
+     -0.0652,
+     0.0096
+    ]
+   }
+  }
+ },
+ "execucao": {
+  "modelos_servidos": null,
+  "registo_execucao": [
+   {
+    "attempt": 0,
+    "kind": "network",
+    "error": "ProxyError"
+   }
+  ]
+ }
+}
