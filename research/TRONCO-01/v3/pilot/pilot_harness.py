@@ -39,7 +39,19 @@ Podes consultar entradas do menu (cada consulta revela a saída) até esgotar o 
 Depois de comprometeres, chega evidência nova: mantém ou revê, aplicando as mesmas definições a todas as observações juntas (as anteriores e as novas).
 - inconsistent: nenhuma das 70 regras reproduz todas as observações juntas. Isto inclui a mesma entrada aparecer com saídas diferentes, mas também pode acontecer sem isso.
 Responde SEMPRE com um único objeto JSON, sem texto adicional."""
-PROMPTS = {"v3": SYSTEM_PROMPT, "v3.1": SYSTEM_PROMPT_V31}
+# v3.2 (18/10/2026, §18, exploratório): v3.1 intacto + duas instruções de procedimento (consulta e verificação de W).
+SYSTEM_PROMPT_V32 = SYSTEM_PROMPT_V31.replace(
+    "Responde SEMPRE com um único objeto JSON, sem texto adicional.",
+    "PROCEDIMENTO (faz isto antes de responder, sem o escrever):\n"
+    "1. Escolher a consulta: pensa nas regras ainda admissíveis e nas entradas retidas onde elas discordam de W. Escolhe a "
+    "consulta cujo resultado mais separa essas regras, ou seja, a que mais provavelmente deixa o veredicto decidido "
+    "(W contradita, ou todas as regras admissíveis a concordar com W nas retidas).\n"
+    "2. Antes de te comprometeres, verifica W contra CADA observação, uma a uma, incluindo a que obtiveste na consulta. "
+    "Se W falhar alguma, o veredicto é rejected e W não é admissível. Só se W reproduzir todas é que olhas para as "
+    "entradas retidas para decidir entre supported e undetermined. Aplica o mesmo à revisão.\n"
+    "Não inventes resultados nem uses informação que não recebeste.\n"
+    "Responde SEMPRE com um único objeto JSON, sem texto adicional.")
+PROMPTS = {"v3": SYSTEM_PROMPT, "v3.1": SYSTEM_PROMPT_V31, "v3.2": SYSTEM_PROMPT_V32}
 
 
 def action_schema(phase: str, state: dict | None = None, cards_object: bool = False) -> dict:

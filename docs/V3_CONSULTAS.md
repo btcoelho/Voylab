@@ -357,3 +357,24 @@ Comparando o veredicto de M1-DS com o veredicto que o seu próprio histórico (o
 - o histórico implicava `supported` em 10: respondeu `undetermined` em todos (não reconheceu o apoio);
 - concordância global com o próprio histórico: 183/225 = 0,81.
 Leitura: as duas fraquezas principais são (1) a escolha da consulta (pesquisa 108/225) e (2) verificar W contra cada observação e reconhecer quando o caso já está decidido. "Prudência excessiva" explica pouco: quando o histórico não decidia, `undetermined` estava certo. Tudo isto é exploratório; não altera o §17 nem as previsões.
+
+## 18. Pré-registo exploratório: prompt v3.2 com o mesmo modelo (aprovado pelo Bruno, 18/10, 18:35; escrito antes de qualquer chamada)
+
+**Natureza:** exploratório. Os 225 mundos de desenvolvimento já foram vistos com v3.1 (§17), e a v3.2 foi escrita a partir desse diagnóstico (§17.1). Uma melhoria aqui é uma hipótese; só se confirma depois em dados não usados para afinar a prompt (partição de validação, uma vez, com aprovação). O instrumento não muda: gerador, grelha, métrica e limiares iguais.
+
+**Única variável alterada:** a prompt. v3.2 = v3.1 sem alterações + um bloco PROCEDIMENTO com duas instruções (`pilot/pilot_harness.py`, `SYSTEM_PROMPT_V32`):
+1. escolher a consulta que mais separa as regras admissíveis nas entradas retidas, isto é, a que mais provavelmente decide o veredicto (justificação: 185/225 consultas de M1-DS não decidiam nada);
+2. verificar W contra cada observação, incluindo a consultada, antes de decidir; se falhar alguma, `rejected` (justificação: em 28/30 casos com W contradita, M1-DS marcou W como admissível).
+Mais a frase "não inventes resultados". Nada sobre prudência.
+
+**Igual a M1-DS:** modelo pedido `deepseek-chat`, temperatura 0, 1024 tokens, esquema `state_cards_object`, os mesmos 225 mundos, uma corrida, sem pós-processamento, retoma sem duplicar, mesma análise (`instrument/analyse_models.py`) e as referências de `instrument/baselines_v4.py`, agora obrigatórias. Corrida identificada como **M1-DS-v32**.
+
+**Previsões (antes de correr):**
+- **P-a:** elegibilidade mantém-se (≥ 98% JSON válido e ações aceites).
+- **P-b:** a concordância entre o veredicto comprometido e o do próprio histórico sobe de 183/225 (0,81) para ≥ 0,90.
+- **P-c:** nos episódios em que o próprio histórico implica `rejected`, o modelo responde `rejected` em ≥ 50% (M1-DS: 0/30).
+- **P-d:** a escolha de consulta melhora: média de (v2 escolhida − média do menu) > +0,074 (valor de M1-DS), com o limite inferior do IC 95% > 0.
+- **P-e:** fundamentado total > 75/225 (a constante `undetermined`); não se prevê superar 119/225 (consulta ao acaso + leitura correta).
+- **P-f:** revisão final correta fica dentro de ±0,10 de 0,59 (a v3.2 não muda as instruções da revisão além do ponto 2).
+
+**Relato:** todas as medidas com denominadores e IC; por veredicto alvo e por estrato de qualidade; comparação lado a lado com M1-DS e com as referências; nenhuma alteração à prompt depois de ver os resultados desta corrida dentro desta ronda (ronda 2 de 3).

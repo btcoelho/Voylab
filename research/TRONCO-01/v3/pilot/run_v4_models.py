@@ -24,7 +24,9 @@ import pilot_harness as H  # noqa: E402
 
 FROZEN_DIR = V3 / "results" / "modelos_v4"
 FROZEN = FROZEN_DIR / "PREREGISTO_CONGELADO.json"            # Claude M1 (§15); kept as it was frozen
-PROVIDERS = {"anthropic": "PREREGISTO_CONGELADO.json", "deepseek": "PREREGISTO_CONGELADO_DEEPSEEK.json"}
+PROVIDERS = {"anthropic": "PREREGISTO_CONGELADO.json", "deepseek": "PREREGISTO_CONGELADO_DEEPSEEK.json",
+             "deepseek_v32": "PREREGISTO_CONGELADO_DEEPSEEK_V32.json"}
+PROMPT_OF = {"anthropic": "v3.1", "deepseek": "v3.1", "deepseek_v32": "v3.2"}
 CODE = ["pilot/pilot_harness.py", "pilot/anthropic_backend.py", "pilot/deepseek_backend.py", "pilot/run_v4_models.py", "env_v3.py", "generator_v3.py",
         "scoring.py", "instrument/variants.py", "instrument/grid.py"]
 DEV_SEED_RANGE = range(91000, 92000)
@@ -47,7 +49,11 @@ def section15() -> str:
 
 def prereg_text(provider: str) -> str:
     """Claude: §15. DeepSeek: §15 plus the deviation §16 (both frozen together)."""
-    return section15() if provider == "anthropic" else section15() + section(16)
+    if provider == "anthropic":
+        return section15()
+    if provider == "deepseek":
+        return section15() + section(16)
+    return section15() + section(16) + section(18)
 
 
 def code_hashes() -> dict:
@@ -57,7 +63,7 @@ def code_hashes() -> dict:
 def freeze(model: str, commit: str, provider: str = "anthropic") -> dict:
     d = {"preregisto": "docs/V3_CONSULTAS.md §15" + (" + §16" if provider != "anthropic" else ""), "provider": provider,
          "section15_sha256": sha(prereg_text(provider).encode()), "commit": commit,
-         "model_requested": model, "temperature": 0.0, "max_tokens": 1024, "prompt": "v3.1", "mode": "state_cards_object",
+         "model_requested": model, "temperature": 0.0, "max_tokens": 1024, "prompt": PROMPT_OF[provider], "mode": "state_cards_object",
          "worlds": "variants.build('V4'), 225 development worlds", "code_sha256": code_hashes()}
     path = FROZEN_DIR / PROVIDERS[provider]
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -121,7 +127,7 @@ class Logged(H.Backend):
         return out
 
 
-def run(out: Path, backend, limit=None) -> dict:
+def run(out: Path, backend, limit=None, prompt: str = "v3.1") -> dict:
     out.mkdir(parents=True, exist_ok=True)
     if (out / "summary.json").exists():
         sys.exit("this run folder is already finished; refusing to run again")
@@ -135,7 +141,7 @@ def run(out: Path, backend, limit=None) -> dict:
         if w["uid"] in done:
             continue
         lb.uid, lb.turn = w["uid"], 0
-        e = H.run_episode(w, lb, mode="state_cards_object", prompt="v3.1")
+        e = H.run_episode(w, lb, mode="state_cards_object", prompt=prompt)
         e["uid"] = w["uid"]
         with ep_file.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(e, ensure_ascii=False) + "\n")
@@ -155,13 +161,13 @@ def main():
         print(json.dumps(freeze(a.model, a.freeze, a.provider), indent=1))
         return
     f = check_frozen(a.model, a.provider)
-    if a.provider == "anthropic":
+    if a.provider == "anthropic":  # noqa: SIM114
         from anthropic_backend import AnthropicBackend
         b = AnthropicBackend(a.model, temperature=f["temperature"], max_tokens=f["max_tokens"])
-    else:
+    else:  # deepseek, deepseek_v32
         from deepseek_backend import DeepSeekBackend
         b = DeepSeekBackend(a.model, temperature=f["temperature"], max_tokens=f["max_tokens"])
-    res = run(a.out, b)
+    res = run(a.out, b, prompt=f["prompt"])
     served = sorted({json.loads(l)["meta"].get("model_served") for l in (a.out / "calls.jsonl").read_text().splitlines() if l.strip()} - {None})
     res.update({"model_requested": a.model, "models_served": served, "frozen": f, "execution_log": b.execution_log})
     if res["episodes"] == 225:
