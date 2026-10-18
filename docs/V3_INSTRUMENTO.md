@@ -182,3 +182,82 @@ Poder do verificador: com 36 rótulos v70 trocados de propósito, os 36 foram de
 - **Defeito: enviesamento de comprimento na escolha forçada.** "não" ocupa 2 tokens e "sim" 1; `undetermined"` ocupa 3 e `rejected"`/`supported"` 2. A soma das log-probabilidades penaliza as candidatas mais longas. Em **todos** os modelos, as três sondas de sim/não deram "sim" em ~100% dos itens. Isto não distingue um modelo que nada sabe de um instrumento enviesado. **Os resultados das sondas sim/não e das famílias de veredicto da ronda 1 não são interpretáveis como capacidade.** As sondas célula (0/1, 1 token cada) e veredicto com o conjunto dado de bandeja (1/1/2 tokens) são menos afetadas, mas também são repetidas.
 - **Correção da ronda 2, registada antes de voltar a correr.** O executor passa a guardar a log-probabilidade de cada token e o id do primeiro token. **Medida principal:** a candidata com maior log-probabilidade do **primeiro** token, quando os primeiros tokens das candidatas são distintos (é o que a descodificação gananciosa decide). Verifica-se que são distintos e reportam-se as colisões. **Medida secundária:** a soma. Na escolha de consulta (`q1` e `q10` partilham o primeiro token) mantém-se a soma, com a nota de que `q10"` tem mais um token. A análise da ronda 1 continua reproduzível com a regra `sum`.
 - As previsões F3-a a F3-g mantêm-se e são avaliadas sobre a ronda 2.
+
+### Ronda 2 da fase 3 (corrida 18/10, 09:52–11:05; código 3b9033f; regra do primeiro token)
+- Os quatro modelos sobre os mesmos 2 304 itens (sha `e168021b…`) e **os mesmos tokens de entrada** (hash das ids de contexto `a6707c4b…`, igual nos quatro). Saídas em `results/instrumento/F3R2/{modelo}/`: pontuações, log-probabilidades por token, contextos tokenizados e análise.
+- **0 colisões de primeiro token** e **0 fronteiras fundidas** em todos os modelos.
+- **Validade por item: massa das candidatas no primeiro token** (mediana; abaixo de 0,5, o modelo queria responder outra coisa e o item não mede a escolha):
+
+| | célula | compat. | separa | contrad. | veredicto dado | pares | metamorfoses |
+|---|---|---|---|---|---|---|---|
+| 0,5B | 1,00 | **0,16** | **0,01** | **0,02** | 0,93 | 0,87 | 0,87 |
+| 1,5B | 1,00 | 0,75 | 0,53 | 0,66 | 0,95 | 0,93 | 0,93 |
+| 3B | 1,00 | 0,98 | 0,99 | 1,00 | 0,98 | 0,95 | 0,96 |
+| 7B | 1,00 | 0,56 | 0,98 | 0,91 | 0,99 | 1,00 | 1,00 |
+
+As sondas sim/não do 0,5B **não são interpretáveis**. As restantes células são.
+
+**Resultados (escolha pelo primeiro token; IC 95% por bootstrap agrupado; acaso entre parênteses):**
+
+| | célula (0,50) | compat. equil. (0,50) | separa (0,50) | contrad. (0,50) | veredicto dado, equil. (0,33) | pares: sensib. / ambos certos | veredicto completo, exatidão | 1.ª posição na consulta |
+|---|---|---|---|---|---|---|---|---|
+| 0,5B | 0,535 [0,47; 0,61] | (inválida) | (inválida) | (inválida) | 0,33, sempre `undetermined` | 0,00 / 0,00 | 0,30, sempre `supported` | 0,94 |
+| 1,5B | 0,535 [0,47; 0,60] | 0,50, sempre "sim" | 0,50, sempre "sim" | 0,50, sempre "sim" | 0,33, sempre `supported` | 0,175 / 0,00 | 0,22 | 1,00 |
+| 3B | 0,59 [0,52; 0,66] | 0,50, sempre "sim" | 0,50, sempre "sim" | 0,50, sempre "sim" | **0,93 [0,87; 0,98]** | 0,00 / 0,00 | 0,35, sempre `undetermined` | 1,00 |
+| 7B | 0,615 [0,56; 0,67] | 0,53 [0,50; 0,57] | 0,50, sempre "sim" | 0,50, sempre "sim" | **0,66 [0,59; 0,73]** | 0,03 / 0,00 | 0,34 | 1,00 |
+
+- **Uso da evidência nos pares mínimos.** Nenhum modelo acerta os dois membros de um par (0/200 nos quatro). A probabilidade de `rejected` sobe no lado certo do par em 0,47–0,55 dos pares, o que é indistinguível do acaso.
+- **Escolha de consulta.** Posição 1 em 94–100% dos casos, com o menu original ou invertido. A invariância do *input* escolhido é 0,00: a escolha é puramente posicional. O valor da consulta escolhida (0,79) é igual ao de escolher ao acaso no menu (0,80); a melhor dá 0,885.
+- **Metamorfoses.** A invariância é alta (0,83–1,00) mas, nos modelos de resposta constante (0,5B, 3B), é vazia. A variação total das probabilidades é maior na permutação do enum (0,5B 0,34; 3B 0,13; 7B 0,14) do que na renomeação das cartas (0,02–0,10): o texto do modelo de ação mexe mais do que o conteúdo.
+
+### Previsões da fase 3 (avaliadas sobre a ronda 2)
+- **F3-a refutada.** Célula: 3B 0,59 e 7B 0,615, abaixo de 0,80; 0,5B e 1,5B 0,535, abaixo de 0,55. A leitura de uma célula está perto do acaso em todos.
+- **F3-b refutada em parte.** A compatibilidade fica ≤ 0,70 em todos (confirmado), mas não fica 0,10 abaixo da célula, porque a própria célula está perto do acaso.
+- **F3-c refutada.** O 7B tem 0,66 (≥ 0,60, confirmado), mas o **3B tem 0,93**, não ≤ 0,50. A relação com o tamanho não é monótona.
+- **F3-d refutada em parte.** 0,5B ≤ 0,15 e "ambos certos" ≤ 30% confirmados; mas o 7B fica em 0,03, não entre 0,20 e 0,50.
+- **F3-e refutada.** 7B 0,55 [0,48; 0,62], não ≥ 0,60.
+- **F3-f mista.** A ordem do menu mostra um enviesamento de posição total (confirmado). O enum só é < 0,90 nos modelos não constantes. A renomeação no 7B fica ≥ 0,85 (confirmado).
+- **F3-g refutada.** Contradição 0,50 (sempre "sim") no 3B e no 7B.
+
+**Critérios de aceitação do instrumento:**
+- resolvedor exato 100%, verificado de forma independente a partir do texto: 0/1 984 divergências;
+- ≥ 150 itens por família;
+- textos tokenizados e distribuições guardados;
+- análise repetível a partir dos ficheiros;
+- e ainda a validade por item (massa das candidatas).
+
+**Decisão da fase 3 (2 rondas de 3): avançar**, com a máscara de validade aplicada. **Fase 3: 100%.**
+
+## Fase 5. Decisão
+
+**O que os números permitem concluir sobre os acertos.** Os acertos registados na escada (16/48, 17/48 e semelhantes) vêm de **políticas constantes** que coincidem com alvos equilibrados (1/3). Com o enunciado corrigido e medição por escolha forçada:
+- nenhum dos quatro modelos lê uma tabela de forma fiável (célula 0,535–0,615);
+- nenhum distingue compatível de incompatível, contradição de não contradição, ou consultas que separam de consultas que não separam;
+- nenhum muda corretamente de veredicto quando a evidência muda (0/200 pares em todos);
+- todos escolhem a consulta pela posição.
+
+**A única competência acima do acaso é aplicar a regra do veredicto quando o conjunto admissível é dado** (3B 0,93; 7B 0,66). O estrangulamento está na **construção do conjunto admissível**: ler tabelas e verificar a compatibilidade. Não está na regra, e não se resolve com tamanho: do 3B para o 7B, a célula sobe 0,025 e o veredicto dado desce 0,27.
+
+**Recomendação: execução de código, mais uma correção da tarefa.** Não recomendo subir de modelo, caderno, especialistas nem revisor por agora.
+1. **Execução de código (trilha `com_codigo`).** O passo que falha (calcular A(H) a partir de tabelas) é exatamente o que o código faz de forma exata. O agente escreve ou chama o código que verifica a compatibilidade e calcula o conjunto; o LLM aplica a regra e decide. É também a arquitetura da decisão de 18/10: o enquadramento produz uma especificação executável.
+2. **Corrigir a tarefa para que C3 seja mensurável.** A alavanca da escolha de consulta é pequena: a melhor consulta vale 0,885 e o acaso 0,798. Mesmo um agente perfeito na escolha mostraria pouco. Antes de medir C3, é preciso um gerador com mais alavanca: menus maiores, consultas com valores mais espalhados, orçamento maior ou várias rondas.
+3. **Caderno, especialistas e revisor** resolvem falhas de planeamento e coordenação, que não se conseguem observar enquanto a perceção falha primeiro. Ficam para depois.
+
+**O que tornaria a recomendação errada:**
+- (a) Um modelo de fronteira, com o mesmo prompt v3.1 e só texto, resolver a tarefa perto do teto. Nesse caso o problema era escala, e a âncora 4.2 decide isto.
+- (b) Com o conjunto admissível calculado por código, os modelos continuarem a falhar a decisão nos pares mínimos. Nesse caso o estrangulamento não era só perceção.
+- (c) As pessoas da âncora 4.1 também falharem. Nesse caso o enunciado continua mal posto.
+
+**Resultado na partição cega que confirmaria ou refutaria** (a pré-registar antes de gerar a cega por drand, dividida por grupos de estrutura):
+- com A(H) calculado por código, o 3B atinge macro fundamentado ≥ 0,80 e "ambos certos" ≥ 0,80 nos pares mínimos;
+- só com texto, o mesmo 3B fica ≤ 0,40.
+A recomendação fica **refutada** se a versão só com texto atingir ≥ 0,60, ou se a versão com código ficar ≤ 0,60.
+
+**Progresso.**
+- Plano do instrumento: fases 1, 2, 3 e 5 a 100%; fase 4 a 100% como propostas, com a execução à espera de aprovação.
+- Global: cerca de 40% (7 de 17 etapas fechadas, sem pesar o esforço: objetivo, auditoria M17, gerador v3 e auditorias, políticas, piloto, escada, validação do instrumento).
+
+**O que preciso do Bruno:**
+1. aprovar ou não as âncoras 4.1 (pessoas), 4.2 (API, com o modelo e a chave configurados por ti) e 4.3 (descarregar o DiscoveryWorld);
+2. aprovar a direção: trilha `com_codigo` e correção da alavanca de C3 antes de mais corridas de modelos;
+3. merge do ramo `tronco01-v3-instrumento` (e de `tronco01-v3-escada`), só com a tua autorização.

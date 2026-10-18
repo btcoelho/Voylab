@@ -1,0 +1,15 @@
+{
+ "snapshot": "/home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-7B-Instruct-bnb-4bit/snapshots/bdd404162d94997f390efbfa660eb3f21cbbc81d/",
+ "items_sha256": "e168021bcfa4221140b77ab17ca3a020de6ec55e51d5fb0b0f27505be54dc145",
+ "items": 2304,
+ "load_seconds": 8.3,
+ "total_seconds": 2390.7,
+ "compat": "reexported PreTrainedTokenizerBase",
+ "python": "3.12.3",
+ "torch": "2.14.1+cu132",
+ "transformers": "5.17.0",
+ "code_sha256": {
+  "run_items.py": "2d7a039e7bd80545657e32b6e1ca29319f84d0205fa3d0032673f05563073d47",
+  "items.py": "7ae3d03eb2247b9162286566ebfb3c69b243f2e742f9d6f6a31edebf78923759"
+ }
+}
