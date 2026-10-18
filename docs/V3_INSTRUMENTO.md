@@ -261,3 +261,7 @@ A recomendação fica **refutada** se a versão só com texto atingir ≥ 0,60, 
 1. aprovar ou não as âncoras 4.1 (pessoas), 4.2 (API, com o modelo e a chave configurados por ti) e 4.3 (descarregar o DiscoveryWorld);
 2. aprovar a direção: trilha `com_codigo` e correção da alavanca de C3 antes de mais corridas de modelos;
 3. merge do ramo `tronco01-v3-instrumento` (e de `tronco01-v3-escada`), só com a tua autorização.
+
+## Adenda (18/10, revisão; não altera resultados históricos)
+
+**Alcance das conclusões sobre a escolha de consultas.** Na tarefa usada nas fases 1–3, a diferença entre a melhor consulta do menu e a média é de 0,087 (mediana). Com essa margem, a métrica de consultas não separa uma política competente de uma aleatória, por isso **as conclusões desta fase sobre a escolha de consultas não medem capacidade**. A escolha de consulta passa a ser medida só na V4 (docs/V3_CONSULTAS.md §10–12: gap mediano 0,438). As conclusões sobre leitura do estado, inferência do veredicto e revisão continuam válidas, porque não dependem dessa margem. Os números acima ficam como estavam.

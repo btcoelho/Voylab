@@ -219,3 +219,34 @@ O que se repete sobre os 225 mundos V4 de desenvolvimento, com o mesmo ambiente 
 - Cada participante grava um documento em `respostas/<id>`. Regras: leitura do conjunto só para editores; cada participante lê e escreve apenas o seu.
 - Verificação funcional: com acesso de participante, uma listagem do conjunto não mostra o documento de outra pessoa (sonda gravada e apagada).
 - Ressalva já registada na §11: as respostas certas estão no código da página.
+
+## 13. Piloto humano: protocolo revisto (aprovado pelo Bruno, 18/10, 16:16, antes de qualquer resposta)
+**Porquê.** O v3.1 pede um raciocínio sobre 70 regras invisíveis. Uma pessoa sem ferramenta pode falhar só por isso, e então não saberíamos se o enunciado está mal posto ou se a tarefa é só impraticável de cabeça.
+
+**Duas condições, dentro de cada pessoa:**
+- **A, sem ajuda:** exatamente como na §11.
+- **B, com ajuda:** a página mostra, calculado a partir do que a pessoa vê, o número de regras (das 70) ainda admissíveis, se W é admissível, quais das três cartas são admissíveis e os padrões de saída das regras admissíveis nas 4 entradas retidas, com contagens. A ajuda atualiza-se no início, depois da consulta e depois da evidência nova. Com a ajuda, o veredicto fica quase mecânico. O que a condição B mede é **a escolha da consulta e a revisão**, com o cálculo de A feito por código, que é o desenho recomendado na fase 5.
+
+**Atribuição:**
+- os 20 episódios dividem-se em dois conjuntos de 10, equilibrados por alvo e por estrato de qualidade (conjuntos X e Y, fixados por `human_pilot.split`);
+- participantes com código ímpar (P1, P3) fazem X sem ajuda e Y com ajuda; os de código par (P2), o contrário;
+- a ordem dos episódios é sempre 1 a 20 e cada episódio diz em que condição está;
+- o código tem de ter a forma P1, P2, P3.
+
+**Leitura dos resultados (ponto 3 da revisão).** Com 10 episódios por pessoa e condição, os intervalos são largos. Cada critério é lido como **passa** (limite inferior do IC 95% ≥ limiar), **falha** (limite superior < limiar) ou **inconclusivo**:
+- proporção de episódios fundamentados: intervalo de Wilson;
+- kappa: bootstrap sobre episódios, 2 000 reamostragens.
+
+Os limiares da §11 mantêm-se: fundamentado ≥ 0,80 e kappa contra a referência ≥ 0,70.
+
+**Estratos obrigatórios (ponto 6).** O código de análise reporta sempre todos os resultados separados por estrato de qualidade (melhor consulta ≥ 0,80 ou < 0,80) e por condição. Não há resultado agregado sem a respetiva desagregação.
+
+**Previsões adicionais:**
+- **H-e.** Na condição B, fundamentado ≥ 0,80 (passa ou inconclusivo, nunca falha) e kappa contra a referência ≥ 0,7.
+- **H-f.** Na condição A, fundamentado < 0,80: as pessoas falham sem ajuda, o que confirma que o estrangulamento é o cálculo de A, tal como nos modelos.
+- **H-g.** A escolha de consulta (valor v2 da escolhida acima da média do menu) não difere mais de 0,15 entre condições, porque a ajuda não mostra o valor das consultas.
+
+**Análise escrita e testada antes de haver respostas reais:** `instrument/analyse_human.py`, testada com participantes sintéticos (§14).
+
+### 13.1 Ressalva de desenho (revisão, 18/10)
+Com as capacidades atuais da página não é possível esconder as respostas: os episódios e a referência ficam num documento partilhado (`db`) que a análise lê e que, por isso, os participantes também conseguem ler. O piloto é feito só com pessoas colaborativas que aceitam não consultar o código nem os dados; esta ressalva acompanha qualquer resultado do piloto, que não serve como prova contra um participante adversarial.

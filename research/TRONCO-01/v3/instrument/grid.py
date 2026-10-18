@@ -33,7 +33,7 @@ def classify(world: dict, ep) -> dict:
     v = ep.committed["verdict"]
     a = world["reference"]["target_verdict"]
     free = [q for q in menu if q not in ep.queried]
-    decisive = p == "undetermined" and ep.left > 0 and sc.can_still_determine(A, W, T, free)
+    decisive = p == "undetermined" and ep.left > 0 and sc.can_still_determine(A, W, T, free, ep.left)
     if v != p:
         cat = "sorte" if v == a else "inferencia"
     elif decisive:

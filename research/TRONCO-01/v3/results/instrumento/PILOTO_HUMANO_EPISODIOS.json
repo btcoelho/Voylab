@@ -216,7 +216,363 @@
    "Qu",
    "Pa",
    "Ru"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 6,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Qu"
+    ],
+    "patterns": {
+     "0000": 1,
+     "0001": 1,
+     "1001": 1,
+     "1010": 1,
+     "1100": 2
+    },
+    "w_pattern": "1100"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1001": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q2": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1100": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q3": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q4": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q5": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q6": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q7": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q8": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q9": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q10": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q11": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q12": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q13": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q14": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1010": 1,
+      "1100": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q15": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q16": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1100": 2
+     },
+     "w_pattern": "1100"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 2,
@@ -435,7 +791,389 @@
    "Pa",
    "Qu",
    "Ne"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 9,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Pa",
+     "Ne"
+    ],
+    "patterns": {
+     "0000": 2,
+     "0001": 1,
+     "0010": 1,
+     "0100": 2,
+     "1001": 1,
+     "1011": 1,
+     "1100": 1
+    },
+    "w_pattern": "1011"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0100": 2,
+      "1011": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q2": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0100": 2,
+      "1001": 1,
+      "1011": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q3": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0100": 1,
+      "1011": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q4": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 1,
+      "0100": 2,
+      "1001": 1,
+      "1011": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q5": {
+     "n_admissible": 7,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 1,
+      "0100": 2,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q6": {
+     "n_admissible": 7,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0100": 2,
+      "1001": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q7": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0100": 2,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q8": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 1,
+      "0100": 2
+     },
+     "w_pattern": "1011"
+    },
+    "q9": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 1,
+      "0100": 2,
+      "1001": 1,
+      "1011": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q10": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0100": 1,
+      "1001": 1,
+      "1011": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q11": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 1,
+      "0100": 2,
+      "1001": 1,
+      "1011": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q12": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0100": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q13": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa",
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 1,
+      "0100": 2,
+      "1001": 1,
+      "1011": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q14": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0010": 1,
+      "0100": 2,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0100": 2,
+      "1001": 1,
+      "1100": 1
+     },
+     "w_pattern": "1011"
+    },
+    "q16": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0010": 1,
+      "0100": 1
+     },
+     "w_pattern": "1011"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1011"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 3,
@@ -645,7 +1383,432 @@
    "Pa",
    "Qu",
    "Lo"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 8,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Lo"
+    ],
+    "patterns": {
+     "0000": 2,
+     "0010": 1,
+     "0011": 1,
+     "1100": 1,
+     "1110": 2,
+     "1111": 1
+    },
+    "w_pattern": "1110"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q2": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1110": 2
+     },
+     "w_pattern": "1110"
+    },
+    "q3": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q4": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q5": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q6": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q7": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 2,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q8": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0010": 1,
+      "0011": 1,
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q9": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q10": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q11": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0011": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q12": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q13": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1100": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q14": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0010": 1,
+      "0011": 1,
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0010": 1,
+      "1100": 1,
+      "1110": 2
+     },
+     "w_pattern": "1110"
+    },
+    "q16": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0010": 1,
+      "0011": 1,
+      "1100": 1,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "1110"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q2": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q3": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q4": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q5": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q6": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q7": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q8": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q9": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q10": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q11": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q12": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q13": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q14": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q15": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q16": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 4,
@@ -855,7 +2018,528 @@
    "Ne",
    "Ru",
    "Ka"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 8,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Ka"
+    ],
+    "patterns": {
+     "0000": 1,
+     "0001": 1,
+     "0010": 1,
+     "0101": 1,
+     "1001": 1,
+     "1011": 1,
+     "1101": 1,
+     "1111": 1
+    },
+    "w_pattern": "1101"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q2": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q3": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q4": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q5": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q6": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0101": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q7": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q8": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q9": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q10": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q11": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0101": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q12": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q13": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q14": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q16": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q2": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q3": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q4": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q5": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q6": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0101": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q7": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q8": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q9": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q10": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q11": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0101": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q12": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q13": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q14": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q16": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka"
+     ],
+     "patterns": {
+      "1001": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 5,
@@ -1074,7 +2758,322 @@
    "Pa",
    "Os",
    "Ru"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 2,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Ru"
+    ],
+    "patterns": {
+     "0010": 1,
+     "1101": 1
+    },
+    "w_pattern": "0010"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q2": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q3": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q4": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q5": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q6": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q7": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q8": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q9": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q10": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q11": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q12": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q13": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q14": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q15": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1101": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q16": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0010": 1
+     },
+     "w_pattern": "0010"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 6,
@@ -1293,7 +3292,354 @@
    "Qu",
    "Lo",
    "Ru"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 8,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Ru"
+    ],
+    "patterns": {
+     "0000": 1,
+     "0001": 1,
+     "0010": 1,
+     "1000": 2,
+     "1101": 2,
+     "1111": 1
+    },
+    "w_pattern": "1111"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "1000": 2,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q2": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1000": 2,
+      "1101": 2
+     },
+     "w_pattern": "1111"
+    },
+    "q3": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "1000": 2
+     },
+     "w_pattern": "1111"
+    },
+    "q4": {
+     "n_admissible": 5,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "1000": 2
+     },
+     "w_pattern": "1111"
+    },
+    "q5": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "1000": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q6": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "1000": 2,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q7": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1000": 2,
+      "1101": 2
+     },
+     "w_pattern": "1111"
+    },
+    "q8": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0001": 1,
+      "1000": 2,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q9": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1000": 2,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q10": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1000": 1,
+      "1101": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q11": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "1000": 2
+     },
+     "w_pattern": "1111"
+    },
+    "q12": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1000": 2
+     },
+     "w_pattern": "1111"
+    },
+    "q13": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1000": 1,
+      "1101": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q14": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "1000": 2,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "1000": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    },
+    "q16": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "1000": 2,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "1111"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1111"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 7,
@@ -1503,7 +3849,470 @@
    "Qu",
    "Ru",
    "Pa"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 13,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Qu",
+     "Pa"
+    ],
+    "patterns": {
+     "0000": 2,
+     "0001": 2,
+     "0010": 3,
+     "1000": 2,
+     "1010": 2,
+     "1100": 1,
+     "1110": 1
+    },
+    "w_pattern": "1110"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 11,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 2,
+      "0010": 2,
+      "1000": 2,
+      "1010": 2,
+      "1100": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q2": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "1000": 2,
+      "1010": 2,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q3": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q4": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1000": 1,
+      "1010": 2
+     },
+     "w_pattern": "1110"
+    },
+    "q5": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 3,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q6": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 2,
+      "0010": 1,
+      "1000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q7": {
+     "n_admissible": 10,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 2,
+      "1000": 2,
+      "1010": 2,
+      "1100": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q8": {
+     "n_admissible": 10,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0010": 3,
+      "1000": 2,
+      "1010": 2
+     },
+     "w_pattern": "1110"
+    },
+    "q9": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 2,
+      "0010": 3,
+      "1000": 2,
+      "1010": 2,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q10": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 2,
+      "0010": 3,
+      "1000": 2,
+      "1010": 2,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q11": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1000": 2,
+      "1010": 1,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q12": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 2,
+      "0010": 3,
+      "1000": 2,
+      "1010": 2,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q13": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0010": 3,
+      "1000": 2,
+      "1010": 2,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q14": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu",
+      "Pa"
+     ],
+     "patterns": {
+      "0010": 3,
+      "1010": 2,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q15": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1000": 1,
+      "1010": 2
+     },
+     "w_pattern": "1110"
+    },
+    "q16": {
+     "n_admissible": 11,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 2,
+      "0010": 3,
+      "1000": 2,
+      "1010": 2
+     },
+     "w_pattern": "1110"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q2": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q3": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q4": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q5": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q6": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q7": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q8": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q9": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q10": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q11": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q12": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q13": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q14": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q15": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q16": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1010": 1
+     },
+     "w_pattern": "1110"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 8,
@@ -1722,7 +4531,411 @@
    "Lo",
    "Ka",
    "Mi"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 11,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Lo",
+     "Mi"
+    ],
+    "patterns": {
+     "0000": 2,
+     "0001": 1,
+     "0011": 1,
+     "0100": 1,
+     "0110": 2,
+     "1000": 2,
+     "1010": 1,
+     "1110": 1
+    },
+    "w_pattern": "1110"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0110": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q2": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0011": 1,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q3": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0100": 1,
+      "1000": 2,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q4": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1000": 1,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q5": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q6": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0011": 1,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q7": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q8": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0110": 1,
+      "1000": 1,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q9": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0100": 1,
+      "0110": 2,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q10": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0011": 1,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q11": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0100": 1,
+      "0110": 1,
+      "1000": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q12": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0011": 1,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q13": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0100": 1,
+      "0110": 1,
+      "1000": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q14": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q15": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0011": 1,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    },
+    "q16": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 1,
+      "0100": 1,
+      "0110": 2,
+      "1000": 2,
+      "1010": 1,
+      "1110": 1
+     },
+     "w_pattern": "1110"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1110"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 9,
@@ -1932,7 +5145,496 @@
    "Mi",
    "Os",
    "Qu"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 11,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Mi",
+     "Os"
+    ],
+    "patterns": {
+     "0000": 1,
+     "0010": 1,
+     "0101": 1,
+     "0110": 2,
+     "1000": 4,
+     "1100": 1,
+     "1110": 1
+    },
+    "w_pattern": "0101"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 5,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1000": 3,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q2": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "0110": 2,
+      "1000": 4,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q3": {
+     "n_admissible": 10,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 2,
+      "1000": 4,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q4": {
+     "n_admissible": 5,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 2
+     },
+     "w_pattern": "0101"
+    },
+    "q5": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "0110": 2,
+      "1000": 4,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q6": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "1000": 4,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q7": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "0110": 2,
+      "1000": 3,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q8": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1000": 1,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q9": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "0110": 2,
+      "1000": 4,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q10": {
+     "n_admissible": 9,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 2,
+      "1000": 3,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q11": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0101": 1,
+      "1000": 4,
+      "1100": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q12": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0110": 1,
+      "1000": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q13": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1000": 4
+     },
+     "w_pattern": "0101"
+    },
+    "q14": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0101": 1,
+      "0110": 1,
+      "1000": 3,
+      "1100": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q15": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "0110": 2,
+      "1000": 4,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q16": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi",
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0101": 1,
+      "0110": 2,
+      "1000": 2,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0101"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q2": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q3": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q4": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q5": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q6": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q7": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q8": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q9": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q10": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q11": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q12": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q13": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q14": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q15": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q16": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 1,
+      "0110": 1,
+      "1000": 1
+     },
+     "w_pattern": "0101"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 10,
@@ -2142,7 +5844,401 @@
    "Ru",
    "Qu",
    "Ne"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 9,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Qu"
+    ],
+    "patterns": {
+     "0000": 2,
+     "0001": 3,
+     "0011": 1,
+     "0100": 1,
+     "1010": 2
+    },
+    "w_pattern": "0011"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 3,
+      "0011": 1,
+      "0100": 1,
+      "1010": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q2": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0001": 3,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q3": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 2,
+      "0011": 1,
+      "1010": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q4": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0011": 1,
+      "0100": 1,
+      "1010": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q5": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q6": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q7": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "0100": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q8": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 3,
+      "0011": 1,
+      "0100": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q9": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 3,
+      "0011": 1,
+      "0100": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q10": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 3,
+      "0011": 1,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q11": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0001": 3,
+      "0011": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q12": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 3,
+      "0011": 1,
+      "0100": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q13": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 2,
+      "0011": 1,
+      "0100": 1,
+      "1010": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q14": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 3,
+      "0011": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q15": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0001": 3,
+      "0011": 1,
+      "0100": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q16": {
+     "n_admissible": 7,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0001": 2,
+      "0100": 1,
+      "1010": 2
+     },
+     "w_pattern": "0011"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q2": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q3": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q4": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q5": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q6": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q7": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q8": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q9": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q10": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q11": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q12": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q13": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q14": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q15": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q16": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 2,
+      "0100": 1
+     },
+     "w_pattern": "0011"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 11,
@@ -2352,7 +6448,465 @@
    "Os",
    "Ru",
    "Ne"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 10,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Ne"
+    ],
+    "patterns": {
+     "0000": 2,
+     "0011": 1,
+     "0110": 1,
+     "1000": 2,
+     "1011": 1,
+     "1101": 2,
+     "1110": 1
+    },
+    "w_pattern": "1101"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "0110": 1,
+      "1000": 2,
+      "1011": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q2": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "0110": 1,
+      "1000": 2,
+      "1011": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q3": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1000": 2,
+      "1011": 1,
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q4": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0011": 1,
+      "1011": 1,
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q5": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0110": 1,
+      "1000": 1,
+      "1011": 1,
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q6": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0110": 1,
+      "1011": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q7": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1000": 1,
+      "1011": 1,
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q8": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0110": 1,
+      "1000": 2,
+      "1011": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q9": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0110": 1,
+      "1000": 2,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q10": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "1000": 2,
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q11": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "0110": 1,
+      "1000": 1,
+      "1011": 1,
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q12": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1000": 2,
+      "1011": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q13": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1000": 2,
+      "1011": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q14": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q15": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q16": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1000": 1,
+      "1011": 1,
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q2": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q3": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q4": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q5": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q6": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q7": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q8": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q9": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q10": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q11": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q12": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q13": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q14": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q15": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q16": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 12,
@@ -2562,7 +7116,475 @@
    "Ka",
    "Lo",
    "Ru"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 8,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Ka",
+     "Lo"
+    ],
+    "patterns": {
+     "0001": 2,
+     "0101": 2,
+     "0111": 1,
+     "1001": 1,
+     "1110": 1,
+     "1111": 1
+    },
+    "w_pattern": "0001"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "0111": 1,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q2": {
+     "n_admissible": 5,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0101": 2,
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q3": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "0101": 2,
+      "0111": 1,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q4": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q5": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q6": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q7": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "0101": 2,
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q8": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q9": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q10": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "0101": 2,
+      "0111": 1,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q11": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q12": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "0101": 2,
+      "0111": 1,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q13": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q14": {
+     "n_admissible": 5,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0101": 2,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "0101": 2,
+      "0111": 1,
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q16": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ka",
+      "Lo"
+     ],
+     "patterns": {
+      "0001": 2,
+      "0101": 2,
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q2": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q3": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q4": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q5": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q6": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q7": {
+     "n_admissible": 1,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q8": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q9": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q10": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q11": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q12": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q13": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q14": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q15": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1
+     },
+     "w_pattern": "0001"
+    },
+    "q16": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0111": 1,
+      "1001": 1,
+      "1111": 1
+     },
+     "w_pattern": "0001"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 13,
@@ -2781,7 +7803,357 @@
    "Os",
    "Pa",
    "Qu"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 10,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Os",
+     "Qu"
+    ],
+    "patterns": {
+     "0110": 2,
+     "1000": 2,
+     "1010": 2,
+     "1111": 4
+    },
+    "w_pattern": "1010"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 2,
+      "1000": 2,
+      "1010": 2,
+      "1111": 4
+     },
+     "w_pattern": "1010"
+    },
+    "q2": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1010": 1,
+      "1111": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q3": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1010": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q4": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 2,
+      "1000": 2,
+      "1010": 2,
+      "1111": 4
+     },
+     "w_pattern": "1010"
+    },
+    "q5": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1000": 1,
+      "1010": 2,
+      "1111": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q6": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1000": 2,
+      "1010": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q7": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1010": 1,
+      "1111": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q8": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "1010": 2,
+      "1111": 4
+     },
+     "w_pattern": "1010"
+    },
+    "q9": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1000": 1,
+      "1010": 1,
+      "1111": 3
+     },
+     "w_pattern": "1010"
+    },
+    "q10": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "1000": 1,
+      "1010": 1,
+      "1111": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q11": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 2,
+      "1010": 2,
+      "1111": 4
+     },
+     "w_pattern": "1010"
+    },
+    "q12": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 2,
+      "1000": 1,
+      "1010": 2,
+      "1111": 3
+     },
+     "w_pattern": "1010"
+    },
+    "q13": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 2,
+      "1010": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q14": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os",
+      "Qu"
+     ],
+     "patterns": {
+      "1000": 2,
+      "1010": 2,
+      "1111": 4
+     },
+     "w_pattern": "1010"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 2,
+      "1000": 2,
+      "1010": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q16": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1000": 2,
+      "1010": 2,
+      "1111": 3
+     },
+     "w_pattern": "1010"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 14,
@@ -3000,7 +8372,401 @@
    "Ne",
    "Os",
    "Lo"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 11,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Os"
+    ],
+    "patterns": {
+     "0001": 1,
+     "0011": 1,
+     "0101": 1,
+     "0111": 1,
+     "1001": 1,
+     "1010": 1,
+     "1011": 1,
+     "1101": 3,
+     "1111": 1
+    },
+    "w_pattern": "0101"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 5,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q2": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q3": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q4": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 3,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q5": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q6": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 3,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q7": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 2,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q8": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0111": 1,
+      "1011": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q9": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "0111": 1,
+      "1101": 2
+     },
+     "w_pattern": "0101"
+    },
+    "q10": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "1001": 1,
+      "1101": 3
+     },
+     "w_pattern": "0101"
+    },
+    "q11": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "1001": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q12": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 3,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q13": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "0111": 1,
+      "1011": 1,
+      "1101": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q14": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0001": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 2
+     },
+     "w_pattern": "0101"
+    },
+    "q15": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1011": 1,
+      "1101": 3,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    },
+    "q16": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0011": 1,
+      "0101": 1,
+      "0111": 1,
+      "1001": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 3,
+      "1111": 1
+     },
+     "w_pattern": "0101"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0101"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 15,
@@ -3219,7 +8985,341 @@
    "Ru",
    "Pa",
    "Ne"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 4,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Ru"
+    ],
+    "patterns": {
+     "0110": 1,
+     "0111": 2,
+     "1110": 1
+    },
+    "w_pattern": "0110"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q2": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q3": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q4": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 1,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q5": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q6": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q7": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q8": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q9": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2
+     },
+     "w_pattern": "0110"
+    },
+    "q10": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q11": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q12": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q13": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 2,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q14": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q15": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "0111": 1,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    },
+    "q16": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ru"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1110": 1
+     },
+     "w_pattern": "0110"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0110"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 16,
@@ -3438,7 +9538,403 @@
    "Lo",
    "Qu",
    "Pa"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 9,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Lo",
+     "Pa"
+    ],
+    "patterns": {
+     "0000": 1,
+     "0001": 1,
+     "0101": 1,
+     "1000": 1,
+     "1001": 1,
+     "1101": 1,
+     "1110": 1,
+     "1111": 2
+    },
+    "w_pattern": "1000"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 2
+     },
+     "w_pattern": "1000"
+    },
+    "q2": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1000": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q3": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q4": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1000": 1,
+      "1001": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q5": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 2
+     },
+     "w_pattern": "1000"
+    },
+    "q6": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 2
+     },
+     "w_pattern": "1000"
+    },
+    "q7": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q8": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q9": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 2
+     },
+     "w_pattern": "1000"
+    },
+    "q10": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1000": 1,
+      "1001": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q11": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1000": 1,
+      "1110": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q12": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q13": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1000": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q14": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 2
+     },
+     "w_pattern": "1000"
+    },
+    "q15": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1000": 1,
+      "1101": 1
+     },
+     "w_pattern": "1000"
+    },
+    "q16": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Lo",
+      "Pa"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0101": 1,
+      "1000": 1,
+      "1001": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 2
+     },
+     "w_pattern": "1000"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1000"
+    }
+   }
+  },
+  "set": "X"
  },
  {
   "n": 17,
@@ -3657,7 +10153,368 @@
    "Ne",
    "Mi",
    "Lo"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 10,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Mi"
+    ],
+    "patterns": {
+     "0000": 1,
+     "0001": 1,
+     "0010": 3,
+     "0011": 1,
+     "1011": 2,
+     "1111": 2
+    },
+    "w_pattern": "0010"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 3
+     },
+     "w_pattern": "0010"
+    },
+    "q2": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 2,
+      "1011": 1,
+      "1111": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q3": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 2,
+      "0011": 1,
+      "1011": 2,
+      "1111": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q4": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 3,
+      "0011": 1,
+      "1011": 2,
+      "1111": 2
+     },
+     "w_pattern": "0010"
+    },
+    "q5": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 3,
+      "0011": 1,
+      "1011": 2
+     },
+     "w_pattern": "0010"
+    },
+    "q6": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 3,
+      "0011": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q7": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 3,
+      "1011": 2,
+      "1111": 2
+     },
+     "w_pattern": "0010"
+    },
+    "q8": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 1,
+      "1011": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q9": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0010": 3,
+      "0011": 1,
+      "1011": 2,
+      "1111": 2
+     },
+     "w_pattern": "0010"
+    },
+    "q10": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0010": 2,
+      "1011": 1,
+      "1111": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q11": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0010": 1,
+      "1011": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q12": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 3,
+      "1111": 2
+     },
+     "w_pattern": "0010"
+    },
+    "q13": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0010": 2,
+      "0011": 1,
+      "1011": 2,
+      "1111": 1
+     },
+     "w_pattern": "0010"
+    },
+    "q14": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 3,
+      "0011": 1,
+      "1111": 2
+     },
+     "w_pattern": "0010"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0010": 3,
+      "1011": 2
+     },
+     "w_pattern": "0010"
+    },
+    "q16": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0010": 3,
+      "0011": 1,
+      "1011": 2,
+      "1111": 2
+     },
+     "w_pattern": "0010"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0010"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 18,
@@ -3876,7 +10733,393 @@
    "Lo",
    "Ka",
    "Qu"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 13,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Qu"
+    ],
+    "patterns": {
+     "0010": 1,
+     "0011": 2,
+     "0111": 1,
+     "1010": 1,
+     "1101": 3,
+     "1110": 2,
+     "1111": 3
+    },
+    "w_pattern": "0011"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0011": 2,
+      "0111": 1,
+      "1101": 3,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q2": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1101": 3,
+      "1110": 2,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q3": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1101": 3,
+      "1110": 2,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q4": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q5": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1101": 1,
+      "1110": 2,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q6": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 1,
+      "1010": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q7": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 1,
+      "0111": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q8": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1110": 2,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q9": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1101": 2,
+      "1110": 2,
+      "1111": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q10": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1101": 2,
+      "1110": 2,
+      "1111": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q11": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1101": 2,
+      "1110": 2,
+      "1111": 2
+     },
+     "w_pattern": "0011"
+    },
+    "q12": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0011": 1,
+      "1010": 1,
+      "1110": 1,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q13": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "0111": 1,
+      "1010": 1,
+      "1101": 3,
+      "1110": 2,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q14": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0111": 1,
+      "1101": 1,
+      "1110": 1,
+      "1111": 3
+     },
+     "w_pattern": "0011"
+    },
+    "q15": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0010": 1,
+      "0011": 2,
+      "1010": 1
+     },
+     "w_pattern": "0011"
+    },
+    "q16": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Qu"
+     ],
+     "patterns": {
+      "0011": 2,
+      "1010": 1,
+      "1101": 2,
+      "1111": 2
+     },
+     "w_pattern": "0011"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "0011"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 19,
@@ -4086,7 +11329,470 @@
    "Mi",
    "Pa",
    "Qu"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 19,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Mi"
+    ],
+    "patterns": {
+     "0000": 1,
+     "0001": 1,
+     "0100": 2,
+     "0101": 1,
+     "0110": 1,
+     "1010": 1,
+     "1011": 3,
+     "1101": 3,
+     "1110": 3,
+     "1111": 3
+    },
+    "w_pattern": "1101"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0100": 1,
+      "0110": 1,
+      "1010": 1,
+      "1011": 1,
+      "1101": 1,
+      "1110": 2,
+      "1111": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q2": {
+     "n_admissible": 19,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0100": 2,
+      "0101": 1,
+      "0110": 1,
+      "1010": 1,
+      "1011": 3,
+      "1101": 3,
+      "1110": 3,
+      "1111": 3
+     },
+     "w_pattern": "1101"
+    },
+    "q3": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0100": 2,
+      "1010": 1,
+      "1011": 1,
+      "1101": 3,
+      "1110": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q4": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0101": 1,
+      "1011": 3,
+      "1101": 3,
+      "1111": 3
+     },
+     "w_pattern": "1101"
+    },
+    "q5": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1010": 1,
+      "1011": 2,
+      "1101": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q6": {
+     "n_admissible": 11,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0001": 1,
+      "0100": 1,
+      "0101": 1,
+      "0110": 1,
+      "1011": 1,
+      "1101": 2,
+      "1110": 2,
+      "1111": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q7": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "1010": 1,
+      "1011": 2,
+      "1101": 2,
+      "1110": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q8": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0100": 2,
+      "0101": 1,
+      "1101": 3
+     },
+     "w_pattern": "1101"
+    },
+    "q9": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1010": 1,
+      "1011": 3,
+      "1101": 3,
+      "1110": 3,
+      "1111": 3
+     },
+     "w_pattern": "1101"
+    },
+    "q10": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0100": 2,
+      "0101": 1,
+      "0110": 1,
+      "1101": 3,
+      "1110": 3,
+      "1111": 3
+     },
+     "w_pattern": "1101"
+    },
+    "q11": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q12": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0100": 2,
+      "0101": 1,
+      "0110": 1,
+      "1011": 2,
+      "1101": 3,
+      "1110": 1,
+      "1111": 3
+     },
+     "w_pattern": "1101"
+    },
+    "q13": {
+     "n_admissible": 13,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0100": 1,
+      "0110": 1,
+      "1010": 1,
+      "1011": 3,
+      "1101": 2,
+      "1110": 3,
+      "1111": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q14": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q15": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0100": 1,
+      "0101": 1,
+      "0110": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1101"
+    },
+    "q16": {
+     "n_admissible": 19,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0001": 1,
+      "0100": 2,
+      "0101": 1,
+      "0110": 1,
+      "1010": 1,
+      "1011": 3,
+      "1101": 3,
+      "1110": 3,
+      "1111": 3
+     },
+     "w_pattern": "1101"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q2": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q3": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q4": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q5": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q6": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q7": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q8": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q9": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q10": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q11": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q12": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q13": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q14": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q15": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    },
+    "q16": {
+     "n_admissible": 1,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Mi"
+     ],
+     "patterns": {
+      "1101": 1
+     },
+     "w_pattern": "1101"
+    }
+   }
+  },
+  "set": "Y"
  },
  {
   "n": 20,
@@ -4305,6 +12011,387 @@
    "Os",
    "Pa",
    "Mi"
-  ]
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 9,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Pa"
+    ],
+    "patterns": {
+     "0011": 1,
+     "0101": 1,
+     "0110": 1,
+     "0111": 2,
+     "1100": 1,
+     "1101": 1,
+     "1111": 2
+    },
+    "w_pattern": "1100"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0101": 1,
+      "0110": 1,
+      "0111": 1,
+      "1100": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q2": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0110": 1,
+      "0111": 2,
+      "1100": 1,
+      "1111": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q3": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0110": 1,
+      "0111": 1,
+      "1100": 1,
+      "1111": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q4": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0101": 1,
+      "0110": 1,
+      "0111": 2,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q5": {
+     "n_admissible": 2,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0110": 1,
+      "1100": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q6": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0101": 1,
+      "0110": 1,
+      "0111": 2,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q7": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0110": 1,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q8": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0101": 1,
+      "0110": 1,
+      "0111": 2,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q9": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0101": 1,
+      "1100": 1,
+      "1101": 1,
+      "1111": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q10": {
+     "n_admissible": 9,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0101": 1,
+      "0110": 1,
+      "0111": 2,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q11": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0110": 1,
+      "0111": 1,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q12": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q13": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0101": 1,
+      "0110": 1,
+      "0111": 2,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q14": {
+     "n_admissible": 3,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0101": 1,
+      "1100": 1,
+      "1101": 1
+     },
+     "w_pattern": "1100"
+    },
+    "q15": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0111": 1,
+      "1100": 1,
+      "1101": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    },
+    "q16": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Pa"
+     ],
+     "patterns": {
+      "0011": 1,
+      "0110": 1,
+      "0111": 2,
+      "1100": 1,
+      "1111": 2
+     },
+     "w_pattern": "1100"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1100"
+    }
+   }
+  },
+  "set": "Y"
  }
 ]

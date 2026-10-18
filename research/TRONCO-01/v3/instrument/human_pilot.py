@@ -42,6 +42,51 @@ def select():
     return chosen
 
 
+def split(chosen):
+    """Two sets of 10, as balanced as possible by target and by quality stratum (exhaustive over the 184 756 splits;
+    the first minimum in lexicographic order is taken, so the split is deterministic)."""
+    from itertools import combinations
+    n = len(chosen)
+    tg = [w["reference"]["target_verdict"] for w, _, _ in chosen]
+    qh = [q for _, q, _ in chosen]
+    best, best_cost = None, None
+    for X in combinations(range(n), n // 2):
+        xs = set(X)
+        cost = abs(sum(qh[k] for k in xs) - sum(qh[k] for k in range(n) if k not in xs))
+        for t in set(tg):
+            cost += abs(sum(tg[k] == t for k in xs) - sum(tg[k] == t for k in range(n) if k not in xs))
+        if best_cost is None or cost < best_cost:
+            best, best_cost = X, cost
+    X = sorted(best)
+    return X, [k for k in range(n) if k not in best]
+
+
+def helper_state(w, rows):
+    """Condition B help, computed by the reference code from what the participant has seen."""
+    hid = w["hidden"]
+    A = g.admissible_idx(rows)
+    cards = {c["id"]: g.hs.card_hypothesis(g.D, c) for c in w["public"]["candidate_models"]}
+    pats = {}
+    for h in A:
+        k = "".join(h[t] for t in hid["T"])
+        pats[k] = pats.get(k, 0) + 1
+    return {"n_admissible": len(A), "w_admissible": hid["w"] in A,
+            "cards_admissible": [cid for cid, hc in cards.items() if hc in A],
+            "patterns": dict(sorted(pats.items())), "w_pattern": "".join(hid["w"][t] for t in hid["T"])}
+
+
+def helpers(w):
+    hid = w["hidden"]
+    base = [(i, hid["h"][i]) for i in hid["obs"]]
+    out = {"inicio": helper_state(w, base), "consulta": {}, "evidencia": {}}
+    for q in w["public"]["query_menu"]:
+        i = g.INPUTS.index(g.D.as_tuple(q["input"]))
+        rows = base + [(i, hid["h"][i])]
+        out["consulta"][q["id"]] = helper_state(w, rows)
+        out["evidencia"][q["id"]] = helper_state(w, rows + [(j, hid["h2"][j]) for j in hid["block"]])
+    return out
+
+
 def export(chosen):
     out = []
     for n, (w, q_hi, v) in enumerate(chosen, 1):
@@ -54,13 +99,16 @@ def export(chosen):
                     "menu": [{"id": q["id"], "input": q["input"], "answer": hid["h"][g.INPUTS.index(g.D.as_tuple(q["input"]))],
                               "value2": round(v[g.INPUTS.index(g.D.as_tuple(q["input"]))], 4)} for q in w["public"]["query_menu"]],
                     "new_evidence": [{"input": dict(zip(g.D.features, g.INPUTS[i])), "output": hid["h2"][i]} for i in hid["block"]],
-                    "cards": [c["id"] for c in w["public"]["candidate_models"]]})
+                    "cards": [c["id"] for c in w["public"]["candidate_models"]], "help": helpers(w)})
     return out
 
 
 if __name__ == "__main__":
     ch = select()
     data = export(ch)
+    X, Y = split(ch)
+    for d in data:
+        d["set"] = "X" if (d["n"] - 1) in X else "Y"
     txt = json.dumps(data, ensure_ascii=False, indent=1)
     Path(sys.argv[1]).write_text(txt + "\n", encoding="utf-8")
     import collections

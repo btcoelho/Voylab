@@ -1,12 +1,12 @@
 {
  "code_sha256": {
   "generator_v3.py": "16ef649bf612825f95a6f106a9feda55a5d05d09093e6f72b5e36593fedbac81",
-  "scoring.py": "4166d4613aed586ac03f6662b861c72d1b3828fee2face5ed474f9dbcf94c0fd",
-  "env_v3.py": "24f388464499fdf070cec18ad45d6445b6d2bb9403ada4a8a43a143f207ba743",
+  "scoring.py": "26830051fc76ba8322306a7d07e3aeb57af0fb2f0e0e6fb8c2ff6ec67f26c4f8",
+  "env_v3.py": "1eb553351cf053cb7f809dce83f70e45dcab807b7957a20d345dd2f8204c3493",
   "audit_v3.py": "041812be994cb6e7b49c42f1705757d7628486fbcbeae930435203b5dd2d4a24",
-  "instrument/grid.py": "bedbfc3ab6a389ae989942f98622d357fae0cf54166796ba9f8d1bdf70332152",
+  "instrument/grid.py": "50fa5d9da3099bf701aa5296d618a000f95e06756ce9a122d25859b47b5429b0",
   "instrument/planted.py": "31134d354b85baac76b5d73f146d686765d802abcbc233597554d306d45b8d1d",
-  "instrument/enumerate_states.py": "62ee0e40705378761ccb22105490dda6d2563e05d0e761fa16f93848f745c4af",
+  "instrument/enumerate_states.py": "7c8b522fb7eedc54f6b9722eade67259bb621033d4ab11db402bad53288a5301",
   "instrument/verify_states.mjs": "ac5b6ba2e32337b9e3aea5fa61b551ed0541198bd568d4d643429d8dfed07ba4",
   "instrument/verify_items.mjs": "5cd98187e5d106b529ffab341d194d6c2576ed939844196d1821af2bde2c0201",
   "instrument/items.py": "7ae3d03eb2247b9162286566ebfb3c69b243f2e742f9d6f6a31edebf78923759",
@@ -15,6 +15,7 @@
   "pilot/pilot_harness.py": "1730800bd620efe0ddd9bc54774832262e8ed7b59a72d7e3499e04b0c08e1794",
   "pilot/select_worlds.py": "94cf8abad21e8f98ad2b8bf2c4565c40366384954f3c2d6ccc23d0b1e3228202"
  },
+ "code_last_commit": "b963219fa4c6bbe8dcdc03e9c8ce5b2409d4bf22",
  "artifacts_sha256": {
   "results/instrumento/F3/ITENS.jsonl.gz": "0d833820a178166e2fd84564c4d3e09084593a0b78fefdd0ed83f8a38fc666b0",
   "results/instrumento/F1_ronda2/F1_ENUMERACAO.json": "8a6fabd04dbd6ff49a89956e9c5b6fc5ff48988c417ffd22fcd985d5e9acab58",

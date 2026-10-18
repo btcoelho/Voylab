@@ -169,12 +169,21 @@ class Oraculo(Policy):
         return todo[0] if todo else None
 
 
+# Seed of the random reference policies. "legacy" (world_id, not unique: siblings share a random sequence) keeps
+# every recorded result reproducible; the frozen protocol uses "uid" (docs/V3_INSTRUMENTO.md §11).
+SEED_MODE = {"mode": "legacy"}
+
+
+def policy_seed_key(world: dict) -> str:
+    return world["uid"] if SEED_MODE["mode"] == "uid" else world["world_id"]
+
+
 POLICIES = [SemConsultas, Aleatoria, Simples, BayesIG, Oraculo, Pegajosa, GreedyA]
 POLICIES_V2 = POLICIES + [Rival, PrimeiroDoMenu, CegaPegajosa, IgnoraEvidencia]
 
 
 def run_episode(policy: Policy, world: dict, seed: int) -> dict:
-    rng = random.Random(f"{policy.name}|{world['world_id']}|{seed}")
+    rng = random.Random(f"{policy.name}|{policy_seed_key(world)}|{seed}")
     v = view(world)
     hid = world["hidden"]
     rows = list(v["rows"])

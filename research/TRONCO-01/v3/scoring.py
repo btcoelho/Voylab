@@ -14,11 +14,18 @@ def history_rows(world: dict, queried: list[int]):
     return [(i, hid["h"][i]) for i in list(hid["obs"]) + list(queried)]
 
 
-def can_still_determine(A, w, T, menu_free) -> bool:
-    """Is there an unused query one of whose possible answers would make the verdict determined?"""
+def can_still_determine(A, w, T, menu_free, k: int = 1) -> bool:
+    """Is there a sequence of up to k unused queries, with answers some admissible hypothesis could give, that makes
+    the verdict determined? k is the remaining budget. (Until 18/10 this looked one step ahead only; on every state
+    enumerated so far the two coincide, see docs/V3_INSTRUMENTO.md §10, so recorded classifications do not change.)"""
+    if k <= 0 or not A:
+        return False
     for q in menu_free:
         for y in {h[q] for h in A}:
-            if g.verdict(frozenset(h for h in A if h[q] == y), w, T) != "undetermined":
+            Ay = frozenset(h for h in A if h[q] == y)
+            if g.verdict(Ay, w, T) != "undetermined":
+                return True
+            if k > 1 and can_still_determine(Ay, w, T, [x for x in menu_free if x != q], k - 1):
                 return True
     return False
 
@@ -34,7 +41,7 @@ def score(world: dict, queried: list[int], answer: dict, left: int) -> dict:
     search_error = v_ref != target
     evidence_ignored = inference_error and v_ref in ("rejected", "supported")
     free = [q for q in menu if q not in queried]
-    determinable = can_still_determine(A, w, T, free) if left > 0 else False
+    determinable = can_still_determine(A, w, T, free, left) if left > 0 else False
     premature = answer["stop"] == "commit" and left > 0 and v_ref == "undetermined" and determinable
     suspend_correct = (answer["stop"] == "suspend" and v_ref == "undetermined" and not determinable)
     # queries asked when the verdict was already determined

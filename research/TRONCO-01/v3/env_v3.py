@@ -156,7 +156,7 @@ class Episode:
 def run_policy(policy, world: dict, seed: int = 0) -> dict:
     """Drive a reference policy through the real protocol (used to prove the harness equals the direct evaluator)."""
     import policies as P
-    rng = random.Random(f"{policy.name}|{world['world_id']}|{seed}")
+    rng = random.Random(f"{policy.name}|{P.policy_seed_key(world)}|{seed}")
     ep = Episode(world)
     v = P.view(world)
     rows = list(v["rows"])

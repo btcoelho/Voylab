@@ -37,6 +37,7 @@ label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
 .status.ok{color:var(--ok)}.status.warn{color:var(--warn)}
 input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);width:12ch}
 .pred{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;font-variant-numeric:tabular-nums}
+.badge{font-size:.8rem;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
 .done{text-align:center;padding:32px 16px;justify-items:center}
 </style>
 <div class="wrap">
@@ -46,16 +47,18 @@ input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);borde
   </div>
   <div class="panel" id="intro">
     <h2>Antes de começar</h2>
-    <p>São 20 episódios curtos, sempre pela mesma ordem. Em cada um escolhes uma consulta, comprometes-te com um veredicto sobre a carta W, vês evidência nova e decides se manténs ou revês. Não há tempo limite, mas o tempo de cada episódio é registado. Não voltes atrás nem peças ajuda a ninguém.</p>
-    <div class="row"><label for="code">Código de participante</label><input type="text" id="code" maxlength="8" placeholder="P1"><button class="btn" id="start" type="button">Começar</button></div>
+    <p>São 20 episódios curtos, sempre pela mesma ordem. Em metade tens uma ajuda que calcula as regras ainda admissíveis; cada episódio diz se é com ou sem ajuda. Em cada um escolhes uma consulta, comprometes-te com um veredicto sobre a carta W, vês evidência nova e decides se manténs ou revês. Não há tempo limite, mas o tempo de cada episódio é registado. Não voltes atrás nem peças ajuda a ninguém.</p>
+    <div class="row"><label for="code">Código de participante</label><input type="text" id="code" maxlength="8" placeholder="P1" pattern="[Pp][0-9]+"><button class="btn" id="start" type="button">Começar</button></div>
     <p class="status" id="savestate">A ligar ao armazenamento…</p>
   </div>
   <div class="grid" id="work" hidden>
     <div class="panel">
       <h2>Regras</h2>
       <details id="rulesbox"><summary>Ver as regras completas</summary><pre id="rules"></pre></details>
+      <div class="row"><span class="badge" id="cond"></span></div>
       <h2>Estado</h2>
       <pre id="state"></pre>
+      <div id="helpbox" class="result" hidden></div>
     </div>
     <div class="panel" id="actions">
       <div class="step" id="s1"><h2>1 · Escolhe uma consulta</h2><div class="menu" id="menu"></div><div class="result" id="qres" hidden></div></div>
@@ -117,19 +120,30 @@ async function save() {
   catch (e) { $("saved").textContent = "Não foi possível guardar (" + (e && e.code ? e.code : "erro") + "). Continua; volta a tentar no fim do próximo episódio."; $("saved").className = "status warn"; }
 }
 $("start").addEventListener("click", () => {
-  const code = $("code").value.trim();
-  if (!code) { $("code").focus(); return; }
+  const code = $("code").value.trim().toUpperCase();
+  if (!/^P[0-9]+$/.test(code)) { $("savestate").textContent = "Usa um código da forma P1, P2 ou P3."; $("savestate").className = "status warn"; $("code").focus(); return; }
   if (!rec || rec.code !== code) rec = { code: code, started: new Date().toISOString(), episodes: {} };
   i = 0;
   while (i < DATA.episodes.length && rec.episodes[DATA.episodes[i].uid] && rec.episodes[DATA.episodes[i].uid].final) i++;
   $("intro").hidden = true;
   show();
 });
+function cond(e) { const n = parseInt(rec.code.slice(1), 10); const without = n % 2 === 1 ? "X" : "Y"; return e.set === without ? "A" : "B"; }
+function renderHelp(h) {
+  if (!h) { $("helpbox").hidden = true; return; }
+  const pats = Object.entries(h.patterns).map(([p, c]) => p + " ×" + c).join(", ") || "nenhum";
+  $("helpbox").textContent = "AJUDA\nRegras admissíveis (das 70): " + h.n_admissible + "\nW é admissível: " + (h.w_admissible ? "sim" : "não") +
+    "\nCartas admissíveis: " + (h.cards_admissible.join(", ") || "nenhuma") + "\nPadrões das regras admissíveis nas retidas 1–4: " + pats + "\nPadrão de W nas retidas: " + h.w_pattern;
+  $("helpbox").hidden = false;
+}
 function show() {
   if (i >= DATA.episodes.length) { $("work").hidden = true; $("end").hidden = false; rec.finished = new Date().toISOString(); save(); return; }
   $("work").hidden = false; ep = DATA.episodes[i]; t0 = Date.now();
   $("progress").textContent = "Episódio " + (i + 1) + " de " + DATA.episodes.length;
   $("state").textContent = ep.state; $("qres").hidden = true; $("saved").textContent = "";
+  ep.cond = cond(ep);
+  $("cond").textContent = ep.cond === "A" ? "Condição A · sem ajuda" : "Condição B · com ajuda";
+  renderHelp(ep.cond === "B" ? ep.help.inicio : null);
   $("s2").setAttribute("aria-disabled", "true"); $("s3").setAttribute("aria-disabled", "true"); $("s1").removeAttribute("aria-disabled");
   const m = $("menu"); m.innerHTML = "";
   for (const q of ep.menu) {
@@ -147,7 +161,8 @@ function show() {
   window.scrollTo(0, 0);
 }
 function query(q) {
-  rec.episodes[ep.uid] = { n: ep.n, query: q.id, t_query_ms: Date.now() - t0 };
+  rec.episodes[ep.uid] = { n: ep.n, condition: ep.cond, query: q.id, t_query_ms: Date.now() - t0 };
+  if (ep.cond === "B") renderHelp(ep.help.consulta[q.id]);
   $("qres").textContent = "Resultado de " + q.id + ": " + q.input + " -> " + q.answer; $("qres").hidden = false;
   $("s1").setAttribute("aria-disabled", "true"); $("s2").removeAttribute("aria-disabled");
 }

@@ -38,9 +38,14 @@ jobs:
         working-directory: research/TRONCO-01/src/m17_audit
         run: python -m unittest discover -s tests
 
-      - name: Task v3 generator and round-0/1 audit (dev only)
+      # Exhaustive instrument tests only on pull requests and on main (fast set on every other push).
+      - name: Task v3 generator, audits and instrument (dev only)
         working-directory: research/TRONCO-01/v3
-        run: python -m unittest discover -s tests
+        env:
+          TRONCO_SLOW: ${{ (github.event_name == 'pull_request' || github.ref == 'refs/heads/main') && 'true' || 'false' }}
+        run: |
+          echo "TRONCO_SLOW=$TRONCO_SLOW"
+          python -m unittest discover -s tests
 
       - name: Tracked files unchanged by the run
         run: |

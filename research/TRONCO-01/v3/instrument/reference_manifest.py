@@ -35,9 +35,19 @@ def recompute() -> dict:
             "pilot_worlds_sha256": S.worlds_sha(S.pilot_worlds()), "hypothesis_space": len(g.SPACE)}
 
 
+def last_commit(paths) -> str | None:
+    """Last commit that touched the reference code (provenance; recorded, not checked by tests)."""
+    import subprocess
+    try:
+        return subprocess.run(["git", "log", "-1", "--format=%H", "--", *paths], cwd=V3, capture_output=True,
+                              text=True, check=True).stdout.strip() or None
+    except Exception:
+        return None
+
+
 def build() -> dict:
-    return {"code_sha256": {c: sha(V3 / c) for c in CODE}, "artifacts_sha256": {f: sha(V3 / f) for f in ARTIFACTS},
-            "recomputed": recompute()}
+    return {"code_sha256": {c: sha(V3 / c) for c in CODE}, "code_last_commit": last_commit(CODE),
+            "artifacts_sha256": {f: sha(V3 / f) for f in ARTIFACTS}, "recomputed": recompute()}
 
 
 def check() -> list[str]:
