@@ -349,3 +349,11 @@ As referências "constante", "consulta ao acaso + leitura correta" e "tudo ao ac
 **Achado sobre o instrumento (não corrigido agora; nada foi ajustado depois de ver os dados).** A taxa agregada de fundamentado premeia uma resposta por omissão: a constante `undetermined` obtém 1/3 sem raciocinar. A leitura por veredicto alvo (pré-registada em §15.6) mostra-o de imediato, e a média das três taxas por alvo (macro, já calculada pela grelha) dá 0,33 tanto para M1-DS como para a constante. Qualquer mudança à métrica principal (por exemplo, exigir a macro ou comparar sempre com a constante) é uma decisão para a próxima ronda, com aprovação, e não se aplica retroativamente a este resultado.
 
 **Decisão proposta (ronda 1 de 3 desta fase): reformular antes de mais corridas.** (1) Registar a constante `undetermined` e a "consulta ao acaso + leitura correta" como referências obrigatórias em qualquer corrida futura; (2) decidir se a métrica principal passa a ser a macro por alvo; (3) só depois decidir se vale a pena correr um Claude (teto previsto no §15) ou outro modelo. Nada disto se corre sem aprovação.
+
+### 17.1 Diagnóstico exploratório (post hoc, 18/10, 18:35): o "sempre undetermined" é sobretudo leitura correta depois de uma consulta fraca
+Comparando o veredicto de M1-DS com o veredicto que o seu próprio histórico (observações + consulta escolhida) implica:
+- o histórico implicava `undetermined` em **185/225** episódios: a consulta escolhida quase nunca decidia o caso. Aqui o modelo respondeu `undetermined` em 183 — leitura correta (categoria "pesquisa" quando o alvo era outro);
+- o histórico implicava `rejected` em 30: o modelo respondeu `undetermined` em todos e, em **28 dos 30, marcou W como admissível** — não detetou a contradição de W com as observações (erro de leitura, não prudência);
+- o histórico implicava `supported` em 10: respondeu `undetermined` em todos (não reconheceu o apoio);
+- concordância global com o próprio histórico: 183/225 = 0,81.
+Leitura: as duas fraquezas principais são (1) a escolha da consulta (pesquisa 108/225) e (2) verificar W contra cada observação e reconhecer quando o caso já está decidido. "Prudência excessiva" explica pouco: quando o histórico não decidia, `undetermined` estava certo. Tudo isto é exploratório; não altera o §17 nem as previsões.
