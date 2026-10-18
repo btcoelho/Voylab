@@ -1,0 +1,390 @@
+{
+ "sets": {
+  "piloto": {
+   "worlds": 48,
+   "legacy_ids": 20,
+   "max_worlds_per_legacy_id": 6,
+   "uids": 48,
+   "contents": 48,
+   "structure_groups": 39
+  },
+  "dev": {
+   "worlds": 267,
+   "legacy_ids": 45,
+   "max_worlds_per_legacy_id": 11,
+   "uids": 267,
+   "contents": 267,
+   "structure_groups": 142
+  },
+  "substituto": {
+   "worlds": 270,
+   "legacy_ids": 45,
+   "max_worlds_per_legacy_id": 11,
+   "uids": 270,
+   "contents": 270,
+   "structure_groups": 143
+  },
+  "confirmacao": {
+   "worlds": 270,
+   "legacy_ids": 45,
+   "max_worlds_per_legacy_id": 11,
+   "uids": 270,
+   "contents": 270,
+   "structure_groups": 150
+  }
+ },
+ "overlap_between_seed_sets": {
+  "dev|substituto": {
+   "shared_structure_groups": 48,
+   "shared_contents": 0
+  },
+  "dev|confirmacao": {
+   "shared_structure_groups": 62,
+   "shared_contents": 0
+  },
+  "substituto|confirmacao": {
+   "shared_structure_groups": 54,
+   "shared_contents": 0
+  }
+ },
+ "pilot_subset_of_dev": true,
+ "pilot_mapping": [
+  {
+   "order": 0,
+   "world_id": "v3-91001-medio-mixed-3",
+   "uid": "v3u-d6e71716f92dea1f",
+   "content_sha256": "0ce57cee69eefcee18d5596649dbba378ca2c2b9460c4ab534ee1c7aa27ed590",
+   "structure_group": "7fa50d0bb5372ba1"
+  },
+  {
+   "order": 1,
+   "world_id": "v3-91003-medio-mixed-1",
+   "uid": "v3u-cbc3cf0f424f355f",
+   "content_sha256": "e8b36dbbd33fa72cd1cd6b0243011a25aceb56da29a7fcd5f08b908f791d0025",
+   "structure_group": "62f85824fcc9a70a"
+  },
+  {
+   "order": 2,
+   "world_id": "v3-91001-medio-mixed-2",
+   "uid": "v3u-889a75f91db3e64f",
+   "content_sha256": "4f2a383caaead866e732ba3aea8b90b78194f996772bec3c93b011a46d634e3f",
+   "structure_group": "13347aec2dda765c"
+  },
+  {
+   "order": 3,
+   "world_id": "v3-91003-facil-mixed-3",
+   "uid": "v3u-c77fac1703dec51d",
+   "content_sha256": "0d12d78746ec2b0c26ba8b44aca6e187d5a9c5371ef6644a24aba4546dbc5c26",
+   "structure_group": "fa3ee863f6c6f072"
+  },
+  {
+   "order": 4,
+   "world_id": "v3-91001-medio-pair-2",
+   "uid": "v3u-e6f64a3173536cae",
+   "content_sha256": "cc95eef8bfe884bd24c33b1c4cafaa0e901c16a1c8ce87a957190e063c63835b",
+   "structure_group": "1c7f75fb4f1c5796"
+  },
+  {
+   "order": 5,
+   "world_id": "v3-91003-medio-pair-2",
+   "uid": "v3u-8f1a168d327bdcef",
+   "content_sha256": "73fcadb57111dfb45e76b2c9b14daba7b6ebca2e8950d9f3ddacd0a52dc37974",
+   "structure_group": "e759835ac8b20702"
+  },
+  {
+   "order": 6,
+   "world_id": "v3-91003-medio-mixed-1",
+   "uid": "v3u-494e439276b33783",
+   "content_sha256": "e3dd7d5b588840d074031d2cbc0bc357896ff6fcf4258a7459aa6812f32b5f9a",
+   "structure_group": "dea2be46ed6b28bb"
+  },
+  {
+   "order": 7,
+   "world_id": "v3-91001-medio-pair-1",
+   "uid": "v3u-a188287b8e5d13a2",
+   "content_sha256": "767cba65a9dcdc13b7ce91bd8d5ea8ba4f5b0060ff508100700cf9e5e45bd571",
+   "structure_group": "47a6b7d9fbacb8c8"
+  },
+  {
+   "order": 8,
+   "world_id": "v3-91003-medio-mixed-2",
+   "uid": "v3u-ed3e3a7f93b914ae",
+   "content_sha256": "24e274d5d68dfc12807fb535ce84dc7efff7057bd5fe3aba9e13bdb3ab03bf90",
+   "structure_group": "ae2ef0a2d2b3dd83"
+  },
+  {
+   "order": 9,
+   "world_id": "v3-91003-medio-single-2",
+   "uid": "v3u-eeb58a8a7dd63f4e",
+   "content_sha256": "52daabea2c96cc98d66ac37d311cadbed2dd31e290d47bac87726eda5028a6f7",
+   "structure_group": "b402ece57248da5b"
+  },
+  {
+   "order": 10,
+   "world_id": "v3-91003-facil-pair-3",
+   "uid": "v3u-836b49bc742330e1",
+   "content_sha256": "213b6195b444e17cf36db623eb36b573f870791060a8efbefb8040cc2bfbbdb1",
+   "structure_group": "e61d0938df25d04c"
+  },
+  {
+   "order": 11,
+   "world_id": "v3-91009-medio-single-2",
+   "uid": "v3u-b6669da17f9a66df",
+   "content_sha256": "699f416dfd1c662d83ba2febef3dd947df5517eb554c5d80131c6e1c267774e6",
+   "structure_group": "71aa5152764c4ebc"
+  },
+  {
+   "order": 12,
+   "world_id": "v3-91003-facil-pair-2",
+   "uid": "v3u-7af29790136ff41e",
+   "content_sha256": "822601f068a2c844dd5157368af8bdb0647b6195e7efd963863df09612a50598",
+   "structure_group": "13ed2b42afcf5776"
+  },
+  {
+   "order": 13,
+   "world_id": "v3-91001-medio-single-2",
+   "uid": "v3u-5eddb87c1b088f61",
+   "content_sha256": "ede24bb1583e2bb21bb00180fb6fd699ace6e2b7077929b13505ec145e26e3ad",
+   "structure_group": "ea1ec22c3e8c735b"
+  },
+  {
+   "order": 14,
+   "world_id": "v3-91003-medio-pair-3",
+   "uid": "v3u-02a0e1e9140c025d",
+   "content_sha256": "3f37e8043d3b7129f5484a229a90332284d261bcf380ff6b4580a12186233965",
+   "structure_group": "e864ba0bfacdc1f5"
+  },
+  {
+   "order": 15,
+   "world_id": "v3-91003-medio-single-1",
+   "uid": "v3u-dc8f0e1e12948b0c",
+   "content_sha256": "7aaedbb9d6f98aad708bc61611ac5558b7b31f940204d5f8cf8ad8be3d34d912",
+   "structure_group": "6c35c86af5ab8edc"
+  },
+  {
+   "order": 16,
+   "world_id": "v3-91001-medio-mixed-3",
+   "uid": "v3u-887ad43f43ab2864",
+   "content_sha256": "6b05ba2e976294abdb9d02a42a3b8d242aa96a159a00f319bb66919dc383fe24",
+   "structure_group": "07877ddd1ce8609c"
+  },
+  {
+   "order": 17,
+   "world_id": "v3-91003-medio-mixed-1",
+   "uid": "v3u-793f2bca5d764780",
+   "content_sha256": "c717de4eb4ce5f59177bc69480d11d84132fc39a003151d008c4362fa9d8471d",
+   "structure_group": "c65ff7ed4d9da07b"
+  },
+  {
+   "order": 18,
+   "world_id": "v3-91001-medio-mixed-2",
+   "uid": "v3u-5bbc829aa5346a5b",
+   "content_sha256": "f3af6ad1ba38e55bfbbb8ba518da1618a735b9fd01e07566e69b168fde79ee8c",
+   "structure_group": "82c039336b1520a7"
+  },
+  {
+   "order": 19,
+   "world_id": "v3-91003-facil-mixed-3",
+   "uid": "v3u-a59dc7662c627fc7",
+   "content_sha256": "bcb2c8a5488804bfb886f37f864dfd1dde1f4dab69061dbf3e05230765275ad9",
+   "structure_group": "f1942cceb872c414"
+  },
+  {
+   "order": 20,
+   "world_id": "v3-91001-medio-pair-2",
+   "uid": "v3u-52d51b817e39a6b4",
+   "content_sha256": "963a6c6473a9f110c7ebefbec3917a0b09357cdc780d6fd74fbfabb584a3abdf",
+   "structure_group": "df4a8397b66de0cb"
+  },
+  {
+   "order": 21,
+   "world_id": "v3-91003-medio-pair-2",
+   "uid": "v3u-2ed95f7c1d0d3525",
+   "content_sha256": "003eb67be6f51b2ff958239b0ce504a01e97a47fd200183a2363a5830a3d838c",
+   "structure_group": "f1942cceb872c414"
+  },
+  {
+   "order": 22,
+   "world_id": "v3-91003-medio-mixed-1",
+   "uid": "v3u-a221205071677a16",
+   "content_sha256": "9344e1abc248436af9b96b60262f4d8ad64bfc12fe57285e257d150946458760",
+   "structure_group": "3952a79436a566ba"
+  },
+  {
+   "order": 23,
+   "world_id": "v3-91001-medio-pair-1",
+   "uid": "v3u-d256a116eb6e51fd",
+   "content_sha256": "2221a64f6cd65874668249a1f8421f0e06497dc09f4f9945ced1e4cf7e3ab04b",
+   "structure_group": "2fbd14e6bb6fa892"
+  },
+  {
+   "order": 24,
+   "world_id": "v3-91003-medio-mixed-2",
+   "uid": "v3u-fdfe3c5c9638ad86",
+   "content_sha256": "8363bd8155c8f718893fb9942cd762183651d1bce5533a7a20775b90549aea3e",
+   "structure_group": "f1942cceb872c414"
+  },
+  {
+   "order": 25,
+   "world_id": "v3-91003-medio-single-2",
+   "uid": "v3u-cc15a22fe470d530",
+   "content_sha256": "da4bb93ec87c40b2efb71caea92610610db61b7d5f070ddbecd05c5a3ce0bcc7",
+   "structure_group": "5614b4012d13118a"
+  },
+  {
+   "order": 26,
+   "world_id": "v3-91003-facil-pair-3",
+   "uid": "v3u-ec97456d5db8ee52",
+   "content_sha256": "8cdaff3e522f6d174b017b8613a79edfb79301705e22665ea8fcbed2a3fbe5f0",
+   "structure_group": "19f622d01e874b3b"
+  },
+  {
+   "order": 27,
+   "world_id": "v3-91009-medio-single-2",
+   "uid": "v3u-f77ec17e3b9f78f4",
+   "content_sha256": "54a27160e1d29e9c05eeaaba98e8a02e636ea31b3325e15f6e22fb1e29b736ec",
+   "structure_group": "5614b4012d13118a"
+  },
+  {
+   "order": 28,
+   "world_id": "v3-91003-facil-pair-2",
+   "uid": "v3u-23bba0160a8b67f6",
+   "content_sha256": "f29f0008b3c886675b4def0a168cd84593bf31d3eaf1679087ac10a7d97705d7",
+   "structure_group": "4f1340fccda8c02d"
+  },
+  {
+   "order": 29,
+   "world_id": "v3-91001-medio-single-2",
+   "uid": "v3u-73df82cf1e02e45e",
+   "content_sha256": "ff6f16674c567e97a5850e5abac493ac9919542b4e7ce249245411cbad13a8f8",
+   "structure_group": "07877ddd1ce8609c"
+  },
+  {
+   "order": 30,
+   "world_id": "v3-91003-medio-pair-3",
+   "uid": "v3u-d1e8f7316f3b2e47",
+   "content_sha256": "01ae49cf90ae5ea43b15e6447c93cec08345e9616f6ae354f318efe757208874",
+   "structure_group": "0be80646f9dde343"
+  },
+  {
+   "order": 31,
+   "world_id": "v3-91003-medio-single-1",
+   "uid": "v3u-b4ff61792f1b4aab",
+   "content_sha256": "7c5aaffbda124462d005d6374e4e32c46f197055b037205a074783815386fee5",
+   "structure_group": "e7dedeb418a3a3c9"
+  },
+  {
+   "order": 32,
+   "world_id": "v3-91001-medio-mixed-3",
+   "uid": "v3u-56b8537e8ba05332",
+   "content_sha256": "b0f161117603eb244b3ac900ff43187d46b050c6ac9cf78d516ad4e63479a8cf",
+   "structure_group": "efeeafe6ecced847"
+  },
+  {
+   "order": 33,
+   "world_id": "v3-91009-facil-single-2",
+   "uid": "v3u-b719be50b38d22fa",
+   "content_sha256": "13b9aa7dbddb24997f0cd93266039fab3c1b37b726e9fb240ea6902c5dfc5121",
+   "structure_group": "3edce1238b18ff76"
+  },
+  {
+   "order": 34,
+   "world_id": "v3-91003-medio-mixed-1",
+   "uid": "v3u-fab9a18b99b207a5",
+   "content_sha256": "af38c41997fade678c70f8078cf3c132e8687b4406b28306132de63dfa47ba85",
+   "structure_group": "fa3048828c72c6eb"
+  },
+  {
+   "order": 35,
+   "world_id": "v3-91001-medio-mixed-2",
+   "uid": "v3u-8c9fe80aa2fb5e09",
+   "content_sha256": "b99049277de858cb3cedd1480d55cc58b07045d2806e247334eab4aaf7030630",
+   "structure_group": "c2ce0c462b8f20ad"
+  },
+  {
+   "order": 36,
+   "world_id": "v3-91001-medio-pair-2",
+   "uid": "v3u-d703913743248409",
+   "content_sha256": "b9da4b6ae5c22005d8a78cca65a7aaa3a430b1c8cabd3472e8a563b2251e9bdb",
+   "structure_group": "64afe3e050e6f95e"
+  },
+  {
+   "order": 37,
+   "world_id": "v3-91003-medio-pair-2",
+   "uid": "v3u-d68decbab7e71d11",
+   "content_sha256": "de60c0405856253a10a1bd89eb894d3e37ca3d816d0adc4ad46065c0fb1070dc",
+   "structure_group": "f6a96c166358900f"
+  },
+  {
+   "order": 38,
+   "world_id": "v3-91003-medio-mixed-1",
+   "uid": "v3u-33a0a3a7dc022f64",
+   "content_sha256": "a354b0a303335611de54e15f16cc5e8068f7ef52a5119adef3d436e02de95a04",
+   "structure_group": "fa0c92c3b9b808cd"
+  },
+  {
+   "order": 39,
+   "world_id": "v3-91003-facil-single-2",
+   "uid": "v3u-ad106abe4110817e",
+   "content_sha256": "2a0bf6f5e4e20f68a635716c2ec932f8f2ac97f3edf14e04bce35ff9b501af23",
+   "structure_group": "b27f807b59d1bd61"
+  },
+  {
+   "order": 40,
+   "world_id": "v3-91003-medio-single-2",
+   "uid": "v3u-5c24b4182cdeaefc",
+   "content_sha256": "671aeab22e28ff3953e7c26c1a05f5edfa1e5b4be57246549902cb832d25d2d9",
+   "structure_group": "5614b4012d13118a"
+  },
+  {
+   "order": 41,
+   "world_id": "v3-91009-medio-pair-3",
+   "uid": "v3u-8b2a8ee41162dd00",
+   "content_sha256": "c831fc4d77b18ef473d34cdb7f9f7223468629725b9c83ad6b4babec9dde7e15",
+   "structure_group": "d1a7bc17abd7e8e3"
+  },
+  {
+   "order": 42,
+   "world_id": "v3-91009-medio-single-3",
+   "uid": "v3u-615157bb3ef9e3f3",
+   "content_sha256": "7302aee7c05a4cf3415219a5ed2fd87ba07f25c757ce1747858fdcb708384cf5",
+   "structure_group": "5614b4012d13118a"
+  },
+  {
+   "order": 43,
+   "world_id": "v3-91003-facil-mixed-3",
+   "uid": "v3u-0fd56155dde5b10b",
+   "content_sha256": "ef94bd5cfce950a5ff2502e91ad505085dbdef36d43ef6ee3b78c265efad5c11",
+   "structure_group": "604e9872e63ebac3"
+  },
+  {
+   "order": 44,
+   "world_id": "v3-91009-medio-single-2",
+   "uid": "v3u-9b75dedc18aa1d87",
+   "content_sha256": "41b7c3e7f766b5eb0a71848c4ff0f1e9f6d466e5cc44b86ae9f7bea5b24b4522",
+   "structure_group": "3edce1238b18ff76"
+  },
+  {
+   "order": 45,
+   "world_id": "v3-91009-medio-mixed-2",
+   "uid": "v3u-019dcf8ebcc270fc",
+   "content_sha256": "6e75b63dea9f97311afc61d5e29557fc212515e0eb8ff13fbbc04d8fad3eb719",
+   "structure_group": "64d965077812ef97"
+  },
+  {
+   "order": 46,
+   "world_id": "v3-91003-medio-pair-3",
+   "uid": "v3u-7ac619beafbd9c23",
+   "content_sha256": "01b8bd1fa5a2eccf65f07c0118bc94ee6a36fcd88c2b2be7cabec12dc6d42864",
+   "structure_group": "f6a96c166358900f"
+  },
+  {
+   "order": 47,
+   "world_id": "v3-91003-medio-single-1",
+   "uid": "v3u-b1e22b79f8491dbc",
+   "content_sha256": "bcb26b6a30333db4ee6f2b488f48c5574c3fa21315446b6f45b591c594e9b81b",
+   "structure_group": "5614b4012d13118a"
+  }
+ ],
+ "pilot_worlds_sha256": "cdf242859c37a6ab330e374d8873122d89d6f120e1f2f263a49271d2639cc452"
+}

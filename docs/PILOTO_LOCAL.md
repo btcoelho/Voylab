@@ -207,3 +207,29 @@ Uma categoria por episódio, N = 48. v = veredicto dado; p = veredicto do própr
 - **Consulta decisiva.** `scoring.can_still_determine` olha só um passo à frente. Comparado com a versão de k passos (até ao orçamento restante) em 1 918 estados (48 mundos do piloto + 186 de desenvolvimento) e nos 37 estados de commit do L1 com orçamento por gastar: **0 divergências**. A equivalência é empírica, não provada; no congelamento troca-se pela versão de k passos.
 - **Alvo alcançável versus decisiva.** O alvo é *ex post* (respostas verdadeiras); a decisiva é *ex ante* (existe um resultado possível que decide). Nos 78 mundos com alvo `undetermined` (piloto + desenvolvimento) há sempre, no início, uma consulta decisiva *ex ante*. Por isso `undetermined` sem consultar é sempre "prematuro certo" (sem ponto), e o `undetermined` só pontua depois de se gastar o orçamento. É o comportamento pretendido: fecha a fuga pelo "não há evidência suficiente".
 - **Revisão: defeito de definição.** `should_revise` compara o veredicto de *referência* antes e depois da evidência nova, e ignora o que o agente concluiu. Um agente que se comprometeu errado e mantém não conta como erro de revisão. Proposta: **revisão final correta** = veredicto final igual ao veredicto pós-evidência (sobre N). Valores: 0,5B 7/48; 1,5B 8/48; 3B 16/48; 7B 16/48. Precisão de `inconsistent`: 3B 9/14, 7B 11/13. Recall de `inconsistent`: 3B 9/26, 7B 11/26.
+
+## 11. Identidade dos mundos: correção e auditoria (18/10/2026; `audit_ids.py`, `results/AUDITORIA_IDS.json`)
+**Correção, só aditiva.** `make_world` passa a devolver, além do `world_id` legado (inalterado):
+- `generation_key`: a chave completa (gerador, semente, dificuldade, família, índice, alvo, tipo, orçamento, k0);
+- `uid` = `v3u-` + sha256 dessa chave.
+
+Funções novas: `content_sha` (hash de tudo exceto os ids) e `structure_group` (mecanismo oculto + carta W). A geração em si não muda.
+
+**O que se manteve igual:**
+- A seleção do piloto: `worlds_sha256` continua `cdf24285…` e os 48 mundos são os mesmos.
+- As repetições de R1, R2, R3, L1, L2 e L3 continuam a coincidir com os `summary.json`.
+- `PILOTO_REFERENCIAS.json` regenerado é idêntico byte a byte.
+- 49/49 testes passam (2 novos: `tests/test_ids.py`).
+
+| Conjunto | Mundos | ids legados | máx. mundos por id | uids | conteúdos distintos | grupos de estrutura |
+|---|---|---|---|---|---|---|
+| piloto | 48 | 20 | 6 | 48 | 48 | 39 |
+| dev (91xxx) | 267 | 45 | 11 | 267 | 267 | 142 |
+| substituto (92xxx) | 270 | 45 | 11 | 270 | 270 | 143 |
+| confirmação (93xxx) | 270 | 45 | 11 | 270 | 270 | 150 |
+
+- **Não há mundos repetidos.** O id legado é que colapsa até 11 mundos distintos. O piloto é um subconjunto do dev, como esperado.
+- **Risco real encontrado: contaminação estrutural entre sementes.** Os conjuntos de sementes diferentes partilham 48 a 62 grupos de estrutura (o mesmo mecanismo oculto com a mesma carta W). Isto é 34% a 44% dos grupos de cada conjunto. Separar partições só por semente **não** dá mundos estruturalmente independentes.
+- **Regra para o congelamento:** treino, validação e cega dividem-se por `structure_group` (cada grupo numa só partição), com uma verificação automática de interseção vazia. As políticas aleatórias passam a semear-se pelo `uid`. Os resultados já registados ficam com a semeadura legada e não se recalculam.
+- **Mapeamento histórico** (ordem → `world_id`, `uid`, `content_sha256`, `structure_group`) para os 48 mundos do piloto, guardado em `results/AUDITORIA_IDS.json`. Nenhum ficheiro histórico foi reescrito.
+- **Reprodução das séries de políticas com o código novo.** `POLITICAS_CONFIRMACAO.json` é idêntica byte a byte; trata-se de um recálculo determinístico, sem modelo e sem informação nova. `POLITICAS_RONDA_1.json` tem **todos os valores antigos idênticos**; só ganha duas chaves (`decomposition`, `rival_vs_bayes_by_need`), que o `summarise` passou a escrever no grupo 2 (commit ed53708, 17/10), depois de o ficheiro ter sido guardado. A diferença é anterior e não vem desta alteração; o ficheiro histórico fica como está.
