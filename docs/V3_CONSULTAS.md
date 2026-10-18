@@ -213,3 +213,9 @@ O que se repete sobre os 225 mundos V4 de desenvolvimento, com o mesmo ambiente 
 - **E-c confirmada:** **36/36 mutantes mortos** (2 por erro), `results/instrumento/V4_MUTACOES.json`. O mutante de `should_revise`, que sobrevivia antes, morre agora com os testes da V4.
 - **E-d confirmada:** consultar uma entrada já observada é aceite (225/225) e não muda o veredicto (225/225).
 - **Decisão: a V4 fica validada como tarefa** (ronda 1 de 3). Segue-se o piloto humano da §11.
+
+### Página do piloto humano (publicada a 18/10)
+- Página privada no claude.ai, gerada a partir de `instrument/piloto_humano_template.html` e de `results/instrumento/PILOTO_HUMANO_EPISODIOS.json` (sha `fc56988c…`).
+- Cada participante grava um documento em `respostas/<id>`. Regras: leitura do conjunto só para editores; cada participante lê e escreve apenas o seu.
+- Verificação funcional: com acesso de participante, uma listagem do conjunto não mostra o documento de outra pessoa (sonda gravada e apagada).
+- Ressalva já registada na §11: as respostas certas estão no código da página.
