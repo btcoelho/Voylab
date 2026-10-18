@@ -95,3 +95,40 @@ Todos medidos nos mundos de desenvolvimento (sementes 91xxx), com a métrica da 
 **Achado estrutural:** com orçamento 2, a segunda consulta neutraliza a escolha da primeira (V1 e V3 têm gap ≈ 0). A alavanca só aparece quando a escolha não pode ser corrigida depois (V2).
 
 **Decisão: segundo a regra da §5, registar o falhanço e decidir com o Bruno.** Não se mexe nos critérios nem se afina nenhuma variante sem essa decisão.
+
+## 8. Ronda 2: pré-registo (decisão do Bruno, 18/10, 12:45; escrito antes de implementar e de medir)
+Máximo de três variantes novas. Os critérios, os limiares e a métrica não mudam. **Se nenhuma passar, para-se e reavalia-se o desenho da tarefa**, sem criar mais variantes.
+
+### Construção exata
+Todas usam os mundos de desenvolvimento (sementes 91xxx), a mesma grelha de células de `audit_v3.dev_set`, k₀ ∈ {2, 3, 4} estratificado como hoje, o conjunto equilibrado por `balance_trim`, o menu baralhado por mundo com uma semente derivada do uid, e o alvo recalculado pelo mesmo oráculo (`determination`) sobre o menu da variante.
+- **V4: uma consulta, menu completo.** Orçamento 1. O menu tem as **16 entradas**, incluindo as já observadas (consultá-las não traz informação) e as 4 retidas (consultá-las revela a saída numa entrada retida).
+- **V5: duas consultas sequenciais, menu completo.** O mesmo menu de 16 entradas da V4; orçamento 2. A segunda consulta é escolhida depois de ver a resposta da primeira. A diferença para a linha de base atual é só o menu completo, por isso V4 e V5 diferem **apenas** na possibilidade de se adaptar.
+- **V6: uma consulta, menu reduzido por um critério independente.** Orçamento 1. Menu = 6 consultas tiradas **ao acaso** do menu atual (semente do uid), sem usar o valor de nenhuma consulta. Testa se a discriminação da V2 vem da estrutura (uma só consulta) ou do menu.
+
+### Métrica (a da §2, sem alterações)
+- **v2(q)** com o orçamento da variante: com orçamento 1, a probabilidade de ficar determinado depois de q; com orçamento 2, depois de q e da melhor segunda consulta escolhida conforme a resposta.
+- **gap** = max − média sobre o menu completo da variante, com peso uniforme.
+- **Posição com a correção da §7:** média da posição dos empates, e posição da melhor nos mundos com melhor única.
+- **Só na V5, medidos à parte** (precaução do Bruno):
+  - **valor da 1.ª consulta sozinha**: v1(q), a probabilidade de ficar determinado só com q, e o respetivo gap1;
+  - **ganho da 2.ª**: v2(q) − v1(q), em média no menu e na melhor consulta.
+  Assim não se confunde a qualidade da seleção inicial com o que a adaptação acrescenta. O critério de aceitação aplica-se ao v2, como em todas as outras.
+
+### Critérios (iguais para as três)
+1. mediana do gap ≥ 0,25 **e** ≥ 50% dos mundos com gap ≥ 0,25;
+2. sem pista de posição: posição média dos empates em [0,40; 0,60]; nos mundos com melhor única, a melhor fica em 1.º lugar em ≤ 1,5/|menu|;
+3. valor da melhor consulta (média de max v2) ≥ 0,80;
+4. valor de uma consulta ao acaso (média do menu) ≤ 0,60;
+5. alvos equilibrados (1/3 cada);
+6. sem pista de superfície: nenhum preditor trivial identifica a melhor consulta acima do dobro do acaso. Os preditores são:
+   - distância de Hamming às observações (máxima e mínima);
+   - "a consulta é uma entrada retida" (novo, porque V4 e V5 incluem as retidas no menu);
+   - "a consulta não é uma entrada já observada".
+
+**Regra de escolha:** avalia-se pela ordem V4, V5, V6. A primeira que cumprir os seis critérios é a escolhida. Se nenhuma cumprir, para-se.
+
+### Previsões ex-ante
+- **D-a (V4).** Cumpre 1, 3 e 4: as entradas já observadas valem 0 e baixam a média, e as retidas sobem a melhor. **Risco no critério 6:** "consultar uma retida" pode identificar a melhor acima do dobro do acaso. Prevejo que a V4 **falha o 6**.
+- **D-b (V5).** Falha o critério 1 (mediana < 0,25), pela mesma razão da V1 e da V3: a segunda consulta compensa. O ganho médio da segunda (v2 − v1) é ≥ 0,15.
+- **D-c (V6).** Gap semelhante ao da V2 (mediana entre 0,25 e 0,40), mas falha o critério 3 (< 0,80), porque escolher o máximo entre 6 opções ao acaso baixa a melhor.
+- **D-d.** Prevejo que **nenhuma** das três cumpre os seis critérios, e que a ronda termina com a paragem e a reavaliação do desenho.
