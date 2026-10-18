@@ -1,0 +1,30 @@
+{
+ "code_sha256": {
+  "generator_v3.py": "16ef649bf612825f95a6f106a9feda55a5d05d09093e6f72b5e36593fedbac81",
+  "scoring.py": "4166d4613aed586ac03f6662b861c72d1b3828fee2face5ed474f9dbcf94c0fd",
+  "env_v3.py": "24f388464499fdf070cec18ad45d6445b6d2bb9403ada4a8a43a143f207ba743",
+  "audit_v3.py": "041812be994cb6e7b49c42f1705757d7628486fbcbeae930435203b5dd2d4a24",
+  "instrument/grid.py": "bedbfc3ab6a389ae989942f98622d357fae0cf54166796ba9f8d1bdf70332152",
+  "instrument/planted.py": "31134d354b85baac76b5d73f146d686765d802abcbc233597554d306d45b8d1d",
+  "instrument/enumerate_states.py": "62ee0e40705378761ccb22105490dda6d2563e05d0e761fa16f93848f745c4af",
+  "instrument/verify_states.mjs": "ac5b6ba2e32337b9e3aea5fa61b551ed0541198bd568d4d643429d8dfed07ba4",
+  "instrument/verify_items.mjs": "5cd98187e5d106b529ffab341d194d6c2576ed939844196d1821af2bde2c0201",
+  "instrument/items.py": "7ae3d03eb2247b9162286566ebfb3c69b243f2e742f9d6f6a31edebf78923759",
+  "instrument/run_items.py": "2d7a039e7bd80545657e32b6e1ca29319f84d0205fa3d0032673f05563073d47",
+  "instrument/analyse_items.py": "764622447cb94afd7e41013955e0639cf4e73858a819ffba27f1240d38016e02",
+  "pilot/pilot_harness.py": "1730800bd620efe0ddd9bc54774832262e8ed7b59a72d7e3499e04b0c08e1794",
+  "pilot/select_worlds.py": "94cf8abad21e8f98ad2b8bf2c4565c40366384954f3c2d6ccc23d0b1e3228202"
+ },
+ "artifacts_sha256": {
+  "results/instrumento/F3/ITENS.jsonl.gz": "0d833820a178166e2fd84564c4d3e09084593a0b78fefdd0ed83f8a38fc666b0",
+  "results/instrumento/F1_ronda2/F1_ENUMERACAO.json": "8a6fabd04dbd6ff49a89956e9c5b6fc5ff48988c417ffd22fcd985d5e9acab58",
+  "results/instrumento/F2_GRELHA_HISTORICOS.json": "882c9d08336dbf839ae8970dd5bbaa1ee0c50bc76b1760e19fa26afc89761106",
+  "results/PILOTO_REFERENCIAS.json": "76eb4a69ad9b9a305337990140a18982df2531760acc6ce1c938978fb17cd188"
+ },
+ "recomputed": {
+  "dev_worlds": 267,
+  "dev_content_sha256": "e17a3cac7894468ae1e8f477ee6e0ff89b62a6222c76ed5cfd3d3ac7a2914c3c",
+  "pilot_worlds_sha256": "cdf242859c37a6ab330e374d8873122d89d6f120e1f2f263a49271d2639cc452",
+  "hypothesis_space": 70
+ }
+}

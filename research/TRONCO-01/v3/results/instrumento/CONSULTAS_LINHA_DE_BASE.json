@@ -1,0 +1,40 @@
+{
+ "worlds": 267,
+ "gap_mean": 0.0847,
+ "gap_median": 0.072,
+ "gap_quartiles": [
+  0.0312,
+  0.1364
+ ],
+ "gap_min_max": [
+  0.0,
+  0.3889
+ ],
+ "share_worlds_gap_ge_threshold": 0.03,
+ "histogram_gap_0.05": {
+  "0.00": 104,
+  "0.05": 60,
+  "0.10": 52,
+  "0.15": 32,
+  "0.20": 11,
+  "0.25": 5,
+  "0.30": 2,
+  "0.35": 1,
+  "0.40": 0,
+  "0.45": 0,
+  "0.50": 0,
+  "0.55": 0,
+  "0.60": 0,
+  "0.65": 0,
+  "0.70": 0,
+  "0.75": 0,
+  "0.80": 0,
+  "0.85": 0,
+  "0.90": 0,
+  "0.95": 0
+ },
+ "evidence_quality_best_mean": 0.8941,
+ "difficulty_1_minus_uniform_mean": 0.1906,
+ "best_query_position_normalised_mean": 0.1221,
+ "best_query_first_in_menu": 0.5805
+}

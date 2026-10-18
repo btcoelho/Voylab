@@ -59,3 +59,9 @@ class DecisiveQuery(unittest.TestCase):
                         seen[one] += 1
         self.assertGreater(seen[True], 0)
         self.assertGreater(seen[False], 0)      # the rare non-decisive states must be exercised
+
+
+class FrozenReference(unittest.TestCase):
+    def test_reference_artifacts_and_recomputed_summary_unchanged(self):
+        import reference_manifest as RM
+        self.assertEqual(RM.check(), [])
