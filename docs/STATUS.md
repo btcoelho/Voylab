@@ -23,3 +23,6 @@ Página curta de orientação. Os detalhes e os números estão nos documentos l
 
 ## Ligações
 [DECISOES_2026-10-18.md](DECISOES_2026-10-18.md) · [DECISOES_2026-10-18_11h21.md](DECISOES_2026-10-18_11h21.md) · [V3_ESPECIFICACAO.md](V3_ESPECIFICACAO.md) · [V3_PLANO_ANALISE.md](V3_PLANO_ANALISE.md)
+
+## Nota sobre o congelamento de M1
+A etiqueta `prereg-v4-m1` existe só localmente: o envio de etiquetas para o GitHub foi recusado (HTTP 403) a partir desta sessão. O congelamento vale pelo commit 929c2c7, que está no GitHub, e pelo ficheiro `results/modelos_v4/PREREGISTO_CONGELADO.json`.
