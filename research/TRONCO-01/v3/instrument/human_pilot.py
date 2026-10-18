@@ -135,11 +135,15 @@ def practice(chosen, k=2):
     return out
 
 
+def fmt_input(x):
+    return x if isinstance(x, str) else ", ".join(f"{k}={v}" for k, v in x.items())
+
+
 def page_episode(d):
     st = d["user_text"].split("\nCONSULTAS DISPONÍVEIS")[0]
     ev = [", ".join(f"{k}={v}" for k, v in e["input"].items()) + " -> " + e["output"] for e in d["new_evidence"]]
     out = {"n": d["n"], "uid": d["uid"], "set": d["set"], "state": st,
-           "menu": [{"id": q["id"], "input": q["input"], "answer": q["answer"]} for q in d["menu"]],
+           "menu": [{"id": q["id"], "input": fmt_input(q["input"]), "answer": q["answer"]} for q in d["menu"]],
            "evidence": ev, "cards": d["cards"], "help": d["help"]}
     if "feedback" in d:
         out["feedback"] = d["feedback"]

@@ -69,6 +69,12 @@ class PilotPageEndToEnd(unittest.TestCase):
             for e in self.tr + self.eps:
                 d = plan[e["uid"]]
                 seen["conds"].append(pg.inner_text("#cond"))
+                menu_txt = pg.inner_text("#menu")
+                self.assertNotIn("[object", menu_txt)
+                q0 = e["menu"][0]
+                self.assertIn(q0["id"] + ": " + ", ".join(f"{k}={v}" for k, v in q0["input"].items())
+                              if isinstance(q0["input"], dict) else q0["input"], menu_txt)
+                self.assertNotIn("[object", pg.inner_text("#state") + pg.inner_text("#rules"))
                 pg.click(f"#q_{d['query']}")
                 pg.check(f"#v_{d['commit']['verdict']}")
                 for c in d["commit"]["cards"]:
@@ -76,6 +82,7 @@ class PilotPageEndToEnd(unittest.TestCase):
                 for k, v in d["commit"]["predictions"].items():
                     pg.check(f"#p{k}_{v}")
                 pg.click("#commit")
+                self.assertNotIn("[object", pg.inner_text("#ev") + pg.inner_text("#qres"))
                 seen["help_on_revision"].append(pg.is_visible("#helpbox") and pg.inner_text("#helpbox"))
                 f = d["final"]
                 if f["action"] == "keep":
