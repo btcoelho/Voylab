@@ -154,3 +154,17 @@ Ordem: Qwen2.5-1.5B-Instruct → Qwen2.5-3B-Instruct → Qwen2.5-7B-Instruct, to
 - **L2 (3B).** Elegibilidade ≥ 98%. O veredicto mais frequente fica em < 80% dos commits (primeiro sinal de depender da evidência). Alcance entre 0,33 e 0,73, ou seja, acima de responder sempre o mesmo e não acima da aleatória.
 - **L3 (7B).** Alcance ≥ 21/48 (≥ "sem consultas" + 0,10). Erro de inferência < 50%. Tipo I < 80%. O bayes_ig (48/48) continua fora de alcance.
 - **Regra.** O primeiro degrau que cumprir as duas condições de L3 (alcance ≥ 21/48 e erro de inferência < 50%) passa a ser o modelo de trabalho do v3. Só então se congela o protocolo para as partições VALIDAÇÃO e CEGA. Se nenhum as cumprir, a tarefa C3–C5 fica fora de alcance de modelos locais pequenos, e decide-se entre um modelo via API ou reformular a tarefa.
+
+### Degrau L1: Qwen2.5-1.5B-Instruct 4 bits (`real_L1`, 18/10/2026 05:18–05:26, código b5f795c)
+Snapshot `d2f2dd02…`. O sha256 do `model.safetensors` (`4be8a58f…`) coincide com o id LFS do Hugging Face. A primeira descarga falhou por perda de DNS no WSL; repetiu-se uma vez e retomou. Hashes do código e dos mundos verificados, e a análise independente coincide com o `summary.json`. Saídas em `results/piloto_L1/`.
+
+| Previsão L1 | Resultado | Estado |
+|---|---|---|
+| Elegibilidade ≥ 98% | 126/126 aceites, 48/48 completos | confirmada |
+| Veredicto mais frequente em ≥ 80% dos commits | `undetermined` em 35/48 (73%); `supported` em 13 | **refutada** (menos constante do que previsto) |
+| Alcance ≤ 0,83 | 13/48 = 0,27 [0,17; 0,41] | confirmada |
+
+Leitura descritiva:
+- **A política mudou, mas não passou a investigar.** Em 28/48 episódios não fez nenhuma consulta (média 0,63) e comprometeu-se cedo: paragem prematura em 37/48 (77%). Nunca reviu: tipo I 39/39, e `keep` em 48/48.
+- **O erro de inferência desceu para 31% [20%; 45%] (o 0,5B tinha 88%), mas por uma razão que não é competência.** Sem consultas, `undetermined` é muitas vezes a conclusão correta do próprio histórico. Uma política que hesita sempre baixa o erro de inferência e paga-o no alcance (0,27, abaixo de "sem consultas", 0,33). É por isso que a regra de L3 exige as duas condições juntas (alcance ≥ 21/48 **e** erro de inferência < 50%). O L1 falha a primeira.
+- Cartas exatas: 0/48.
