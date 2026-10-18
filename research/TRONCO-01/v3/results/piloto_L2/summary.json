@@ -1,0 +1,151 @@
+{
+  "backend": "hf:/home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-3B-Instruct-bnb-4bit/snapshots/2672b588848527e456d320c11926c794539f47d5",
+  "worlds": 48,
+  "schema": "state_cards_object",
+  "worlds_sha256": "cdf242859c37a6ab330e374d8873122d89d6f120e1f2f263a49271d2639cc452",
+  "code_sha256": {
+    "pilot_harness.py": "a4fc6959b2f0b56596d6de892effe061dde004d226f4f4ba56a42e04a71d5c21",
+    "select_worlds.py": "94cf8abad21e8f98ad2b8bf2c4565c40366384954f3c2d6ccc23d0b1e3228202",
+    "run_pilot.py": "674466c9a152e5b44d5c5998ab64391919c16643b1f9dc4eda5b636694c27db8",
+    "hf_backend.py": "254fa8f5f4e357e1dc694d3193b973aef3104fcb278434155dcd3c8c84ad3f95",
+    "../env_v3.py": "24f388464499fdf070cec18ad45d6445b6d2bb9403ada4a8a43a143f207ba743",
+    "../generator_v3.py": "db010e03abd61038ecb891424cc463feb25a114a70354817b004eb184048f9c6",
+    "../scoring.py": "4166d4613aed586ac03f6662b861c72d1b3828fee2face5ed474f9dbcf94c0fd",
+    "../audit_v3.py": "041812be994cb6e7b49c42f1705757d7628486fbcbeae930435203b5dd2d4a24"
+  },
+  "python": "3.12.3",
+  "aggregate": {
+    "episodes": 48,
+    "complete": {
+      "k": 48,
+      "n": 48,
+      "rate": 1.0,
+      "ci95": [
+        0.9258973488472576,
+        0.9999999999999999
+      ]
+    },
+    "forced_termination": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "turn_limit": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "outputs_parseable_json": {
+      "k": 192,
+      "n": 192,
+      "rate": 1.0
+    },
+    "actions_accepted": {
+      "k": 192,
+      "n": 192,
+      "rate": 1.0,
+      "invalid_rate": 0.0
+    },
+    "among_complete": {
+      "reach": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "inference_error": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "search_error": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "evidence_ignored": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "premature_stop": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "suspend_used": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "suspend_correct": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "revision_type_I": {
+        "k": 21,
+        "n": 48,
+        "rate": 0.4375,
+        "ci95": [
+          0.3070105464041092,
+          0.5772522849899835
+        ]
+      },
+      "revision_type_II": {
+        "k": 4,
+        "n": 48,
+        "rate": 0.08333333333333333,
+        "ci95": [
+          0.03288322434995555,
+          0.19553565161066291
+        ]
+      },
+      "cards_exact": {
+        "k": 19,
+        "n": 48,
+        "rate": 0.3958333333333333,
+        "ci95": [
+          0.2702062649595057,
+          0.5368984540306487
+        ]
+      }
+    },
+    "queries_mean": 2.0
+  }
+}

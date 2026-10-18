@@ -1,0 +1,84 @@
+{
+  "python": "3.12.3",
+  "cases": [
+    {
+      "phase": "explore",
+      "state_schema": false,
+      "cards_object": false,
+      "seconds": 5.7,
+      "raw": "{\"action\":\"query\",\"query_id\":\"q1\"}",
+      "parsed": {
+        "action": "query",
+        "query_id": "q1"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": false,
+      "cards_object": false,
+      "seconds": 2.2,
+      "raw": "{\"action\":\"keep\"}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "explore",
+      "state_schema": true,
+      "cards_object": false,
+      "seconds": 3.2,
+      "raw": "{\"action\":\"query\",\"query_id\":\"q1\"}",
+      "parsed": {
+        "action": "query",
+        "query_id": "q1"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": true,
+      "cards_object": false,
+      "seconds": 3.1,
+      "raw": "{\"action\":\"keep\"}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "explore",
+      "state_schema": true,
+      "cards_object": true,
+      "seconds": 3.2,
+      "raw": "{\"action\":\"query\",\"query_id\":\"q1\"}",
+      "parsed": {
+        "action": "query",
+        "query_id": "q1"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": true,
+      "cards_object": true,
+      "seconds": 2.9,
+      "raw": "{\"action\":\"keep\"}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    }
+  ],
+  "load_seconds": 10.1,
+  "compat": "reexported PreTrainedTokenizerBase",
+  "versions": {
+    "torch": "2.14.1+cu132",
+    "transformers": "5.17.0",
+    "lm-format-enforcer": "?",
+    "cuda": true,
+    "device": "cuda:0"
+  },
+  "ok": true
+}

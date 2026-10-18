@@ -1,0 +1,211 @@
+{
+  "replay_matches_summary": true,
+  "aggregate": {
+    "episodes": 48,
+    "complete": {
+      "k": 48,
+      "n": 48,
+      "rate": 1.0,
+      "ci95": [
+        0.9258973488472576,
+        0.9999999999999999
+      ]
+    },
+    "forced_termination": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "turn_limit": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "outputs_parseable_json": {
+      "k": 192,
+      "n": 192,
+      "rate": 1.0
+    },
+    "actions_accepted": {
+      "k": 192,
+      "n": 192,
+      "rate": 1.0,
+      "invalid_rate": 0.0
+    },
+    "among_complete": {
+      "reach": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "inference_error": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "search_error": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "evidence_ignored": {
+        "k": 16,
+        "n": 48,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2167660137089678,
+          0.47460153667527943
+        ]
+      },
+      "premature_stop": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "suspend_used": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "suspend_correct": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "revision_type_I": {
+        "k": 21,
+        "n": 48,
+        "rate": 0.4375,
+        "ci95": [
+          0.3070105464041092,
+          0.5772522849899835
+        ]
+      },
+      "revision_type_II": {
+        "k": 4,
+        "n": 48,
+        "rate": 0.08333333333333333,
+        "ci95": [
+          0.03288322434995555,
+          0.19553565161066291
+        ]
+      },
+      "cards_exact": {
+        "k": 19,
+        "n": 48,
+        "rate": 0.3958333333333333,
+        "ci95": [
+          0.2702062649595057,
+          0.5368984540306487
+        ]
+      }
+    },
+    "queries_mean": 2.0
+  },
+  "revision_among_should_revise": {
+    "n": 32,
+    "type_I": 21,
+    "ci95": [
+      0.4831077350878594,
+      0.7958976664567146
+    ]
+  },
+  "revision_among_should_keep": {
+    "n": 16,
+    "type_II": 4
+  },
+  "final_action": {
+    "keep": 29,
+    "revise": 19
+  },
+  "query_menu_positions": {
+    "1": 47,
+    "2": 39,
+    "8": 1,
+    "10": 9
+  },
+  "cards_given": {
+    "Qu": 10,
+    "Ne": 6,
+    "Pa": 4,
+    "Os": 4,
+    "Mi": 4,
+    "Ru": 3,
+    "(nenhuma)": 3,
+    "Ka": 3,
+    "Lo,Ka": 3,
+    "Pa,Qu": 2,
+    "Mi,Pa": 2,
+    "Pa,Lo": 2,
+    "Mi,Lo": 2,
+    "Lo,Ne": 2,
+    "Lo,Os": 2,
+    "Mi,Ne": 2,
+    "Qu,Lo": 1,
+    "Ru,Lo": 1,
+    "Mi,Qu": 1,
+    "Mi,Os": 1,
+    "Ru,Pa": 1,
+    "Qu,Ne": 1,
+    "Ne,Lo": 1,
+    "Ne,Ru": 1,
+    "Lo": 1,
+    "Os,Mi": 1,
+    "Lo,Mi": 1,
+    "Ka,Ne": 1,
+    "Ka,Qu": 1
+  },
+  "commit_verdict__ref_from_own_history__target": {
+    "undetermined|undetermined|undetermined": 16,
+    "undetermined|rejected|rejected": 12,
+    "undetermined|undetermined|supported": 12,
+    "undetermined|undetermined|rejected": 4,
+    "undetermined|supported|supported": 4
+  },
+  "suspend": 0,
+  "reach_vs_references": {
+    "sem_consultas": 16,
+    "aleatoria": 35,
+    "simples": 37,
+    "bayes_ig": 48,
+    "oraculo": 48,
+    "pegajosa": 48,
+    "greedy_a": 35,
+    "rival": 34,
+    "primeiro_do_menu": 32,
+    "cega_pegajosa": 16,
+    "ignora_evidencia": 16
+  }
+}

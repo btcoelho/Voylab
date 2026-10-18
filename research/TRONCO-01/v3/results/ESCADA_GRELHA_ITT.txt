@@ -1,0 +1,10 @@
+sem_consultas      fund  0 | sorte  0 | prem_certo 16 | inf  0 | pesq  0 | prem 32 | incompl  0 | recall s/r/u 0/0/0 de 16/16/16 | macro 0.00
+aleatoria          fund 35 | sorte  0 | prem_certo  0 | inf  0 | pesq 13 | prem  0 | incompl  0 | recall s/r/u 6/13/16 de 16/16/16 | macro 0.73
+primeiro_do_menu   fund 32 | sorte  0 | prem_certo  0 | inf  0 | pesq 16 | prem  0 | incompl  0 | recall s/r/u 4/12/16 de 16/16/16 | macro 0.67
+bayes_ig           fund 48 | sorte  0 | prem_certo  0 | inf  0 | pesq  0 | prem  0 | incompl  0 | recall s/r/u 16/16/16 de 16/16/16 | macro 1.00
+0.5B R1 (real_2)   fund  0 | sorte  0 | prem_certo  0 | inf  0 | pesq  0 | prem  0 | incompl 48 | recall s/r/u 0/0/0 de 16/16/16 | macro 0.00
+0.5B R2 (real_3)   fund  3 | sorte  4 | prem_certo  0 | inf 18 | pesq  0 | prem  0 | incompl 23 | recall s/r/u 3/0/0 de 16/16/16 | macro 0.06
+0.5B R3 (real_4)   fund  6 | sorte 10 | prem_certo  0 | inf 32 | pesq  0 | prem  0 | incompl  0 | recall s/r/u 6/0/0 de 16/16/16 | macro 0.12
+1.5B L1            fund  5 | sorte  2 | prem_certo  6 | inf 13 | pesq  2 | prem 20 | incompl  0 | recall s/r/u 0/0/5 de 16/16/16 | macro 0.10
+3B L2              fund 16 | sorte  0 | prem_certo  0 | inf 16 | pesq 16 | prem  0 | incompl  0 | recall s/r/u 0/0/16 de 16/16/16 | macro 0.33
+7B L3              fund  7 | sorte 10 | prem_certo  0 | inf 28 | pesq  3 | prem  0 | incompl  0 | recall s/r/u 4/0/3 de 16/16/16 | macro 0.15

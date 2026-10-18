@@ -168,3 +168,42 @@ Leitura descritiva:
 - **A política mudou, mas não passou a investigar.** Em 28/48 episódios não fez nenhuma consulta (média 0,63) e comprometeu-se cedo: paragem prematura em 37/48 (77%). Nunca reviu: tipo I 39/39, e `keep` em 48/48.
 - **O erro de inferência desceu para 31% [20%; 45%] (o 0,5B tinha 88%), mas por uma razão que não é competência.** Sem consultas, `undetermined` é muitas vezes a conclusão correta do próprio histórico. Uma política que hesita sempre baixa o erro de inferência e paga-o no alcance (0,27, abaixo de "sem consultas", 0,33). É por isso que a regra de L3 exige as duas condições juntas (alcance ≥ 21/48 **e** erro de inferência < 50%). O L1 falha a primeira.
 - Cartas exatas: 0/48.
+
+### Degraus L2 (3B) e L3 (7B), 18/10/2026
+Os dois cumpriram a elegibilidade. Hashes do código e dos mundos verificados; o `model.safetensors` coincide com o id LFS (3B `f49f0825…`, 7B `99b85155…`); a repetição independente coincide com o `summary.json`. Saídas em `results/piloto_L2/` e `results/piloto_L3/`.
+
+| | L2 (3B) | L3 (7B) |
+|---|---|---|
+| Ações aceites / completos | 192/192, 48/48 | 187/187, 48/48 |
+| Commits | `undetermined` em 48/48 | `supported` 42, `undetermined` 6 |
+| Consultas (média; 1.ª = `q1`) | 2,0; 39/48 | 1,9; 45/48 |
+| Alcance (métrica atual) | 16/48 | 17/48 [0,23; 0,50] |
+| Erro de inferência (atual, completos) | 16/48 | 38/48 = 79% |
+| Tipo I (mundos de mudança) | 21/32 = 66% | 20/32 = 63% |
+| Revisão final correta | 16/48 | 16/48 |
+| `inconsistent` declarado (corretos / existentes) | 14 (9 / 26) | 13 (11 / 26) |
+
+Previsões: L2 (veredicto mais frequente < 80%) **refutada** (100% `undetermined`). L3: alcance ≥ 21/48 **refutada**; erro de inferência < 50% **refutada**; tipo I < 80% confirmada. **Nenhum degrau cumpre a regra de L3.** A conclusão pré-registada seria "C3–C5 fora de alcance de modelos locais pequenos, nesta interface". Por decisão do Bruno (18/10, 06:07), antes de decidir seguem-se as auditorias, a correção dos ids e as sondas de diagnóstico.
+
+## 9. Grelha ITT proposta, aplicada a toda a escada (`pilot/grelha_itt.py`, `results/ESCADA_GRELHA_ITT.txt`)
+Uma categoria por episódio, N = 48. v = veredicto dado; p = veredicto do próprio histórico; a = alvo. Precedência: incompleto → (v ≠ p: acerto por sorte se v = a, senão erro de inferência) → (v = p com consulta decisiva ainda disponível: prematuro certo se v = a, senão paragem prematura) → (v = a: **fundamentado**; senão erro de pesquisa). Falha técnica do arnês: corrida anulada.
+
+| | Fundam. | Sorte | Prem. certo | Inferência | Pesquisa | Prematura | Incompl. | Recall s/r/u | Macro |
+|---|---|---|---|---|---|---|---|---|---|
+| sem_consultas | 0 | 0 | 16 | 0 | 0 | 32 | 0 | 0/0/0 | 0,00 |
+| aleatória | 35 | 0 | 0 | 0 | 13 | 0 | 0 | 6/13/16 | 0,73 |
+| bayes_ig | 48 | 0 | 0 | 0 | 0 | 0 | 0 | 16/16/16 | 1,00 |
+| 0,5B R3 | 6 | 10 | 0 | 32 | 0 | 0 | 0 | 6/0/0 | 0,12 |
+| 1,5B L1 | 5 | 2 | 6 | 13 | 2 | 20 | 0 | 0/0/5 | 0,10 |
+| 3B L2 | 16 | 0 | 0 | 16 | 16 | 0 | 0 | 0/0/16 | 0,33 |
+| 7B L3 | 7 | 10 | 0 | 28 | 3 | 0 | 0 | 4/0/3 | 0,15 |
+
+(0,5B R1: 48 incompletos; R2: 3 fundamentados, 4 por sorte, 18 de inferência, 23 incompletos.)
+
+**Achado transversal.** Em 192 commits dos quatro modelos, **nenhum foi `rejected`**. Recall de `rejected`: 0/16 em todos. Decidir `rejected` só exige ver que W falha numa observação. Isto aponta para a leitura das cartas como o primeiro ponto de rotura.
+
+## 10. Auditorias de definição (18/10/2026)
+- **Veredicto do próprio histórico (p)** reconstruído de forma independente, só a partir da vista pública (`hypothesis_sets` mais as observações e consultas mostradas): **0 divergências em 192 episódios.** O mesmo para o veredicto pós-evidência da revisão: **0/192**.
+- **Consulta decisiva.** `scoring.can_still_determine` olha só um passo à frente. Comparado com a versão de k passos (até ao orçamento restante) em 1 918 estados (48 mundos do piloto + 186 de desenvolvimento) e nos 37 estados de commit do L1 com orçamento por gastar: **0 divergências**. A equivalência é empírica, não provada; no congelamento troca-se pela versão de k passos.
+- **Alvo alcançável versus decisiva.** O alvo é *ex post* (respostas verdadeiras); a decisiva é *ex ante* (existe um resultado possível que decide). Nos 78 mundos com alvo `undetermined` (piloto + desenvolvimento) há sempre, no início, uma consulta decisiva *ex ante*. Por isso `undetermined` sem consultar é sempre "prematuro certo" (sem ponto), e o `undetermined` só pontua depois de se gastar o orçamento. É o comportamento pretendido: fecha a fuga pelo "não há evidência suficiente".
+- **Revisão: defeito de definição.** `should_revise` compara o veredicto de *referência* antes e depois da evidência nova, e ignora o que o agente concluiu. Um agente que se comprometeu errado e mantém não conta como erro de revisão. Proposta: **revisão final correta** = veredicto final igual ao veredicto pós-evidência (sobre N). Valores: 0,5B 7/48; 1,5B 8/48; 3B 16/48; 7B 16/48. Precisão de `inconsistent`: 3B 9/14, 7B 11/13. Recall de `inconsistent`: 3B 9/26, 7B 11/26.
