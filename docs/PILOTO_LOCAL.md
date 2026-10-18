@@ -154,3 +154,102 @@ Ordem: Qwen2.5-1.5B-Instruct → Qwen2.5-3B-Instruct → Qwen2.5-7B-Instruct, to
 - **L2 (3B).** Elegibilidade ≥ 98%. O veredicto mais frequente fica em < 80% dos commits (primeiro sinal de depender da evidência). Alcance entre 0,33 e 0,73, ou seja, acima de responder sempre o mesmo e não acima da aleatória.
 - **L3 (7B).** Alcance ≥ 21/48 (≥ "sem consultas" + 0,10). Erro de inferência < 50%. Tipo I < 80%. O bayes_ig (48/48) continua fora de alcance.
 - **Regra.** O primeiro degrau que cumprir as duas condições de L3 (alcance ≥ 21/48 e erro de inferência < 50%) passa a ser o modelo de trabalho do v3. Só então se congela o protocolo para as partições VALIDAÇÃO e CEGA. Se nenhum as cumprir, a tarefa C3–C5 fica fora de alcance de modelos locais pequenos, e decide-se entre um modelo via API ou reformular a tarefa.
+
+### Degrau L1: Qwen2.5-1.5B-Instruct 4 bits (`real_L1`, 18/10/2026 05:18–05:26, código b5f795c)
+Snapshot `d2f2dd02…`. O sha256 do `model.safetensors` (`4be8a58f…`) coincide com o id LFS do Hugging Face. A primeira descarga falhou por perda de DNS no WSL; repetiu-se uma vez e retomou. Hashes do código e dos mundos verificados, e a análise independente coincide com o `summary.json`. Saídas em `results/piloto_L1/`.
+
+| Previsão L1 | Resultado | Estado |
+|---|---|---|
+| Elegibilidade ≥ 98% | 126/126 aceites, 48/48 completos | confirmada |
+| Veredicto mais frequente em ≥ 80% dos commits | `undetermined` em 35/48 (73%); `supported` em 13 | **refutada** (menos constante do que previsto) |
+| Alcance ≤ 0,83 | 13/48 = 0,27 [0,17; 0,41] | confirmada |
+
+Leitura descritiva:
+- **A política mudou, mas não passou a investigar.** Em 28/48 episódios não fez nenhuma consulta (média 0,63) e comprometeu-se cedo: paragem prematura em 37/48 (77%). Nunca reviu: tipo I 39/39, e `keep` em 48/48.
+- **O erro de inferência desceu para 31% [20%; 45%] (o 0,5B tinha 88%), mas por uma razão que não é competência.** Sem consultas, `undetermined` é muitas vezes a conclusão correta do próprio histórico. Uma política que hesita sempre baixa o erro de inferência e paga-o no alcance (0,27, abaixo de "sem consultas", 0,33). É por isso que a regra de L3 exige as duas condições juntas (alcance ≥ 21/48 **e** erro de inferência < 50%). O L1 falha a primeira.
+- Cartas exatas: 0/48.
+
+### Degraus L2 (3B) e L3 (7B), 18/10/2026
+Os dois cumpriram a elegibilidade. Hashes do código e dos mundos verificados; o `model.safetensors` coincide com o id LFS (3B `f49f0825…`, 7B `99b85155…`); a repetição independente coincide com o `summary.json`. Saídas em `results/piloto_L2/` e `results/piloto_L3/`.
+
+| | L2 (3B) | L3 (7B) |
+|---|---|---|
+| Ações aceites / completos | 192/192, 48/48 | 187/187, 48/48 |
+| Commits | `undetermined` em 48/48 | `supported` 42, `undetermined` 6 |
+| Consultas (média; 1.ª = `q1`) | 2,0; 39/48 | 1,9; 45/48 |
+| Alcance (métrica atual) | 16/48 | 17/48 [0,23; 0,50] |
+| Erro de inferência (atual, completos) | 16/48 | 38/48 = 79% |
+| Tipo I (mundos de mudança) | 21/32 = 66% | 20/32 = 63% |
+| Revisão final correta | 16/48 | 16/48 |
+| `inconsistent` declarado (corretos / existentes) | 14 (9 / 26) | 13 (11 / 26) |
+
+Previsões: L2 (veredicto mais frequente < 80%) **refutada** (100% `undetermined`). L3: alcance ≥ 21/48 **refutada**; erro de inferência < 50% **refutada**; tipo I < 80% confirmada. **Nenhum degrau cumpre a regra de L3.** A conclusão pré-registada seria "C3–C5 fora de alcance de modelos locais pequenos, nesta interface". Por decisão do Bruno (18/10, 06:07), antes de decidir seguem-se as auditorias, a correção dos ids e as sondas de diagnóstico.
+
+## 9. Grelha ITT proposta, aplicada a toda a escada (`pilot/grelha_itt.py`, `results/ESCADA_GRELHA_ITT.txt`)
+Uma categoria por episódio, N = 48. v = veredicto dado; p = veredicto do próprio histórico; a = alvo. Precedência: incompleto → (v ≠ p: acerto por sorte se v = a, senão erro de inferência) → (v = p com consulta decisiva ainda disponível: prematuro certo se v = a, senão paragem prematura) → (v = a: **fundamentado**; senão erro de pesquisa). Falha técnica do arnês: corrida anulada.
+
+| | Fundam. | Sorte | Prem. certo | Inferência | Pesquisa | Prematura | Incompl. | Recall s/r/u | Macro |
+|---|---|---|---|---|---|---|---|---|---|
+| sem_consultas | 0 | 0 | 16 | 0 | 0 | 32 | 0 | 0/0/0 | 0,00 |
+| aleatória | 35 | 0 | 0 | 0 | 13 | 0 | 0 | 6/13/16 | 0,73 |
+| bayes_ig | 48 | 0 | 0 | 0 | 0 | 0 | 0 | 16/16/16 | 1,00 |
+| 0,5B R3 | 6 | 10 | 0 | 32 | 0 | 0 | 0 | 6/0/0 | 0,12 |
+| 1,5B L1 | 5 | 2 | 6 | 13 | 2 | 20 | 0 | 0/0/5 | 0,10 |
+| 3B L2 | 16 | 0 | 0 | 16 | 16 | 0 | 0 | 0/0/16 | 0,33 |
+| 7B L3 | 7 | 10 | 0 | 28 | 3 | 0 | 0 | 4/0/3 | 0,15 |
+
+(0,5B R1: 48 incompletos; R2: 3 fundamentados, 4 por sorte, 18 de inferência, 23 incompletos.)
+
+**Achado transversal.** Em 192 commits dos quatro modelos, **nenhum foi `rejected`**. Recall de `rejected`: 0/16 em todos. Decidir `rejected` só exige ver que W falha numa observação. Isto aponta para a leitura das cartas como o primeiro ponto de rotura.
+
+## 10. Auditorias de definição (18/10/2026)
+- **Veredicto do próprio histórico (p)** reconstruído de forma independente, só a partir da vista pública (`hypothesis_sets` mais as observações e consultas mostradas): **0 divergências em 192 episódios.** O mesmo para o veredicto pós-evidência da revisão: **0/192**.
+- **Consulta decisiva.** `scoring.can_still_determine` olha só um passo à frente. Comparado com a versão de k passos (até ao orçamento restante) em 1 918 estados (48 mundos do piloto + 186 de desenvolvimento) e nos 37 estados de commit do L1 com orçamento por gastar: **0 divergências**. A equivalência é empírica, não provada; no congelamento troca-se pela versão de k passos.
+- **Alvo alcançável versus decisiva.** O alvo é *ex post* (respostas verdadeiras); a decisiva é *ex ante* (existe um resultado possível que decide). Nos 78 mundos com alvo `undetermined` (piloto + desenvolvimento) há sempre, no início, uma consulta decisiva *ex ante*. Por isso `undetermined` sem consultar é sempre "prematuro certo" (sem ponto), e o `undetermined` só pontua depois de se gastar o orçamento. É o comportamento pretendido: fecha a fuga pelo "não há evidência suficiente".
+- **Revisão: defeito de definição.** `should_revise` compara o veredicto de *referência* antes e depois da evidência nova, e ignora o que o agente concluiu. Um agente que se comprometeu errado e mantém não conta como erro de revisão. Proposta: **revisão final correta** = veredicto final igual ao veredicto pós-evidência (sobre N). Valores: 0,5B 7/48; 1,5B 8/48; 3B 16/48; 7B 16/48. Precisão de `inconsistent`: 3B 9/14, 7B 11/13. Recall de `inconsistent`: 3B 9/26, 7B 11/26.
+
+## 11. Identidade dos mundos: correção e auditoria (18/10/2026; `audit_ids.py`, `results/AUDITORIA_IDS.json`)
+**Correção, só aditiva.** `make_world` passa a devolver, além do `world_id` legado (inalterado):
+- `generation_key`: a chave completa (gerador, semente, dificuldade, família, índice, alvo, tipo, orçamento, k0);
+- `uid` = `v3u-` + sha256 dessa chave.
+
+Funções novas: `content_sha` (hash de tudo exceto os ids) e `structure_group` (mecanismo oculto + carta W). A geração em si não muda.
+
+**O que se manteve igual:**
+- A seleção do piloto: `worlds_sha256` continua `cdf24285…` e os 48 mundos são os mesmos.
+- As repetições de R1, R2, R3, L1, L2 e L3 continuam a coincidir com os `summary.json`.
+- `PILOTO_REFERENCIAS.json` regenerado é idêntico byte a byte.
+- 49/49 testes passam (2 novos: `tests/test_ids.py`).
+
+| Conjunto | Mundos | ids legados | máx. mundos por id | uids | conteúdos distintos | grupos de estrutura |
+|---|---|---|---|---|---|---|
+| piloto | 48 | 20 | 6 | 48 | 48 | 39 |
+| dev (91xxx) | 267 | 45 | 11 | 267 | 267 | 142 |
+| substituto (92xxx) | 270 | 45 | 11 | 270 | 270 | 143 |
+| confirmação (93xxx) | 270 | 45 | 11 | 270 | 270 | 150 |
+
+- **Não há mundos repetidos.** O id legado é que colapsa até 11 mundos distintos. O piloto é um subconjunto do dev, como esperado.
+- **Risco real encontrado: contaminação estrutural entre sementes.** Os conjuntos de sementes diferentes partilham 48 a 62 grupos de estrutura (o mesmo mecanismo oculto com a mesma carta W). Isto é 34% a 44% dos grupos de cada conjunto. Separar partições só por semente **não** dá mundos estruturalmente independentes.
+- **Regra para o congelamento:** treino, validação e cega dividem-se por `structure_group` (cada grupo numa só partição), com uma verificação automática de interseção vazia. As políticas aleatórias passam a semear-se pelo `uid`. Os resultados já registados ficam com a semeadura legada e não se recalculam.
+- **Mapeamento histórico** (ordem → `world_id`, `uid`, `content_sha256`, `structure_group`) para os 48 mundos do piloto, guardado em `results/AUDITORIA_IDS.json`. Nenhum ficheiro histórico foi reescrito.
+- **Reprodução das séries de políticas com o código novo.** `POLITICAS_CONFIRMACAO.json` é idêntica byte a byte; trata-se de um recálculo determinístico, sem modelo e sem informação nova. `POLITICAS_RONDA_1.json` tem **todos os valores antigos idênticos**; só ganha duas chaves (`decomposition`, `rival_vs_bayes_by_need`), que o `summarise` passou a escrever no grupo 2 (commit ed53708, 17/10), depois de o ficheiro ter sido guardado. A diferença é anterior e não vem desta alteração; o ficheiro histórico fica como está.
+
+## 12. Defeito de definição da tarefa: o espaço de hipóteses não é comunicado (18/10/2026)
+Encontrado ao preparar as sondas. A especificação (`V3_ESPECIFICACAO.md`, linhas 6 e 9) define os veredictos sobre **as 70 hipóteses** de suporte ≤ 2: as 3 cartas "podem não conter h". O prompt do piloto diz apenas "três cartas que descrevem possíveis regras" e "todas as regras admissíveis". O espaço nunca é mencionado. Um agente que leia o prompt à letra raciocina sobre as 3 cartas.
+
+**As duas leituras divergem muito** (todos os estados alcançáveis com 0–2 consultas):
+
+| Referência (70 hipóteses) → leitura só-cartas | piloto (2 201 estados) | dev (11 850) |
+|---|---|---|
+| undetermined → **supported** | **1 327 (60%)** | 7 522 (63%) |
+| rejected → inconsistent | 198 | 1 383 |
+| iguais | 676 | 2 945 |
+
+Alvos do piloto na leitura só-cartas: os 16 `undetermined` passariam a `supported`, e 6 dos 16 `rejected` também. **Na leitura só-cartas, o alvo seria `supported` em 38/48 mundos.**
+
+**Releitura post hoc** (diagnóstico, não substitui a pontuação pré-registada): veredicto coerente com a leitura só-cartas do próprio histórico em 0,5B 33/48, 1,5B 14/48, 3B 3/48 e 7B 28/48. A política "sempre `supported`" do 0,5B, e em grande parte a do 7B, é **parcialmente racional** perante o prompt que receberam. Isto não explica tudo: o 3B (sempre `undetermined`) e o 1,5B continuam incoerentes nas duas leituras, e nenhum modelo diz `rejected`. Mas significa que a escada mediu uma mistura de capacidade com ambiguidade do enunciado.
+
+**Consequências:**
+- A pontuação do piloto e da escada mantém-se como registada, porque foi pré-registada. A interpretação muda: os resultados não separam capacidade de ambiguidade.
+- As **sondas não podem avançar** sem fixar a definição: o veredicto depende do espaço.
+- **Decisão necessária (do Bruno):** (A) dizer explicitamente o espaço no prompt (funções de no máximo 2 atributos, sendo as cartas exemplos e não a lista completa), ou (B) redefinir a tarefa com as cartas como espaço fechado, o que muda o gerador, os alvos e o equilíbrio. Recomendação: **A**. Mantém a especificação, as referências e o gerador, e corrige só o enunciado. Mas exige que o agente raciocine sobre 70 hipóteses que não vê, o que as sondas devem medir à parte.

@@ -81,6 +81,30 @@ def revision_reference(world: dict, queried: list[int]) -> dict:
     return {"pre_verdict": pv, "post_verdict": qv, "should_revise": pv != qv}
 
 
+def _canon(x) -> str:
+    import json
+    return json.dumps(x, sort_keys=True, separators=(",", ":"), ensure_ascii=False, default=list)
+
+
+def world_uid(key: dict) -> str:
+    """Unique id from the full generation key (the legacy world_id omits target, kind, budget and k0)."""
+    import hashlib
+    return "v3u-" + hashlib.sha256(_canon(key).encode()).hexdigest()[:16]
+
+
+def content_sha(world: dict) -> str:
+    """Hash of everything the world contains except its ids: equal hash = identical world."""
+    import hashlib
+    return hashlib.sha256(_canon({"public": world["public"], "hidden": world["hidden"]}).encode()).hexdigest()
+
+
+def structure_group(world: dict) -> str:
+    """Hidden mechanism + working card: worlds sharing it are siblings and must sit in the same partition."""
+    import hashlib
+    hid = world["hidden"]
+    return hashlib.sha256(_canon([list(hid["h"]), list(hid["w"])]).encode()).hexdigest()[:16]
+
+
 def card_public(h, cid):
     feats = [f for f in D.features if f in SUPPORT[h]]
     idx = [D.features.index(f) for f in feats]
@@ -186,7 +210,10 @@ def make_world(seed: int, difficulty: str, family: str, index: int, target: str,
                            for n, i in enumerate(menu, 1)],
             "remaining_query_budget": budget,
         }
-        return {"world_id": f"v3-{seed}-{difficulty}-{family}-{index}",
+        key = {"generator": "v3", "seed": seed, "difficulty": difficulty, "family": family, "index": index,
+               "target": target, "kind": kind, "budget": budget, "k0": k0}
+        return {"world_id": f"v3-{seed}-{difficulty}-{family}-{index}",   # legacy, NOT unique (see world_uid)
+                "uid": world_uid(key), "generation_key": key,
                 "public": public,
                 "hidden": {"h": h, "h2": h2, "w": w, "obs": obs, "T": T, "menu": menu, "block": block,
                            "cards": cards},

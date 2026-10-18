@@ -1,0 +1,229 @@
+{
+  "replay_matches_summary": true,
+  "aggregate": {
+    "episodes": 48,
+    "complete": {
+      "k": 48,
+      "n": 48,
+      "rate": 1.0,
+      "ci95": [
+        0.9258973488472576,
+        0.9999999999999999
+      ]
+    },
+    "forced_termination": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "turn_limit": {
+      "k": 0,
+      "n": 48,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0741026511527422
+      ]
+    },
+    "outputs_parseable_json": {
+      "k": 126,
+      "n": 126,
+      "rate": 1.0
+    },
+    "actions_accepted": {
+      "k": 126,
+      "n": 126,
+      "rate": 1.0,
+      "invalid_rate": 0.0
+    },
+    "among_complete": {
+      "reach": {
+        "k": 13,
+        "n": 48,
+        "rate": 0.2708333333333333,
+        "ci95": [
+          0.16565803561632889,
+          0.40997234616201117
+        ]
+      },
+      "inference_error": {
+        "k": 15,
+        "n": 48,
+        "rate": 0.3125,
+        "ci95": [
+          0.19945512167731494,
+          0.4533333725049633
+        ]
+      },
+      "search_error": {
+        "k": 22,
+        "n": 48,
+        "rate": 0.4583333333333333,
+        "ci95": [
+          0.3257502185455351,
+          0.5970916690505266
+        ]
+      },
+      "evidence_ignored": {
+        "k": 3,
+        "n": 48,
+        "rate": 0.0625,
+        "ci95": [
+          0.021482843131227225,
+          0.1683569766274222
+        ]
+      },
+      "premature_stop": {
+        "k": 37,
+        "n": 48,
+        "rate": 0.7708333333333334,
+        "ci95": [
+          0.6346046409154885,
+          0.8669230897101096
+        ]
+      },
+      "suspend_used": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "suspend_correct": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "revision_type_I": {
+        "k": 39,
+        "n": 48,
+        "rate": 0.8125,
+        "ci95": [
+          0.6805986065115378,
+          0.8980872365179983
+        ]
+      },
+      "revision_type_II": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      },
+      "cards_exact": {
+        "k": 0,
+        "n": 48,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0741026511527422
+        ]
+      }
+    },
+    "queries_mean": 0.625
+  },
+  "revision_among_should_revise": {
+    "n": 39,
+    "type_I": 39,
+    "ci95": [
+      0.9103301463997611,
+      1.0
+    ]
+  },
+  "revision_among_should_keep": {
+    "n": 9,
+    "type_II": 0
+  },
+  "final_action": {
+    "keep": 48
+  },
+  "query_menu_positions": {
+    "1": 12,
+    "2": 7,
+    "10": 11
+  },
+  "cards_given": {
+    "Pa,Lo,Ru": 2,
+    "Lo,Os,Ne": 2,
+    "Qu,Ru,Lo": 1,
+    "Pa,Ne,Qu": 1,
+    "Os,Ru,Ne": 1,
+    "Ru,Ka,Lo": 1,
+    "Mi,Pa,Ne": 1,
+    "Pa,Qu,Ka": 1,
+    "Pa,Mi,Qu": 1,
+    "Mi,Os,Ru": 1,
+    "Ka,Mi,Ne": 1,
+    "Ka,Os,Pa": 1,
+    "Ru,Ka,Pa": 1,
+    "Ka,Ru,Os": 1,
+    "Pa,Qu,Os": 1,
+    "Ru,Lo,Qu": 1,
+    "Pa,Ru,Qu": 1,
+    "Lo,Ka,Pa": 1,
+    "Qu,Ne,Ka": 1,
+    "Qu,Ne,Os": 1,
+    "Mi,Pa,Lo": 1,
+    "Ru,Qu,Ka": 1,
+    "Mi,Qu,Lo": 1,
+    "Ne,Qu,Mi": 1,
+    "Ne,Lo,Ru": 1,
+    "Qu,Mi,Pa": 1,
+    "Qu,Os,Lo": 1,
+    "Os,Mi,Pa": 1,
+    "Ru,Pa,Os": 1,
+    "Lo,Ka,Ne": 1,
+    "Mi,Pa,Qu": 1,
+    "Lo,Mi,Ka": 1,
+    "Qu,Lo,Ka": 1,
+    "Ru,Qu,Pa": 1,
+    "Mi,Ru,Ne": 1,
+    "Ru,Os,Ka": 1,
+    "Mi,Ka,Os": 1,
+    "Lo,Qu,Ne": 1,
+    "Lo,Mi,Os": 1,
+    "Pa,Mi,Os": 1,
+    "Ne,Pa,Ru": 1,
+    "Ka,Ru,Ne": 1,
+    "Mi,Os,Ne": 1,
+    "Ka,Pa,Qu": 1,
+    "Mi,Ne,Os": 1,
+    "Lo,Ne,Qu": 1
+  },
+  "commit_verdict__ref_from_own_history__target": {
+    "undetermined|undetermined|supported": 14,
+    "undetermined|undetermined|undetermined": 11,
+    "undetermined|undetermined|rejected": 8,
+    "supported|undetermined|rejected": 5,
+    "supported|undetermined|undetermined": 5,
+    "undetermined|rejected|rejected": 2,
+    "supported|undetermined|supported": 2,
+    "supported|rejected|rejected": 1
+  },
+  "suspend": 0,
+  "reach_vs_references": {
+    "sem_consultas": 16,
+    "aleatoria": 35,
+    "simples": 37,
+    "bayes_ig": 48,
+    "oraculo": 48,
+    "pegajosa": 48,
+    "greedy_a": 35,
+    "rival": 34,
+    "primeiro_do_menu": 32,
+    "cega_pegajosa": 16,
+    "ignora_evidencia": 16
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "python": "3.12.3",
+  "cases": [
+    {
+      "phase": "explore",
+      "state_schema": false,
+      "cards_object": false,
+      "seconds": 6.1,
+      "raw": "{\"action\":\"commit\",\"verdict\":\"undetermined\",\"admissible_cards\":[\"ids\"],\"predictions\":{\"1\":\"0\",\"2\":\"1\",\"3\":\"0\",\"4\":\"1\"}}",
+      "parsed": {
+        "action": "commit",
+        "verdict": "undetermined",
+        "admissible_cards": [
+          "ids"
+        ],
+        "predictions": {
+          "1": "0",
+          "2": "1",
+          "3": "0",
+          "4": "1"
+        }
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": false,
+      "cards_object": false,
+      "seconds": 2.9,
+      "raw": "{\"action\":\"keep\"}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "explore",
+      "state_schema": true,
+      "cards_object": false,
+      "seconds": 3.3,
+      "raw": "{\"action\":\"commit\",\"verdict\":\"undetermined\",\"admissible_cards\":[\"A\"],\"predictions\":{\"1\":\"0\"}}",
+      "parsed": {
+        "action": "commit",
+        "verdict": "undetermined",
+        "admissible_cards": [
+          "A"
+        ],
+        "predictions": {
+          "1": "0"
+        }
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": true,
+      "cards_object": false,
+      "seconds": 3.1,
+      "raw": "{\"action\":\"keep\"}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "explore",
+      "state_schema": true,
+      "cards_object": true,
+      "seconds": 3.7,
+      "raw": "{\"action\":\"commit\",\"verdict\":\"undetermined\",\"admissible_cards\":{\"A\":false},\"predictions\":{\"1\":\"0\"}}",
+      "parsed": {
+        "action": "commit",
+        "verdict": "undetermined",
+        "admissible_cards": {
+          "A": false
+        },
+        "predictions": {
+          "1": "0"
+        }
+      },
+      "matches_schema": true
+    },
+    {
+      "phase": "revision",
+      "state_schema": true,
+      "cards_object": true,
+      "seconds": 3.9,
+      "raw": "{\"action\":\"keep\"}",
+      "parsed": {
+        "action": "keep"
+      },
+      "matches_schema": true
+    }
+  ],
+  "load_seconds": 10.5,
+  "compat": "reexported PreTrainedTokenizerBase",
+  "versions": {
+    "torch": "2.14.1+cu132",
+    "transformers": "5.17.0",
+    "lm-format-enforcer": "?",
+    "cuda": true,
+    "device": "cuda:0"
+  },
+  "ok": true
+}

@@ -25,6 +25,22 @@ Podes consultar entradas do menu (cada consulta revela a saída) até esgotar o 
 Depois de comprometeres, chega evidência nova: mantém ou revê. Se a evidência nova contradiz as observações anteriores, o veredicto de revisão é inconsistent.
 Responde SEMPRE com um único objeto JSON, sem texto adicional."""
 
+# v3.1 (18/10/2026, fase 1 do instrumento): o espaço de regras passa a ser dito. O texto v3 acima fica intacto
+# (as corridas R1-R3 e L1-L3 usaram-no); o veredicto de referência não muda, só deixa de ser ambíguo.
+SYSTEM_PROMPT_V31 = """Investigas um sistema com quatro atributos (glyph, setting, partner, phase), cada um com dois valores. A saída é sempre 0 ou 1.
+REGRAS POSSÍVEIS: qualquer regra que dê 0 ou 1 a cada uma das 16 entradas e dependa de no máximo dois dos quatro atributos. São 70 regras ao todo.
+As três cartas são apenas exemplos dessas regras; a regra verdadeira pode não ser nenhuma delas. W é a carta de trabalho.
+Uma regra é admissível se reproduz todas as observações (as iniciais e as que consultaste). Veredictos sobre W:
+- rejected: W não reproduz as observações.
+- supported: W reproduz as observações e TODAS as regras admissíveis, entre as 70 e não só as cartas, dão a mesma saída que W em cada entrada retida.
+- undetermined: W reproduz as observações, mas pelo menos uma regra admissível, entre as 70, discorda de W numa entrada retida.
+Em admissible_cards indica quais das três cartas são admissíveis.
+Podes consultar entradas do menu (cada consulta revela a saída) até esgotar o orçamento, depois comprometes-te.
+Depois de comprometeres, chega evidência nova: mantém ou revê, aplicando as mesmas definições a todas as observações juntas (as anteriores e as novas).
+- inconsistent: nenhuma das 70 regras reproduz todas as observações juntas. Isto inclui a mesma entrada aparecer com saídas diferentes, mas também pode acontecer sem isso.
+Responde SEMPRE com um único objeto JSON, sem texto adicional."""
+PROMPTS = {"v3": SYSTEM_PROMPT, "v3.1": SYSTEM_PROMPT_V31}
+
 
 def action_schema(phase: str, state: dict | None = None, cards_object: bool = False) -> dict:
     """JSON schema of a legal action. With `state` (pilot round 2 onwards) the ids are restricted to what the state
@@ -112,8 +128,9 @@ def to_env_action(action, state: dict, mode: str):
 
 
 def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: bool = False,
-                mode: str = "state_cards_object") -> dict:
+                mode: str = "state_cards_object", prompt: str = "v3") -> dict:
     assert mode in MODES
+    system = PROMPTS[prompt]
     ep = E.Episode(world)
     turns = []
     for t in range(max_turns):
@@ -123,7 +140,7 @@ def run_episode(world: dict, backend: Backend, max_turns: int = 10, pass_state: 
         obj = mode == "state_cards_object"
         user = render_state(st, cards_object=obj)
         schema = action_schema(st["phase"], st if mode != "phase" else None, cards_object=obj)
-        raw = backend.generate(SYSTEM_PROMPT, user, schema, st) if pass_state else backend.generate(SYSTEM_PROMPT, user, schema)
+        raw = backend.generate(system, user, schema, st) if pass_state else backend.generate(system, user, schema)
         try:
             action = json.loads(raw)
             parsed = True
