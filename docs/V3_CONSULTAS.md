@@ -132,3 +132,35 @@ Todas usam os mundos de desenvolvimento (sementes 91xxx), a mesma grelha de cél
 - **D-b (V5).** Falha o critério 1 (mediana < 0,25), pela mesma razão da V1 e da V3: a segunda consulta compensa. O ganho médio da segunda (v2 − v1) é ≥ 0,15.
 - **D-c (V6).** Gap semelhante ao da V2 (mediana entre 0,25 e 0,40), mas falha o critério 3 (< 0,80), porque escolher o máximo entre 6 opções ao acaso baixa a melhor.
 - **D-d.** Prevejo que **nenhuma** das três cumpre os seis critérios, e que a ronda termina com a paragem e a reavaliação do desenho.
+
+## 9. Ronda 2: resultados (`results/instrumento/CONSULTAS_VARIANTES_R2.json`)
+
+| | V4 (1 consulta, menu de 16) | V5 (2 adaptativas, menu de 16) | V6 (1 consulta, 6 ao acaso) | critério |
+|---|---|---|---|---|
+| mundos (equilibrados) | 225 | **48** | 300 | |
+| gap mediana (quartis) | **0,438** (0,344–0,638) | 0,090 (0,072–0,177) | 0,324 (0,205–0,500) | ≥ 0,25 |
+| mundos com gap ≥ 0,25 | **91%** | 2% | 66% | ≥ 50% |
+| valor da melhor (média de max v2) | **0,806** | 0,942 | 0,762 | ≥ 0,80 |
+| valor médio do menu | **0,332** | 0,824 | 0,413 | ≤ 0,60 |
+| posição média dos empates | 0,49 | 0,50 | 0,50 | [0,40; 0,60] |
+| melhor única em 1.º lugar | 0,044 (90 mundos com melhor única; limite 0,094) | sem mundos com melhor única | 0,175 (limite 0,25) | ≤ 1,5/\|menu\| |
+| pista de superfície mais forte (acerto / acaso) | 1,47× (Hamming máx.); retida 1,27×; não observada 1,25× | 1,52× | 1,29× | ≤ 2× |
+| alvos equilibrados | sim | sim | sim | |
+| **todos os critérios** | **sim** | não (1, 4) | não (3) | |
+
+- **V5, medidas separadas.** A 1.ª consulta sozinha tem gap mediano 0,284. O ganho médio da 2.ª consulta é 0,444 sobre o menu e 0,429 na melhor. A adaptação acrescenta muito valor, e é por isso que, com duas consultas, a escolha da primeira deixa de discriminar. Além disso, com o menu completo e duas consultas quase tudo fica determinado: só 48 mundos sobrevivem ao equilíbrio dos alvos.
+- **Previsões:**
+  - D-a confirmada nos critérios 1, 3 e 4, mas **refutada no 6**: a pista "consultar uma retida" fica em 1,27×, não acima de 2×;
+  - **D-b confirmada** (falha o 1; ganho da 2.ª ≥ 0,15);
+  - **D-c confirmada exatamente** (gap 0,32, falha o 3 com 0,762);
+  - **D-d refutada**: a V4 cumpre tudo.
+- **Decisão pela regra da §8: a V4 é a variante escolhida** (a primeira, pela ordem, a cumprir os seis critérios).
+
+### Sensibilidade da V4 (relatada, não usada para afinar; `CONSULTAS_V4_SENSIBILIDADE.json`)
+- **A discriminação é estrutural, não vem das opções sem valor.** Sem as entradas já observadas no menu, a mediana do gap é 0,359 e 80% dos mundos ficam ≥ 0,25. Sem as observadas nem as retidas, 0,340 e 73%.
+- **A qualidade passa pela média, mas é heterogénea.** Média 0,806, com o critério cumprido por pouco: 55,6% dos mundos têm a melhor consulta abaixo de 0,80 (percentil 10 = 0,60), e a média é sustentada pelos mundos em que a melhor decide sempre. Isto fica registado como ponto fraco do instrumento. Ao validar a tarefa V4 completa, reporta-se o resultado por estrato de qualidade.
+
+### Próximos passos (sem corridas de modelos, sem partição cega)
+1. Implementar a V4 como tarefa completa no ambiente (orçamento 1, menu de 16; consultar uma entrada já observada é uma ação válida que não traz informação). Repetir sobre ela as validações das fases 1 e 2: verificador independente, políticas plantadas e mutação.
+2. Piloto humano sobre a V4.
+3. Modelo de fronteira, só depois.

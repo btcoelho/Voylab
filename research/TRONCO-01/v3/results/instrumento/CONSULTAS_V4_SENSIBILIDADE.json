@@ -1,0 +1,8 @@
+{
+ "gap_mediana_sem_observadas": 0.359,
+ "share_ge_0.25_sem_observadas": 0.804,
+ "gap_mediana_sem_observadas_nem_retidas": 0.34,
+ "share_ge_0.25_sem_ambas": 0.729,
+ "mundos_qualidade_lt_0.8": 0.556,
+ "qualidade_p10": 0.6
+}

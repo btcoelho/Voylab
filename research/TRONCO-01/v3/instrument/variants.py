@@ -69,6 +69,18 @@ def build(name):
             w["hidden"]["menu"] = sorted(top + low)
             out.append(rederive_reference(w))
         ws = out
+    elif name in ("V4", "V5"):                  # ronda 2: full 16-input menu; V4 budget 1, V5 budget 2 (adaptive)
+        budget = 1 if name == "V4" else 2
+        ws = cells(budget, lambda i: 2 + (i - 1) % 3, infeasible)
+        for w in ws:
+            w["hidden"]["menu"] = list(range(g.N))
+            rederive_reference(w)
+    elif name == "V6":                          # ronda 2: budget 1, 6 menu queries drawn at random (no values used)
+        ws = cells(1, lambda i: 2 + (i - 1) % 3, infeasible)
+        for w in ws:
+            rng = random.Random("v6|" + w["uid"])
+            w["hidden"]["menu"] = sorted(rng.sample(w["hidden"]["menu"], min(6, len(w["hidden"]["menu"]))))
+            rederive_reference(w)
     else:
         raise ValueError(name)
     ws = [shuffle_menu(w) for w in ws]
