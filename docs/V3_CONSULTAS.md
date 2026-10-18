@@ -267,3 +267,36 @@ Feita depois de uma revisão crítica; nenhum resultado humano existia. Substitu
 10. **Ensaio do Bruno (P0)** antes dos participantes, com 3–4 episódios, para medir o tempo e a clareza das instruções. Não conta para a análise; o código P0 fica reservado para isso.
 11. **Defeito encontrado ao conferir a página publicada (18/10, 17:15):** as entradas do menu de consultas eram exportadas como dicionários e a página mostrava "[object Object]". Corrigido (`fmt_input`); o teste ponta a ponta passa a verificar o texto do menu, do estado, das regras e da evidência, e falha com o defeito reposto. A página publicada foi atualizada (versão 4, mesmo endereço, armazenamento e regras de acesso mantidos); a cópia acidental sem armazenamento foi apagada.
 12. **Resultado do ensaio P0 (18/10, 17:28):** o Bruno perdeu-se logo no início; as instruções estavam escritas para um modelo, não para pessoas. A introdução foi reescrita em linguagem simples (a máquina com 4 interruptores, o que se vê, os 3 passos, um exemplo), com uma legenda "Como ler o estado" e a definição de cada veredicto junto às opções. Episódios, referências, regras e limiares não mudaram. O P0 repete-se com esta versão antes de P1–P4.
+
+## 15. Piloto humano suspenso; pré-registo da corrida de modelos na V4 (18/10, 17:40; nada corrido)
+
+### 15.1 Decisão sobre o piloto humano
+O ensaio P0 (§14, ponto 12) mostrou que a tarefa, mesmo com a introdução reescrita, não é compreensível para um participante sem formação em lógica: exige raciocinar sobre o espaço de 70 regras. **O piloto humano fica suspenso** (não reformulado: uma versão simplificada seria outra tarefa). Nenhuma resposta foi recolhida; a página e a análise ficam guardadas para um eventual piloto com participantes de formação técnica. Consequência registada: **a V4 fica, por agora, sem âncora humana**, e qualquer resultado de modelos lê-se sem essa referência. Pôr o ChatGPT a responder na página foi considerado e rejeitado: os dados ficariam rotulados como humanos.
+
+Esta decisão altera a ordem aprovada antes ("modelo de fronteira só depois do piloto humano"); foi aprovada pelo Bruno a 18/10, 17:38.
+
+### 15.2 O que se corre (quando aprovado)
+- **Mundos:** os 225 mundos de desenvolvimento da V4 (sementes 91xxx; 75 por veredicto alvo). Nenhum mundo de validação ou da partição cega. Esta corrida é **de desenvolvimento**: estima o teto e testa o instrumento; não confirma hipóteses do plano de análise.
+- **Tarefa e enunciado:** ambiente `env_v3` em V4 (orçamento 1, menu de 16), prompt v3.1, resposta só em JSON. Uma corrida por mundo e por modelo; sem novas tentativas além do que o protocolo já prevê para ações inválidas (contam como inválidas).
+- **Modelos:** (M1) um modelo Claude de fronteira, identificador exato registado no momento da corrida; (M2) opcional, um modelo da OpenAI escolhido pelo Bruno. Parâmetros de amostragem fixados antes e registados por modelo (temperatura 0 quando o modelo o permitir; caso contrário, o valor por omissão, registado).
+- **Referências já existentes, sem custo:** política aleatória e políticas de referência do repositório, nos mesmos 225 mundos.
+
+### 15.3 Medidas (definidas antes)
+1. Elegibilidade: respostas que cumprem o esquema ≥ 98% e ações inválidas ≤ 1% (§4 do plano de análise); abaixo disto, o modelo não é avaliado em desempenho.
+2. Grelha ITT: distribuição das categorias e taxa de **fundamentado** com IC de Wilson, por veredicto alvo e por estrato de qualidade da consulta.
+3. Escolha de consulta: valor v2 da consulta escolhida contra a média do menu e contra a melhor, por mundo (diferença pareada, IC 95%).
+4. Revisão: taxa de revisão final correta.
+5. Entre modelos (se houver M2): diferenças pareadas por mundo, apenas descritivas.
+
+### 15.4 Previsões (escritas antes de qualquer chamada; podem ser corrigidas pelo Bruno só antes da corrida)
+- **H-m1:** M1 cumpre a elegibilidade (≥ 98% no esquema).
+- **H-m2:** M1 escolhe consultas acima da média do menu (IC 95% da diferença pareada > 0), mas abaixo da melhor (IC da diferença para a melhor < 0).
+- **H-m3:** a taxa de fundamentado de M1 fica entre 0,50 e 0,90; prevê-se mais baixa nos mundos de alvo `undetermined` do que nos de alvo `rejected`.
+- **H-m4:** revisão final correta de M1 ≥ 0,80.
+- **Sem previsão direcional** entre M1 e M2.
+
+### 15.5 Regras
+- Máximo de 3 rondas de auditoria; não se ajusta gerador, limiares, métrica ou prompt depois de ver resultados.
+- A chave da API é configurada pelo Bruno e não entra no repositório, nos logs nem nos resultados.
+- Cada corrida (M1 e, separadamente, M2) precisa de aprovação explícita. Para M2 falta ainda escrever o adaptador da API da OpenAI; escrever e testar esse adaptador sem chamadas reais é também um passo que pede aprovação.
+- Volume previsto: 225 episódios por modelo, cada um com até 3 pedidos (consulta, compromisso, revisão), ou seja, até cerca de 675 pedidos por modelo.
