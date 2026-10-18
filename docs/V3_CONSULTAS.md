@@ -434,7 +434,7 @@ Categorias de M1-DS-R: fundamentado 37, pesquisa 4, prematura 4 (comprometeu sem
 
 **Decisão proposta para a fase (3 rondas esgotadas): avançar, com uma correção de execução.** (1) O limite de tokens é uma condição de execução, não da tarefa: propor, com aprovação, subir o limite ou impor um orçamento de raciocínio, para eliminar as respostas cortadas; (2) confirmar o efeito do raciocínio na partição de validação (uma vez, pré-registado, com aprovação), que é o primeiro teste não exploratório; (3) tornar obrigatórias as referências constante e "consulta ao acaso + leitura correta" e reportar sempre por veredicto alvo.
 
-## 22. Pré-registo da validação V4 (aprovado pelo Bruno, 18/10, 19:29; escolha de tamanho às 19:3x; escrito antes de gerar a partição)
+## 22. Pré-registo da validação V4 (aprovado pelo Bruno, 18/10, 19:29, incluindo a escolha de 225 mundos; escrito antes de gerar a partição)
 
 **Primeiro teste não exploratório desta linha.** Confirma ou não, em mundos nunca vistos, o efeito do raciocínio observado no §21.
 - **Partição:** gerada só depois do congelamento, a partir do valor de uma ronda **futura** do beacon público drand (quicknet), anunciada no ficheiro de congelamento (≈ 30 min depois do congelamento), como manda a especificação (§9). Três sementes derivadas desse valor (`instrument/validation_v4.derive_seeds`), nunca de desenvolvimento nem reservadas; mesma construção da V4 (`variants.build("V4", seeds)`), conjunto equilibrado, no máximo 75 por veredicto alvo (≈ 216–225 mundos; escolha do Bruno por custo, em vez dos 720 do plano). Um ensaio do código com um valor fictício (`00…00`) deu 216 mundos (72 por alvo); nenhum valor real foi usado.
