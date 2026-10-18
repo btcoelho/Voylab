@@ -149,3 +149,29 @@ Poder do verificador: com 36 rótulos v70 trocados de propósito, os 36 foram de
   - Ronda 2 (`F2_MUTACOES_R2.json`): **35/36 mortos (97%)**, um deles por erro. O único sobrevivente muda `should_revise` em `revision_reference`. É equivalente para a grelha, porque esta usa o veredicto pós-evidência e não esse campo (o defeito da `PILOTO_LOCAL.md` §10).
 - **F2-d refutada.** Revisão final correta: 0,5B 7/48, 1,5B 8/48, 3B 16/48, 7B 16/48. A ordenação é a mesma do tipo I (3B e 7B à frente). A métrica nova não reordena, mas passa a contar os casos em que o compromisso estava errado.
 - **Decisão da fase 2: avançar** (2 rondas de 3). **Fase 2: 100%. Plano do instrumento: 40%.**
+
+## Fase 4. Âncoras externas: propostas para aprovação (nada executado)
+
+### 4.1 Referência humana
+- **Objetivo:** saber se a tarefa, tal como o v3.1 a enuncia, é resolúvel por pessoas. Se não for, o problema está no enunciado e não nos modelos.
+- **Desenho:** 2 a 3 pessoas (podes ser tu e uma ou duas pessoas que não conheçam o projeto), **20 episódios** de desenvolvimento, iguais para todas: 7/7/6 por alvo, e 8 dos 20 com mudança na revisão. Mais 20 itens de sonda (célula, compatibilidade, contradição), para separar a leitura do raciocínio.
+- **Interface:** uma página privada (Artifact) que mostra o prompt v3.1 e o estado exatamente como o modelo os vê, recolhe as ações e guarda as respostas. Precisa de aprovação para a criar.
+- **Medidas:** grelha ITT e revisão final correta por pessoa; **kappa de Cohen** entre pessoas e contra a referência; tempo por episódio.
+- **Esforço estimado:** 1,5 a 3 horas por pessoa.
+- **Critério:** se as pessoas atingirem o macro fundamentado ≥ 0,8 e um kappa com a referência ≥ 0,7, o enunciado está bem posto. Abaixo disso, volta-se à fase 1.
+
+### 4.2 Teto com um modelo de fronteira via API
+- **Objetivo:** com o mesmo prompt v3.1 e o mesmo arnês, um modelo forte chega perto do bayes_ig? Se não chegar, a tarefa pode ser difícil por razões do enunciado ou do formato, e não por falta de capacidade.
+- **Âmbito:** os 48 episódios do piloto (cerca de 200 chamadas) e as sondas em modo de geração (cerca de 1 000 chamadas). A escolha forçada por probabilidades não é possível em APIs que não as devolvem.
+- **Volume estimado:** cerca de 1,3 M tokens de entrada e 0,1 M de saída, contados pelos prompts reais (~1 000 tokens cada). O custo depende do preço do modelo escolhido, que confirmo na altura com a tabela oficial, sem inventar valores.
+- **O que precisa de ti:** escolher o modelo e configurares tu a chave da API. Eu não introduzo chaves.
+
+### 4.3 Benchmark externo (validade convergente)
+- **Objetivo:** ver se a ordenação dos modelos aqui concorda com a de outra tarefa que meça o mesmo tipo de competência (escolher experiências e usar a evidência).
+- **Candidatos:**
+  - **DiscoveryWorld** (Apache-2.0, código verificado na síntese de 17/10);
+  - **HypoSpace** (conjuntos admissíveis; licença por esclarecer);
+  - **LUCA** (o código está numa ligação anónima de revisão, inacessível);
+  - **ACED-Bench** (não encontrei código).
+  - Recomendação: um subconjunto pequeno do DiscoveryWorld com os mesmos 4 modelos locais.
+- **Medida:** correlação de postos (Spearman) entre a ordenação nas duas tarefas; com 4 modelos é só indicativa. Exige descarregar o repositório, o que precisa de aprovação.
