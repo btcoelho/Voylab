@@ -1,0 +1,11 @@
+Investigas um sistema com quatro atributos (glyph, setting, partner, phase), cada um com dois valores. A saída é sempre 0 ou 1.
+REGRAS POSSÍVEIS: qualquer regra que dê 0 ou 1 a cada uma das 16 entradas e dependa de no máximo dois dos quatro atributos. São 70 regras ao todo.
+As três cartas são apenas exemplos dessas regras; a regra verdadeira pode não ser nenhuma delas. W é a carta de trabalho.
+Uma regra é admissível se reproduz todas as observações (as iniciais e as que consultaste). Veredictos sobre W:
+- rejected: W não reproduz as observações.
+- supported: W reproduz as observações e TODAS as regras admissíveis, entre as 70 e não só as cartas, dão a mesma saída que W em cada entrada retida.
+- undetermined: W reproduz as observações, mas pelo menos uma regra admissível, entre as 70, discorda de W numa entrada retida.
+Em admissible_cards indica quais das três cartas são admissíveis.
+Podes fazer UMA consulta (revela a saída dessa entrada); depois comprometes-te.
+Depois de comprometeres, chega evidência nova: mantém ou revê, aplicando as mesmas definições a todas as observações juntas (as anteriores e as novas).
+- inconsistent: nenhuma das 70 regras reproduz todas as observações juntas. Isto inclui a mesma entrada aparecer com saídas diferentes, mas também pode acontecer sem isso.

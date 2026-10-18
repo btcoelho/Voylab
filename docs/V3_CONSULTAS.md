@@ -250,3 +250,18 @@ Os limiares da §11 mantêm-se: fundamentado ≥ 0,80 e kappa contra a referênc
 
 ### 13.1 Ressalva de desenho (revisão, 18/10)
 Com as capacidades atuais da página não é possível esconder as respostas: os episódios e a referência ficam num documento partilhado (`db`) que a análise lê e que, por isso, os participantes também conseguem ler. O piloto é feito só com pessoas colaborativas que aceitam não consultar o código nem os dados; esta ressalva acompanha qualquer resultado do piloto, que não serve como prova contra um participante adversarial.
+
+## 14. Piloto humano: segunda revisão do protocolo (aprovada pelo Bruno, 18/10, 16:55, antes de qualquer resposta)
+
+Feita depois de uma revisão crítica; nenhum resultado humano existia. Substitui o que §11 e §13 dizem em contrário.
+
+1. **Natureza do piloto: descritiva (opção b).** Com 3 pessoas × 10 episódios por condição, o agregado só passaria com 29 ou 30 em 30 (com taxa verdadeira de 90%, P(passa) ≈ 0,18). O piloto serve para encontrar defeitos na tarefa, na página e na grelha, e para estimar o tempo e a taxa de acerto. As leituras passa/falha/inconclusivo continuam a ser calculadas e reportadas, mas **a decisão sobre a resolubilidade humana fica para uma amostra posterior**, dimensionada com as estimativas deste piloto. Os limiares (0,80 e 0,70) não mudam.
+2. **Participantes: 4 (P1–P4)**, 2 de código ímpar e 2 de código par, para o contrabalanço ficar 2 contra 2.
+3. **Ordem intercalada:** os episódios passam a seguir a ordem fixa X, Y, X, Y, … (sha do ficheiro `eeaffd9e…`). Cada participante alterna as condições (ímpares A,B,A,B…; pares B,A,B,A…), e a aprendizagem deixa de se confundir com a ajuda. A seleção dos 20 e a partição X/Y não mudaram.
+4. **Leitura da condição B:** a ajuda mostra as regras admissíveis, os seus padrões nas retidas e o de W; o veredicto lê-se quase diretamente. A condição B é **um teto e um teste de compreensão da tarefa**, não uma medida de raciocínio com apoio.
+5. **Defeito corrigido:** a ajuda da condição B no passo da revisão estava calculada mas não era mostrada; passa a ser.
+6. **Treino:** 2 episódios de treino (um com alvo `rejected`, outro `supported`), do mesmo conjunto de desenvolvimento da V4 e fora dos 20, o primeiro sem ajuda e o segundo com ajuda, com a resposta de referência no fim. Não entram na análise (`results/instrumento/PILOTO_HUMANO_TREINO.json`).
+7. **Concordância simples** reportada ao lado do kappa (contra a referência e entre pessoas), porque com veredictos desequilibrados o kappa pode ser baixo com muita concordância.
+8. **Fuga:** além do documento `db`, as respostas estão no código da página; a introdução pede explicitamente para não o abrir. Ressalva de §13.1 mantém-se.
+9. **Verificação ponta a ponta** (`tests/test_pilot_page_e2e.py`): um participante simulado clica a página real no Chromium; o registo gravado, passado por `analyse_human`, dá exatamente as mesmas linhas que o mesmo comportamento escrito à mão (P1 e P2); confirma a alternância das condições, a ajuda na revisão só em B e o retorno do treino. Com a linha da ajuda na revisão retirada, o teste falha (mutação apanhada). Corre localmente com TRONCO_SLOW=true; no CI é saltado, porque o Playwright não está instalado lá.
+10. **Ensaio do Bruno (P0)** antes dos participantes, com 3–4 episódios, para medir o tempo e a clareza das instruções. Não conta para a análise; o código P0 fica reservado para isso.

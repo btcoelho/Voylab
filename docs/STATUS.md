@@ -6,7 +6,7 @@ Página curta de orientação. Os detalhes e os números estão nos documentos l
 - **Instrumento (grelha ITT, fases 1–3):** validado para leitura, inferência e revisão. [V3_INSTRUMENTO.md](V3_INSTRUMENTO.md)
 - **V4 (orçamento 1, menu de 16):** escolhida e validada como tarefa completa; verificador independente 0/12 836, políticas plantadas 0/2 250, mutação 36/36; gap mediano 0,438. [V3_CONSULTAS.md](V3_CONSULTAS.md) §10–12
 - **Referência congelada:** `results/instrumento/REFERENCIA.json`, com verificação no CI.
-- **Piloto humano:** protocolo revisto (duas condições contrabalançadas, leitura passa/falha/inconclusivo), análise escrita e testada antes de haver respostas. [V3_CONSULTAS.md](V3_CONSULTAS.md) §11, §13
+- **Piloto humano:** descritivo (§14); 4 participantes, condições alternadas, 2 episódios de treino; análise e página testadas ponta a ponta antes de haver respostas. [V3_CONSULTAS.md](V3_CONSULTAS.md) §11, §13, §14
 
 ## O que foi retirado
 - **Pista de posição de 58%:** vinha de um defeito na medição com empates; não existe.
@@ -14,8 +14,8 @@ Página curta de orientação. Os detalhes e os números estão nos documentos l
 - **Escolha de consultas na tarefa antiga (gap 0,087):** não mede capacidade; ver a adenda de V3_INSTRUMENTO.md.
 
 ## Pendente
-1. Piloto humano (Bruno e participantes P1–P3), com a página partilhada com acesso "interact".
-2. Análise com `instrument/analyse_human.py`. Por pessoa e condição (n = 10) o resultado só pode ser "inconclusivo" ou "falha"; só o agregado pode passar.
+1. Ensaio do Bruno (P0), depois o piloto humano com P1–P4, com a página partilhada com acesso "interact".
+2. Análise com `instrument/analyse_human.py`. O piloto é descritivo: estima taxas e tempos; a decisão de resolubilidade humana fica para uma amostra posterior, dimensionada com estas estimativas.
 3. Só depois: teto com um modelo de fronteira (aprovação caso a caso). DiscoveryWorld adiado.
 4. Partição cega: reservada para a validação final.
 

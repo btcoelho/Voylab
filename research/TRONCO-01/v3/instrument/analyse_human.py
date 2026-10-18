@@ -119,6 +119,7 @@ def summary(rows: list[dict]) -> dict:
     times = [r["t_total_s"] for r in rows if r["t_total_s"]]
     return {"n": n, "categories": dict(collections.Counter(r["category"] for r in rows)),
             "fundamentado": [k, n], "fundamentado_ic95": [lo, hi], "leitura_fundamentado": read(lo, hi, THRESH_FUND),
+            "concordancia_simples_vs_referencia": [sum(a == b for a, b in pairs), len(pairs)],
             "kappa_vs_referencia": None if kp is None else round(kp, 3), "kappa_ic95": [klo, khi],
             "leitura_kappa": read(klo, khi, THRESH_KAPPA),
             "revisao_final_correta": [sum(r["revision_final_correct"] for r in rows), n],
@@ -150,6 +151,7 @@ def analyse(episodes, participants, worlds_by_uid) -> dict:
             pairs = [(a[u]["committed"], b[u]["committed"]) for u in a if u in b and a[u]["committed"] and b[u]["committed"]]
             same = sum(a[u]["condition"] == b[u]["condition"] for u in a if u in b)
             inter[f"{codes[i]}|{codes[j]}"] = {"kappa": None if not pairs else round(kappa(pairs), 3), "n": len(pairs),
+                                              "concordancia_simples": sum(a == b for a, b in pairs),
                                               "episodios_mesma_condicao": same}
     return {"por_participante": per, "agregado": pooled, "kappa_entre_pessoas": inter, "linhas": allrows}
 

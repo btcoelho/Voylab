@@ -43,11 +43,11 @@ input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);borde
 <div class="wrap">
   <div class="top">
     <h1>Piloto humano TRONCO-01</h1>
-    <div class="meta" id="progress">20 episódios</div>
+    <div class="meta" id="progress">2 de treino + 20 episódios</div>
   </div>
   <div class="panel" id="intro">
     <h2>Antes de começar</h2>
-    <p>São 20 episódios curtos, sempre pela mesma ordem. Em metade tens uma ajuda que calcula as regras ainda admissíveis; cada episódio diz se é com ou sem ajuda. Em cada um escolhes uma consulta, comprometes-te com um veredicto sobre a carta W, vês evidência nova e decides se manténs ou revês. Não há tempo limite, mas o tempo de cada episódio é registado. Não voltes atrás nem peças ajuda a ninguém.</p>
+    <p>Começas com 2 episódios de treino, que não contam e que mostram no fim a resposta de referência. Seguem-se 20 episódios curtos, sempre pela mesma ordem, alternando sem ajuda e com ajuda (a ajuda calcula as regras ainda admissíveis); cada episódio diz qual é. Por favor não abras o código da página nem os dados guardados: os resultados só valem se não o fizeres. Em cada um escolhes uma consulta, comprometes-te com um veredicto sobre a carta W, vês evidência nova e decides se manténs ou revês. Não há tempo limite, mas o tempo de cada episódio é registado. Não voltes atrás nem peças ajuda a ninguém.</p>
     <div class="row"><label for="code">Código de participante</label><input type="text" id="code" maxlength="8" placeholder="P1" pattern="[Pp][0-9]+"><button class="btn" id="start" type="button">Começar</button></div>
     <p class="status" id="savestate">A ligar ao armazenamento…</p>
   </div>
@@ -75,12 +75,14 @@ input[type=text]{font:inherit;padding:6px 8px;border:1px solid var(--line);borde
       <p class="status" id="saved"></p>
     </div>
   </div>
+  <div class="panel" id="fb" hidden><h2>Treino · resposta de referência</h2><div class="result" id="fbtext"></div><div><button class="btn" id="fbnext" type="button">Continuar</button></div></div>
   <div class="panel done" id="end" hidden><h1>Terminado</h1><p>Obrigado. As tuas respostas ficaram registadas.</p></div>
 </div>
 <script>
 const DATA = __DATA__;
 const $ = (id) => document.getElementById(id);
 let db = null, uid = null, rec = null, i = 0, ep = null, t0 = 0;
+const ALL = DATA.training.concat(DATA.episodes);
 $("rules").textContent = DATA.rules;
 (async () => {
   try {
@@ -124,11 +126,11 @@ $("start").addEventListener("click", () => {
   if (!/^P[0-9]+$/.test(code)) { $("savestate").textContent = "Usa um código da forma P1, P2 ou P3."; $("savestate").className = "status warn"; $("code").focus(); return; }
   if (!rec || rec.code !== code) rec = { code: code, started: new Date().toISOString(), episodes: {} };
   i = 0;
-  while (i < DATA.episodes.length && rec.episodes[DATA.episodes[i].uid] && rec.episodes[DATA.episodes[i].uid].final) i++;
+  while (i < ALL.length && rec.episodes[ALL[i].uid] && rec.episodes[ALL[i].uid].final) i++;
   $("intro").hidden = true;
   show();
 });
-function cond(e) { const n = parseInt(rec.code.slice(1), 10); const without = n % 2 === 1 ? "X" : "Y"; return e.set === without ? "A" : "B"; }
+function cond(e) { if (e.set === "T") return e.n === "T1" ? "A" : "B"; const n = parseInt(rec.code.slice(1), 10); const without = n % 2 === 1 ? "X" : "Y"; return e.set === without ? "A" : "B"; }
 function renderHelp(h) {
   if (!h) { $("helpbox").hidden = true; return; }
   const pats = Object.entries(h.patterns).map(([p, c]) => p + " ×" + c).join(", ") || "nenhum";
@@ -137,9 +139,11 @@ function renderHelp(h) {
   $("helpbox").hidden = false;
 }
 function show() {
-  if (i >= DATA.episodes.length) { $("work").hidden = true; $("end").hidden = false; rec.finished = new Date().toISOString(); save(); return; }
-  $("work").hidden = false; ep = DATA.episodes[i]; t0 = Date.now();
-  $("progress").textContent = "Episódio " + (i + 1) + " de " + DATA.episodes.length;
+  $("fb").hidden = true;
+  if (i >= ALL.length) { $("work").hidden = true; $("end").hidden = false; rec.finished = new Date().toISOString(); save(); return; }
+  $("work").hidden = false; ep = ALL[i]; t0 = Date.now();
+  const nt = DATA.training.length;
+  $("progress").textContent = i < nt ? "Treino " + (i + 1) + " de " + nt : "Episódio " + (i - nt + 1) + " de " + DATA.episodes.length;
   $("state").textContent = ep.state; $("qres").hidden = true; $("saved").textContent = "";
   ep.cond = cond(ep);
   $("cond").textContent = ep.cond === "A" ? "Condição A · sem ajuda" : "Condição B · com ajuda";
@@ -174,10 +178,20 @@ $("commit").addEventListener("click", () => {
   e.t_commit_ms = Date.now() - t0;
   $("s2").setAttribute("aria-disabled", "true"); $("s3").removeAttribute("aria-disabled");
   $("ev").textContent = "EVIDÊNCIA NOVA\n" + ep.evidence.join("\n");
+  if (ep.cond === "B") renderHelp(ep.help.evidencia[e.query]);
   radios($("rv"), "r", ["rejected", "supported", "undetermined", "inconsistent"], () => { $("revise").disabled = !val("r"); });
   checks($("rcards"), "rc", ep.cards); $("revise").disabled = true;
 });
-async function finish(final) { const e = rec.episodes[ep.uid]; e.final = final; e.t_total_ms = Date.now() - t0; await save(); i++; show(); }
+async function finish(final) {
+  const e = rec.episodes[ep.uid]; e.final = final; e.t_total_ms = Date.now() - t0; await save(); i++;
+  if (ep.feedback) {
+    const f = ep.feedback[e.query], rv = final.action === "keep" ? e.commit.verdict : final.verdict;
+    $("fbtext").textContent = "Com a consulta " + e.query + ", o veredicto correto no compromisso era " + f.commit + " (respondeste " + e.commit.verdict + ").\nDepois da evidência nova, o correto era " + f.revision + " (ficaste com " + rv + ").";
+    $("work").hidden = true; $("fb").hidden = false; window.scrollTo(0, 0); return;
+  }
+  show();
+}
+$("fbnext").addEventListener("click", () => show());
 $("keep").addEventListener("click", () => finish({ action: "keep" }));
 $("revise").addEventListener("click", () => finish({ action: "revise", verdict: val("r"), cards: vals("rc") }));
 </script>

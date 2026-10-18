@@ -1,0 +1,1385 @@
+[
+ {
+  "n": "T1",
+  "uid": "v3u-9977719361b4b8f8",
+  "target": "rejected",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r159: glyph=g1, setting=s0, partner=p1, phase=t1 -> 0\n- r909: glyph=g1, setting=s1, partner=p0, phase=t1 -> 1\n- r239: glyph=g1, setting=s0, partner=p1, phase=t0 -> 0\nCARTAS\n- Pa (Output depends on partner and phase.)\n    p0|t0 -> 1\n    p0|t1 -> 1\n    p1|t0 -> 0\n    p1|t1 -> 1\n- Qu (Output depends on glyph and partner.)\n    g0|p0 -> 1\n    g0|p1 -> 0\n    g1|p0 -> 1\n    g1|p1 -> 1\n- Os (Output depends on partner.)\n    p0 -> 1\n    p1 -> 0\nCARTA DE TRABALHO: Os\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s0, partner=p0, phase=t1\n- 2: glyph=g1, setting=s1, partner=p1, phase=t0\n- 3: glyph=g1, setting=s0, partner=p0, phase=t0\n- 4: glyph=g0, setting=s0, partner=p1, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s1, partner=p1, phase=t1\n- q2: glyph=g0, setting=s0, partner=p1, phase=t0\n- q3: glyph=g1, setting=s0, partner=p0, phase=t0\n- q4: glyph=g1, setting=s1, partner=p0, phase=t1\n- q5: glyph=g0, setting=s0, partner=p1, phase=t1\n- q6: glyph=g1, setting=s0, partner=p1, phase=t0\n- q7: glyph=g0, setting=s1, partner=p0, phase=t1\n- q8: glyph=g0, setting=s0, partner=p0, phase=t0\n- q9: glyph=g1, setting=s1, partner=p1, phase=t0\n- q10: glyph=g0, setting=s0, partner=p0, phase=t1\n- q11: glyph=g1, setting=s1, partner=p1, phase=t1\n- q12: glyph=g1, setting=s0, partner=p0, phase=t1\n- q13: glyph=g1, setting=s1, partner=p0, phase=t0\n- q14: glyph=g0, setting=s1, partner=p0, phase=t0\n- q15: glyph=g1, setting=s0, partner=p1, phase=t1\n- q16: glyph=g0, setting=s1, partner=p1, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Pa\":true|false,\"Qu\":true|false,\"Os\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5833
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5833
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4167
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.1667
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.4167
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Pa",
+   "Qu",
+   "Os"
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 12,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Os"
+    ],
+    "patterns": {
+     "0000": 2,
+     "0100": 2,
+     "0101": 2,
+     "1000": 1,
+     "1010": 2,
+     "1011": 2,
+     "1110": 1
+    },
+    "w_pattern": "1010"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0100": 1,
+      "0101": 1,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q2": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0101": 2,
+      "1011": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q3": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "1010": 2,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q4": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0100": 2,
+      "0101": 2,
+      "1000": 1,
+      "1010": 2,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q5": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0101": 2,
+      "1011": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q6": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0100": 2,
+      "0101": 2,
+      "1000": 1,
+      "1010": 2,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q7": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0100": 1,
+      "0101": 1,
+      "1000": 1,
+      "1010": 1,
+      "1011": 1,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q8": {
+     "n_admissible": 5,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0101": 2,
+      "1010": 1,
+      "1011": 1,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q9": {
+     "n_admissible": 7,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 2,
+      "1000": 1,
+      "1010": 2,
+      "1011": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q10": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0101": 2,
+      "1000": 1,
+      "1010": 1,
+      "1011": 1,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q11": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "1000": 1,
+      "1010": 2,
+      "1011": 2
+     },
+     "w_pattern": "1010"
+    },
+    "q12": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "1000": 1,
+      "1010": 2,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q13": {
+     "n_admissible": 10,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0100": 2,
+      "0101": 2,
+      "1010": 2,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q14": {
+     "n_admissible": 6,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 1,
+      "0100": 1,
+      "0101": 1,
+      "1010": 1,
+      "1011": 1,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q15": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Os"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0100": 2,
+      "0101": 2,
+      "1000": 1,
+      "1010": 2,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    },
+    "q16": {
+     "n_admissible": 5,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0100": 1,
+      "0101": 1,
+      "1011": 2,
+      "1110": 1
+     },
+     "w_pattern": "1010"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q2": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q3": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q4": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q5": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q6": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q7": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q8": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q9": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q10": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q11": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q12": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q13": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q14": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q15": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    },
+    "q16": {
+     "n_admissible": 0,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {},
+     "w_pattern": "1010"
+    }
+   }
+  },
+  "set": "T",
+  "feedback": {
+   "q1": {
+    "commit": "rejected",
+    "revision": "inconsistent"
+   },
+   "q2": {
+    "commit": "rejected",
+    "revision": "inconsistent"
+   },
+   "q3": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q4": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q5": {
+    "commit": "rejected",
+    "revision": "inconsistent"
+   },
+   "q6": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q7": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q8": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q9": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q10": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q11": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q12": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q13": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q14": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q15": {
+    "commit": "undetermined",
+    "revision": "inconsistent"
+   },
+   "q16": {
+    "commit": "rejected",
+    "revision": "inconsistent"
+   }
+  }
+ },
+ {
+  "n": "T2",
+  "uid": "v3u-35a88848dc6a516e",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r522: glyph=g0, setting=s0, partner=p0, phase=t0 -> 1\n- r644: glyph=g1, setting=s1, partner=p1, phase=t1 -> 0\nCARTAS\n- Ne (Output depends on glyph and setting.)\n    g0|s0 -> 1\n    g0|s1 -> 0\n    g1|s0 -> 0\n    g1|s1 -> 0\n- Mi (Output depends on partner and phase.)\n    p0|t0 -> 1\n    p0|t1 -> 0\n    p1|t0 -> 1\n    p1|t1 -> 1\n- Lo (Output depends on phase.)\n    t0 -> 1\n    t1 -> 0\nCARTA DE TRABALHO: Ne\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s1, partner=p0, phase=t0\n- 2: glyph=g1, setting=s1, partner=p0, phase=t1\n- 3: glyph=g0, setting=s1, partner=p1, phase=t0\n- 4: glyph=g0, setting=s1, partner=p1, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p0, phase=t0\n- q2: glyph=g1, setting=s1, partner=p1, phase=t1\n- q3: glyph=g1, setting=s0, partner=p0, phase=t1\n- q4: glyph=g0, setting=s1, partner=p0, phase=t1\n- q5: glyph=g1, setting=s1, partner=p0, phase=t1\n- q6: glyph=g0, setting=s0, partner=p0, phase=t0\n- q7: glyph=g0, setting=s1, partner=p1, phase=t0\n- q8: glyph=g1, setting=s0, partner=p1, phase=t0\n- q9: glyph=g0, setting=s1, partner=p1, phase=t1\n- q10: glyph=g0, setting=s0, partner=p1, phase=t1\n- q11: glyph=g1, setting=s1, partner=p1, phase=t0\n- q12: glyph=g0, setting=s0, partner=p0, phase=t1\n- q13: glyph=g1, setting=s1, partner=p0, phase=t0\n- q14: glyph=g1, setting=s0, partner=p1, phase=t1\n- q15: glyph=g0, setting=s0, partner=p1, phase=t0\n- q16: glyph=g0, setting=s1, partner=p0, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Ne\":true|false,\"Mi\":true|false,\"Lo\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.75
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 1.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Ne",
+   "Mi",
+   "Lo"
+  ],
+  "help": {
+   "inicio": {
+    "n_admissible": 16,
+    "w_admissible": true,
+    "cards_admissible": [
+     "Ne",
+     "Lo"
+    ],
+    "patterns": {
+     "0000": 5,
+     "0010": 1,
+     "0011": 2,
+     "1000": 1,
+     "1010": 2,
+     "1011": 1,
+     "1100": 2,
+     "1110": 1,
+     "1111": 1
+    },
+    "w_pattern": "0000"
+   },
+   "consulta": {
+    "q1": {
+     "n_admissible": 12,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 3,
+      "0011": 1,
+      "1000": 1,
+      "1010": 2,
+      "1011": 1,
+      "1100": 2,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q2": {
+     "n_admissible": 16,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne",
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 5,
+      "0010": 1,
+      "0011": 2,
+      "1000": 1,
+      "1010": 2,
+      "1011": 1,
+      "1100": 2,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q3": {
+     "n_admissible": 8,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1010": 1,
+      "1100": 2,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q4": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne",
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 4,
+      "0010": 1,
+      "1000": 1,
+      "1010": 2
+     },
+     "w_pattern": "0000"
+    },
+    "q5": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne",
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 5,
+      "0010": 1,
+      "0011": 2,
+      "1000": 1,
+      "1010": 2,
+      "1011": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q6": {
+     "n_admissible": 16,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne",
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 5,
+      "0010": 1,
+      "0011": 2,
+      "1000": 1,
+      "1010": 2,
+      "1011": 1,
+      "1100": 2,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q7": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 5,
+      "1000": 1,
+      "1100": 2
+     },
+     "w_pattern": "0000"
+    },
+    "q8": {
+     "n_admissible": 8,
+     "w_admissible": false,
+     "cards_admissible": [
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1010": 2,
+      "1011": 1,
+      "1100": 1,
+      "1110": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q9": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne",
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 5,
+      "0010": 1,
+      "1000": 1,
+      "1010": 2,
+      "1100": 2,
+      "1110": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q10": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 2,
+      "0011": 2,
+      "1010": 1,
+      "1011": 1,
+      "1100": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q11": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 5,
+      "0010": 1,
+      "0011": 2,
+      "1000": 1,
+      "1100": 2,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q12": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 4,
+      "0011": 2,
+      "1010": 1,
+      "1011": 1,
+      "1100": 2,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q13": {
+     "n_admissible": 8,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 5,
+      "0010": 1,
+      "0011": 2
+     },
+     "w_pattern": "0000"
+    },
+    "q14": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1010": 1,
+      "1100": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q15": {
+     "n_admissible": 12,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne",
+      "Lo"
+     ],
+     "patterns": {
+      "0000": 3,
+      "0010": 1,
+      "0011": 2,
+      "1010": 2,
+      "1011": 1,
+      "1100": 1,
+      "1110": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q16": {
+     "n_admissible": 4,
+     "w_admissible": true,
+     "cards_admissible": [
+      "Ne"
+     ],
+     "patterns": {
+      "0000": 4
+     },
+     "w_pattern": "0000"
+    }
+   },
+   "evidencia": {
+    "q1": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1100": 2,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q2": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1100": 2,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q3": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1100": 2,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q4": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2
+     },
+     "w_pattern": "0000"
+    },
+    "q5": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q6": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1100": 2,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q7": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "1100": 2
+     },
+     "w_pattern": "0000"
+    },
+    "q8": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1100": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q9": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "1100": 2
+     },
+     "w_pattern": "0000"
+    },
+    "q10": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1100": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q11": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1100": 2,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q12": {
+     "n_admissible": 6,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1,
+      "1100": 2,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q13": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2,
+      "0011": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q14": {
+     "n_admissible": 3,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1100": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q15": {
+     "n_admissible": 4,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 1,
+      "0011": 1,
+      "1100": 1,
+      "1111": 1
+     },
+     "w_pattern": "0000"
+    },
+    "q16": {
+     "n_admissible": 2,
+     "w_admissible": false,
+     "cards_admissible": [],
+     "patterns": {
+      "0000": 2
+     },
+     "w_pattern": "0000"
+    }
+   }
+  },
+  "set": "T",
+  "feedback": {
+   "q1": {
+    "commit": "rejected",
+    "revision": "rejected"
+   },
+   "q2": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q3": {
+    "commit": "rejected",
+    "revision": "rejected"
+   },
+   "q4": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q5": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q6": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q7": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q8": {
+    "commit": "rejected",
+    "revision": "rejected"
+   },
+   "q9": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q10": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q11": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q12": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q13": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q14": {
+    "commit": "rejected",
+    "revision": "rejected"
+   },
+   "q15": {
+    "commit": "undetermined",
+    "revision": "rejected"
+   },
+   "q16": {
+    "commit": "supported",
+    "revision": "rejected"
+   }
+  }
+ }
+]

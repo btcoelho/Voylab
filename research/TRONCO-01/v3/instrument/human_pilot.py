@@ -87,6 +87,71 @@ def helpers(w):
     return out
 
 
+def interleave(data, X, Y):
+    """Fixed order X, Y, X, Y, ... so that condition alternates within every participant (A,B,A,B or B,A,B,A)."""
+    xs = [d for d in data if (d["n"] - 1) in X]
+    ys = [d for d in data if (d["n"] - 1) in Y]
+    for d in xs:
+        d["set"] = "X"
+    for d in ys:
+        d["set"] = "Y"
+    out = [d for pair in zip(xs, ys) for d in pair]
+    for k, d in enumerate(out, 1):
+        d["n"] = k
+    return out
+
+
+def reference_answers(w):
+    """Per query: verdict after the query (commit reference) and after the new evidence (revision reference)."""
+    hid = w["hidden"]
+    base = [(i, hid["h"][i]) for i in hid["obs"]]
+    out = {}
+    for q in w["public"]["query_menu"]:
+        i = g.INPUTS.index(g.D.as_tuple(q["input"]))
+        rows = base + [(i, hid["h"][i])]
+        post = rows + [(j, hid["h2"][j]) for j in hid["block"]]
+        out[q["id"]] = {"commit": g.verdict(g.admissible_idx(rows), hid["w"], hid["T"]),
+                        "revision": g.verdict(g.admissible_idx(post), hid["w"], hid["T"])}
+    return out
+
+
+def practice(chosen, k=2):
+    """Two practice episodes from the same V4 development build, never among the 20; not analysed."""
+    ws, _ = VA.build("V4")
+    used = {w["uid"] for w, _, _ in chosen}
+    rng = random.Random("tronco01-v4-piloto-humano-treino")
+    pool = [w for w in ws if w["uid"] not in used]
+    rng.shuffle(pool)
+    picked, seen = [], set()
+    for w in pool:                       # one 'supported' and one 'rejected' target, for clear feedback
+        t = w["reference"]["target_verdict"]
+        if t in ("supported", "rejected") and t not in seen:
+            picked.append((w, max(QL.values(w).values()) >= 0.80, QL.values(w))); seen.add(t)
+        if len(picked) == k:
+            break
+    out = export(picked)
+    for d, (w, _, _) in zip(out, picked):
+        d["set"] = "T"; d["n"] = "T" + str(d["n"]); d["feedback"] = reference_answers(w)
+    return out
+
+
+def page_episode(d):
+    st = d["user_text"].split("\nCONSULTAS DISPONÍVEIS")[0]
+    ev = [", ".join(f"{k}={v}" for k, v in e["input"].items()) + " -> " + e["output"] for e in d["new_evidence"]]
+    out = {"n": d["n"], "uid": d["uid"], "set": d["set"], "state": st,
+           "menu": [{"id": q["id"], "input": q["input"], "answer": q["answer"]} for q in d["menu"]],
+           "evidence": ev, "cards": d["cards"], "help": d["help"]}
+    if "feedback" in d:
+        out["feedback"] = d["feedback"]
+    return out
+
+
+def build_page(episodes, training, template: Path, rules: Path) -> str:
+    data = {"rules": rules.read_text(encoding="utf-8"), "training": [page_episode(d) for d in training],
+            "episodes": [page_episode(d) for d in episodes]}
+    return template.read_text(encoding="utf-8").replace("__DATA__", json.dumps(data, ensure_ascii=False))
+
+
 def export(chosen):
     out = []
     for n, (w, q_hi, v) in enumerate(chosen, 1):
@@ -107,10 +172,15 @@ if __name__ == "__main__":
     ch = select()
     data = export(ch)
     X, Y = split(ch)
-    for d in data:
-        d["set"] = "X" if (d["n"] - 1) in X else "Y"
+    data = interleave(data, X, Y)
     txt = json.dumps(data, ensure_ascii=False, indent=1)
     Path(sys.argv[1]).write_text(txt + "\n", encoding="utf-8")
     import collections
     print(len(data), dict(collections.Counter(d["target"] for d in data)), "qualidade alta", sum(d["quality_hi"] for d in data),
-          "sha", hashlib.sha256(txt.encode()).hexdigest()[:16])
+          "sha", hashlib.sha256(txt.encode()).hexdigest()[:16], "ordem", "".join(d["set"] for d in data))
+    tr = practice(ch)
+    Path(sys.argv[1]).with_name("PILOTO_HUMANO_TREINO.json").write_text(json.dumps(tr, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    if len(sys.argv) > 2:
+        here = Path(__file__).resolve().parent
+        Path(sys.argv[2]).write_text(build_page(data, tr, here / "piloto_humano_template.html", here / "piloto_humano_regras.txt"),
+                                     encoding="utf-8")
