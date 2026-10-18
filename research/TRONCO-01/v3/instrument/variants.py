@@ -35,9 +35,9 @@ def rederive_reference(w):
     return w
 
 
-def cells(budget, k0_of, infeasible):
+def cells(budget, k0_of, infeasible, seeds=None):
     worlds = []
-    for seed in a.DEV_SEEDS:
+    for seed in (seeds or a.DEV_SEEDS):
         for diff, fam, target in product(g.DIFFICULTIES, g.FAMILIES, g.VERDICTS):
             kinds = g.KINDS_V2 if diff == "medio" else g.KINDS[:2]
             for kind in kinds:
@@ -52,7 +52,8 @@ def cells(budget, k0_of, infeasible):
     return worlds
 
 
-def build(name):
+def build(name, seeds=None):
+    """seeds=None: development seeds (91xxx). Other seeds only for a pre-registered partition (§22)."""
     infeasible = []
     if name == "V1":
         ws = cells(2, lambda i: 5 + (i - 1) % 3, infeasible)
@@ -71,7 +72,7 @@ def build(name):
         ws = out
     elif name in ("V4", "V5"):                  # ronda 2: full 16-input menu; V4 budget 1, V5 budget 2 (adaptive)
         budget = 1 if name == "V4" else 2
-        ws = cells(budget, lambda i: 2 + (i - 1) % 3, infeasible)
+        ws = cells(budget, lambda i: 2 + (i - 1) % 3, infeasible, seeds)
         for w in ws:
             w["hidden"]["menu"] = list(range(g.N))
             rederive_reference(w)

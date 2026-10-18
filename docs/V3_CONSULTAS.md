@@ -433,3 +433,19 @@ Categorias de M1-DS-R: fundamentado 37, pesquisa 4, prematura 4 (comprometeu sem
 **Leitura.** Com raciocínio, o mesmo modelo deixa de se comportar como a constante: lê corretamente o histórico em todos os casos, revê corretamente em todos e escolhe consultas muito melhores, ficando acima da referência "consulta ao acaso + leitura correta" (37 contra 24). O que faltava nas rondas 1 e 2 não era texto na prompt, era espaço de raciocínio. Ressalvas: exploratório (mundos já vistos), 45 mundos, elegibilidade formal falhada por truncagem, e desempenho não é validade.
 
 **Decisão proposta para a fase (3 rondas esgotadas): avançar, com uma correção de execução.** (1) O limite de tokens é uma condição de execução, não da tarefa: propor, com aprovação, subir o limite ou impor um orçamento de raciocínio, para eliminar as respostas cortadas; (2) confirmar o efeito do raciocínio na partição de validação (uma vez, pré-registado, com aprovação), que é o primeiro teste não exploratório; (3) tornar obrigatórias as referências constante e "consulta ao acaso + leitura correta" e reportar sempre por veredicto alvo.
+
+## 22. Pré-registo da validação V4 (aprovado pelo Bruno, 18/10, 19:29; escolha de tamanho às 19:3x; escrito antes de gerar a partição)
+
+**Primeiro teste não exploratório desta linha.** Confirma ou não, em mundos nunca vistos, o efeito do raciocínio observado no §21.
+- **Partição:** gerada só depois do congelamento, a partir do valor de uma ronda **futura** do beacon público drand (quicknet), anunciada no ficheiro de congelamento (≈ 30 min depois do congelamento), como manda a especificação (§9). Três sementes derivadas desse valor (`instrument/validation_v4.derive_seeds`), nunca de desenvolvimento nem reservadas; mesma construção da V4 (`variants.build("V4", seeds)`), conjunto equilibrado, no máximo 75 por veredicto alvo (≈ 216–225 mundos; escolha do Bruno por custo, em vez dos 720 do plano). Um ensaio do código com um valor fictício (`00…00`) deu 216 mundos (72 por alvo); nenhum valor real foi usado.
+- **Corrida única:** `deepseek-chat` com raciocínio (`thinking: enabled`), prompt v3.1, temperatura 0, uma corrida por mundo. **Correção de execução pré-anunciada no §21:** limite de saída 64 000 tokens (32 000 cortou 7/138 respostas). 5 em paralelo, retoma sem duplicar, paragem se o saldo descer de 1 USD (se parar, reporta-se o que correu e a partição não se repete).
+- **Referências obrigatórias** nos mesmos mundos: constante `undetermined` e "consulta ao acaso + leitura correta" (`instrument/baselines_v4.py`).
+- **Hipóteses e critérios de passagem (sem afinação posterior):**
+  - **V-0 (elegibilidade):** respostas JSON e ações aceites ≥ 0,98. Se falhar, não há avaliação formal de desempenho.
+  - **V-1 (primária):** fundamentado total com limite inferior de Wilson > 1/3 (a constante obtém exatamente 1/3).
+  - **V-2 (primária):** fundamentado acima de "consulta ao acaso + leitura correta", pareado por mundo (IC 95% da diferença média > 0).
+  - **V-3:** fundamentado ≥ 1/2 em cada um dos alvos `rejected` e `supported` (estimativa pontual), relatado com IC.
+  - **V-4:** revisão final correta com limite inferior de Wilson ≥ 0,80.
+  - Primárias V-1 e V-2 com Holm a α = 0,05 (a V-1 usa o teste binomial unilateral contra 1/3).
+- **Relato:** denominadores, IC, por veredicto alvo e por estrato de qualidade, lado a lado com as referências e com o §21; desempenho separado de validade (nada disto mostra que a grelha mede capacidade de investigação humana).
+- **Rede:** gerar a partição requer acesso a `api.drand.sh`, ainda bloqueado nesta sessão.
