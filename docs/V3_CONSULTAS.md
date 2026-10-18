@@ -378,3 +378,23 @@ Mais a frase "não inventes resultados". Nada sobre prudência.
 - **P-f:** revisão final correta fica dentro de ±0,10 de 0,59 (a v3.2 não muda as instruções da revisão além do ponto 2).
 
 **Relato:** todas as medidas com denominadores e IC; por veredicto alvo e por estrato de qualidade; comparação lado a lado com M1-DS e com as referências; nenhuma alteração à prompt depois de ver os resultados desta corrida dentro desta ronda (ronda 2 de 3).
+
+## 19. Resultados de M1-DS-v32 (prompt v3.2; ronda 2 de 3; `results/modelos_v4/M1-DS-v32/`)
+
+**Execução.** 225/225 episódios, 675 chamadas, 0 falhas de execução, modelo servido `deepseek-flash`; sem campo de raciocínio separado.
+
+| Medida | M1-DS (v3.1) | M1-DS-v32 (v3.2) | Constante `undetermined` | Consulta ao acaso + leitura correta |
+|---|---|---|---|---|
+| Fundamentado total | 75/225 [0,28; 0,40] | 78/225 [0,29; 0,41] | 75/225 | 119/225 |
+| … `rejected` / `supported` / `undetermined` | 0 / 0 / 75 | 5 / 0 / 73 | 0 / 0 / 75 | 33 / 11 / 75 |
+| Concordância com o próprio histórico | 183/225 | 176/225 | — | 225/225 |
+| Histórico implica `rejected` → responde `rejected` | 0/30 | 5/33 | 0 | todos |
+| Falsos `rejected` (histórico `undetermined`) | 0 | 8 | 0 | 0 |
+| v2 escolhida − média do menu | +0,074 [0,041; 0,106] | +0,081 [0,048; 0,114] | — | ≈ 0 |
+| Revisão final correta | 132/225 | 132/225 | 40/225 | 225/225 |
+
+**Previsões do §18:** P-a **confirmada** (675/675). P-b **refutada** (0,78; desceu). P-c **refutada** (5/33 = 0,15). P-d **confirmada formalmente**, mas a diferença para M1-DS é desprezável e os IC sobrepõem-se. P-e **confirmada formalmente** (78 > 75), sem diferença real para a constante. P-f **confirmada** (0,59).
+
+**Leitura.** A v3.2 não mudou o comportamento de forma relevante: o modelo continua a não escolher consultas decisivas e a não detetar a contradição de W; passou a dizer `rejected` algumas vezes, quase tantas vezes erradas (8) como certas (5). As instruções de procedimento não chegam quando o modelo responde só com JSON e sem raciocínio: a prompt pede que pense "sem o escrever", e este modelo, servido sem modo de raciocínio, aparentemente não o faz.
+
+**Decisão proposta (falta 1 ronda de 3):** não afinar mais o texto da prompt. A hipótese seguinte é outra variável: **dar espaço de raciocínio** (modo de raciocínio do modelo, ou o modelo `deepseek-v4-pro`, ou um campo de raciocínio antes do JSON). É uma variável nova e tem de ser pré-registada e aprovada antes de correr.
