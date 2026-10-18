@@ -1,0 +1,23 @@
+{
+ "preregisto": "docs/V3_CONSULTAS.md §15 + §16",
+ "provider": "deepseek",
+ "section15_sha256": "744a4608d59f1ddc7e63602fcd76c4f947fea48691a946c26db00bb0eb5465d7",
+ "commit": "5ac7f6b",
+ "model_requested": "deepseek-chat",
+ "temperature": 0.0,
+ "max_tokens": 1024,
+ "prompt": "v3.1",
+ "mode": "state_cards_object",
+ "worlds": "variants.build('V4'), 225 development worlds",
+ "code_sha256": {
+  "pilot/pilot_harness.py": "1730800bd620efe0ddd9bc54774832262e8ed7b59a72d7e3499e04b0c08e1794",
+  "pilot/anthropic_backend.py": "5317234c171366d65f2fb591d10a4c49a050091fb3a3fc17a0337c334f729fe6",
+  "pilot/deepseek_backend.py": "e2a229219cddb41170b98154dc5d69e9b7b3f8aa6882b251a6282fa44f573d59",
+  "pilot/run_v4_models.py": "99ef9c2c71e0c61c70949cc7fea4faa904a43369fc454158e38e213eb05fdcda",
+  "env_v3.py": "1eb553351cf053cb7f809dce83f70e45dcab807b7957a20d345dd2f8204c3493",
+  "generator_v3.py": "16ef649bf612825f95a6f106a9feda55a5d05d09093e6f72b5e36593fedbac81",
+  "scoring.py": "26830051fc76ba8322306a7d07e3aeb57af0fb2f0e0e6fb8c2ff6ec67f26c4f8",
+  "instrument/variants.py": "0aeec1ac040f776e96c13a413453f1f933dcf075a36e80cfb2e32b5f092b1f68",
+  "instrument/grid.py": "50fa5d9da3099bf701aa5296d618a000f95e06756ce9a122d25859b47b5429b0"
+ }
+}
