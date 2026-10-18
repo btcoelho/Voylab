@@ -233,3 +233,23 @@ Funções novas: `content_sha` (hash de tudo exceto os ids) e `structure_group` 
 - **Regra para o congelamento:** treino, validação e cega dividem-se por `structure_group` (cada grupo numa só partição), com uma verificação automática de interseção vazia. As políticas aleatórias passam a semear-se pelo `uid`. Os resultados já registados ficam com a semeadura legada e não se recalculam.
 - **Mapeamento histórico** (ordem → `world_id`, `uid`, `content_sha256`, `structure_group`) para os 48 mundos do piloto, guardado em `results/AUDITORIA_IDS.json`. Nenhum ficheiro histórico foi reescrito.
 - **Reprodução das séries de políticas com o código novo.** `POLITICAS_CONFIRMACAO.json` é idêntica byte a byte; trata-se de um recálculo determinístico, sem modelo e sem informação nova. `POLITICAS_RONDA_1.json` tem **todos os valores antigos idênticos**; só ganha duas chaves (`decomposition`, `rival_vs_bayes_by_need`), que o `summarise` passou a escrever no grupo 2 (commit ed53708, 17/10), depois de o ficheiro ter sido guardado. A diferença é anterior e não vem desta alteração; o ficheiro histórico fica como está.
+
+## 12. Defeito de definição da tarefa: o espaço de hipóteses não é comunicado (18/10/2026)
+Encontrado ao preparar as sondas. A especificação (`V3_ESPECIFICACAO.md`, linhas 6 e 9) define os veredictos sobre **as 70 hipóteses** de suporte ≤ 2: as 3 cartas "podem não conter h". O prompt do piloto diz apenas "três cartas que descrevem possíveis regras" e "todas as regras admissíveis". O espaço nunca é mencionado. Um agente que leia o prompt à letra raciocina sobre as 3 cartas.
+
+**As duas leituras divergem muito** (todos os estados alcançáveis com 0–2 consultas):
+
+| Referência (70 hipóteses) → leitura só-cartas | piloto (2 201 estados) | dev (11 850) |
+|---|---|---|
+| undetermined → **supported** | **1 327 (60%)** | 7 522 (63%) |
+| rejected → inconsistent | 198 | 1 383 |
+| iguais | 676 | 2 945 |
+
+Alvos do piloto na leitura só-cartas: os 16 `undetermined` passariam a `supported`, e 6 dos 16 `rejected` também. **Na leitura só-cartas, o alvo seria `supported` em 38/48 mundos.**
+
+**Releitura post hoc** (diagnóstico, não substitui a pontuação pré-registada): veredicto coerente com a leitura só-cartas do próprio histórico em 0,5B 33/48, 1,5B 14/48, 3B 3/48 e 7B 28/48. A política "sempre `supported`" do 0,5B, e em grande parte a do 7B, é **parcialmente racional** perante o prompt que receberam. Isto não explica tudo: o 3B (sempre `undetermined`) e o 1,5B continuam incoerentes nas duas leituras, e nenhum modelo diz `rejected`. Mas significa que a escada mediu uma mistura de capacidade com ambiguidade do enunciado.
+
+**Consequências:**
+- A pontuação do piloto e da escada mantém-se como registada, porque foi pré-registada. A interpretação muda: os resultados não separam capacidade de ambiguidade.
+- As **sondas não podem avançar** sem fixar a definição: o veredicto depende do espaço.
+- **Decisão necessária (do Bruno):** (A) dizer explicitamente o espaço no prompt (funções de no máximo 2 atributos, sendo as cartas exemplos e não a lista completa), ou (B) redefinir a tarefa com as cartas como espaço fechado, o que muda o gerador, os alvos e o equilíbrio. Recomendação: **A**. Mantém a especificação, as referências e o gerador, e corrige só o enunciado. Mas exige que o agente raciocine sobre 70 hipóteses que não vê, o que as sondas devem medir à parte.
