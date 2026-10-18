@@ -206,3 +206,10 @@ O que se repete sobre os 225 mundos V4 de desenvolvimento, com o mesmo ambiente 
   - H-b: o macro fundamentado fica entre 0,6 e 0,9, com mais erros no estrato de qualidade baixa e em `undetermined`;
   - H-c: kappa contra a referência ≥ 0,6;
   - H-d: tempo mediano por episódio entre 2 e 6 minutos.
+
+## 12. V4: resultados da validação da tarefa completa
+- **E-a confirmada:** 0 divergências em 12 836 estados (6 418 pré-compromisso e 6 418 de revisão), com |H| = 70 obtido de forma independente (`results/instrumento/V4_F1/`).
+- **E-b confirmada:** 10 políticas plantadas × 225 mundos = 2 250 episódios, **0 erros**, todas as categorias exercitadas e a revisão certa em todos.
+- **E-c confirmada:** **36/36 mutantes mortos** (2 por erro), `results/instrumento/V4_MUTACOES.json`. O mutante de `should_revise`, que sobrevivia antes, morre agora com os testes da V4.
+- **E-d confirmada:** consultar uma entrada já observada é aceite (225/225) e não muda o veredicto (225/225).
+- **Decisão: a V4 fica validada como tarefa** (ronda 1 de 3). Segue-se o piloto humano da §11.
