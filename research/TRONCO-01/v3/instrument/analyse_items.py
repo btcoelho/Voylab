@@ -111,11 +111,21 @@ def analyse(items, scores):
                 units.append((d["orig"]["cluster"], choice(d["orig"], scores[d["orig"]["item_id"]]) ==
                               choice(d[tr], scores[d[tr]["item_id"]])))
         mv[tr] = cluster_boot(units, acc)
+        # added 18/10 after the 0.5B (before any larger model was analysed): invariance is vacuous for a constant
+        # responder, so also report the probability-level change (total variation) and the orig answer entropy
+        tv = []
+        for b, d in base.items():
+            if "orig" in d and tr in d:
+                po, pt = probs(scores[d["orig"]["item_id"]]["scores"]), probs(scores[d[tr]["item_id"]]["scores"])
+                tv.append((d["orig"]["cluster"], 0.5 * sum(abs(x - y) for x, y in zip(po, pt))))
+        mv[tr + "_total_variation"] = cluster_boot(tv, lambda v: sum(v) / len(v))
     orig = [d["orig"] for d in base.values() if "orig" in d]
     mv["orig_accuracy"] = cluster_boot([(it["cluster"], choice(it, scores[it["item_id"]]) == it["answer"]) for it in orig], acc)
     mv["orig_choice_distribution"] = dict(collections.Counter(choice(it, scores[it["item_id"]]) for it in orig))
     mv["orig_recall"] = {a: f"{sum(choice(it, scores[it['item_id']]) == a for it in orig if it['answer'] == a)}/"
                             f"{sum(it['answer'] == a for it in orig)}" for a in ('rejected"', 'supported"', 'undetermined"')}
+    dist = collections.Counter(choice(it, scores[it["item_id"]]) for it in orig)
+    mv["constant_responder"] = max(dist.values()) / sum(dist.values()) >= 0.95
     out["metamorfoses_veredicto"] = mv
     # query choice
     qb = collections.defaultdict(dict)
