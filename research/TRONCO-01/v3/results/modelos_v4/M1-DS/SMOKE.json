@@ -1,0 +1,1 @@
+{"when":"2026-10-18T18:17+01:00","what":"one smoke call before the run (world 0, first turn), outside calls.jsonl","model_requested":"deepseek-chat","model_served":"deepseek-flash","finish_reason":"stop","parsed_ok":true,"note":"counts as an execution check, not a model result"}
