@@ -18,7 +18,7 @@ API = "https://api.deepseek.com/chat/completions"
 
 class DeepSeekBackend(Backend):
     def __init__(self, model: str, temperature: float = 0.0, max_tokens: int = 1024, timeout: float = 180.0,
-                 max_retries: int = 6, session=None, sleep=time.sleep):
+                 max_retries: int = 6, session=None, sleep=time.sleep, extra_body: dict | None = None):
         import requests
         self.requests = requests
         self.session = session or requests.Session()
@@ -26,7 +26,8 @@ class DeepSeekBackend(Backend):
         self.verify = ca if os.path.exists(ca) else True
         self.model, self.temperature, self.max_tokens = model, temperature, max_tokens
         self.timeout, self.max_retries, self.sleep = timeout, max_retries, sleep
-        self.name = f"deepseek:{model}"
+        self.extra_body = dict(extra_body or {})
+        self.name = f"deepseek:{model}" + ("+" + json.dumps(self.extra_body, sort_keys=True) if self.extra_body else "")
         self.last_meta: dict = {}
         self.execution_log: list[dict] = []
 
@@ -38,7 +39,7 @@ class DeepSeekBackend(Backend):
 
     def generate(self, system: str, user: str, schema: dict) -> str:
         body = {"model": self.model, "temperature": self.temperature, "max_tokens": self.max_tokens, "stream": False,
-                "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
+                "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}], **self.extra_body}
         headers = {"Authorization": "Bearer " + self._key(), "Content-Type": "application/json"}
         for attempt in range(self.max_retries + 1):
             try:
@@ -52,7 +53,8 @@ class DeepSeekBackend(Backend):
                 msg = (d.get("choices") or [{}])[0].get("message", {})
                 self.last_meta = {"model_served": d.get("model"), "finish_reason": (d.get("choices") or [{}])[0].get("finish_reason"),
                                   "usage": d.get("usage"), "request_id": d.get("id"), "attempts": attempt + 1,
-                                  "reasoning_present": bool(msg.get("reasoning_content"))}
+                                  "reasoning_present": bool(msg.get("reasoning_content")),
+                                  "reasoning_chars": len(msg.get("reasoning_content") or "")}
                 return msg.get("content") or ""
             kind = "retryable" if r.status_code in (429, 500, 502, 503, 504) else "fatal"
             self.execution_log.append({"attempt": attempt, "kind": kind, "status": r.status_code})

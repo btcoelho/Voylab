@@ -398,3 +398,17 @@ Mais a frase "não inventes resultados". Nada sobre prudência.
 **Leitura.** A v3.2 não mudou o comportamento de forma relevante: o modelo continua a não escolher consultas decisivas e a não detetar a contradição de W; passou a dizer `rejected` algumas vezes, quase tantas vezes erradas (8) como certas (5). As instruções de procedimento não chegam quando o modelo responde só com JSON e sem raciocínio: a prompt pede que pense "sem o escrever", e este modelo, servido sem modo de raciocínio, aparentemente não o faz.
 
 **Decisão proposta (falta 1 ronda de 3):** não afinar mais o texto da prompt. A hipótese seguinte é outra variável: **dar espaço de raciocínio** (modo de raciocínio do modelo, ou o modelo `deepseek-v4-pro`, ou um campo de raciocínio antes do JSON). É uma variável nova e tem de ser pré-registada e aprovada antes de correr.
+
+## 20. Ronda 3 de 3: o mesmo modelo com modo de raciocínio (aprovado pelo Bruno, 18/10, 19:00; escrito antes da corrida)
+
+**Natureza:** exploratória, como o §18. **Única variável:** o modo de raciocínio do DeepSeek (`thinking: enabled`), com o limite de saída subido para 32 000 tokens (com 1024 o raciocínio esgota o limite e não sai resposta: verificado em 3 pedidos de teste isolados, que não contam). Prompt **v3.1** (a de M1-DS, não a v3.2), para isolar o efeito do raciocínio. Restante igual a M1-DS. Corrida **M1-DS-R**.
+- **Mundos:** subconjunto equilibrado de 45 dos 225 mundos de desenvolvimento, 15 por veredicto alvo, sorteados com a semente fixa `tronco01-v4-raciocinio-45` (lista de uids congelada). Motivo: custo e tempo (~20 000 tokens e ~100 s por pedido com raciocínio). Comparação pareada com M1-DS nos mesmos 45 mundos.
+- **Execução:** 5 episódios em paralelo, cada um com o seu ligador; retoma sem duplicar chamadas; paragem automática se o saldo da conta descer abaixo de 3 USD. O texto do raciocínio não é guardado (só o seu tamanho). Uma resposta truncada por limite conta como falha do modelo (não analisável) e é reportada à parte.
+- **Previsões (antes de correr):**
+  - **R-a:** elegibilidade ≥ 98% (respostas JSON e ações aceites).
+  - **R-b:** concordância do veredicto com o próprio histórico ≥ 0,90.
+  - **R-c:** quando o próprio histórico implica `rejected`, responde `rejected` em ≥ 50%.
+  - **R-d:** escolha de consulta melhor do que M1-DS nos mesmos mundos (diferença pareada de v2, IC 95% > 0).
+  - **R-e:** fundamentado acima da constante `undetermined` nos mesmos 45 (15/45), com pelo menos um acerto em `rejected` ou `supported`.
+  - **R-f:** revisão final correta ≥ 0,80.
+- Com 15 mundos por alvo, os IC são largos; o resultado serve para decidir a direção, não para confirmar. Esta é a última ronda desta fase; a seguir decide-se avançar, reformular ou suspender.

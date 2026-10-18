@@ -21,6 +21,7 @@ class Scripted(H.Backend):
 
     def __init__(self, fail_at=None):
         self.calls, self.fail_at = 0, fail_at
+        self.execution_log, self.last_meta = [], {}
 
     def generate(self, system, user, schema, state=None):
         self.calls += 1
@@ -152,3 +153,24 @@ class Frozen(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Reasoning(unittest.TestCase):
+    def test_parallel_resume_no_duplicates_and_balance_stop(self):
+        import run_v4_reasoning as RR
+        ws = RR.subset(R.worlds())
+        self.assertEqual(len(ws), 45)
+        import collections
+        self.assertEqual(collections.Counter(w["reference"]["target_verdict"] for w in ws), {"rejected": 15, "supported": 15, "undetermined": 15})
+        ws = ws[:6]
+        with tempfile.TemporaryDirectory() as d:
+            ref = RR.run(Path(d) / "ref", Scripted, ws, workers=3)
+            calls = iter([10.0, 10.0, 1.0] + [10.0] * 50)
+            part = RR.run(Path(d) / "run", Scripted, ws, workers=1, balance_fn=lambda: next(calls), floor=3.0)
+            self.assertTrue(part["stopped_by_balance"])
+            self.assertEqual(part["episodes"], 2)
+            rest = RR.run(Path(d) / "run", Scripted, ws, workers=3)
+            self.assertEqual(rest["episodes"], 6)
+            self.assertEqual(part["fresh_calls_this_session"] + rest["fresh_calls_this_session"], ref["fresh_calls_this_session"])
+            keys = [json.loads(l)["key"] for l in (Path(d) / "run" / "calls.jsonl").read_text().splitlines()]
+            self.assertEqual(len(keys), len(set(keys)))
