@@ -79,3 +79,12 @@ Poder do verificador: com 36 rótulos v70 trocados de propósito, os 36 foram de
 - F1-b refutada, e a forma da divergência (`rejected` → `inconsistent`) dá uma hipótese nova para a fase 3.
 - Fica registado que as corridas R1–R3 e L1–L3 usaram o enunciado ambíguo. As pontuações mantêm-se; a interpretação é a da `PILOTO_LOCAL.md` §12.
 - **Fase 1: 100%. Plano do instrumento: 20%** (1 de 5 fases, sem pesar o esforço; as fases 2 e 3 são as mais pesadas).
+
+## Fase 2. A métrica deteta o que diz detetar?
+
+### Previsões ex-ante (escritas antes de correr a fase 2)
+- **F2-a.** As políticas com defeitos plantados, corridas pelo ambiente real (`env_v3.Episode`), são classificadas pela grelha (`instrument/grid.py`) exatamente no rótulo que a sua construção implica, em todos os 267 mundos de desenvolvimento: matriz de confusão diagonal, 0 erros.
+- **F2-b.** A grelha nova aplicada às transcrições R1–R3 e L1–L3 reproduz os números do script provisório (`pilot/grelha_itt.py`, `results/ESCADA_GRELHA_ITT.txt`) sem diferenças.
+- **F2-c.** Nos testes de mutação a `grid.py` e às funções de `scoring.py` que a grelha usa, ≥ 90% das mutações são mortas pelos testes das políticas plantadas. As sobreviventes são equivalentes ou ficam explicadas uma a uma.
+- **F2-d.** Com a métrica "revisão final correta", a ordenação dos modelos na revisão muda face ao tipo I. Os resultados históricos não são reescritos: o efeito fica num ficheiro novo.
+- **Critérios de aceitação:** F2-a com 0 erros; F2-c ≥ 90% com as sobreviventes explicadas.
