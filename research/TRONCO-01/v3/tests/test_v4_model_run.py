@@ -138,21 +138,19 @@ class DeepSeek(unittest.TestCase):
 
 
 class Frozen(unittest.TestCase):
-    def test_refuses_when_section15_or_model_differ(self):
-        p = R.FROZEN_DIR / R.PROVIDERS["deepseek_v32"]
-        if not p.exists():
+    """The current freeze (round 3, §20) must pass as is and refuse any change; earlier freezes go stale once their
+    run is finished and the code moves on, which is the intended behaviour."""
+    def test_current_freeze_passes_and_refuses_changes(self):
+        import run_v4_reasoning as RR
+        if not RR.FROZEN.exists():
             self.skipTest("not frozen yet")
-        f = json.loads(p.read_text())
-        R.check_frozen(f["model_requested"], "deepseek_v32")            # passes as is
-        with self.assertRaises(SystemExit):
-            R.check_frozen("other-model", "deepseek_v32")
-        with mock.patch.object(R, "section", lambda n=15: "changed"):
+        RR.check()
+        with mock.patch.dict(RR.PARAMS, {"max_tokens": 1}):
             with self.assertRaises(SystemExit):
-                R.check_frozen(f["model_requested"], "deepseek_v32")
-
-
-if __name__ == "__main__":
-    unittest.main()
+                RR.check()
+        with mock.patch.object(RR, "prereg", lambda: "changed"):
+            with self.assertRaises(SystemExit):
+                RR.check()
 
 
 class Reasoning(unittest.TestCase):
