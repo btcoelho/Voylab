@@ -80,6 +80,15 @@ Poder do verificador: com 36 rótulos v70 trocados de propósito, os 36 foram de
 - Fica registado que as corridas R1–R3 e L1–L3 usaram o enunciado ambíguo. As pontuações mantêm-se; a interpretação é a da `PILOTO_LOCAL.md` §12.
 - **Fase 1: 100%. Plano do instrumento: 20%** (1 de 5 fases, sem pesar o esforço; as fases 2 e 3 são as mais pesadas).
 
+### Ronda 2 da fase 1 (reaberta durante o desenho da fase 3, antes de qualquer corrida com v3.1)
+**Falha encontrada.** O v3, e o próprio v3.1 da ronda 1, definem `inconsistent` como "a evidência nova contradiz as observações anteriores". A referência diz `inconsistent` quando **nenhuma das 70 regras** reproduz tudo junto. Na árvore completa de revisão (um estado pós-evidência por cada estado pré-compromisso, 35 209), há **24 396** `inconsistent` e **8 805 (36%) não têm nenhuma contradição direta** (nenhuma entrada com duas saídas). Só nas respostas verdadeiras, a proporção é 1 840/6 244 (29%). Um agente que siga o enunciado à letra responderia mal em todos esses casos.
+
+**Correção (v3.1, revisto).** Na revisão aplicam-se as mesmas definições a todas as observações juntas. `inconsistent` = nenhuma das 70 regras reproduz todas as observações; inclui a mesma entrada com saídas diferentes, mas pode acontecer sem isso.
+
+**Verificação.** A enumeração passa a incluir os estados de revisão (`results/instrumento/F1_ronda2/`; estados com sha256 `c8c1fd9c…`, 70 418 no total). O verificador Node.js dá **0 divergências em 70 418 estados**, nas duas leituras.
+
+**Decisão (ronda 2 de 3): avançar.** Ficam registados dois defeitos de enunciado no v3: o espaço não é dito, e `inconsistent` está mal definido. Ambos estão corrigidos no v3.1, e nenhuma corrida com o v3.1 aconteceu antes desta correção.
+
 ## Fase 2. A métrica deteta o que diz detetar?
 
 ### Previsões ex-ante (escritas antes de correr a fase 2)

@@ -92,6 +92,18 @@ def main(out_dir: Path):
                     key = canon(pn)
                     by_public[key].add(v70)
                     nodes_out.append({"world": w["uid"], "node": pn, "v70": v70, "vcards": vc})
+                    # revision state reached from this pre-commit state (only reachable answer sets are kept above)
+                    post_rows = rows + [(i, hid["h2"][i]) for i in hid["block"]]
+                    seen = dict(rows)
+                    direct = any(i in seen and seen[i] != y for i, y in post_rows[len(rows):])
+                    vpost = g.verdict(g.admissible_idx(post_rows), W, T)
+                    stats["revision_states"] += 1
+                    stats["revision_inconsistent"] += vpost == "inconsistent"
+                    stats["revision_inconsistent_without_direct_conflict"] += (vpost == "inconsistent" and not direct)
+                    pp = public_node(w, rows)
+                    pp["rows"] = [[list(g.INPUTS[i]), y] for i, y in post_rows]
+                    nodes_out.append({"world": w["uid"], "node": pp, "v70": vpost, "vcards": verdict_cards(hid["cards"], post_rows, W, T),
+                                      "revision": True})
         # target possibilities at the root: recompute the generator's oracle for every still-admissible hypothesis
         possible = collections.Counter(g.determination(h, hid["obs"], T, W, menu, budget)[0] for h in A0)
         roots.append({"uid": w["uid"], "target": w["reference"]["target_verdict"], "admissible_at_root": len(A0),
@@ -105,6 +117,8 @@ def main(out_dir: Path):
         "share_divergent": sum(v for k, v in div.items() if k[0] != k[1]) / stats["states"],
         "undetermined_states_with_budget": stats["undetermined_with_budget"],
         "decisive_1_vs_k_disagreements": stats["decisive_1_vs_k_disagree"],
+        "revision_states": stats["revision_states"], "revision_inconsistent": stats["revision_inconsistent"],
+        "revision_inconsistent_without_direct_conflict": stats["revision_inconsistent_without_direct_conflict"],
         "roots_with_more_than_one_possible_target": multi_target,
         "roots": roots,
     }

@@ -36,7 +36,8 @@ Uma regra é admissível se reproduz todas as observações (as iniciais e as qu
 - undetermined: W reproduz as observações, mas pelo menos uma regra admissível, entre as 70, discorda de W numa entrada retida.
 Em admissible_cards indica quais das três cartas são admissíveis.
 Podes consultar entradas do menu (cada consulta revela a saída) até esgotar o orçamento, depois comprometes-te.
-Depois de comprometeres, chega evidência nova: mantém ou revê. Se a evidência nova contradiz as observações anteriores, o veredicto de revisão é inconsistent.
+Depois de comprometeres, chega evidência nova: mantém ou revê, aplicando as mesmas definições a todas as observações juntas (as anteriores e as novas).
+- inconsistent: nenhuma das 70 regras reproduz todas as observações juntas. Isto inclui a mesma entrada aparecer com saídas diferentes, mas também pode acontecer sem isso.
 Responde SEMPRE com um único objeto JSON, sem texto adicional."""
 PROMPTS = {"v3": SYSTEM_PROMPT, "v3.1": SYSTEM_PROMPT_V31}
 
