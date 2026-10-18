@@ -320,3 +320,32 @@ O §15 fica intacto. Este desvio aplica-se só à corrida identificada como **M1
 - **Chave:** lida só da variável de ambiente `DEEPSEEK_API_KEY`. O Bruno enviou um valor pela conversa, por decisão sua (desvio à regra de a chave nunca passar pela conversa, registado aqui). Esse valor tem a forma de um UUID e pode não ser a chave secreta; confirma-se na primeira chamada (um 401 para a corrida e conta como falha de execução). Recomendado revogá-lo depois.
 - **Rede:** `api.deepseek.com` está bloqueado nesta sessão; a corrida só pode arrancar depois de o Bruno autorizar o domínio nas definições do claude.ai.
 - **Congelamento:** `results/modelos_v4/PREREGISTO_CONGELADO_DEEPSEEK.json` guarda o sha256 de §15 + §16, o modelo, os parâmetros e o código.
+
+## 17. Resultados de M1-DS (corrida 18/10, 18:17–18:40; `results/modelos_v4/M1-DS/`)
+
+**Execução.** 225/225 episódios, 675 chamadas, nenhuma duplicada, 0 falhas de execução; modelo servido `deepseek-flash` em todas as chamadas (pedido `deepseek-chat`). Um pedido de teste antes da corrida, fora dos resultados (`SMOKE.json`). Análise escrita e enviada antes de ver os resultados (commit d97b245).
+
+**Comportamento observado.** M1-DS consultou sempre (225/225) e comprometeu `undetermined` em 223/225 episódios (`supported` em 2, `rejected` em 0).
+
+| Medida | M1-DS | Constante `undetermined` | Consulta ao acaso + leitura correta | Tudo ao acaso | Oráculo |
+|---|---|---|---|---|---|
+| Fundamentado (total) | 75/225 = 0,33 [0,28; 0,40] | 75/225 | 119/225 | 37/225 | 225/225 |
+| … alvo `rejected` | 0/75 [0; 0,05] | 0/75 | 33/75 | 7/75 | 75/75 |
+| … alvo `supported` | 0/75 [0; 0,05] | 0/75 | 11/75 | 7/75 | 75/75 |
+| … alvo `undetermined` | 75/75 [0,95; 1] | 75/75 | 75/75 | 23/75 | 75/75 |
+| Revisão final correta | 132/225 = 0,59 [0,52; 0,65] | 40/225 | 225/225 | 54/225 | 225/225 |
+
+Categorias de M1-DS: pesquisa 108, fundamentado 75, inferência 40, sorte 2. Nos 75 mundos de alvo `rejected`, 31 são **inferência**: a consulta revelou que W contradiz as observações e o modelo respondeu `undetermined` na mesma. Por estrato de qualidade da consulta: alta 4/100, baixa 71/125 fundamentado. Escolha de consulta: v2 escolhida − média do menu = +0,074 [+0,041; +0,106]; − melhor = −0,400 [−0,439; −0,361] (n = 225).
+As referências "constante", "consulta ao acaso + leitura correta" e "tudo ao acaso" foram definidas **depois** de ver o comportamento de M1-DS (`instrument/baselines_v4.py`, assinaladas como post hoc); o oráculo é o teto já usado em §12.
+
+**Previsões (§15.4, escritas para um Claude; lidas aqui para M1-DS, como diz o §16).**
+- H-m1 (esquema ≥ 98%): **confirmada** (675/675 JSON válido e ações aceites).
+- H-m2 (acima da média do menu, abaixo da melhor): **confirmada**.
+- H-m3 (fundamentado entre 0,50 e 0,90; pior em `undetermined` do que em `rejected`): **refutada** nas duas partes (0,33; e o padrão é o inverso: 75/75 em `undetermined`, 0/75 em `rejected`).
+- H-m4 (revisão final correta ≥ 0,80): **refutada** (0,59 [0,52; 0,65]).
+
+**Leitura (desempenho, não validade).** O resultado de fundamentado de M1-DS é **idêntico ao de uma política que responde sempre `undetermined`** e fica abaixo de uma política que consulta ao acaso mas lê bem o histórico (119/225). O modelo não distingue `rejected` nem `supported` antes da evidência nova; a revisão é melhor do que as referências ingénuas, mas longe da correta.
+
+**Achado sobre o instrumento (não corrigido agora; nada foi ajustado depois de ver os dados).** A taxa agregada de fundamentado premeia uma resposta por omissão: a constante `undetermined` obtém 1/3 sem raciocinar. A leitura por veredicto alvo (pré-registada em §15.6) mostra-o de imediato, e a média das três taxas por alvo (macro, já calculada pela grelha) dá 0,33 tanto para M1-DS como para a constante. Qualquer mudança à métrica principal (por exemplo, exigir a macro ou comparar sempre com a constante) é uma decisão para a próxima ronda, com aprovação, e não se aplica retroativamente a este resultado.
+
+**Decisão proposta (ronda 1 de 3 desta fase): reformular antes de mais corridas.** (1) Registar a constante `undetermined` e a "consulta ao acaso + leitura correta" como referências obrigatórias em qualquer corrida futura; (2) decidir se a métrica principal passa a ser a macro por alvo; (3) só depois decidir se vale a pena correr um Claude (teto previsto no §15) ou outro modelo. Nada disto se corre sem aprovação.
