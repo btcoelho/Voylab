@@ -57,7 +57,7 @@ def least_informative_pair(world):
     return best[1]
 
 
-def play(world, queries, commit_verdict, revise_rule, invalid=False):
+def play(world, queries, commit_verdict, revise_rule, invalid=False, invalid_revision=False):
     ep = E.Episode(world)
     qid = {i: k for k, i in ep._menu_ids.items()}
     if invalid:
@@ -67,6 +67,10 @@ def play(world, queries, commit_verdict, revise_rule, invalid=False):
     for q in queries:
         assert ep.step({"action": "query", "query_id": qid[q]})["ok"]
     assert ep.step({"action": "commit", "verdict": commit_verdict, "admissible_cards": [], "predictions": {}})["ok"]
+    if invalid_revision:                                 # committed, then three invalid revision actions
+        for _ in range(3):
+            ep.step({"action": "query", "query_id": "q1"})
+        return ep
     post = g.revision_reference(world, ep.queried)["post_verdict"]
     final = revise_rule(commit_verdict, post)
     if final == commit_verdict:
@@ -100,6 +104,7 @@ def build(world):
     out["incompleto"] = (play(world, [], None, None, invalid=True), "incompleto", False)
     nr = "supported" if pb == "rejected" else pb
     out["nunca_rejected"] = (play(world, bq, nr, correct_revision), "inferencia" if pb == "rejected" else "fundamentado", True)
+    out["sem_revisao"] = (play(world, bq, pb, None, invalid_revision=True), "incompleto", False)
     ep_keep = play(world, bq, pb, lambda c, post: c)
     post = g.revision_reference(world, bq)["post_verdict"]
     out["nunca_rever"] = (ep_keep, "fundamentado", post == pb)

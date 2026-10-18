@@ -1,0 +1,369 @@
+{
+ "mutants": 36,
+ "summary": {
+  "survived": 5,
+  "killed": 31
+ },
+ "results": [
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "bool",
+    "classify",
+    26,
+    0
+   ],
+   "status": "survived"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "bool",
+    "classify",
+    36,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    37,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    36,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    36,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    45,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    35,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "classify",
+    36,
+    20
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    38,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "classify",
+    38,
+    14
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "classify",
+    38,
+    37
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    40,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "classify",
+    40,
+    14
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "classify",
+    40,
+    47
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "classify",
+    42,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "classify",
+    42,
+    14
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "classify",
+    42,
+    44
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "summarise",
+    52,
+    14
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "summarise",
+    52,
+    27
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "summarise",
+    52,
+    39
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "summarise",
+    50,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "summarise",
+    53,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "cmp",
+    "summarise",
+    54,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "instrument/grid.py",
+   "site": [
+    "str",
+    "summarise",
+    54,
+    39
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "scoring.py",
+   "site": [
+    "cmp",
+    "can_still_determine",
+    21,
+    0
+   ],
+   "status": "survived"
+  },
+  {
+   "file": "scoring.py",
+   "site": [
+    "str",
+    "can_still_determine",
+    21,
+    72
+   ],
+   "status": "survived"
+  },
+  {
+   "file": "scoring.py",
+   "site": [
+    "cmp",
+    "can_still_determine",
+    21,
+    0
+   ],
+   "status": "survived"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "not",
+    "verdict",
+    50,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "cmp",
+    "verdict",
+    52,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "str",
+    "verdict",
+    51,
+    15
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "str",
+    "verdict",
+    53,
+    15
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "str",
+    "verdict",
+    54,
+    11
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "str",
+    "verdict",
+    54,
+    85
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "cmp",
+    "verdict",
+    54,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "cmp",
+    "admissible_idx",
+    60,
+    0
+   ],
+   "status": "killed"
+  },
+  {
+   "file": "generator_v3.py",
+   "site": [
+    "cmp",
+    "revision_reference",
+    81,
+    0
+   ],
+   "status": "survived"
+  }
+ ]
+}
