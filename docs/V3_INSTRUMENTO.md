@@ -88,3 +88,32 @@ Poder do verificador: com 36 rótulos v70 trocados de propósito, os 36 foram de
 - **F2-c.** Nos testes de mutação a `grid.py` e às funções de `scoring.py` que a grelha usa, ≥ 90% das mutações são mortas pelos testes das políticas plantadas. As sobreviventes são equivalentes ou ficam explicadas uma a uma.
 - **F2-d.** Com a métrica "revisão final correta", a ordenação dos modelos na revisão muda face ao tipo I. Os resultados históricos não são reescritos: o efeito fica num ficheiro novo.
 - **Critérios de aceitação:** F2-a com 0 erros; F2-c ≥ 90% com as sobreviventes explicadas.
+
+## Fase 3. Testes de comportamento (desenho e previsões, escritos antes de construir os itens e de correr modelos)
+
+### Método
+- **Só mundos de desenvolvimento** (sementes 91xxx). Nenhuma semente reservada é aberta.
+- **Medição por escolha forçada.** Para cada item calcula-se a log-probabilidade de cada resposta candidata, dado o prompt (chat template do Qwen, texto tokenizado guardado). A resposta do modelo é a de maior probabilidade; a distribuição normalizada sobre as candidatas é a "probabilidade do modelo". Isto evita a descodificação gananciosa e a gramática.
+- **Prompt v3.1** (espaço explícito) em todos os itens de veredicto.
+- **Itens:**
+  1. *Pares mínimos.* Dois estados do mesmo mundo, com o mesmo conjunto de consultas, que diferem na resposta de uma só consulta, e cujos veredictos (leitura 70) diferem. Orçamento restante 0, para isolar a inferência. Uma amostra estratificada por tipo de transição (por exemplo, undetermined↔supported, undetermined↔rejected, supported↔rejected).
+  2. *Metamorfoses* de estados de base: (i) ordem do menu invertida; (ii) cartas renomeadas; (iii) ordem do enum de veredictos permutada; (iv) atributos renomeados (nomes e valores). A resposta correta não muda.
+  3. *Sondas* (resposta exata calculada por código; acaso indicado):
+     - **célula**: saída de uma carta numa entrada (acaso 0,5);
+     - **compatibilidade**: a carta reproduz todas as observações? (acaso 0,5; reporta-se a exatidão equilibrada);
+     - **separa**: uma consulta dá saídas diferentes em duas cartas? (0,5);
+     - **veredicto dado o conjunto**: dados explicitamente "W é/não é admissível" e as saídas das regras admissíveis nas retidas, qual é o veredicto? (1/3);
+     - **contradição**: a evidência nova contradiz alguma observação? (0,5).
+     O resolvedor exato acerta 100% por construção; isto é verificado.
+- **Incerteza:** IC 95% por bootstrap agrupado por `structure_group` (2 000 reamostragens).
+- **Potência (calculada antes):** com n = 200 itens binários, a diferença 0,60 vs 0,50 tem potência ≈ 0,8 (α = 0,05) sem agrupamento. Com ~140 grupos de estrutura, o efeito de desenho reduz-se ao n efetivo, que será reportado. Nos pares mínimos, uma política constante tem sensibilidade 0, pelo que qualquer sensibilidade ≥ 0,10 é detetável com ~150 pares.
+
+### Previsões ex-ante da fase 3
+- **F3-a (leitura).** A sonda *célula* é a mais fácil. 3B e 7B ≥ 0,80; 0,5B e 1,5B entre 0,55 e 0,75.
+- **F3-b (compatibilidade).** É o primeiro ponto de rotura, como sugerem os 0 `rejected`. Exatidão equilibrada ≤ 0,70 em todos os modelos, e pelo menos 0,10 abaixo da *célula* em cada modelo.
+- **F3-c (veredicto dado o conjunto).** Com o conjunto dado de bandeja, o 7B ≥ 0,60 e os restantes ≤ 0,50. Acaso 1/3.
+- **F3-d (pares mínimos).** Sensibilidade à evidência (veredicto escolhido muda dentro do par): 0,5B ≤ 0,15; 7B entre 0,20 e 0,50. Nenhum modelo acerta os dois membros do par em mais de 30% dos pares.
+- **F3-e (probabilidades).** A massa de probabilidade em `rejected` sobe dentro do par quando a evidência passa a rejeitar W em ≥ 60% desses pares no 7B. É uma deslocação na direção certa, mesmo que insuficiente para mudar a escolha.
+- **F3-f (metamorfoses).** A invariância do veredicto escolhido fica abaixo de 0,90 em todos os modelos para a permutação do enum e para a ordem do menu (enviesamento de posição). A renomeação de cartas e atributos é a mais estável (≥ 0,85 no 7B).
+- **F3-g (contradição).** Melhor do que o acaso em 3B e 7B (≥ 0,65), em linha com serem os únicos que reveem.
+- **Critérios de aceitação da fase 3 (do instrumento, não dos modelos):** o resolvedor exato tem 100% em todas as sondas; cada sonda e cada metamorfose tem ≥ 150 itens; os textos tokenizados e as distribuições ficam guardados; a análise é repetível a partir dos ficheiros guardados.
