@@ -1,0 +1,4310 @@
+[
+ {
+  "n": 1,
+  "uid": "v3u-3653f7f409acf372",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r332: glyph=g1, setting=s1, partner=p1, phase=t1 -> 0\n- r661: glyph=g1, setting=s1, partner=p0, phase=t0 -> 0\n- r179: glyph=g1, setting=s0, partner=p1, phase=t1 -> 0\n- r482: glyph=g0, setting=s0, partner=p1, phase=t0 -> 0\nCARTAS\n- Qu (Output depends on glyph and phase.)\n    g0|t0 -> 0\n    g0|t1 -> 1\n    g1|t0 -> 0\n    g1|t1 -> 0\n- Pa (Output depends on partner and phase.)\n    p0|t0 -> 1\n    p0|t1 -> 0\n    p1|t0 -> 0\n    p1|t1 -> 1\n- Ru (Output depends on glyph and setting.)\n    g0|s0 -> 0\n    g0|s1 -> 0\n    g1|s0 -> 0\n    g1|s1 -> 1\nCARTA DE TRABALHO: Qu\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p0, phase=t1\n- 2: glyph=g0, setting=s1, partner=p1, phase=t1\n- 3: glyph=g1, setting=s1, partner=p0, phase=t1\n- 4: glyph=g0, setting=s0, partner=p0, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p0, phase=t1\n- q2: glyph=g0, setting=s0, partner=p1, phase=t1\n- q3: glyph=g0, setting=s0, partner=p1, phase=t0\n- q4: glyph=g0, setting=s1, partner=p1, phase=t0\n- q5: glyph=g1, setting=s1, partner=p1, phase=t0\n- q6: glyph=g0, setting=s0, partner=p0, phase=t0\n- q7: glyph=g0, setting=s1, partner=p0, phase=t1\n- q8: glyph=g1, setting=s1, partner=p0, phase=t1\n- q9: glyph=g1, setting=s1, partner=p0, phase=t0\n- q10: glyph=g1, setting=s0, partner=p1, phase=t0\n- q11: glyph=g0, setting=s0, partner=p0, phase=t1\n- q12: glyph=g0, setting=s1, partner=p1, phase=t1\n- q13: glyph=g1, setting=s0, partner=p1, phase=t1\n- q14: glyph=g0, setting=s1, partner=p0, phase=t0\n- q15: glyph=g1, setting=s0, partner=p0, phase=t0\n- q16: glyph=g1, setting=s1, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Qu\":true|false,\"Pa\":true|false,\"Ru\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.3333
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.1667
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.3333
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.1667
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.3333
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.1667
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Qu",
+   "Pa",
+   "Ru"
+  ]
+ },
+ {
+  "n": 2,
+  "uid": "v3u-5c29799854ddb232",
+  "target": "rejected",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r682: glyph=g1, setting=s0, partner=p1, phase=t0 -> 0\n- r413: glyph=g1, setting=s0, partner=p0, phase=t0 -> 0\n- r750: glyph=g0, setting=s1, partner=p1, phase=t1 -> 0\n- r841: glyph=g0, setting=s0, partner=p1, phase=t1 -> 0\nCARTAS\n- Pa (Output depends on glyph and phase.)\n    g0|t0 -> 1\n    g0|t1 -> 0\n    g1|t0 -> 0\n    g1|t1 -> 1\n- Qu (Output depends on setting and partner.)\n    s0|p0 -> 0\n    s0|p1 -> 1\n    s1|p0 -> 1\n    s1|p1 -> 1\n- Ne (Output depends on glyph and setting.)\n    g0|s0 -> 0\n    g0|s1 -> 0\n    g1|s0 -> 0\n    g1|s1 -> 1\nCARTA DE TRABALHO: Pa\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p1, phase=t0\n- 2: glyph=g1, setting=s1, partner=p0, phase=t0\n- 3: glyph=g1, setting=s0, partner=p1, phase=t1\n- 4: glyph=g0, setting=s0, partner=p0, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s1, partner=p0, phase=t1\n- q2: glyph=g0, setting=s0, partner=p0, phase=t1\n- q3: glyph=g1, setting=s1, partner=p1, phase=t1\n- q4: glyph=g1, setting=s0, partner=p1, phase=t0\n- q5: glyph=g0, setting=s0, partner=p1, phase=t0\n- q6: glyph=g1, setting=s0, partner=p1, phase=t1\n- q7: glyph=g1, setting=s1, partner=p0, phase=t0\n- q8: glyph=g0, setting=s1, partner=p1, phase=t0\n- q9: glyph=g1, setting=s0, partner=p0, phase=t0\n- q10: glyph=g0, setting=s1, partner=p0, phase=t1\n- q11: glyph=g0, setting=s1, partner=p1, phase=t1\n- q12: glyph=g1, setting=s1, partner=p1, phase=t0\n- q13: glyph=g0, setting=s0, partner=p1, phase=t1\n- q14: glyph=g0, setting=s0, partner=p0, phase=t0\n- q15: glyph=g1, setting=s0, partner=p0, phase=t1\n- q16: glyph=g0, setting=s1, partner=p0, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Pa\":true|false,\"Qu\":true|false,\"Ne\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4444
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.2222
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6667
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.7778
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.7778
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6667
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.3333
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2222
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6667
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6667
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4444
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "1"
+   }
+  ],
+  "cards": [
+   "Pa",
+   "Qu",
+   "Ne"
+  ]
+ },
+ {
+  "n": 3,
+  "uid": "v3u-2ff01bc285f8e346",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r539: glyph=g1, setting=s0, partner=p0, phase=t1 -> 1\n- r847: glyph=g0, setting=s0, partner=p0, phase=t1 -> 1\n- r446: glyph=g0, setting=s0, partner=p1, phase=t1 -> 0\nCARTAS\n- Pa (Output depends on setting and partner.)\n    s0|p0 -> 0\n    s0|p1 -> 0\n    s1|p0 -> 1\n    s1|p1 -> 0\n- Qu (Output depends on glyph and phase.)\n    g0|t0 -> 0\n    g0|t1 -> 1\n    g1|t0 -> 1\n    g1|t1 -> 0\n- Lo (Output depends on glyph and partner.)\n    g0|p0 -> 1\n    g0|p1 -> 0\n    g1|p0 -> 1\n    g1|p1 -> 1\nCARTA DE TRABALHO: Lo\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p0, phase=t0\n- 2: glyph=g1, setting=s1, partner=p0, phase=t0\n- 3: glyph=g1, setting=s1, partner=p1, phase=t0\n- 4: glyph=g0, setting=s0, partner=p1, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s1, partner=p0, phase=t0\n- q2: glyph=g1, setting=s1, partner=p1, phase=t1\n- q3: glyph=g0, setting=s0, partner=p0, phase=t0\n- q4: glyph=g1, setting=s1, partner=p0, phase=t1\n- q5: glyph=g1, setting=s0, partner=p1, phase=t1\n- q6: glyph=g1, setting=s1, partner=p1, phase=t0\n- q7: glyph=g0, setting=s1, partner=p1, phase=t0\n- q8: glyph=g0, setting=s0, partner=p1, phase=t1\n- q9: glyph=g1, setting=s0, partner=p0, phase=t0\n- q10: glyph=g0, setting=s1, partner=p0, phase=t0\n- q11: glyph=g1, setting=s0, partner=p1, phase=t0\n- q12: glyph=g0, setting=s1, partner=p0, phase=t1\n- q13: glyph=g0, setting=s1, partner=p1, phase=t1\n- q14: glyph=g1, setting=s0, partner=p0, phase=t1\n- q15: glyph=g0, setting=s0, partner=p1, phase=t0\n- q16: glyph=g0, setting=s0, partner=p0, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Pa\":true|false,\"Qu\":true|false,\"Lo\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.625
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.375
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.625
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   }
+  ],
+  "cards": [
+   "Pa",
+   "Qu",
+   "Lo"
+  ]
+ },
+ {
+  "n": 4,
+  "uid": "v3u-912bbb2512772886",
+  "target": "undetermined",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r833: glyph=g0, setting=s0, partner=p0, phase=t0 -> 0\n- r329: glyph=g1, setting=s1, partner=p0, phase=t0 -> 0\n- r120: glyph=g0, setting=s0, partner=p1, phase=t1 -> 1\nCARTAS\n- Ne (Output depends on glyph and setting.)\n    g0|s0 -> 0\n    g0|s1 -> 1\n    g1|s0 -> 1\n    g1|s1 -> 1\n- Ru (Output depends on setting and partner.)\n    s0|p0 -> 1\n    s0|p1 -> 0\n    s1|p0 -> 0\n    s1|p1 -> 0\n- Ka (Output depends on partner.)\n    p0 -> 0\n    p1 -> 1\nCARTA DE TRABALHO: Ka\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s1, partner=p1, phase=t1\n- 2: glyph=g0, setting=s1, partner=p1, phase=t0\n- 3: glyph=g1, setting=s0, partner=p0, phase=t1\n- 4: glyph=g0, setting=s1, partner=p1, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s1, partner=p1, phase=t1\n- q2: glyph=g0, setting=s1, partner=p0, phase=t1\n- q3: glyph=g1, setting=s0, partner=p1, phase=t1\n- q4: glyph=g0, setting=s0, partner=p1, phase=t1\n- q5: glyph=g1, setting=s1, partner=p1, phase=t0\n- q6: glyph=g0, setting=s0, partner=p1, phase=t0\n- q7: glyph=g1, setting=s0, partner=p1, phase=t0\n- q8: glyph=g0, setting=s0, partner=p0, phase=t0\n- q9: glyph=g0, setting=s0, partner=p0, phase=t1\n- q10: glyph=g1, setting=s1, partner=p0, phase=t0\n- q11: glyph=g0, setting=s1, partner=p1, phase=t0\n- q12: glyph=g1, setting=s0, partner=p0, phase=t0\n- q13: glyph=g1, setting=s0, partner=p0, phase=t1\n- q14: glyph=g0, setting=s1, partner=p0, phase=t0\n- q15: glyph=g1, setting=s1, partner=p0, phase=t1\n- q16: glyph=g1, setting=s1, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Ne\":true|false,\"Ru\":true|false,\"Ka\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.375
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.75
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.625
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.625
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.375
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Ne",
+   "Ru",
+   "Ka"
+  ]
+ },
+ {
+  "n": 5,
+  "uid": "v3u-cabc49fc6a4f5d86",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r325: glyph=g0, setting=s1, partner=p0, phase=t1 -> 1\n- r642: glyph=g0, setting=s0, partner=p1, phase=t0 -> 0\n- r743: glyph=g1, setting=s0, partner=p1, phase=t0 -> 1\n- r876: glyph=g1, setting=s0, partner=p0, phase=t1 -> 0\nCARTAS\n- Pa (Output depends on glyph and phase.)\n    g0|t0 -> 1\n    g0|t1 -> 0\n    g1|t0 -> 1\n    g1|t1 -> 1\n- Os (Output depends on setting and phase.)\n    s0|t0 -> 0\n    s0|t1 -> 0\n    s1|t0 -> 1\n    s1|t1 -> 0\n- Ru (Output depends on glyph and partner.)\n    g0|p0 -> 1\n    g0|p1 -> 0\n    g1|p0 -> 0\n    g1|p1 -> 1\nCARTA DE TRABALHO: Ru\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p1, phase=t1\n- 2: glyph=g1, setting=s1, partner=p0, phase=t0\n- 3: glyph=g1, setting=s0, partner=p1, phase=t1\n- 4: glyph=g1, setting=s0, partner=p0, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s0, partner=p0, phase=t1\n- q2: glyph=g0, setting=s0, partner=p1, phase=t0\n- q3: glyph=g0, setting=s1, partner=p0, phase=t1\n- q4: glyph=g1, setting=s1, partner=p0, phase=t0\n- q5: glyph=g1, setting=s0, partner=p1, phase=t1\n- q6: glyph=g1, setting=s0, partner=p0, phase=t0\n- q7: glyph=g0, setting=s1, partner=p1, phase=t0\n- q8: glyph=g1, setting=s0, partner=p1, phase=t0\n- q9: glyph=g0, setting=s0, partner=p1, phase=t1\n- q10: glyph=g1, setting=s1, partner=p1, phase=t1\n- q11: glyph=g1, setting=s1, partner=p0, phase=t1\n- q12: glyph=g0, setting=s1, partner=p0, phase=t0\n- q13: glyph=g0, setting=s0, partner=p0, phase=t0\n- q14: glyph=g1, setting=s0, partner=p0, phase=t1\n- q15: glyph=g1, setting=s1, partner=p1, phase=t0\n- q16: glyph=g0, setting=s1, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Pa\":true|false,\"Os\":true|false,\"Ru\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 1.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 1.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 1.0
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 1.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "1"
+   }
+  ],
+  "cards": [
+   "Pa",
+   "Os",
+   "Ru"
+  ]
+ },
+ {
+  "n": 6,
+  "uid": "v3u-4968b02f6d61cda5",
+  "target": "rejected",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r844: glyph=g0, setting=s1, partner=p1, phase=t1 -> 1\n- r616: glyph=g1, setting=s0, partner=p1, phase=t1 -> 0\n- r387: glyph=g0, setting=s0, partner=p1, phase=t1 -> 0\nCARTAS\n- Qu (Output depends on partner and phase.)\n    p0|t0 -> 1\n    p0|t1 -> 0\n    p1|t0 -> 1\n    p1|t1 -> 1\n- Lo (Output depends on partner and phase.)\n    p0|t0 -> 0\n    p0|t1 -> 1\n    p1|t0 -> 0\n    p1|t1 -> 0\n- Ru (Output depends on setting and phase.)\n    s0|t0 -> 1\n    s0|t1 -> 0\n    s1|t0 -> 1\n    s1|t1 -> 1\nCARTA DE TRABALHO: Ru\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s1, partner=p1, phase=t0\n- 2: glyph=g1, setting=s1, partner=p0, phase=t0\n- 3: glyph=g0, setting=s0, partner=p1, phase=t0\n- 4: glyph=g0, setting=s1, partner=p0, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s0, partner=p1, phase=t1\n- q2: glyph=g0, setting=s0, partner=p1, phase=t0\n- q3: glyph=g1, setting=s1, partner=p0, phase=t1\n- q4: glyph=g1, setting=s1, partner=p0, phase=t0\n- q5: glyph=g1, setting=s0, partner=p0, phase=t1\n- q6: glyph=g1, setting=s1, partner=p1, phase=t0\n- q7: glyph=g1, setting=s0, partner=p1, phase=t0\n- q8: glyph=g0, setting=s1, partner=p1, phase=t0\n- q9: glyph=g1, setting=s1, partner=p1, phase=t1\n- q10: glyph=g1, setting=s0, partner=p0, phase=t0\n- q11: glyph=g0, setting=s1, partner=p0, phase=t1\n- q12: glyph=g0, setting=s1, partner=p0, phase=t0\n- q13: glyph=g0, setting=s0, partner=p0, phase=t0\n- q14: glyph=g1, setting=s0, partner=p1, phase=t1\n- q15: glyph=g0, setting=s0, partner=p0, phase=t1\n- q16: glyph=g0, setting=s1, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Qu\":true|false,\"Lo\":true|false,\"Ru\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.75
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.375
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.625
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.375
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.75
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.125
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Qu",
+   "Lo",
+   "Ru"
+  ]
+ },
+ {
+  "n": 7,
+  "uid": "v3u-ae48dd29e8f68aa8",
+  "target": "rejected",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r996: glyph=g1, setting=s1, partner=p0, phase=t0 -> 0\n- r806: glyph=g0, setting=s1, partner=p1, phase=t1 -> 0\n- r464: glyph=g0, setting=s1, partner=p0, phase=t0 -> 0\nCARTAS\n- Qu (Output depends on setting.)\n    s0 -> 1\n    s1 -> 0\n- Ru (Output depends on glyph and phase.)\n    g0|t0 -> 0\n    g0|t1 -> 1\n    g1|t0 -> 1\n    g1|t1 -> 1\n- Pa (Output depends on partner and phase.)\n    p0|t0 -> 0\n    p0|t1 -> 1\n    p1|t0 -> 1\n    p1|t1 -> 0\nCARTA DE TRABALHO: Pa\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s0, partner=p0, phase=t1\n- 2: glyph=g0, setting=s1, partner=p0, phase=t1\n- 3: glyph=g0, setting=s0, partner=p1, phase=t0\n- 4: glyph=g1, setting=s1, partner=p1, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s1, partner=p1, phase=t0\n- q2: glyph=g0, setting=s0, partner=p0, phase=t1\n- q3: glyph=g1, setting=s0, partner=p0, phase=t0\n- q4: glyph=g0, setting=s0, partner=p0, phase=t0\n- q5: glyph=g1, setting=s0, partner=p1, phase=t0\n- q6: glyph=g1, setting=s0, partner=p1, phase=t1\n- q7: glyph=g1, setting=s1, partner=p1, phase=t0\n- q8: glyph=g1, setting=s1, partner=p0, phase=t1\n- q9: glyph=g1, setting=s1, partner=p0, phase=t0\n- q10: glyph=g0, setting=s1, partner=p0, phase=t0\n- q11: glyph=g1, setting=s0, partner=p0, phase=t1\n- q12: glyph=g0, setting=s1, partner=p1, phase=t1\n- q13: glyph=g1, setting=s1, partner=p1, phase=t1\n- q14: glyph=g0, setting=s0, partner=p1, phase=t0\n- q15: glyph=g0, setting=s0, partner=p1, phase=t1\n- q16: glyph=g0, setting=s1, partner=p0, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Qu\":true|false,\"Ru\":true|false,\"Pa\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.8462
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5385
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3077
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3077
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.4615
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4615
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.7692
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.7692
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4615
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.1538
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5385
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3077
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.8462
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   }
+  ],
+  "cards": [
+   "Qu",
+   "Ru",
+   "Pa"
+  ]
+ },
+ {
+  "n": 8,
+  "uid": "v3u-815b3c531662cd75",
+  "target": "undetermined",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r687: glyph=g1, setting=s0, partner=p1, phase=t0 -> 0\n- r524: glyph=g0, setting=s0, partner=p0, phase=t0 -> 0\n- r163: glyph=g0, setting=s0, partner=p1, phase=t0 -> 0\n- r619: glyph=g0, setting=s1, partner=p0, phase=t0 -> 0\nCARTAS\n- Lo (Output depends on partner and phase.)\n    p0|t0 -> 0\n    p0|t1 -> 1\n    p1|t0 -> 0\n    p1|t1 -> 0\n- Ka (Output depends on partner and phase.)\n    p0|t0 -> 1\n    p0|t1 -> 1\n    p1|t0 -> 0\n    p1|t1 -> 1\n- Mi (Output depends on phase.)\n    t0 -> 0\n    t1 -> 1\nCARTA DE TRABALHO: Mi\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p0, phase=t1\n- 2: glyph=g1, setting=s0, partner=p1, phase=t1\n- 3: glyph=g1, setting=s0, partner=p0, phase=t1\n- 4: glyph=g1, setting=s1, partner=p0, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p0, phase=t1\n- q2: glyph=g0, setting=s1, partner=p0, phase=t0\n- q3: glyph=g0, setting=s1, partner=p1, phase=t1\n- q4: glyph=g0, setting=s0, partner=p0, phase=t1\n- q5: glyph=g1, setting=s1, partner=p0, phase=t0\n- q6: glyph=g0, setting=s0, partner=p1, phase=t0\n- q7: glyph=g1, setting=s1, partner=p1, phase=t0\n- q8: glyph=g1, setting=s1, partner=p0, phase=t1\n- q9: glyph=g1, setting=s0, partner=p1, phase=t1\n- q10: glyph=g0, setting=s0, partner=p0, phase=t0\n- q11: glyph=g1, setting=s1, partner=p1, phase=t1\n- q12: glyph=g0, setting=s1, partner=p1, phase=t0\n- q13: glyph=g0, setting=s0, partner=p1, phase=t1\n- q14: glyph=g0, setting=s1, partner=p0, phase=t1\n- q15: glyph=g1, setting=s0, partner=p1, phase=t0\n- q16: glyph=g1, setting=s0, partner=p0, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Lo\":true|false,\"Ka\":true|false,\"Mi\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5455
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5455
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6364
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.1818
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.1818
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4545
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6364
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4545
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0909
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6364
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6364
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0909
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Lo",
+   "Ka",
+   "Mi"
+  ]
+ },
+ {
+  "n": 9,
+  "uid": "v3u-b436ebbaa0d69f86",
+  "target": "rejected",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r730: glyph=g0, setting=s1, partner=p1, phase=t0 -> 0\n- r736: glyph=g1, setting=s1, partner=p0, phase=t0 -> 0\n- r223: glyph=g1, setting=s1, partner=p1, phase=t0 -> 0\n- r952: glyph=g1, setting=s1, partner=p0, phase=t1 -> 0\nCARTAS\n- Mi (Output depends on partner and phase.)\n    p0|t0 -> 0\n    p0|t1 -> 0\n    p1|t0 -> 0\n    p1|t1 -> 1\n- Os (Output depends on setting and partner.)\n    s0|p0 -> 1\n    s0|p1 -> 0\n    s1|p0 -> 0\n    s1|p1 -> 0\n- Qu (Output depends on setting and partner.)\n    s0|p0 -> 0\n    s0|p1 -> 0\n    s1|p0 -> 1\n    s1|p1 -> 0\nCARTA DE TRABALHO: Mi\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s0, partner=p0, phase=t1\n- 2: glyph=g1, setting=s0, partner=p1, phase=t1\n- 3: glyph=g1, setting=s0, partner=p1, phase=t0\n- 4: glyph=g1, setting=s1, partner=p1, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s0, partner=p0, phase=t0\n- q2: glyph=g1, setting=s1, partner=p0, phase=t1\n- q3: glyph=g1, setting=s1, partner=p1, phase=t1\n- q4: glyph=g0, setting=s0, partner=p1, phase=t1\n- q5: glyph=g0, setting=s1, partner=p1, phase=t0\n- q6: glyph=g0, setting=s0, partner=p0, phase=t1\n- q7: glyph=g0, setting=s1, partner=p0, phase=t0\n- q8: glyph=g1, setting=s0, partner=p0, phase=t1\n- q9: glyph=g1, setting=s1, partner=p0, phase=t0\n- q10: glyph=g0, setting=s1, partner=p1, phase=t1\n- q11: glyph=g1, setting=s0, partner=p1, phase=t0\n- q12: glyph=g1, setting=s0, partner=p0, phase=t0\n- q13: glyph=g1, setting=s0, partner=p1, phase=t1\n- q14: glyph=g0, setting=s0, partner=p1, phase=t0\n- q15: glyph=g1, setting=s1, partner=p1, phase=t0\n- q16: glyph=g0, setting=s1, partner=p0, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Mi\":true|false,\"Os\":true|false,\"Qu\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.4545
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 1.0
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4545
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5455
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0909
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3636
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.8182
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.3636
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3636
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5455
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.3636
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.1818
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Mi",
+   "Os",
+   "Qu"
+  ]
+ },
+ {
+  "n": 10,
+  "uid": "v3u-0fd16d6e9b358645",
+  "target": "rejected",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r798: glyph=g0, setting=s0, partner=p1, phase=t0 -> 0\n- r486: glyph=g0, setting=s0, partner=p0, phase=t1 -> 0\n- r231: glyph=g0, setting=s0, partner=p0, phase=t0 -> 0\n- r791: glyph=g1, setting=s1, partner=p0, phase=t1 -> 0\nCARTAS\n- Ru (Output depends on glyph.)\n    g0 -> 1\n    g1 -> 0\n- Qu (Output depends on setting and phase.)\n    s0|t0 -> 0\n    s0|t1 -> 0\n    s1|t0 -> 1\n    s1|t1 -> 0\n- Ne (Output depends on glyph and setting.)\n    g0|s0 -> 1\n    g0|s1 -> 1\n    g1|s0 -> 0\n    g1|s1 -> 1\nCARTA DE TRABALHO: Qu\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p0, phase=t1\n- 2: glyph=g0, setting=s0, partner=p1, phase=t1\n- 3: glyph=g0, setting=s1, partner=p0, phase=t0\n- 4: glyph=g1, setting=s1, partner=p1, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p0, phase=t1\n- q2: glyph=g0, setting=s1, partner=p0, phase=t0\n- q3: glyph=g1, setting=s0, partner=p1, phase=t1\n- q4: glyph=g1, setting=s0, partner=p1, phase=t0\n- q5: glyph=g1, setting=s1, partner=p1, phase=t1\n- q6: glyph=g0, setting=s1, partner=p1, phase=t0\n- q7: glyph=g0, setting=s1, partner=p1, phase=t1\n- q8: glyph=g1, setting=s1, partner=p0, phase=t1\n- q9: glyph=g0, setting=s0, partner=p1, phase=t0\n- q10: glyph=g0, setting=s1, partner=p0, phase=t1\n- q11: glyph=g1, setting=s1, partner=p1, phase=t0\n- q12: glyph=g0, setting=s0, partner=p0, phase=t1\n- q13: glyph=g1, setting=s0, partner=p0, phase=t0\n- q14: glyph=g0, setting=s0, partner=p1, phase=t1\n- q15: glyph=g0, setting=s0, partner=p0, phase=t0\n- q16: glyph=g1, setting=s1, partner=p0, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Ru\":true|false,\"Qu\":true|false,\"Ne\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.2222
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6667
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4444
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4444
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5556
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4444
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.2222
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5556
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.3333
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.1111
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.7778
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   }
+  ],
+  "cards": [
+   "Ru",
+   "Qu",
+   "Ne"
+  ]
+ },
+ {
+  "n": 11,
+  "uid": "v3u-f01ad919c65802f8",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r706: glyph=g0, setting=s0, partner=p0, phase=t0 -> 1\n- r308: glyph=g1, setting=s0, partner=p0, phase=t0 -> 0\nCARTAS\n- Os (Output depends on glyph and phase.)\n    g0|t0 -> 1\n    g0|t1 -> 0\n    g1|t0 -> 1\n    g1|t1 -> 1\n- Ru (Output depends on glyph.)\n    g0 -> 0\n    g1 -> 1\n- Ne (Output depends on glyph and partner.)\n    g0|p0 -> 1\n    g0|p1 -> 1\n    g1|p0 -> 0\n    g1|p1 -> 1\nCARTA DE TRABALHO: Ne\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p0, phase=t1\n- 2: glyph=g1, setting=s1, partner=p1, phase=t0\n- 3: glyph=g1, setting=s1, partner=p0, phase=t1\n- 4: glyph=g1, setting=s0, partner=p1, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p0, phase=t0\n- q2: glyph=g0, setting=s0, partner=p0, phase=t0\n- q3: glyph=g1, setting=s1, partner=p0, phase=t0\n- q4: glyph=g1, setting=s0, partner=p1, phase=t1\n- q5: glyph=g0, setting=s0, partner=p1, phase=t1\n- q6: glyph=g1, setting=s1, partner=p1, phase=t1\n- q7: glyph=g0, setting=s1, partner=p1, phase=t0\n- q8: glyph=g0, setting=s0, partner=p0, phase=t1\n- q9: glyph=g1, setting=s0, partner=p0, phase=t1\n- q10: glyph=g1, setting=s1, partner=p0, phase=t1\n- q11: glyph=g0, setting=s0, partner=p1, phase=t0\n- q12: glyph=g0, setting=s1, partner=p0, phase=t1\n- q13: glyph=g0, setting=s1, partner=p0, phase=t0\n- q14: glyph=g1, setting=s1, partner=p1, phase=t0\n- q15: glyph=g1, setting=s0, partner=p1, phase=t0\n- q16: glyph=g0, setting=s1, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Os\":true|false,\"Ru\":true|false,\"Ne\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.2
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.4
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.2
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.2
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.6
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 1.0
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Os",
+   "Ru",
+   "Ne"
+  ]
+ },
+ {
+  "n": 12,
+  "uid": "v3u-2552e1405ff4aaec",
+  "target": "rejected",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r901: glyph=g1, setting=s1, partner=p0, phase=t0 -> 0\n- r604: glyph=g0, setting=s1, partner=p0, phase=t1 -> 1\n- r238: glyph=g1, setting=s0, partner=p0, phase=t1 -> 1\nCARTAS\n- Ka (Output depends on phase.)\n    t0 -> 0\n    t1 -> 1\n- Lo (Output depends on setting and phase.)\n    s0|t0 -> 1\n    s0|t1 -> 1\n    s1|t0 -> 0\n    s1|t1 -> 1\n- Ru (Output depends on partner and phase.)\n    p0|t0 -> 0\n    p0|t1 -> 0\n    p1|t0 -> 0\n    p1|t1 -> 1\nCARTA DE TRABALHO: Ka\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s0, partner=p0, phase=t0\n- 2: glyph=g0, setting=s1, partner=p1, phase=t0\n- 3: glyph=g0, setting=s1, partner=p0, phase=t0\n- 4: glyph=g0, setting=s0, partner=p0, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s1, partner=p1, phase=t0\n- q2: glyph=g0, setting=s0, partner=p1, phase=t0\n- q3: glyph=g0, setting=s1, partner=p0, phase=t1\n- q4: glyph=g0, setting=s1, partner=p1, phase=t0\n- q5: glyph=g1, setting=s0, partner=p0, phase=t0\n- q6: glyph=g0, setting=s0, partner=p1, phase=t1\n- q7: glyph=g0, setting=s1, partner=p0, phase=t0\n- q8: glyph=g1, setting=s0, partner=p1, phase=t1\n- q9: glyph=g1, setting=s1, partner=p1, phase=t1\n- q10: glyph=g1, setting=s1, partner=p0, phase=t0\n- q11: glyph=g0, setting=s1, partner=p1, phase=t1\n- q12: glyph=g1, setting=s0, partner=p0, phase=t1\n- q13: glyph=g0, setting=s0, partner=p0, phase=t0\n- q14: glyph=g1, setting=s0, partner=p1, phase=t0\n- q15: glyph=g1, setting=s1, partner=p0, phase=t1\n- q16: glyph=g0, setting=s0, partner=p0, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Ka\":true|false,\"Lo\":true|false,\"Ru\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.625
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.625
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.375
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.375
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.375
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.375
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.625
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.25
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.125
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "1"
+   }
+  ],
+  "cards": [
+   "Ka",
+   "Lo",
+   "Ru"
+  ]
+ },
+ {
+  "n": 13,
+  "uid": "v3u-ea10adac093fccc7",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r222: glyph=g1, setting=s1, partner=p1, phase=t0 -> 1\n- r270: glyph=g1, setting=s0, partner=p1, phase=t0 -> 0\nCARTAS\n- Os (Output depends on glyph and setting.)\n    g0|s0 -> 1\n    g0|s1 -> 1\n    g1|s0 -> 0\n    g1|s1 -> 1\n- Pa (Output depends on partner and phase.)\n    p0|t0 -> 0\n    p0|t1 -> 0\n    p1|t0 -> 0\n    p1|t1 -> 1\n- Qu (Output depends on setting and phase.)\n    s0|t0 -> 0\n    s0|t1 -> 1\n    s1|t0 -> 1\n    s1|t1 -> 0\nCARTA DE TRABALHO: Qu\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p1, phase=t0\n- 2: glyph=g1, setting=s1, partner=p0, phase=t1\n- 3: glyph=g1, setting=s1, partner=p0, phase=t0\n- 4: glyph=g0, setting=s1, partner=p0, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s1, partner=p1, phase=t0\n- q2: glyph=g1, setting=s0, partner=p1, phase=t1\n- q3: glyph=g1, setting=s1, partner=p1, phase=t1\n- q4: glyph=g1, setting=s0, partner=p1, phase=t0\n- q5: glyph=g0, setting=s0, partner=p0, phase=t0\n- q6: glyph=g1, setting=s1, partner=p0, phase=t1\n- q7: glyph=g0, setting=s0, partner=p1, phase=t1\n- q8: glyph=g0, setting=s1, partner=p0, phase=t0\n- q9: glyph=g0, setting=s0, partner=p0, phase=t1\n- q10: glyph=g1, setting=s0, partner=p0, phase=t1\n- q11: glyph=g1, setting=s1, partner=p0, phase=t0\n- q12: glyph=g1, setting=s0, partner=p0, phase=t0\n- q13: glyph=g0, setting=s1, partner=p1, phase=t1\n- q14: glyph=g0, setting=s1, partner=p1, phase=t0\n- q15: glyph=g0, setting=s1, partner=p0, phase=t1\n- q16: glyph=g0, setting=s0, partner=p1, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Os\":true|false,\"Pa\":true|false,\"Qu\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.8
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 1.0
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.4
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.6
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.2
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.2
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Os",
+   "Pa",
+   "Qu"
+  ]
+ },
+ {
+  "n": 14,
+  "uid": "v3u-40ce378faacb26ca",
+  "target": "rejected",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r325: glyph=g0, setting=s1, partner=p1, phase=t1 -> 1\n- r282: glyph=g0, setting=s1, partner=p0, phase=t1 -> 1\n- r207: glyph=g0, setting=s0, partner=p1, phase=t1 -> 1\n- r462: glyph=g0, setting=s0, partner=p1, phase=t0 -> 1\nCARTAS\n- Ne (Output depends on partner and phase.)\n    p0|t0 -> 1\n    p0|t1 -> 1\n    p1|t0 -> 1\n    p1|t1 -> 0\n- Os (Output depends on glyph and setting.)\n    g0|s0 -> 1\n    g0|s1 -> 1\n    g1|s0 -> 0\n    g1|s1 -> 1\n- Lo (Output depends on setting and partner.)\n    s0|p0 -> 0\n    s0|p1 -> 0\n    s1|p0 -> 0\n    s1|p1 -> 1\nCARTA DE TRABALHO: Os\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s0, partner=p1, phase=t1\n- 2: glyph=g1, setting=s1, partner=p1, phase=t0\n- 3: glyph=g1, setting=s0, partner=p0, phase=t0\n- 4: glyph=g0, setting=s1, partner=p1, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s1, partner=p1, phase=t0\n- q2: glyph=g0, setting=s1, partner=p0, phase=t0\n- q3: glyph=g0, setting=s0, partner=p0, phase=t0\n- q4: glyph=g0, setting=s1, partner=p0, phase=t1\n- q5: glyph=g1, setting=s0, partner=p1, phase=t1\n- q6: glyph=g0, setting=s1, partner=p1, phase=t1\n- q7: glyph=g0, setting=s0, partner=p0, phase=t1\n- q8: glyph=g1, setting=s1, partner=p1, phase=t1\n- q9: glyph=g1, setting=s0, partner=p0, phase=t1\n- q10: glyph=g1, setting=s0, partner=p0, phase=t0\n- q11: glyph=g1, setting=s0, partner=p1, phase=t0\n- q12: glyph=g0, setting=s0, partner=p1, phase=t0\n- q13: glyph=g1, setting=s1, partner=p0, phase=t1\n- q14: glyph=g1, setting=s1, partner=p0, phase=t0\n- q15: glyph=g0, setting=s1, partner=p1, phase=t0\n- q16: glyph=g0, setting=s0, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Ne\":true|false,\"Os\":true|false,\"Lo\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4545
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.1818
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.1818
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6364
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0909
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.3636
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5455
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4545
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6364
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.3636
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5455
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0909
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Ne",
+   "Os",
+   "Lo"
+  ]
+ },
+ {
+  "n": 15,
+  "uid": "v3u-39586330061e4a0f",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r340: glyph=g1, setting=s0, partner=p1, phase=t0 -> 1\n- r151: glyph=g0, setting=s1, partner=p0, phase=t1 -> 0\n- r469: glyph=g0, setting=s1, partner=p0, phase=t0 -> 1\nCARTAS\n- Ru (Output depends on phase.)\n    t0 -> 1\n    t1 -> 0\n- Pa (Output depends on setting and phase.)\n    s0|t0 -> 0\n    s0|t1 -> 1\n    s1|t0 -> 1\n    s1|t1 -> 1\n- Ne (Output depends on glyph and phase.)\n    g0|t0 -> 1\n    g0|t1 -> 1\n    g1|t0 -> 1\n    g1|t1 -> 0\nCARTA DE TRABALHO: Ru\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s0, partner=p0, phase=t1\n- 2: glyph=g0, setting=s0, partner=p0, phase=t0\n- 3: glyph=g0, setting=s1, partner=p1, phase=t0\n- 4: glyph=g1, setting=s1, partner=p1, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p0, phase=t1\n- q2: glyph=g0, setting=s1, partner=p0, phase=t1\n- q3: glyph=g1, setting=s0, partner=p0, phase=t0\n- q4: glyph=g1, setting=s1, partner=p0, phase=t1\n- q5: glyph=g1, setting=s1, partner=p1, phase=t0\n- q6: glyph=g0, setting=s1, partner=p0, phase=t0\n- q7: glyph=g0, setting=s0, partner=p1, phase=t0\n- q8: glyph=g1, setting=s1, partner=p0, phase=t0\n- q9: glyph=g0, setting=s0, partner=p0, phase=t1\n- q10: glyph=g0, setting=s1, partner=p1, phase=t0\n- q11: glyph=g1, setting=s0, partner=p1, phase=t0\n- q12: glyph=g0, setting=s0, partner=p1, phase=t1\n- q13: glyph=g0, setting=s0, partner=p0, phase=t0\n- q14: glyph=g1, setting=s0, partner=p1, phase=t1\n- q15: glyph=g0, setting=s1, partner=p1, phase=t1\n- q16: glyph=g1, setting=s1, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Ru\":true|false,\"Pa\":true|false,\"Ne\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 1.0
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.25
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "1"
+   }
+  ],
+  "cards": [
+   "Ru",
+   "Pa",
+   "Ne"
+  ]
+ },
+ {
+  "n": 16,
+  "uid": "v3u-692b473ff4c4f663",
+  "target": "undetermined",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r670: glyph=g0, setting=s0, partner=p0, phase=t0 -> 0\n- r992: glyph=g0, setting=s1, partner=p1, phase=t1 -> 1\n- r895: glyph=g1, setting=s1, partner=p1, phase=t1 -> 1\n- r386: glyph=g1, setting=s1, partner=p0, phase=t1 -> 1\nCARTAS\n- Lo (Output depends on setting.)\n    s0 -> 0\n    s1 -> 1\n- Qu (Output depends on phase.)\n    t0 -> 1\n    t1 -> 0\n- Pa (Output depends on phase.)\n    t0 -> 0\n    t1 -> 1\nCARTA DE TRABALHO: Pa\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s0, partner=p1, phase=t1\n- 2: glyph=g1, setting=s0, partner=p1, phase=t0\n- 3: glyph=g0, setting=s0, partner=p1, phase=t0\n- 4: glyph=g1, setting=s1, partner=p0, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s0, partner=p0, phase=t0\n- q2: glyph=g1, setting=s1, partner=p1, phase=t0\n- q3: glyph=g0, setting=s0, partner=p1, phase=t0\n- q4: glyph=g1, setting=s0, partner=p1, phase=t0\n- q5: glyph=g1, setting=s0, partner=p1, phase=t1\n- q6: glyph=g1, setting=s1, partner=p1, phase=t1\n- q7: glyph=g1, setting=s0, partner=p0, phase=t1\n- q8: glyph=g0, setting=s1, partner=p0, phase=t1\n- q9: glyph=g0, setting=s0, partner=p1, phase=t1\n- q10: glyph=g1, setting=s0, partner=p0, phase=t0\n- q11: glyph=g1, setting=s1, partner=p0, phase=t0\n- q12: glyph=g0, setting=s0, partner=p0, phase=t1\n- q13: glyph=g0, setting=s1, partner=p0, phase=t0\n- q14: glyph=g1, setting=s1, partner=p0, phase=t1\n- q15: glyph=g0, setting=s1, partner=p1, phase=t0\n- q16: glyph=g0, setting=s1, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Lo\":true|false,\"Qu\":true|false,\"Pa\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.7778
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.3333
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5556
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.2222
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.1111
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.3333
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6667
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5556
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4444
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6667
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Lo",
+   "Qu",
+   "Pa"
+  ]
+ },
+ {
+  "n": 17,
+  "uid": "v3u-5cf297a21fa18b77",
+  "target": "undetermined",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r381: glyph=g0, setting=s1, partner=p1, phase=t1 -> 0\n- r930: glyph=g0, setting=s1, partner=p1, phase=t0 -> 1\nCARTAS\n- Ne (Output depends on glyph and setting.)\n    g0|s0 -> 1\n    g0|s1 -> 1\n    g1|s0 -> 1\n    g1|s1 -> 0\n- Mi (Output depends on setting and phase.)\n    s0|t0 -> 0\n    s0|t1 -> 0\n    s1|t0 -> 1\n    s1|t1 -> 0\n- Lo (Output depends on glyph and partner.)\n    g0|p0 -> 0\n    g0|p1 -> 0\n    g1|p0 -> 0\n    g1|p1 -> 1\nCARTA DE TRABALHO: Mi\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s0, partner=p1, phase=t1\n- 2: glyph=g1, setting=s1, partner=p1, phase=t1\n- 3: glyph=g0, setting=s1, partner=p0, phase=t0\n- 4: glyph=g1, setting=s0, partner=p0, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p0, phase=t1\n- q2: glyph=g1, setting=s0, partner=p0, phase=t0\n- q3: glyph=g1, setting=s1, partner=p1, phase=t0\n- q4: glyph=g0, setting=s1, partner=p1, phase=t1\n- q5: glyph=g1, setting=s1, partner=p1, phase=t1\n- q6: glyph=g1, setting=s0, partner=p1, phase=t1\n- q7: glyph=g0, setting=s1, partner=p0, phase=t1\n- q8: glyph=g0, setting=s0, partner=p0, phase=t0\n- q9: glyph=g0, setting=s1, partner=p0, phase=t0\n- q10: glyph=g1, setting=s0, partner=p1, phase=t0\n- q11: glyph=g0, setting=s0, partner=p1, phase=t0\n- q12: glyph=g0, setting=s0, partner=p0, phase=t1\n- q13: glyph=g1, setting=s1, partner=p0, phase=t0\n- q14: glyph=g0, setting=s0, partner=p1, phase=t1\n- q15: glyph=g1, setting=s1, partner=p0, phase=t1\n- q16: glyph=g0, setting=s1, partner=p1, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Ne\":true|false,\"Mi\":true|false,\"Lo\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.2
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.2
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.6
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.8
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.4
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.2
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Ne",
+   "Mi",
+   "Lo"
+  ]
+ },
+ {
+  "n": 18,
+  "uid": "v3u-2b76600250aac749",
+  "target": "undetermined",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r942: glyph=g1, setting=s1, partner=p0, phase=t1 -> 1\n- r348: glyph=g1, setting=s0, partner=p0, phase=t0 -> 1\n- r448: glyph=g0, setting=s1, partner=p0, phase=t1 -> 1\nCARTAS\n- Lo (Output depends on setting and phase.)\n    s0|t0 -> 0\n    s0|t1 -> 1\n    s1|t0 -> 1\n    s1|t1 -> 1\n- Ka (Output depends on glyph and partner.)\n    g0|p0 -> 1\n    g0|p1 -> 0\n    g1|p0 -> 0\n    g1|p1 -> 1\n- Qu (Output depends on setting and partner.)\n    s0|p0 -> 1\n    s0|p1 -> 1\n    s1|p0 -> 1\n    s1|p1 -> 0\nCARTA DE TRABALHO: Qu\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p1, phase=t1\n- 2: glyph=g1, setting=s1, partner=p1, phase=t1\n- 3: glyph=g0, setting=s0, partner=p0, phase=t1\n- 4: glyph=g1, setting=s0, partner=p1, phase=t0\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g1, setting=s0, partner=p1, phase=t0\n- q2: glyph=g1, setting=s1, partner=p0, phase=t1\n- q3: glyph=g0, setting=s1, partner=p0, phase=t1\n- q4: glyph=g0, setting=s1, partner=p1, phase=t1\n- q5: glyph=g1, setting=s0, partner=p0, phase=t1\n- q6: glyph=g1, setting=s1, partner=p1, phase=t0\n- q7: glyph=g0, setting=s1, partner=p1, phase=t0\n- q8: glyph=g0, setting=s0, partner=p0, phase=t1\n- q9: glyph=g0, setting=s1, partner=p0, phase=t0\n- q10: glyph=g0, setting=s0, partner=p0, phase=t0\n- q11: glyph=g1, setting=s1, partner=p0, phase=t0\n- q12: glyph=g0, setting=s0, partner=p1, phase=t1\n- q13: glyph=g1, setting=s0, partner=p0, phase=t0\n- q14: glyph=g1, setting=s0, partner=p1, phase=t1\n- q15: glyph=g1, setting=s1, partner=p1, phase=t1\n- q16: glyph=g0, setting=s0, partner=p1, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Lo\":true|false,\"Ka\":true|false,\"Qu\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3077
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6923
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.1538
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5385
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.4615
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.2308
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2308
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.1538
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.1538
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.5385
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4615
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6923
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.4615
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "output": "1"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Lo",
+   "Ka",
+   "Qu"
+  ]
+ },
+ {
+  "n": 19,
+  "uid": "v3u-68931bfa1a48245a",
+  "target": "supported",
+  "quality_hi": true,
+  "user_text": "OBSERVAÇÕES\n- r674: glyph=g0, setting=s1, partner=p0, phase=t0 -> 1\n- r377: glyph=g1, setting=s0, partner=p0, phase=t0 -> 1\nCARTAS\n- Mi (Output depends on glyph and setting.)\n    g0|s0 -> 0\n    g0|s1 -> 1\n    g1|s0 -> 1\n    g1|s1 -> 0\n- Pa (Output depends on partner and phase.)\n    p0|t0 -> 0\n    p0|t1 -> 0\n    p1|t0 -> 0\n    p1|t1 -> 1\n- Qu (Output depends on glyph and setting.)\n    g0|s0 -> 1\n    g0|s1 -> 0\n    g1|s0 -> 0\n    g1|s1 -> 1\nCARTA DE TRABALHO: Mi\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g0, setting=s1, partner=p0, phase=t1\n- 2: glyph=g1, setting=s0, partner=p1, phase=t0\n- 3: glyph=g1, setting=s1, partner=p0, phase=t1\n- 4: glyph=g0, setting=s1, partner=p1, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s0, partner=p1, phase=t1\n- q2: glyph=g1, setting=s0, partner=p0, phase=t0\n- q3: glyph=g1, setting=s1, partner=p1, phase=t1\n- q4: glyph=g0, setting=s1, partner=p1, phase=t1\n- q5: glyph=g0, setting=s0, partner=p1, phase=t0\n- q6: glyph=g1, setting=s0, partner=p1, phase=t1\n- q7: glyph=g1, setting=s1, partner=p1, phase=t0\n- q8: glyph=g1, setting=s1, partner=p0, phase=t1\n- q9: glyph=g0, setting=s1, partner=p0, phase=t1\n- q10: glyph=g1, setting=s0, partner=p1, phase=t0\n- q11: glyph=g1, setting=s1, partner=p0, phase=t0\n- q12: glyph=g0, setting=s1, partner=p1, phase=t0\n- q13: glyph=g1, setting=s0, partner=p0, phase=t1\n- q14: glyph=g0, setting=s0, partner=p0, phase=t0\n- q15: glyph=g0, setting=s0, partner=p0, phase=t1\n- q16: glyph=g0, setting=s1, partner=p0, phase=t0\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Mi\":true|false,\"Pa\":true|false,\"Qu\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4737
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4737
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4211
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5789
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.4211
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.5789
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5789
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3158
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3158
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 1.0
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3158
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3158
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "0",
+    "value2": 0.8947
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.5789
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Mi",
+   "Pa",
+   "Qu"
+  ]
+ },
+ {
+  "n": 20,
+  "uid": "v3u-08e09b7c58faed86",
+  "target": "undetermined",
+  "quality_hi": false,
+  "user_text": "OBSERVAÇÕES\n- r691: glyph=g1, setting=s0, partner=p1, phase=t0 -> 1\n- r413: glyph=g0, setting=s0, partner=p0, phase=t1 -> 1\n- r513: glyph=g0, setting=s1, partner=p1, phase=t0 -> 1\nCARTAS\n- Os (Output depends on glyph and phase.)\n    g0|t0 -> 0\n    g0|t1 -> 0\n    g1|t0 -> 0\n    g1|t1 -> 1\n- Pa (Output depends on glyph and phase.)\n    g0|t0 -> 1\n    g0|t1 -> 1\n    g1|t0 -> 1\n    g1|t1 -> 0\n- Mi (Output depends on glyph and phase.)\n    g0|t0 -> 0\n    g0|t1 -> 1\n    g1|t0 -> 0\n    g1|t1 -> 0\nCARTA DE TRABALHO: Pa\nENTRADAS RETIDAS (previsões 1 a 4, por esta ordem)\n- 1: glyph=g1, setting=s1, partner=p0, phase=t0\n- 2: glyph=g1, setting=s1, partner=p1, phase=t0\n- 3: glyph=g1, setting=s0, partner=p1, phase=t1\n- 4: glyph=g1, setting=s0, partner=p0, phase=t1\nCONSULTAS DISPONÍVEIS (orçamento restante 1)\n- q1: glyph=g0, setting=s1, partner=p0, phase=t1\n- q2: glyph=g0, setting=s1, partner=p1, phase=t1\n- q3: glyph=g1, setting=s1, partner=p0, phase=t1\n- q4: glyph=g0, setting=s1, partner=p1, phase=t0\n- q5: glyph=g1, setting=s0, partner=p0, phase=t1\n- q6: glyph=g0, setting=s0, partner=p1, phase=t0\n- q7: glyph=g0, setting=s1, partner=p0, phase=t0\n- q8: glyph=g1, setting=s0, partner=p1, phase=t0\n- q9: glyph=g1, setting=s1, partner=p1, phase=t1\n- q10: glyph=g0, setting=s0, partner=p0, phase=t1\n- q11: glyph=g0, setting=s0, partner=p0, phase=t0\n- q12: glyph=g1, setting=s1, partner=p0, phase=t0\n- q13: glyph=g1, setting=s1, partner=p1, phase=t0\n- q14: glyph=g1, setting=s0, partner=p1, phase=t1\n- q15: glyph=g1, setting=s0, partner=p0, phase=t0\n- q16: glyph=g0, setting=s0, partner=p1, phase=t1\nAÇÕES: {\"action\":\"query\",\"query_id\":\"qN\"} | {\"action\":\"commit\",\"verdict\":\"rejected|supported|undetermined\",\"admissible_cards\":{\"Os\":true|false,\"Pa\":true|false,\"Mi\":true|false},\"predictions\":{\"1\":\"0|1\",\"2\":\"0|1\",\"3\":\"0|1\",\"4\":\"0|1\"}} | {\"action\":\"suspend\"}",
+  "menu": [
+   {
+    "id": "q1",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.2222
+   },
+   {
+    "id": "q2",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q3",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4444
+   },
+   {
+    "id": "q4",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q5",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.7778
+   },
+   {
+    "id": "q6",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q7",
+    "input": {
+     "glyph": "g0",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q8",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q9",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.4444
+   },
+   {
+    "id": "q10",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.0
+   },
+   {
+    "id": "q11",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.2222
+   },
+   {
+    "id": "q12",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.5556
+   },
+   {
+    "id": "q13",
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.1111
+   },
+   {
+    "id": "q14",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "0",
+    "value2": 0.6667
+   },
+   {
+    "id": "q15",
+    "input": {
+     "glyph": "g1",
+     "setting": "s0",
+     "partner": "p0",
+     "phase": "t0"
+    },
+    "answer": "1",
+    "value2": 0.3333
+   },
+   {
+    "id": "q16",
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "answer": "1",
+    "value2": 0.2222
+   }
+  ],
+  "new_evidence": [
+   {
+    "input": {
+     "glyph": "g0",
+     "setting": "s0",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p0",
+     "phase": "t1"
+    },
+    "output": "0"
+   },
+   {
+    "input": {
+     "glyph": "g1",
+     "setting": "s1",
+     "partner": "p1",
+     "phase": "t1"
+    },
+    "output": "0"
+   }
+  ],
+  "cards": [
+   "Os",
+   "Pa",
+   "Mi"
+  ]
+ }
+]
