@@ -54,13 +54,19 @@ class Scorer:
         for k, s in enumerate(seqs):
             ids[k, : len(s)] = torch.tensor(s); mask[k, : len(s)] = 1
         dev = self.model.device
+        # Only the last K positions are needed (K covers every candidate plus the position before it). Asking the model
+        # for K logits instead of L avoids a [batch, L, vocab] float tensor (~2 GB at L~1000, vocab 151k), which
+        # filled the 12 GB GPU on the 3B run (18/10, 08:20) and pushed Windows into shared-memory fallback.
+        K = max(len(s) - st for s, st in zip(seqs, starts)) + 1 + (L - min(len(s) for s in seqs))
         with torch.no_grad():
-            logits = self.model(input_ids=ids.to(dev), attention_mask=mask.to(dev)).logits.float()
-        logp = torch.log_softmax(logits[:, :-1], dim=-1)
+            logits = self.model(input_ids=ids.to(dev), attention_mask=mask.to(dev), logits_to_keep=K).logits.float()
+        logp = torch.log_softmax(logits, dim=-1)              # position j of logp = sequence position L - K + j
+        off = L - K
         scores, ntok = [], []
         for k, s in enumerate(seqs):
             tgt = torch.tensor(s[starts[k]:], device=dev)
-            pos = torch.arange(starts[k] - 1, len(s) - 1, device=dev)
+            pos = torch.arange(starts[k] - 1, len(s) - 1, device=dev) - off
+            assert int(pos.min()) >= 0
             scores.append(float(logp[k, pos, tgt].sum())); ntok.append(len(s) - starts[k])
         return {"item_id": item["item_id"], "scores": scores, "ntokens": ntok, "boundary_ok": boundary_ok,
                 "context_sha256": sha(ctx.encode()), "context_ids_sha256": sha(json.dumps(ctx_ids).encode()),
