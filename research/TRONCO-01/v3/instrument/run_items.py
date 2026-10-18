@@ -62,13 +62,18 @@ class Scorer:
             logits = self.model(input_ids=ids.to(dev), attention_mask=mask.to(dev), logits_to_keep=K).logits.float()
         logp = torch.log_softmax(logits, dim=-1)              # position j of logp = sequence position L - K + j
         off = L - K
-        scores, ntok = [], []
+        scores, ntok, toklp, first_ids = [], [], [], []
         for k, s in enumerate(seqs):
             tgt = torch.tensor(s[starts[k]:], device=dev)
             pos = torch.arange(starts[k] - 1, len(s) - 1, device=dev) - off
             assert int(pos.min()) >= 0
-            scores.append(float(logp[k, pos, tgt].sum())); ntok.append(len(s) - starts[k])
-        return {"item_id": item["item_id"], "scores": scores, "ntokens": ntok, "boundary_ok": boundary_ok,
+            tl = logp[k, pos, tgt]
+            scores.append(float(tl.sum())); ntok.append(len(s) - starts[k]); toklp.append([float(x) for x in tl])
+            first_ids.append(s[starts[k]])
+        # round 2 (18/10): per-token log-probs and first token ids, so choices can be read off the first token
+        # (what greedy decoding decides) instead of a length-biased sum
+        return {"item_id": item["item_id"], "scores": scores, "ntokens": ntok, "token_logprobs": toklp,
+                "first_token_ids": first_ids, "boundary_ok": boundary_ok,
                 "context_sha256": sha(ctx.encode()), "context_ids_sha256": sha(json.dumps(ctx_ids).encode()),
                 "context_tokens": len(ctx_ids), "context": ctx, "context_ids": ctx_ids}
 

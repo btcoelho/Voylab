@@ -1,0 +1,13 @@
+commit 8a1acb4; pacote 58759e3a20c06c8c8762d368ab0af440ee5ab098cedd94d0f124602d3305f6e3; inicio 2026-10-18T07:39:52+01:00
+itens e168021bcfa4221140b77ab17ca3a020de6ec55e51d5fb0b0f27505be54dc145
+== 0.5B /home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-0.5B-Instruct-bnb-4bit/snapshots/216d96b52c97a3c8294776df8477592f6828981c/ 2026-10-18T07:39:52+01:00
+EXIT=0 2026-10-18T07:56:51+01:00 linhas=2304
+== 1.5B /home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-1.5B-Instruct-bnb-4bit/snapshots/d2f2dd02b071701d5100a04a7a49d6fb0bd305b7/ 2026-10-18T07:56:51+01:00
+EXIT=0 2026-10-18T08:14:52+01:00 linhas=2304
+== 3B /home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-3B-Instruct-bnb-4bit/snapshots/2672b588848527e456d320c11926c794539f47d5/ 2026-10-18T08:14:52+01:00
+f3b commit 9b02b34; pacote c066227f6c4a0aa819e5b2f98db0166bb223fa1cd0c70c246bef54ab7e89b5b8; inicio 2026-10-18T08:54:39+01:00
+EQUIVALENCIA itens=60 max_dif=0.00000 mesma_escolha=60/60
+== 3B /home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-3B-Instruct-bnb-4bit/snapshots/2672b588848527e456d320c11926c794539f47d5/ 2026-10-18T08:54:58+01:00
+EXIT=0 2026-10-18T09:09:25+01:00 linhas=2304
+== 7B /home/bcoelho/.cache/huggingface/hub/models--unsloth--Qwen2.5-7B-Instruct-bnb-4bit/snapshots/bdd404162d94997f390efbfa660eb3f21cbbc81d/ 2026-10-18T09:09:25+01:00
+EXIT=0 2026-10-18T09:48:52+01:00 linhas=2304

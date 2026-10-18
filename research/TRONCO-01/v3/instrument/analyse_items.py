@@ -30,8 +30,21 @@ def probs(s):
     return [x / z for x in e]
 
 
+MODE = {"rule": "sum"}
+
+
+def item_scores(item, sc):
+    """Round 2 (18/10, registered before re-running): primary = first-token log-prob when the candidates' first
+    tokens are distinct (the greedy choice); otherwise (query ids q1/q10...) the full-string sum. Round-1 files,
+    which lack per-token data, can only be read with the sum."""
+    if MODE["rule"] == "first" and "first_token_ids" in sc and item["family"] != "query_choice":
+        if len(set(sc["first_token_ids"])) == len(sc["first_token_ids"]):
+            return [t[0] for t in sc["token_logprobs"]]
+    return sc["scores"]
+
+
 def choice(item, sc):
-    s = sc["scores"]
+    s = item_scores(item, sc)
     return item["candidates"][s.index(max(s))]
 
 
@@ -72,6 +85,10 @@ def analyse(items, scores):
             fam[it["family"]].append(it)
     out["coverage"] = {f: len(v) for f, v in fam.items()}
     out["boundary_merges"] = sum(not all(s["boundary_ok"]) for s in scores.values())
+    out["rule"] = MODE["rule"]
+    out["first_token_collisions"] = sum(1 for iid, s in scores.items() if "first_token_ids" in s
+                                        and items[iid]["family"] != "query_choice"
+                                        and len(set(s["first_token_ids"])) < len(s["first_token_ids"]))
     # probes
     for f in ("sonda_celula", "sonda_compat", "sonda_separa", "sonda_contradicao", "sonda_veredicto"):
         units = [(it["cluster"], (it["answer"], choice(it, scores[it["item_id"]]) == it["answer"])) for it in fam[f]]
@@ -89,7 +106,7 @@ def analyse(items, scores):
             continue
         A, B = d["A"], d["B"]
         cA, cB = choice(A, scores[A["item_id"]]), choice(B, scores[B["item_id"]])
-        pA, pB = probs(scores[A["item_id"]]["scores"]), probs(scores[B["item_id"]]["scores"])
+        pA, pB = probs(item_scores(A, scores[A["item_id"]])), probs(item_scores(B, scores[B["item_id"]]))
         ri = A["candidates"].index('rejected"')
         rej_side, oth = (pA, pB) if A["answer"] == 'rejected"' else (pB, pA)
         pu.append((A["cluster"], (cA != cB, cA == A["answer"] and cB == B["answer"], rej_side[ri] > oth[ri],
@@ -116,7 +133,7 @@ def analyse(items, scores):
         tv = []
         for b, d in base.items():
             if "orig" in d and tr in d:
-                po, pt = probs(scores[d["orig"]["item_id"]]["scores"]), probs(scores[d[tr]["item_id"]]["scores"])
+                po, pt = probs(item_scores(d["orig"], scores[d["orig"]["item_id"]])), probs(item_scores(d[tr], scores[d[tr]["item_id"]]))
                 tv.append((d["orig"]["cluster"], 0.5 * sum(abs(x - y) for x, y in zip(po, pt))))
         mv[tr + "_total_variation"] = cluster_boot(tv, lambda v: sum(v) / len(v))
     orig = [d["orig"] for d in base.values() if "orig" in d]
@@ -162,5 +179,7 @@ def analyse(items, scores):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 3:
+        MODE["rule"] = sys.argv[3]
     items, scores = load(Path(sys.argv[1]), Path(sys.argv[2]))
     print(json.dumps(analyse(items, scores), ensure_ascii=False, indent=1))
