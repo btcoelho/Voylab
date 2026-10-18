@@ -321,7 +321,7 @@ O §15 fica intacto. Este desvio aplica-se só à corrida identificada como **M1
 - **Rede:** `api.deepseek.com` está bloqueado nesta sessão; a corrida só pode arrancar depois de o Bruno autorizar o domínio nas definições do claude.ai.
 - **Congelamento:** `results/modelos_v4/PREREGISTO_CONGELADO_DEEPSEEK.json` guarda o sha256 de §15 + §16, o modelo, os parâmetros e o código.
 
-## 17. Resultados de M1-DS (corrida 18/10, 18:17–18:40; `results/modelos_v4/M1-DS/`)
+## 17. Resultados de M1-DS (corrida iniciada a 18/10, 18:17; `results/modelos_v4/M1-DS/`)
 
 **Execução.** 225/225 episódios, 675 chamadas, nenhuma duplicada, 0 falhas de execução; modelo servido `deepseek-flash` em todas as chamadas (pedido `deepseek-chat`). Um pedido de teste antes da corrida, fora dos resultados (`SMOKE.json`). Análise escrita e enviada antes de ver os resultados (commit d97b245).
 
