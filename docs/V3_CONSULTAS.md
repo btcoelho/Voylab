@@ -300,3 +300,13 @@ Esta decisão altera a ordem aprovada antes ("modelo de fronteira só depois do 
 - A chave da API é configurada pelo Bruno e não entra no repositório, nos logs nem nos resultados.
 - Cada corrida (M1 e, separadamente, M2) precisa de aprovação explícita. Para M2 falta ainda escrever o adaptador da API da OpenAI; escrever e testar esse adaptador sem chamadas reais é também um passo que pede aprovação.
 - Volume previsto: 225 episódios por modelo, cada um com até 3 pedidos (consulta, compromisso, revisão), ou seja, até cerca de 675 pedidos por modelo.
+
+### 15.6 Detalhes de execução fixados antes do congelamento (aprovação do Bruno, 18/10, 17:40)
+- **M1 aprovado; M2 adiado:** só se decide depois de analisar M1 e se responder a uma pergunta científica concreta.
+- **Modelo pedido:** `claude-opus-5-5`. O identificador efetivamente servido é gravado em cada chamada (`model_served`) e no resumo.
+- **Parâmetros:** temperatura 0; máximo de 1024 tokens de saída; prompt v3.1 sem alterações; esquema `state_cards_object`; sem ferramentas; sem pós-processamento da resposta (texto que não seja JSON válido conta como resposta não analisável, como nas corridas anteriores).
+- **Falhas de execução ≠ falhas do modelo:** erros de rede, 429 e 5xx repetem-se com espera e ficam no registo de execução, nunca como resposta do modelo; outro erro 4xx ou a falta da chave param a corrida. Respostas não analisáveis ou ações inválidas são falhas do modelo.
+- **Retoma sem duplicar chamadas:** cada chamada é gravada (`calls.jsonl`) antes de o episódio continuar; ao retomar, uma chamada já feita é respondida a partir do registo. Testado com uma interrupção simulada a meio de um episódio (`tests/test_v4_model_run.py`).
+- **Congelamento:** `results/modelos_v4/PREREGISTO_CONGELADO.json` guarda o sha256 desta secção 15, o modelo, os parâmetros e o sha256 do código; a corrida recusa arrancar se algo diferir. A etiqueta git `prereg-v4-m1` marca o commit congelado. Qualquer desvio é documentado numa secção nova, nunca editando esta.
+- **Relato obrigatório:** denominadores e IC de Wilson em todas as proporções; resultados por veredicto alvo (com destaque para `undetermined`) e por estrato de qualidade da consulta; desempenho separado de validade (cumprir o formato ou acertar não demonstra que a grelha mede capacidade de investigação).
+- **Chave:** lida só da variável de ambiente `ANTHROPIC_API_KEY`, configurada pelo Bruno; nunca é escrita em ficheiros, registos ou resultados (testado).
