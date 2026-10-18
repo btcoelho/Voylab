@@ -138,16 +138,16 @@ class DeepSeek(unittest.TestCase):
 
 class Frozen(unittest.TestCase):
     def test_refuses_when_section15_or_model_differ(self):
-        p = R.FROZEN_DIR / R.PROVIDERS["deepseek"]
+        p = R.FROZEN_DIR / R.PROVIDERS["deepseek_v32"]
         if not p.exists():
             self.skipTest("not frozen yet")
         f = json.loads(p.read_text())
-        R.check_frozen(f["model_requested"], "deepseek")            # passes as is
+        R.check_frozen(f["model_requested"], "deepseek_v32")            # passes as is
         with self.assertRaises(SystemExit):
-            R.check_frozen("other-model", "deepseek")
+            R.check_frozen("other-model", "deepseek_v32")
         with mock.patch.object(R, "section", lambda n=15: "changed"):
             with self.assertRaises(SystemExit):
-                R.check_frozen(f["model_requested"], "deepseek")
+                R.check_frozen(f["model_requested"], "deepseek_v32")
 
 
 if __name__ == "__main__":
