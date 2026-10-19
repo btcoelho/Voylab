@@ -22,8 +22,9 @@ SYSTEM = (
     "Analisas um texto cifrado. Só podes basear-te nas medidas que pedires e nos resultados que o verificador "
     "devolve. Para cada hipótese (" + ", ".join(HIPOTESES) + ") dá um veredicto (rejeitada, compativel ou "
     "indeterminada) e cita as afirmações numéricas que o sustentam, com os seus ids. Uma afirmação sem medida é "
-    "interpretação e não conta como prova. Responde só com JSON: "
-    '{"action":"medir","medida":"..."} ou {"action":"relatorio","hipoteses":{"LN":{"veredicto":"...","afirmacoes":["A1"]}},'
+    "interpretação e não conta como prova. Indica em 'mais_provavel' a hipótese que achas mais provável, ou "
+    "'indeterminada' se as medidas não a distinguem. Usa os números exatamente como o resultado os deu. Responde só com JSON: "
+    '{"action":"medir","medida":"..."} ou {"action":"relatorio","mais_provavel":"...","hipoteses":{"LN":{"veredicto":"...","afirmacoes":["A1"]}},'
     '"afirmacoes":[{"id":"A1","medida":"...","parametros":{},"campo":"...","valor":0.0,"tolerancia":0.0}]}'
 )
 
@@ -109,6 +110,7 @@ def pontuar(relatorio, verdade):
         return {"valido": False}
     h = relatorio.get("hipoteses", {})
     v_verd = h.get(verdade, {}).get("veredicto")
-    return {"valido": True, "verdadeira_veredicto": v_verd,
+    return {"valido": True, "verdadeira_veredicto": v_verd, "mais_provavel": relatorio.get("mais_provavel"),
+            "acerto": relatorio.get("mais_provavel") == verdade,
             "verdadeira_rejeitada": v_verd == "rejeitada",
             "afirmacoes_falsas": sum(1 for x in relatorio.get("_verificacao", []) if x["verdadeira"] is False)}

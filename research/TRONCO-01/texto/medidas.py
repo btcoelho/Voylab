@@ -34,8 +34,8 @@ def alfabeto(words):
 def entropia(words):
     """h0 (glifo), h1 (glifo), h2 condicional (glifo dado o anterior dentro da palavra e no fluxo)."""
     seq = flat(words)
-    h0 = _entropy(Counter(seq))
-    h1 = _entropy(Counter(seq))  # unigramas: mesma medida; mantido para leitura uniforme
+    h0 = math.log2(len(set(seq))) if seq else 0.0   # máximo para o alfabeto observado
+    h1 = _entropy(Counter(seq))
     pairs_in = Counter()
     for w in words:
         pairs_in.update(zip(w, w[1:]))
@@ -121,8 +121,8 @@ def zipf(words):
     return {"declive": round(slope, 4), "r2": round(r2, 4)}
 
 
-def posicional(words):
-    """Por glifo: fração em início, meio e fim de palavra (palavras de comprimento ≥ 2)."""
+def posicional(words, top=15):
+    """Por glifo (os `top` mais frequentes): fração em início, meio e fim de palavra (palavras de comprimento ≥ 2)."""
     cnt = {}
     for w in words:
         if len(w) < 2:
@@ -131,7 +131,7 @@ def posicional(words):
             k = "inicio" if i == 0 else "fim" if i == len(w) - 1 else "meio"
             cnt.setdefault(g, Counter())[k] += 1
     out = {}
-    for g, c in cnt.items():
+    for g, c in sorted(cnt.items(), key=lambda x: -sum(x[1].values()))[:top]:
         n = sum(c.values())
         if n >= 20:
             out[g] = {k: round(c[k] / n, 4) for k in ("inicio", "meio", "fim")}

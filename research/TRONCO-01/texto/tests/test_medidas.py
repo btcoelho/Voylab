@@ -14,7 +14,7 @@ def W(*ws):
 class Entropia(unittest.TestCase):
     def test_uniform_two_glyphs_is_one_bit(self):
         e = M.entropia(W("ab", "ba", "ab", "ba"))
-        self.assertAlmostEqual(e["h0"], 1.0, places=4)
+        self.assertAlmostEqual(e["h0"], 1.0, places=4); self.assertAlmostEqual(e["h1"], 1.0, places=4)
 
     def test_deterministic_successor_has_zero_h2(self):
         # a -> b sempre; b -> a sempre dentro da palavra

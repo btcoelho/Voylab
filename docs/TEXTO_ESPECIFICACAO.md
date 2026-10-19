@@ -83,3 +83,16 @@ Para cada hipótese o agente dá `rejeitada`, `compatível` ou `indeterminada`, 
 4. Pré-registo da primeira corrida (modelo, orçamento, previsões), congelado.
 5. Corrida no desenvolvimento, com aprovação; análise; no máximo 3 rondas de ajuste nesta fase.
 6. Validação e, só no fim, a partição cega.
+
+## 9. Prova de conceito (pedida pelo Bruno, 19/10, 06:29: testes só os suficientes para verificar a credibilidade; escrito antes de correr a regra e o agente)
+
+**Dados.** 8 obras do Perseus (CC BY-SA 3.0 US; 4 em latim: César *BG*, Cícero, Ovídio *Met.*, Virgílio *En.*; 4 em inglês: César *BG*, *Ilíada*, *Odisseia*, Heródoto), checksums em `SHA256SUMS.txt` junto dos ficheiros (fora do repositório). Um excerto de 2000 palavras por obra (só a–z, com fronteiras de palavra), cifrado nas 9 famílias: 72 amostras, sementes fixas (`texto/poc.py`). `NUL` = substituição com 12% de glifos nulos do próprio alfabeto dentro das palavras; `TAB` = prefixo+meio+sufixo escolhidos por uma grelha que avança.
+**Agente.** `deepseek-chat` sem raciocínio, temperatura 0, até 8 medidas, até 2 rondas de correção pelo verificador de código; indica `mais_provavel`.
+**Regra simples.** `poc.regra`, limiares fixados agora: alfabeto ≤ 10 → VER (h2 < h1 − 0,3) ou ALE; IC < 0,05 → POL; h2 do fluxo > h1 − 0,25 → TRA; dependência entre palavras não significativa → TAB (Zipf > −0,7) ou BAR; 5 dos 6 glifos mais frequentes entre `etaoinsrhul` → LN; IC < 0,058 → NUL; senão SUB.
+**Previsões.**
+- **P1:** regra ≥ 43/72 (60%).
+- **P2:** o agente acerta menos do que a regra em `mais_provavel`.
+- **P3:** afirmações numéricas falsas no relatório final ≤ 5%.
+- **P4:** família verdadeira `rejeitada` em ≤ 7/72.
+- **P5:** relatório válido em ≥ 65/72 (90%).
+**Leitura.** Exploratória e pequena (8 por família, Wilson muito largo). Serve para decidir se vale a pena investir mais, não para afirmar capacidade. Custo previsto < 2 USD.
