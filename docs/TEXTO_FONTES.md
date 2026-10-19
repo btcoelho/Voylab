@@ -116,3 +116,26 @@ Contraexemplos (o que não queremos ser): no fórum Voynich Ninja, uma alegada d
 Como corpus base de texto simples, sugiro **HistCorp** (inclui português histórico) mais **Perseus**, e Gutenberg/eBible para textos de dezenas de milhares de palavras.
 
 **Por fazer:** confirmar no browser os repositórios GitHub e Zenodo que não consegui abrir (Naibbe, Timm, Rozanova, currier-signatures, o repositório principal do `ms408`) e a licença do artigo do Naibbe.
+---
+
+## Auditoria inicial do Cipher Corpus v0.6 (19/10/2026, aprovada pelo Bruno)
+
+Descarregados do Zenodo (registo 23297920, CC0 para os registos sintéticos) os 12 ficheiros do depósito (≈ 105 MB), todos com md5 conforme. Os dados ficam fora do repositório; esta secção regista só agregados.
+
+| Ponto | Resultado |
+|---|---|
+| Registos | 100 326 (100 272 sintéticos, 54 históricos); 85 tipos |
+| Comprimento (letras, sem espaços) | mediana 48; 90% ≤ 143; 414 registos ≥ 300; 5 ≥ 1000; máximo 1065 |
+| Espaços entre palavras | retirados em 74 327 (74%); preservados em 25 996 |
+| Línguas | inglês 96 671 (96%); latim, alemão, espanhol, francês ≈ 800 cada; italiano 480 |
+| Texto simples distintos | só **882** para 100 326 registos; o mais repetido aparece 522 vezes |
+| Fuga entre partições | **499 dos 882** textos simples aparecem tanto em `public` como em `blind` |
+| Tipos que cabem nas nossas hipóteses | 18 de 85 (SUB 5, POL 8, TRA 5), 39 596 registos |
+| … desses, com ≥ 300 letras | **0** (SUB, POL e TRA) |
+| … com espaços preservados | SUB 14 285 de 14 329; POL 373 de 16 302; TRA 34 de 8 965 |
+| Verificação independente (Vigenère, nosso código) | 4 835 decifram exatamente; 142 não (por ver: o corpus declara 526 desvios conhecidos) |
+| VER, TAB, BAR, NUL (no nosso sentido) | ausentes; `null_cipher` (234) é esteganografia, não nulos inseridos; `homophonic` 107 |
+
+**Previsões de 06:14:** (1) textos curtos: **confirmada**, e pior do que previ (nenhum registo das nossas famílias chega a 300 letras); (2) sem espaços: **confirmada** (74%); (3) 20–40% dos tipos cabem: **confirmada** (18/85 = 21%); (4) VER/TAB/BAR/NUL ausentes: **confirmada**; (5) risco de memorização: agravado pela repetição de textos simples; (6) qualidade: as soluções verificáveis decifram em 97% dos Vigenère testados.
+
+**Decisão proposta.** O Cipher Corpus serve só para um teste auxiliar de **identificação de tipo em textos curtos**, com partições refeitas por texto simples (as `public`/`blind` do corpus não são independentes). Não serve para as medidas linguísticas nem para as hipóteses do manuscrito. O corpus principal tem de ser texto longo (HistCorp, Perseus, Gutenberg) cifrado por nós e pelos geradores da lacuna 2–4.
