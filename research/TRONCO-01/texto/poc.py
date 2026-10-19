@@ -160,7 +160,12 @@ def run_agente(workers=4):
     def one(r):
         b = DeepSeekBackend("deepseek-chat", 0.0, 2048)
         w = [list(x) for x in r["palavras"]]
-        rel, log = A.Analista(b, max_medidas=8).analisar(w)
+        try:
+            rel, log = A.Analista(b, max_medidas=8).analisar(w)
+        except Exception as ex:  # noqa: BLE001  falha de execução: registada à parte, a amostra fica por fazer
+            with lock, (OUT / "falhas_execucao.jsonl").open("a", encoding="utf-8") as fh:
+                fh.write(json.dumps({"uid": r["uid"], "erro": repr(ex)[:300]}) + "\n")
+            return
         rec = {"uid": r["uid"], "familia": r["familia"], "relatorio": rel, "log": log,
                "pontuacao": A.pontuar(rel, r["familia"])}
         with lock, ep.open("a", encoding="utf-8") as fh:
