@@ -1,0 +1,69 @@
+TESTE TEXTO-01 NO PC (modelo Qwen local via Ollama)
+====================================================
+
+O que faz: corre 18 amostras de texto cifrado com o Qwen3.5-9B no teu PC, com
+raciocínio ligado. Não usa internet depois de instalado e não envia nada para
+fora. Gera um único ficheiro, resultados_pc.jsonl, que me envias.
+
+Tempo previsto: entre 30 minutos e 2 horas (depende da placa e do raciocínio).
+Requisitos: Windows, RTX 4070 de 12 GB (ou melhor), 32 GB de RAM.
+
+
+PASSO 1 - Instalar o Python (se ainda não tens)
+-----------------------------------------------
+1. Abre https://www.python.org/downloads/ e descarrega a versão 3.11 ou superior.
+2. Ao instalar, MARCA a caixa "Add python.exe to PATH" antes de carregar em Install.
+3. Confirma num PowerShell novo:  python --version
+
+PASSO 2 - Instalar o Ollama
+---------------------------
+1. Abre https://ollama.com/download e descarrega o instalador para Windows.
+2. Instala com as opções por omissão.
+3. Depois de instalado, o Ollama corre em segundo plano (ícone na barra de tarefas).
+
+PASSO 3 - Descarregar o modelo (uma vez só, cerca de 6 GB)
+----------------------------------------------------------
+Abre o PowerShell e escreve:
+
+    ollama pull qwen3.5:9b
+
+Antes disso, confirma a etiqueta exata em https://ollama.com/library/qwen3.5 .
+Se a etiqueta do 9B for outra, usa essa e diz-me qual foi.
+
+Testa que responde:
+
+    ollama run qwen3.5:9b "responde apenas OK"
+
+(Para sair do teste de chat, escreve  /bye  e Enter.)
+
+PASSO 4 - Pôr os ficheiros numa pasta
+-------------------------------------
+Extrai o ZIP para uma pasta simples, por exemplo  C:\texto-poc  .
+Deve haver: rodar_pc.py, medidas.py, programa.py, amostras.jsonl, LEIA-ME.txt .
+
+PASSO 5 - Correr o teste
+------------------------
+No PowerShell:
+
+    cd C:\texto-poc
+    python rodar_pc.py qwen3.5:9b
+
+Cada linha é uma amostra: a família verdadeira, o que o modelo respondeu, e
+OK ou -- conforme acertou. Não feches a janela enquanto corre. Se for
+interrompido (por exemplo, o PC desligou), volta a correr o mesmo comando: retoma
+de onde ficou.
+
+No fim aparece:  TOTAL: x/18 acertos.
+
+PASSO 6 - Enviar-me o resultado
+-------------------------------
+Envia-me o ficheiro  resultados_pc.jsonl  (está na mesma pasta). Não tem chaves
+nem dados pessoais: só o código gerado, as justificações e os tempos.
+
+PROBLEMAS COMUNS
+----------------
+- "O Ollama não responde": abre a aplicação Ollama (ícone na barra de tarefas) e tenta de novo.
+- "O modelo não está instalado": repete o PASSO 3.
+- Muito lento ou sem memória de placa: corre  ollama pull qwen3.5:4b  e depois
+  python rodar_pc.py qwen3.5:4b  (é mais pequeno e menos preciso; diz-me que o usaste).
+- Qualquer outra mensagem de erro: copia-a e envia-ma.
