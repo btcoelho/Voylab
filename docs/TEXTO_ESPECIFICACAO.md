@@ -138,3 +138,10 @@ Por família (agente | regra): LN 2|2, SUB 2|1, POL 2|2, ALE 2|2, NUL 0|0 (ambos
 Por amostra: TRA 1/2 (0-TRA continua SUB); VER 0/2 (já não POL, agora TAB e BAR); BAR 0/2 (continua LN); NUL 0/2 (LN e VER); TAB 1/2; LN, POL e ALE 2/2; SUB 1/2.
 **Previsões:** **C1 refutada** (9 < 11); C2 confirmada (18/18); C3 confirmada (0%); **C4 refutada** contando por amostra: o erro-tipo desaparece em 3 das 6 amostras (VER→POL nas 2, TRA→SUB em 1, BAR→LN em 0), mas as duas VER continuam erradas; **C5 refutada** (1/4: uma TAB certa).
 **Leitura.** (1) Citar números por referência e avaliá-los por código **resolve as afirmações inventadas** (de 20%/10% em §9.2 para 0,0% no fim), o que confirma o desenho do Proof-Carrying Numbers. (2) **Não resolve a classificação**: o acerto fica no ruído de §9.2. A função que o modelo escreve não é um classificador; é a sua conclusão escrita como código (por exemplo, `m['alfabeto.glifos_distintos'] > m['sukhotin.letras']` → VER, que nunca é verdade), e as justificações verdadeiras não garantem que sejam as que distinguem as famílias. (3) Pela regra escrita antes de correr, a opção seguinte é o código decidir e o modelo só explicar.
+
+### 9.4 Teste pequeno: modo programa com raciocínio ligado (aprovado pelo Bruno, 19/10, 07:03; escrito antes de correr)
+
+**Base:** V4 §21 (o mesmo modelo com raciocínio: 15/45 → 37/45 fundamentados); "Do Reasoning Models Ask Better Questions?" (2026; com CoT 0,94 contra 0,08 de vitórias); "Agents Explore but Agents Ignore" (2026; raciocínio alto ≈ 3× mais uso do que o agente tem disponível).
+**Mudança:** só o modo de raciocínio (`thinking: enabled`, limite 32 000 tokens). Tudo o resto como em §9.3: as mesmas 18 amostras, a mesma bateria, `classificar(m)` executada pelo código, justificações por referência, 2 rondas.
+**Previsões.** **R1:** acerto ≥ 12/18 (iguala a regra). **R2:** justificações falsas no fim ≤ 5%. **R3:** a função corre em ≥ 17/18. **R4:** pelo menos 1 de 4 NUL/TAB certa. **R5:** respostas cortadas pelo limite ≤ 1/18.
+**Decisão depois:** se R1 se confirmar, alarga-se às 72 com raciocínio; se não, passa-se ao código a decidir e o modelo a explicar.

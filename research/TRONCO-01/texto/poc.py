@@ -182,6 +182,7 @@ if __name__ == "__main__":
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--bateria", action="store_true", help="§9.2: 18 amostras (obras 0 e 1), bateria completa")
     ap.add_argument("--programa", action="store_true", help="§9.3")
+    ap.add_argument("--programa-raciocinio", action="store_true", help="§9.4")
     a = ap.parse_args()
     if a.build:
         build()
@@ -193,7 +194,7 @@ if __name__ == "__main__":
         run_agente(bateria=True, subconjunto={"0", "1"}, nome="episodios_bateria.jsonl")
 
 
-def run_programa(workers=4, subconjunto=("0", "1"), nome="episodios_programa.jsonl"):
+def run_programa(workers=4, subconjunto=("0", "1"), nome="episodios_programa.jsonl", raciocinio=False):
     """§9.3: o modelo escreve classificar(m); o código executa-a e avalia as justificações."""
     from concurrent.futures import ThreadPoolExecutor
     import threading
@@ -205,7 +206,9 @@ def run_programa(workers=4, subconjunto=("0", "1"), nome="episodios_programa.jso
 
     def one(r):
         try:
-            rel, log = P.Programador(DeepSeekBackend("deepseek-chat", 0.0, 2048)).analisar([list(x) for x in r["palavras"]])
+            b = (DeepSeekBackend("deepseek-chat", 0.0, 32000, timeout=600, extra_body={"thinking": {"type": "enabled"}})
+                 if raciocinio else DeepSeekBackend("deepseek-chat", 0.0, 2048))
+            rel, log = P.Programador(b).analisar([list(x) for x in r["palavras"]])
         except Exception as ex:  # noqa: BLE001
             with lock, (OUT / "falhas_execucao.jsonl").open("a", encoding="utf-8") as fh:
                 fh.write(json.dumps({"uid": r["uid"], "modo": "programa", "erro": repr(ex)[:300]}) + "\n")
@@ -221,3 +224,5 @@ def run_programa(workers=4, subconjunto=("0", "1"), nome="episodios_programa.jso
 
 if __name__ == "__main__" and "--programa" in sys.argv:
     run_programa()
+if __name__ == "__main__" and "--programa-raciocinio" in sys.argv:
+    run_programa(nome="episodios_programa_raciocinio.jsonl", raciocinio=True)
