@@ -255,3 +255,73 @@ O random forest deles destaca como mais importantes para separar texto sem signi
 Para os nulos não há medida publicada e validada. Os pontos 5, 6 e 9 são extrapolações. Para treinar e testar, o caminho é gerar nós próprios o corpus de nulos e o corpus de tabela (com grelha à Rugg ou auto-cópia à Timm).
 
 Fontes: as ligações estão na tabela; a pesquisa de Parisel 2026 não devolveu resultados relevantes.
+
+
+---
+
+## O modelo tem os números e conclui mal: o que outros trabalhos fizeram (pesquisa de 19/10, 06:55)
+
+# LLMs que têm as estatísticas certas à frente e concluem mal: o que foi feito noutros trabalhos (2022–2026)
+
+**Resposta curta:** a evidência mais sólida aponta para tirar a decisão do texto livre do LLM. O caminho é pô-lo a escrever ou executar código que decide, ou deixar decidir um classificador ou regras explícitas, e reduzir o LLM a explicar. Nenhuma fonte que encontrei mostra que um LLM sem raciocínio, só com instruções, passa a comparar bem números que já tem à frente. Não encontrei nenhum trabalho com uma tarefa igual à vossa (identificar a família de cifra a partir de estatísticas). Tudo o que segue é por analogia.
+
+Legenda: **V** = verifiquei o número na página primária nesta sessão. **I** = número indireto ou de memória, a confirmar. Não descarreguei nem corri nada. As licenças não estavam visíveis nas páginas que li, salvo onde indico.
+
+## Tabela
+
+| # | Nome | Link primário | Ano | Mecanismo | Evidência quantitativa (antes → depois) | Licença | Utilidade | V/I |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Program of Thoughts (PoT) | [arXiv 2211.12588](https://arxiv.org/abs/2211.12588) | 2022/23 (TMLR) | O LLM escreve um programa e o interpretador faz as contas e as comparações. | Em média cerca de **+12 %** sobre o raciocínio em texto (CoT), em few-shot e zero-shot. Com self-consistency chega ao melhor resultado da altura em 5 conjuntos de problemas matemáticos. | não vista | **Alta**: o vosso erro é comparar mal números, e isso passa para o código. | V |
+| 2 | PAL (Program-Aided LM) | arXiv 2211.10435 (a página foi bloqueada nesta sessão) | 2022 | Igual ao PoT: código Python como raciocínio, executado à parte. | Ganho grande sobre CoT no GSM8K (de memória, cerca de +15 pontos), por confirmar. | não vista | Alta, pelo mesmo motivo do PoT. | I |
+| 3 | Chain-of-Table | [arXiv 2401.04398](https://arxiv.org/html/2401.04398v2) | 2024 (ICLR) | O LLM aplica operações sobre a tabela passo a passo e a tabela transformada serve de cadeia de raciocínio. | Contra o melhor método anterior: WikiTQ com PaLM 2, **61,48 → 67,31**; com GPT-3.5, **56,74 → 59,94**. TabFact com PaLM 2, **84,63 → 86,61**; com GPT-3.5, **79,17 → 80,20**. | não vista | Média: ganhos modestos, e a vossa "tabela" tem só ~12 números. | V |
+| 4 | TableBench | [arXiv 2408.09174](https://arxiv.org/html/2408.09174v2) | 2024 | Benchmark de perguntas sobre tabelas que compara três modos de raciocínio: em texto (TCoT), simbólico (SCoT) e com código (PoT). | Humanos **85,91**. GPT-4-Turbo: **51,32** em texto, **45,69** com código, **44,26** simbólico. O código é melhor nas contas, mas só **78,67 %** dos programas corriam. | não vista | Média: avisa que o código só ganha se for executável. Usem esqueletos fixos. | V |
+| 5 | StatQA ("Are LLMs Good Statisticians?") | [arXiv 2406.07815](https://arxiv.org/html/2406.07815v1) · [GitHub](https://github.com/derrickzhuyz/StatQA) | 2024 (NeurIPS D&B) | Benchmark sobre se o método estatístico se aplica aos dados. Testa exemplos (1-shot), conhecimento de domínio no prompt, CoT e fine-tuning. | GPT-4o com 1 exemplo e conhecimento de domínio: **64,83 %**. Estatísticos humanos com consulta: **53,45 %**. LLaMA-3 8B afinado: **77,13 %**. Um exemplo dá **+9,6 pontos** aos LLaMA e **+4,7** aos GPT. O CoT pouco ajuda nos modelos grandes. O erro dominante é aplicar mal os critérios. | ver o repositório | **Alta**: o erro dominante é o vosso; exemplos e critérios no prompt ajudam um pouco, o fine-tuning ajuda muito. | V |
+| 6 | BLADE | [HF 2408.09667](https://huggingface.co/papers/2408.09667) · [página UW](https://idl.uw.edu/papers/blade) | 2024 | Agentes a fazer análises científicas sobre 12 conjuntos de dados. | Só qualitativo na página: os LLMs ficam "em análises básicas"; com acesso aos dados melhoram, mas não chegam ao ótimo. | não vista | Baixa. | V |
+| 7 | DiscoveryBench, QRData, DSBench, DataBench | não verificados nesta sessão | 2024 | Benchmarks de análise de dados com agentes. | Não encontrei números. | — | Baixa como evidência direta. | — |
+| 8 | Number Cookbook (NUPA) | [arXiv 2411.03766](https://arxiv.org/abs/2411.03766v1) · github.com/GraphPKU/number_cookbook | 2024/25 (ICLR) | Bateria de 17 tarefas numéricas em 4 representações (41 combinações). Testa tokenizadores, codificações de posição, formatos de número e fine-tuning. | Os LLMs falham comparações básicas (por exemplo, dizem que 9,11 > 9,9). Os truques de representação não resultam em modelos já pré-treinados; o fine-tuning simples melhora muito. | não vista | **Alta como diagnóstico**: comparar números em texto é uma fraqueza do próprio modelo e não se corrige com o prompt. | V |
+| 9 | Atributos gerados por LLM e classificador clássico (Kliegr et al.) | [arXiv 2409.07132](https://arxiv.org/abs/2409.07132v1) | 2024 | O LLM extrai atributos interpretáveis e um classificador comum decide. No fim extraem regras de ação. | **62 atributos** contra 768 dimensões do SciBERT, com desempenho "semelhante". A página não dá métricas exatas. | não vista | Média: confirma o padrão "o LLM extrai, um classificador decide". No vosso caso os atributos já são calculados por código, o que é ainda melhor. | V |
+| 10 | Self-Consistency (Wang et al.) | arXiv 2203.11171 (a página foi bloqueada nesta sessão) | 2022 | Gerar várias cadeias de raciocínio e escolher por maioria. | De memória, cerca de +18 pontos no GSM8K. Exige temperatura acima de 0. | — | Média ou baixa: com 18 amostras e um modelo que ignora a evidência, a maioria vota no mesmo erro. | I |
+| 11 | "LLMs Cannot Self-Correct Reasoning Yet" (Huang et al.) | [arXiv 2310.01798](https://arxiv.org/abs/2310.01798v2) | 2023/24 (ICLR) | Avaliação da autocorreção sem retorno externo. | Qualitativo: sem retorno externo o desempenho não melhora e às vezes piora. | CC BY 4.0 (o texto do artigo) | **Alta para interpretar o vosso resultado**: o verificador externo baixou as falsas de 20 % para 10 %, o que é coerente; só reler o próprio texto não chegaria. | V |
+| 12 | "LLMs cannot find reasoning errors, but can correct them given the error location" | [arXiv 2311.08516](https://arxiv.org/html/2311.08516v3) | 2023/24 | Separar encontrar o erro de o corrigir. | Não li os números. | — | Média: o verificador deve dizer *qual* afirmação falhou, e não só "há erro". | I |
+| 13 | Proof-Carrying Numbers (PCN) | [arXiv 2509.06902](https://arxiv.org/abs/2509.06902v1) | 2025 | Cada número sai como um token ligado a uma afirmação estruturada. O renderizador confere-o (igualdade exata, arredondamento, tolerância) e o que não passa fica marcado como "não verificado". | **Sem experiências**: só propriedades formais. | não vista | **Alta como desenho**: elimina números inventados por construção. | V |
+
+Ficaram por pesquisar: debate entre agentes e scorecards ou checklists por hipótese com números medidos. Não encontrei evidência quantitativa direta em 2023–2026 e não preenchi linhas sem fonte.
+
+## As 3 opções mais sustentadas, por ordem
+
+### 1. O código decide e o LLM só explica (linhas 1, 5, 8, 9)
+O que dá mais evidência é tirar a comparação de números ao LLM.
+- **O que mudar:**
+  - Transformar a regra de limiares (12/18), ou uma árvore de decisão pequena treinada em amostras sintéticas das 9 famílias, no decisor oficial.
+  - O LLM recebe a família decidida e as medidas que a justificam, e escreve a explicação.
+  - Opcional: o LLM pode marcar "discordo" com uma justificação. Nesse caso o código reavalia apenas aquela medida.
+- **Previsão testável:**
+  - O acerto fica igual ao da regra, ≥12/18, porque é a regra que decide.
+  - As afirmações falsas na explicação devem cair abaixo dos 10 % atuais, porque o LLM já não precisa de inventar a decisão.
+  - Se as discordâncias do LLM baixarem o acerto abaixo de 12/18, desliguem o veto.
+
+### 2. Programa como raciocínio, em vez de texto (linhas 1, 2, 4)
+- **O que mudar:**
+  - O DeepSeek recebe as medidas como um dicionário Python.
+  - Tem de devolver uma função `classificar(m)` com comparações explícitas, por exemplo `abs(m['h2']-m['h1'])<x` → transposição, `alfabeto<=6` → tabela ou verbosa, `razao_amancio≈1` → palavras baralhadas.
+  - O vosso código executa a função; a resposta do LLM em texto não conta.
+  - Usem um esqueleto fixo de função para evitar código que não corre (no TableBench só 78,67 % corria).
+- **Previsão testável:**
+  - A sobe de 8/18 para pelo menos 11/18.
+  - Desaparecem os 3 erros-tipo que descreveste: transposição apesar de h2≈h1, Vigenère apesar de 6 glifos, língua natural apesar de razão≈1.
+  - Mais de 90 % das funções devem executar sem erro.
+
+### 3. Números citados por referência e um verificador que aponta o erro (linhas 13, 11, 12)
+- **O que mudar:**
+  - No prompt, cada medida passa a ter um id (`[M07]`) e o LLM fica proibido de escrever dígitos. O renderizador substitui `[M07]` pelo valor calculado (estilo PCN).
+  - Para comparações, o LLM escreve `[M03] < [M04]` e o código avalia a expressão.
+  - Quando uma afirmação falha, o verificador devolve qual id e qual comparação falharam.
+  - Pode combinar-se com a opção 1 ou 2.
+- **Previsão testável:**
+  - As afirmações com valores inventados passam a 0 % por construção.
+  - As comparações falsas caem para menos de 5 % depois de uma ronda.
+  - Sozinha, esta opção não deve melhorar o acerto da família mais do que ±1 amostra, porque resolve a citação e não a decisão.
+
+**Nota:** a linha 5 (StatQA) sugere que exemplos rotulados por família melhoram só uns 5–10 pontos. Num teste de 18 amostras isso é cerca de 1–2 amostras, dentro do ruído. Por isso não entra entre as três. O raciocínio ligado não tem números próprios nesta pesquisa; o vosso resultado noutra tarefa já é o indício mais direto.
+
+Fontes: [PoT](https://arxiv.org/abs/2211.12588), [Chain-of-Table](https://arxiv.org/html/2401.04398v2), [TableBench](https://arxiv.org/html/2408.09174v2), [StatQA](https://arxiv.org/html/2406.07815v1), [StatQA GitHub](https://github.com/derrickzhuyz/StatQA), [BLADE](https://huggingface.co/papers/2408.09667), [Number Cookbook](https://arxiv.org/abs/2411.03766v1), [Kliegr et al.](https://arxiv.org/abs/2409.07132v1), [Huang et al.](https://arxiv.org/abs/2310.01798v2), [Tyen et al.](https://arxiv.org/html/2311.08516v3), [PCN](https://arxiv.org/abs/2509.06902v1)
