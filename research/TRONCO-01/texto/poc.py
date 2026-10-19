@@ -181,6 +181,7 @@ if __name__ == "__main__":
     ap.add_argument("--regra", action="store_true")
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--bateria", action="store_true", help="§9.2: 18 amostras (obras 0 e 1), bateria completa")
+    ap.add_argument("--programa", action="store_true", help="§9.3")
     a = ap.parse_args()
     if a.build:
         build()
@@ -190,3 +191,33 @@ if __name__ == "__main__":
         run_agente()
     if a.bateria:
         run_agente(bateria=True, subconjunto={"0", "1"}, nome="episodios_bateria.jsonl")
+
+
+def run_programa(workers=4, subconjunto=("0", "1"), nome="episodios_programa.jsonl"):
+    """§9.3: o modelo escreve classificar(m); o código executa-a e avalia as justificações."""
+    from concurrent.futures import ThreadPoolExecutor
+    import threading
+    import programa as P
+    from deepseek_backend import DeepSeekBackend
+    ep = OUT / nome
+    done = {json.loads(l)["uid"] for l in ep.read_text(encoding="utf-8").splitlines() if l.strip()} if ep.exists() else set()
+    lock = threading.Lock()
+
+    def one(r):
+        try:
+            rel, log = P.Programador(DeepSeekBackend("deepseek-chat", 0.0, 2048)).analisar([list(x) for x in r["palavras"]])
+        except Exception as ex:  # noqa: BLE001
+            with lock, (OUT / "falhas_execucao.jsonl").open("a", encoding="utf-8") as fh:
+                fh.write(json.dumps({"uid": r["uid"], "modo": "programa", "erro": repr(ex)[:300]}) + "\n")
+            return
+        with lock, ep.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({"uid": r["uid"], "familia": r["familia"], "relatorio": rel, "log": log,
+                                 "acerto": bool(rel) and rel.get("mais_provavel") == r["familia"]},
+                                ensure_ascii=False) + "\n")
+    rs = [r for r in carregar() if r["uid"] not in done and r["uid"].split("-")[0] in subconjunto]
+    with ThreadPoolExecutor(workers) as ex:
+        list(ex.map(one, rs))
+
+
+if __name__ == "__main__" and "--programa" in sys.argv:
+    run_programa()
