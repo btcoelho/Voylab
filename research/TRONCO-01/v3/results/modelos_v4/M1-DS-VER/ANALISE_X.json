@@ -1,0 +1,271 @@
+{
+ "code": {
+  "eleg": {
+   "respostas_json": {
+    "k": 135,
+    "n": 135,
+    "ic95": [
+     0.972,
+     1.0
+    ]
+   },
+   "acoes_aceites": {
+    "k": 135,
+    "n": 135,
+    "ic95": [
+     0.972,
+     1.0
+    ]
+   },
+   "invalidas_taxa": 0.0,
+   "elegivel": true
+  },
+  "rej_own": [
+   3,
+   3,
+   [
+    0.438,
+    1.0
+   ]
+  ],
+  "agree": [
+   42,
+   45,
+   [
+    0.821,
+    0.977
+   ]
+  ],
+  "rev": [
+   26,
+   45,
+   [
+    0.433,
+    0.71
+   ]
+  ],
+  "feedback_rounds": 25,
+  "rounds": 112,
+  "pairs": {
+   "undetermined->undetermined": 39,
+   "rejected->rejected": 3,
+   "supported->undetermined": 3
+  },
+  "total": {
+   "n": 45,
+   "categorias": {
+    "pesquisa": 24,
+    "fundamentado": 18,
+    "inferencia": 3
+   },
+   "fundamentado": {
+    "k": 18,
+    "n": 45,
+    "ic95": [
+     0.27,
+     0.545
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 26,
+    "n": 45,
+    "ic95": [
+     0.433,
+     0.71
+    ]
+   },
+   "consultas_feitas": 45,
+   "consulta_menos_media": {
+    "n": 45,
+    "mean": 0.0449,
+    "ci95": [
+     -0.029,
+     0.1188
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 45,
+    "mean": -0.4119,
+    "ci95": [
+     -0.5091,
+     -0.3147
+    ]
+   }
+  },
+  "por_alvo": {
+   "rejected": {
+    "k": 3,
+    "n": 15,
+    "ic95": [
+     0.07,
+     0.452
+    ]
+   },
+   "supported": {
+    "k": 0,
+    "n": 15,
+    "ic95": [
+     -0.0,
+     0.204
+    ]
+   },
+   "undetermined": {
+    "k": 15,
+    "n": 15,
+    "ic95": [
+     0.796,
+     1.0
+    ]
+   }
+  }
+ },
+ "llm": {
+  "eleg": {
+   "respostas_json": {
+    "k": 135,
+    "n": 135,
+    "ic95": [
+     0.972,
+     1.0
+    ]
+   },
+   "acoes_aceites": {
+    "k": 135,
+    "n": 135,
+    "ic95": [
+     0.972,
+     1.0
+    ]
+   },
+   "invalidas_taxa": 0.0,
+   "elegivel": true
+  },
+  "rej_own": [
+   1,
+   4,
+   [
+    0.046,
+    0.699
+   ]
+  ],
+  "agree": [
+   38,
+   45,
+   [
+    0.712,
+    0.923
+   ]
+  ],
+  "rev": [
+   23,
+   45,
+   [
+    0.37,
+    0.65
+   ]
+  ],
+  "feedback_rounds": 45,
+  "rounds": 130,
+  "pairs": {
+   "undetermined->undetermined": 37,
+   "rejected->rejected": 1,
+   "rejected->undetermined": 3,
+   "supported->undetermined": 3,
+   "undetermined->supported": 1
+  },
+  "total": {
+   "n": 45,
+   "categorias": {
+    "pesquisa": 23,
+    "fundamentado": 15,
+    "inferencia": 7
+   },
+   "fundamentado": {
+    "k": 15,
+    "n": 45,
+    "ic95": [
+     0.214,
+     0.479
+    ]
+   },
+   "revisao_final_correta": {
+    "k": 23,
+    "n": 45,
+    "ic95": [
+     0.37,
+     0.65
+    ]
+   },
+   "consultas_feitas": 45,
+   "consulta_menos_media": {
+    "n": 45,
+    "mean": 0.0653,
+    "ci95": [
+     -0.0081,
+     0.1387
+    ]
+   },
+   "consulta_menos_melhor": {
+    "n": 45,
+    "mean": -0.3915,
+    "ci95": [
+     -0.4918,
+     -0.2912
+    ]
+   }
+  },
+  "por_alvo": {
+   "rejected": {
+    "k": 1,
+    "n": 15,
+    "ic95": [
+     0.012,
+     0.298
+    ]
+   },
+   "supported": {
+    "k": 0,
+    "n": 15,
+    "ic95": [
+     -0.0,
+     0.204
+    ]
+   },
+   "undetermined": {
+    "k": 14,
+    "n": 15,
+    "ic95": [
+     0.702,
+     0.988
+    ]
+   }
+  },
+  "verifier": {
+   "acerto": [
+    1339,
+    1476,
+    [
+     0.891,
+     0.921
+    ]
+   ],
+   "falsas_aceites": [
+    137,
+    568,
+    [
+     0.208,
+     0.278
+    ]
+   ],
+   "verdadeiras_rejeitadas": [
+    0,
+    908,
+    [
+     0.0,
+     0.004
+    ]
+   ],
+   "nao_parse": 0
+  }
+ }
+}

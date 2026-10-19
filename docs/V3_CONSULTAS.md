@@ -468,3 +468,23 @@ Categorias de M1-DS-R: fundamentado 37, pesquisa 4, prematura 4 (comprometeu sem
 - **X-e:** nenhum braço chega a 37/45 (M1-DS-R), porque `supported` e a escolha da consulta não são verificados.
 - **X-f:** revisão final correta ≥ 25/45 (M1-DS) nos dois braços.
 **Custo previsto:** < 1 USD; paragem se o saldo descer de 1 USD.
+
+## 24. Resultados de M1-DS-VER (agente + verificador; exploratório; `results/modelos_v4/M1-DS-VER/`)
+
+**Execução.** Pré-registo §23 congelado (commit ee9b8dc, verificado antes de correr). 45/45 episódios em cada braço; paragem por saldo não disparou (saldo final 6,05 USD; custo ≈ 0,21 USD desde o fim de §21). Análise com `instrument/analyse_models.py` e `grid.classify`, escrita antes da corrida; números em `ANALISE_X.json` e `{code,llm}/ANALISE.json`.
+
+| Nos mesmos 45 mundos | M1-DS (sem verificador) | Braço código | Braço modelo | M1-DS-R (raciocínio) |
+|---|---|---|---|---|
+| Elegibilidade (JSON / ações aceites) | — | 135/135 | 135/135 | 131/138 |
+| Fundamentado | 15/45 [0,21; 0,48] | 18/45 [0,27; 0,55] | 15/45 [0,21; 0,48] | 37/45 |
+| … `rejected` / `supported` / `undetermined` (de 15) | 0 / 0 / 15 | 3 / 0 / 15 | 1 / 0 / 14 | 8 / 14 / 15 |
+| Histórico implica `rejected` → responde `rejected` | — | 3/3 [0,44; 1] | 1/4 [0,05; 0,70] | — |
+| Concordância com o próprio histórico | 38/45 | 42/45 [0,82; 0,98] | 38/45 [0,71; 0,92] | 45/45 |
+| Revisão final correta | 25/45 | 26/45 [0,43; 0,71] | 23/45 [0,37; 0,65] | 45/45 |
+| Rondas com correção do verificador | — | 25 de 112 | 45 de 130 | — |
+
+**Verificador-modelo contra a verdade calculada (1476 afirmações):** acerto 1339/1476 = 0,907 [0,891; 0,921]; afirmações falsas aceites como verdadeiras 137/568 = 0,241 [0,208; 0,278]; verdadeiras rejeitadas 0/908 [0; 0,004]; 0 respostas por interpretar. O erro é todo no mesmo sentido: tende a dizer VERDADEIRA.
+
+**Previsões do §23:** X-a **confirmada** (100% nos dois braços). X-b **confirmada** (3/3 e 42/45 = 0,93), com n muito pequeno: o agente quase nunca chega a um histórico que implique `rejected`, porque as suas consultas raramente o revelam. X-c **refutada** (0,907 < 0,95; 0,241 > 0,05). X-d **refutada** (15/45 < 20). X-e **confirmada** (18 e 15 < 37). X-f **confirmada no braço código** (26 ≥ 25), **refutada no braço modelo** (23 < 25).
+
+**Leitura.** (1) O verificador por código corrige a leitura das cartas (concordância 38 → 42 de 45), mas o ganho em fundamentado é pequeno (15 → 18, intervalos sobrepostos): o estrangulamento passou para a escolha da consulta e para `supported`, que não são verificados. (2) Um modelo barato a verificar outro modelo não ajuda: aceita um quarto das afirmações falsas e o resultado fica igual a não ter verificador. (3) O que o raciocínio deu em §21 (37/45) não se recupera verificando só a leitura das cartas. Consequência para o desenho: verificar por código tudo o que puder ser código; uma camada de modelo só entra depois de medida a sua taxa de falsas aceites e a calibração da sua confiança contra a verdade exata. Ressalvas: exploratório (mundos já vistos), 45 mundos, um só modelo, desempenho não é validade.

@@ -138,19 +138,19 @@ class DeepSeek(unittest.TestCase):
 
 
 class Frozen(unittest.TestCase):
-    """The current freeze (round 3, §20) must pass as is and refuse any change; earlier freezes go stale once their
-    run is finished and the code moves on, which is the intended behaviour."""
+    """The current freeze (agent + verifier, §23) must pass as is and refuse any change; earlier freezes (§15, §18, §20)
+    go stale once their run is finished and the code moves on, which is the intended behaviour."""
     def test_current_freeze_passes_and_refuses_changes(self):
-        import run_v4_reasoning as RR
-        if not RR.FROZEN.exists():
+        import run_v4_verifier as RV
+        if not RV.FROZEN.exists():
             self.skipTest("not frozen yet")
-        RR.check()
-        with mock.patch.dict(RR.PARAMS, {"max_tokens": 1}):
+        RV.check()
+        with mock.patch.dict(RV.PARAMS, {"max_rounds": 1}):
             with self.assertRaises(SystemExit):
-                RR.check()
-        with mock.patch.object(RR, "prereg", lambda: "changed"):
+                RV.check()
+        with mock.patch.object(RV, "prereg", lambda: "changed"):
             with self.assertRaises(SystemExit):
-                RR.check()
+                RV.check()
 
 
 class Reasoning(unittest.TestCase):
