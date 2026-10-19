@@ -71,3 +71,11 @@ class Ciclo(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Bateria(unittest.TestCase):
+    def test_todas_as_medidas_entram_no_prompt(self):
+        b = Scripted([json.dumps({"action": "relatorio", "hipoteses": {}, "afirmacoes": []})])
+        out, log = A.Analista(b, bateria=True).analisar(TEXTO * 10)
+        self.assertEqual(log["medidas"], A.medidas_disponiveis())
+        self.assertIn("RESULTADO amancio", b.seen[0])

@@ -31,7 +31,7 @@ SYSTEM = (
 
 def medidas_disponiveis():
     return ["alfabeto", "entropia", "coincidencia", "kasiski", "palavras", "zipf", "posicional",
-            "repeticoes", "dependencia", "sukhotin"]
+            "repeticoes", "dependencia", "sukhotin", "gaskell", "amancio"]
 
 
 def run_medida(words, nome):
@@ -42,7 +42,10 @@ def run_medida(words, nome):
 class Analista:
     """Ciclo de um texto. Devolve o relatório final verificado e o registo completo."""
 
-    def __init__(self, backend, max_rounds=MAX_ROUNDS, max_medidas=12):
+    def __init__(self, backend, max_rounds=MAX_ROUNDS, max_medidas=12, bateria=False):
+        """bateria=True: o código corre todas as medidas antes e entrega-as ao modelo, que só interpreta
+        (opção 1 de docs/TEXTO_FONTES.md: ms408, Data Interpreter, 'Agents Explore but Agents Ignore')."""
+        self.bateria = bateria
         self.backend = backend
         self.max_rounds = max_rounds
         self.max_medidas = max_medidas
@@ -50,6 +53,12 @@ class Analista:
     def analisar(self, words):
         log = {"medidas": [], "rondas": [], "erro": None}
         user = self._prompt_inicial(words)
+        if self.bateria:
+            for nome in medidas_disponiveis():
+                user += f"\nRESULTADO {nome}: {json.dumps(run_medida(words, nome), ensure_ascii=False)}"
+                log["medidas"].append(nome)
+            user += ("\nJá tens todas as medidas. Responde agora com a ação 'relatorio'. Para cada hipótese, "
+                     "cita as medidas que a apoiam ou contradizem. 'indeterminada' só se nenhuma medida as distinguir.")
         pedidos = 0
         while pedidos < self.max_medidas:
             out = self.backend.generate(SYSTEM, user, {})

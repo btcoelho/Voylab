@@ -149,11 +149,11 @@ def run_regra():
     print("regra:", ok, "/", len(res))
 
 
-def run_agente(workers=4):
+def run_agente(workers=4, bateria=False, subconjunto=None, nome="episodios.jsonl"):
     from concurrent.futures import ThreadPoolExecutor
     import threading
     from deepseek_backend import DeepSeekBackend
-    ep = OUT / "episodios.jsonl"
+    ep = OUT / nome
     done = {json.loads(l)["uid"] for l in ep.read_text(encoding="utf-8").splitlines() if l.strip()} if ep.exists() else set()
     lock = threading.Lock()
 
@@ -161,7 +161,7 @@ def run_agente(workers=4):
         b = DeepSeekBackend("deepseek-chat", 0.0, 2048)
         w = [list(x) for x in r["palavras"]]
         try:
-            rel, log = A.Analista(b, max_medidas=8).analisar(w)
+            rel, log = A.Analista(b, max_medidas=8, bateria=bateria).analisar(w)
         except Exception as ex:  # noqa: BLE001  falha de execução: registada à parte, a amostra fica por fazer
             with lock, (OUT / "falhas_execucao.jsonl").open("a", encoding="utf-8") as fh:
                 fh.write(json.dumps({"uid": r["uid"], "erro": repr(ex)[:300]}) + "\n")
@@ -171,7 +171,8 @@ def run_agente(workers=4):
         with lock, ep.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(rec, ensure_ascii=False, default=str) + "\n")
     with ThreadPoolExecutor(workers) as ex:
-        list(ex.map(one, [r for r in carregar() if r["uid"] not in done]))
+        rs = [r for r in carregar() if r["uid"] not in done and (subconjunto is None or r["uid"].split("-")[0] in subconjunto)]
+        list(ex.map(one, rs))
 
 
 if __name__ == "__main__":
@@ -179,6 +180,7 @@ if __name__ == "__main__":
     ap.add_argument("--build", action="store_true")
     ap.add_argument("--regra", action="store_true")
     ap.add_argument("--run", action="store_true")
+    ap.add_argument("--bateria", action="store_true", help="§9.2: 18 amostras (obras 0 e 1), bateria completa")
     a = ap.parse_args()
     if a.build:
         build()
@@ -186,3 +188,5 @@ if __name__ == "__main__":
         run_regra()
     if a.run:
         run_agente()
+    if a.bateria:
+        run_agente(bateria=True, subconjunto={"0", "1"}, nome="episodios_bateria.jsonl")

@@ -235,7 +235,47 @@ def tudo(words, referencia=None):
     out = {"alfabeto": alfabeto(words), "entropia": entropia(words), "coincidencia": coincidencia(words),
            "kasiski": kasiski(words), "palavras": palavras(words), "zipf": zipf(words),
            "posicional": posicional(words), "repeticoes": repeticoes(words), "dependencia": dependencia(words),
-           "sukhotin": sukhotin(words)}
+           "sukhotin": sukhotin(words), "gaskell": gaskell(words), "amancio": amancio(words)}
     if referencia is not None:
         out["perfil"] = perfil(words, referencia)
     return out
+
+
+def gaskell(words):
+    """Subconjunto das métricas de Gaskell & Bowern 2022 (CEUR Vol-3313, paper4): comprimento de palavra
+    (média, desvio, assimetria, autocorrelação lag 1), compressão (zlib) e palavras repetidas seguidas."""
+    import zlib
+    lens = [len(w) for w in words]
+    n = len(lens)
+    m = sum(lens) / n
+    sd = (sum((x - m) ** 2 for x in lens) / n) ** 0.5
+    skew = (sum((x - m) ** 3 for x in lens) / n) / sd ** 3 if sd else 0.0
+    ac = (sum((a - m) * (b - m) for a, b in zip(lens, lens[1:])) / (n - 1)) / sd ** 2 if sd and n > 1 else 0.0
+    raw = " ".join("".join(w) for w in words).encode()
+    return {"wordlen_media": round(m, 4), "wordlen_desvio": round(sd, 4), "wordlen_assimetria": round(skew, 4),
+            "wordlen_autocorr": round(ac, 4), "compressao": round(len(zlib.compress(raw, 9)) / len(raw), 4),
+            "palavras_repetidas_seguidas": sum(1 for a, b in zip(words, words[1:]) if a == b)}
+
+
+def amancio(words, versoes=10, semente=0):
+    """Normalização de Amancio et al. 2013 (arXiv 1303.0347): medida real a dividir pela média de versões com as
+    palavras baralhadas. Perto de 1 = a ordem das palavras não traz informação. Medidas: bigramas de palavras
+    repetidos e entropia condicional da palavra seguinte."""
+    def stats(ws):
+        bi = Counter(zip(map(tuple, ws), map(tuple, ws[1:])))
+        rep = sum(1 for v in bi.values() if v > 1)
+        first = Counter(map(tuple, ws[:-1]))
+        h = _cond(bi, first)
+        return rep, h
+    rep, h = stats(words)
+    rng = random.Random(semente)
+    ws = list(words)
+    rs, hs = [], []
+    for _ in range(versoes):
+        rng.shuffle(ws)
+        a, b = stats(ws)
+        rs.append(a)
+        hs.append(b)
+    mr, mh = sum(rs) / versoes, sum(hs) / versoes
+    return {"bigramas_repetidos_razao": round(rep / mr, 4) if mr else None,
+            "h_palavra_seguinte_razao": round(h / mh, 4) if mh else None}

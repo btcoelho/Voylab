@@ -113,3 +113,11 @@ Para cada hipótese o agente dá `rejeitada`, `compatível` ou `indeterminada`, 
 **Previsões:** P1 confirmada (49 ≥ 43); P2 confirmada (13 < 49); P3 confirmada (1,7% ≤ 5%); P4 confirmada (2 ≤ 7); P5 confirmada (72/72).
 
 **Leitura.** (1) A cadeia é credível: as medidas, as transformações e o verificador funcionam, e o verificador apanha e faz corrigir as afirmações falsas (7% → 1,7%). (2) O agente não investiga: pára ao fim de duas medidas e responde "indeterminada" em 60% dos casos, mesmo quando a medida que distinguia estava disponível e não foi pedida. É a mesma falha da V4 (§17, §24): o problema é recolher a evidência, não lê-la. (3) A regra simples falha NUL e TAB (dá SUB a todos) e metade de BAR: as medidas atuais não chegam para essas três famílias, o que é um limite das medidas, não do agente.
+
+### 9.2 Teste pequeno: bateria completa em código, o modelo só interpreta (aprovado pelo Bruno, 19/10, 06:50; escrito antes de correr)
+
+**Base nos outros projetos** (`docs/TEXTO_FONTES.md`): ms408 (bateria fixa aplicada sempre; o LLM fica fora do cálculo), Data Interpreter (plano explícito: 0,37 → 0,85 na ablação), "Agents Explore but Agents Ignore" (os modelos não usam o que têm disponível, mas usam-no quando o recebem pronto). Medidas novas com fonte: `gaskell` (comprimento de palavra, autocorrelação, compressão; Gaskell & Bowern 2022) e `amancio` (razão contra versões baralhadas; Amancio et al. 2013).
+**Mudança.** `Analista(bateria=True)`: o código corre as 12 medidas e entrega-as todas no primeiro pedido; o modelo responde logo com o relatório. Tudo o resto igual (modelo, temperatura, verificador, 2 rondas).
+**Amostras.** 18: obras 0 (inglês, César) e 1 (latim, César), as 9 famílias, as mesmas amostras de §9. Nessas 18, antes: agente 2/18, "indeterminada" 12/18; regra 12/18.
+**Previsões.** **B1:** agente ≥ 6/18. **B2:** "indeterminada" ≤ 6/18. **B3:** afirmações falsas finais ≤ 5%. **B4:** o agente continua abaixo da regra (≤ 12/18), porque NUL e TAB não se distinguem com estas medidas. **B5:** 18/18 relatórios válidos.
+**Decisão depois:** se B1 e B2 se confirmarem, o problema era de recolha de evidência e alarga-se às 72; se não, o problema é de interpretação e a próxima base a estudar é a falsificação sequencial (POPPER) ou o raciocínio ligado.
