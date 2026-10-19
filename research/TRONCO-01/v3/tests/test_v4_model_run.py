@@ -172,3 +172,36 @@ class Reasoning(unittest.TestCase):
             self.assertEqual(part["fresh_calls_this_session"] + rest["fresh_calls_this_session"], ref["fresh_calls_this_session"])
             keys = [json.loads(l)["key"] for l in (Path(d) / "run" / "calls.jsonl").read_text().splitlines()]
             self.assertEqual(len(keys), len(set(keys)))
+
+
+class Verifier(unittest.TestCase):
+    def test_code_verifier_matches_generator_admissibility(self):
+        import verified_agent as VA
+        import env_v3 as E
+        import generator_v3 as g
+        for w in R.worlds()[:60]:
+            st = E.Episode(w).state()
+            for c in st["candidate_models"]:
+                adm = all(VA.card_output(c, o["input"]) == o["output"] for o in st["observations"])
+                h = g.hs.card_hypothesis(g.D, c)
+                rows = [(g.INPUTS.index(g.D.as_tuple(o["input"])), o["output"]) for o in st["observations"]]
+                self.assertEqual(adm, all(h[i] == y for i, y in rows))
+
+    def test_loop_feeds_back_only_public_facts_and_stops(self):
+        import verified_agent as VA
+        import run_v4_verifier as RV
+        seen = []
+
+        class Rec(Scripted):
+            def generate(self, system, user, schema, state=None):
+                seen.append(user)
+                return super().generate(system, user, schema)
+        with tempfile.TemporaryDirectory() as d:
+            res = RV.run_arm(Path(d), "code", R.worlds()[:3], Rec, None, workers=1)
+            self.assertEqual(res["episodes"], 3)
+            fb = [u for u in seen if "VERIFICAÇÃO INDEPENDENTE" in u]
+            self.assertTrue(fb)
+            eps = [json.loads(l) for l in (Path(d) / "episodes.jsonl").read_text().splitlines()]
+            self.assertTrue(all(len([r for r in e["rounds"] if r["phase"] == "explore"]) <= 3 for e in eps))
+            for u in fb:                       # feedback mentions only visible observation ids
+                self.assertNotIn("hidden", u)

@@ -449,3 +449,22 @@ Categorias de M1-DS-R: fundamentado 37, pesquisa 4, prematura 4 (comprometeu sem
   - Primárias V-1 e V-2 com Holm a α = 0,05 (a V-1 usa o teste binomial unilateral contra 1/3).
 - **Relato:** denominadores, IC, por veredicto alvo e por estrato de qualidade, lado a lado com as referências e com o §21; desempenho separado de validade (nada disto mostra que a grelha mede capacidade de investigação humana).
 - **Rede:** gerar a partição requer acesso a `api.drand.sh`, ainda bloqueado nesta sessão.
+
+## 23. Experiência agente + verificador (aprovada pelo Bruno, 19/10, 04:38; escrita antes de correr)
+
+**Pergunta.** A investigação por agentes escala quando a verificação escala com ela: um modelo propõe, outro verifica cada afirmação contra a fonte. Na V4: um agente barato (DeepSeek **sem** raciocínio, o de M1-DS) mais um verificador recupera o que só o raciocínio deu em §21?
+**Natureza:** exploratória (os mesmos 45 mundos de §20/§21, já vistos). A validação de §22 fica em pausa (nada gerado).
+**Desenho.**
+- Agente: `deepseek-chat` sem raciocínio, prompt v3.1, 1024 tokens, temperatura 0 (como M1-DS).
+- Afirmações verificadas: para cada carta e cada observação **visível** ao agente, "a carta dá nesta entrada a saída observada". Uma carta é admissível se todas forem verdadeiras. Quando a lista de cartas admissíveis do agente (no compromisso ou na revisão) discorda do verificador, o agente recebe só os factos falsificados e responde de novo; até 3 rondas. O verificador **nunca** vê o estado escondido.
+- **Não** se verifica `supported` vs `undetermined` (exige raciocinar sobre as 70 regras) nem a escolha da consulta: limitação assumida.
+- Dois braços nos mesmos 45 mundos: **código** (verificador exato, referência) e **modelo** (`deepseek-chat` sem raciocínio, chamada separada por afirmação, resposta VERDADEIRA/FALSA, 8 tokens). Cada resposta do verificador-modelo é comparada com a verdade calculada por código: mede-se o erro do próprio verificador.
+- Um pedido de teste ao verificador antes da corrida (respondeu FALSA, correto), fora dos resultados.
+**Previsões.**
+- **X-a:** elegibilidade do agente ≥ 98% nos dois braços.
+- **X-b (braço código):** quando o próprio histórico implica `rejected`, o agente responde `rejected` em ≥ 80%; concordância com o próprio histórico ≥ 0,90.
+- **X-c (verificador-modelo):** acerto ≥ 95% nas afirmações; afirmações falsas aceites como verdadeiras ≤ 5%.
+- **X-d:** fundamentado do braço modelo ≥ 20/45 (M1-DS: 15/45 nos mesmos mundos).
+- **X-e:** nenhum braço chega a 37/45 (M1-DS-R), porque `supported` e a escolha da consulta não são verificados.
+- **X-f:** revisão final correta ≥ 25/45 (M1-DS) nos dois braços.
+**Custo previsto:** < 1 USD; paragem se o saldo descer de 1 USD.
