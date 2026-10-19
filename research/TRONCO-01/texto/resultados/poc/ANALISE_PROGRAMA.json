@@ -1,0 +1,36 @@
+{
+ "acerto": 9,
+ "n": 18,
+ "funcao_corre": 18,
+ "justificacoes_falsas_fim": [
+  0,
+  153
+ ],
+ "ronda0": {
+  "falsas": [
+   2,
+   155
+  ],
+  "erros_execucao": 1
+ },
+ "por_amostra": {
+  "0-SUB": "SUB",
+  "0-LN": "LN",
+  "0-POL": "POL",
+  "0-VER": "TAB",
+  "0-NUL": "LN",
+  "0-TRA": "SUB",
+  "0-TAB": "BAR",
+  "0-BAR": "LN",
+  "0-ALE": "ALE",
+  "1-LN": "LN",
+  "1-SUB": "LN",
+  "1-POL": "POL",
+  "1-TRA": "TRA",
+  "1-BAR": "LN",
+  "1-TAB": "TAB",
+  "1-VER": "BAR",
+  "1-NUL": "VER",
+  "1-ALE": "ALE"
+ }
+}
