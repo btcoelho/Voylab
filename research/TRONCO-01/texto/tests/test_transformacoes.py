@@ -55,3 +55,10 @@ class Verificador(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Malformada(unittest.TestCase):
+    def test_campo_dict_conta_como_falsa(self):
+        r = V.verifica_todas(TEXTO, [{"id": "A9", "medida": "entropia", "campo": "h1", "valor": {"x": 1}}])[0]
+        self.assertFalse(r["verdadeira"])
+        self.assertTrue(r["malformada"])

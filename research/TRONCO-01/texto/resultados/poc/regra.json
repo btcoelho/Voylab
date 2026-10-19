@@ -1,0 +1,362 @@
+[
+ {
+  "uid": "0-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "0-SUB",
+  "familia": "SUB",
+  "regra": "LN"
+ },
+ {
+  "uid": "0-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "0-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "0-VER",
+  "familia": "VER",
+  "regra": "VER"
+ },
+ {
+  "uid": "0-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "0-BAR",
+  "familia": "BAR",
+  "regra": "BAR"
+ },
+ {
+  "uid": "0-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "0-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ },
+ {
+  "uid": "1-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "1-SUB",
+  "familia": "SUB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "1-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "1-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "1-VER",
+  "familia": "VER",
+  "regra": "VER"
+ },
+ {
+  "uid": "1-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "1-BAR",
+  "familia": "BAR",
+  "regra": "TAB"
+ },
+ {
+  "uid": "1-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "1-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ },
+ {
+  "uid": "2-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "2-SUB",
+  "familia": "SUB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "2-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "2-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "2-VER",
+  "familia": "VER",
+  "regra": "VER"
+ },
+ {
+  "uid": "2-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "2-BAR",
+  "familia": "BAR",
+  "regra": "TAB"
+ },
+ {
+  "uid": "2-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "2-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ },
+ {
+  "uid": "3-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "3-SUB",
+  "familia": "SUB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "3-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "3-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "3-VER",
+  "familia": "VER",
+  "regra": "VER"
+ },
+ {
+  "uid": "3-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "3-BAR",
+  "familia": "BAR",
+  "regra": "TAB"
+ },
+ {
+  "uid": "3-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "3-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ },
+ {
+  "uid": "4-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "4-SUB",
+  "familia": "SUB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "4-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "4-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "4-VER",
+  "familia": "VER",
+  "regra": "VER"
+ },
+ {
+  "uid": "4-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "4-BAR",
+  "familia": "BAR",
+  "regra": "TAB"
+ },
+ {
+  "uid": "4-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "4-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ },
+ {
+  "uid": "5-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "5-SUB",
+  "familia": "SUB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "5-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "5-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "5-VER",
+  "familia": "VER",
+  "regra": "VER"
+ },
+ {
+  "uid": "5-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "5-BAR",
+  "familia": "BAR",
+  "regra": "BAR"
+ },
+ {
+  "uid": "5-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "5-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ },
+ {
+  "uid": "6-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "6-SUB",
+  "familia": "SUB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "6-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "6-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "6-VER",
+  "familia": "VER",
+  "regra": "ALE"
+ },
+ {
+  "uid": "6-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "6-BAR",
+  "familia": "BAR",
+  "regra": "BAR"
+ },
+ {
+  "uid": "6-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "6-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ },
+ {
+  "uid": "7-LN",
+  "familia": "LN",
+  "regra": "LN"
+ },
+ {
+  "uid": "7-SUB",
+  "familia": "SUB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "7-POL",
+  "familia": "POL",
+  "regra": "POL"
+ },
+ {
+  "uid": "7-TRA",
+  "familia": "TRA",
+  "regra": "TRA"
+ },
+ {
+  "uid": "7-VER",
+  "familia": "VER",
+  "regra": "ALE"
+ },
+ {
+  "uid": "7-NUL",
+  "familia": "NUL",
+  "regra": "SUB"
+ },
+ {
+  "uid": "7-BAR",
+  "familia": "BAR",
+  "regra": "BAR"
+ },
+ {
+  "uid": "7-TAB",
+  "familia": "TAB",
+  "regra": "SUB"
+ },
+ {
+  "uid": "7-ALE",
+  "familia": "ALE",
+  "regra": "ALE"
+ }
+]

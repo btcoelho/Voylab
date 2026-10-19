@@ -96,3 +96,4 @@ Para cada hipótese o agente dá `rejeitada`, `compatível` ou `indeterminada`, 
 - **P4:** família verdadeira `rejeitada` em ≤ 7/72.
 - **P5:** relatório válido em ≥ 65/72 (90%).
 **Leitura.** Exploratória e pequena (8 por família, Wilson muito largo). Serve para decidir se vale a pena investir mais, não para afirmar capacidade. Custo previsto < 2 USD.
+**Desvio de execução (registado durante a corrida).** Após 11 de 72 amostras, uma afirmação do agente com um valor não numérico fez o verificador lançar uma exceção e parou a corrida. Correção: afirmações não verificáveis contam como **falsas e malformadas** (antes não estavam previstas). As 11 amostras feitas mantêm-se; a corrida retoma nas restantes 61. Nada mais muda (regra, previsões, medidas, prompt).

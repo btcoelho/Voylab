@@ -43,5 +43,16 @@ def verifica(words, afirmacao):
     return {"id": afirmacao.get("id"), "interpretacao": False, "verdadeira": bool(ok), "valor_a": a, "valor_b": b}
 
 
+def verifica_seguro(words, afirmacao):
+    """Uma afirmação que não se consegue verificar (medida ou campo inexistente, valor não numérico) conta como
+    falsa e malformada; nunca interrompe a corrida."""
+    try:
+        return verifica(words, afirmacao)
+    except Exception as ex:  # noqa: BLE001
+        return {"id": afirmacao.get("id") if isinstance(afirmacao, dict) else None, "interpretacao": False,
+                "verdadeira": False, "malformada": True, "valor_a": f"não verificável ({type(ex).__name__})",
+                "valor_b": afirmacao.get("valor") if isinstance(afirmacao, dict) else None}
+
+
 def verifica_todas(words, afirmacoes):
-    return [verifica(words, a) for a in afirmacoes]
+    return [verifica_seguro(words, a) for a in (afirmacoes or [])]
