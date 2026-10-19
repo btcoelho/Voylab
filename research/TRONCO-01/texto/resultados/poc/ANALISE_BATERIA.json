@@ -1,0 +1,89 @@
+{
+ "validos": 18,
+ "n": 18,
+ "acerto": 8,
+ "indeterminada": 0,
+ "falsas_finais": [
+  16,
+  157
+ ],
+ "falsas_primeira_ronda": [
+  46,
+  228
+ ],
+ "verdadeira_rejeitada": 4,
+ "por_amostra": {
+  "0-LN": {
+   "agente": "LN",
+   "regra": "LN"
+  },
+  "0-SUB": {
+   "agente": "SUB",
+   "regra": "LN"
+  },
+  "0-TRA": {
+   "agente": "SUB",
+   "regra": "TRA"
+  },
+  "0-VER": {
+   "agente": "POL",
+   "regra": "VER"
+  },
+  "0-POL": {
+   "agente": "POL",
+   "regra": "POL"
+  },
+  "0-BAR": {
+   "agente": "LN",
+   "regra": "BAR"
+  },
+  "0-NUL": {
+   "agente": "SUB",
+   "regra": "SUB"
+  },
+  "0-TAB": {
+   "agente": "SUB",
+   "regra": "SUB"
+  },
+  "0-ALE": {
+   "agente": "ALE",
+   "regra": "ALE"
+  },
+  "1-SUB": {
+   "agente": "SUB",
+   "regra": "SUB"
+  },
+  "1-LN": {
+   "agente": "LN",
+   "regra": "LN"
+  },
+  "1-POL": {
+   "agente": "POL",
+   "regra": "POL"
+  },
+  "1-TRA": {
+   "agente": "SUB",
+   "regra": "TRA"
+  },
+  "1-TAB": {
+   "agente": "SUB",
+   "regra": "SUB"
+  },
+  "1-VER": {
+   "agente": "POL",
+   "regra": "VER"
+  },
+  "1-BAR": {
+   "agente": "LN",
+   "regra": "TAB"
+  },
+  "1-NUL": {
+   "agente": "SUB",
+   "regra": "SUB"
+  },
+  "1-ALE": {
+   "agente": "ALE",
+   "regra": "ALE"
+  }
+ }
+}
