@@ -97,3 +97,19 @@ Para cada hipótese o agente dá `rejeitada`, `compatível` ou `indeterminada`, 
 - **P5:** relatório válido em ≥ 65/72 (90%).
 **Leitura.** Exploratória e pequena (8 por família, Wilson muito largo). Serve para decidir se vale a pena investir mais, não para afirmar capacidade. Custo previsto < 2 USD.
 **Desvio de execução (registado durante a corrida).** Após 11 de 72 amostras, uma afirmação do agente com um valor não numérico fez o verificador lançar uma exceção e parou a corrida. Correção: afirmações não verificáveis contam como **falsas e malformadas** (antes não estavam previstas). As 11 amostras feitas mantêm-se; a corrida retoma nas restantes 61. Nada mais muda (regra, previsões, medidas, prompt).
+
+### 9.1 Resultados da prova de conceito (`texto/resultados/poc/ANALISE.json`)
+
+72/72 relatórios válidos; 0 falhas de execução depois da correção; custo ≈ 0,05 USD (saldo 6,05 → 6,00).
+
+| | Agente (DeepSeek sem raciocínio) | Regra simples |
+|---|---|---|
+| Acerto da família | 13/72 [0,11; 0,29] | 49/72 [0,57; 0,78] |
+| LN / SUB / POL / TRA / VER / NUL / BAR / TAB / ALE (de 8) | 8 / 2 / 2 / 0 / 0 / 0 / 0 / 0 / 1 | 8 / 7 / 8 / 8 / 6 / 0 / 4 / 0 / 8 |
+| Respondeu "indeterminada" | 43/72 | — |
+
+**Afirmações:** 13/180 falsas na primeira versão; depois do verificador, **3/174 = 1,7%** [0,6%; 4,9%]. **Família verdadeira rejeitada:** 2/72 (duas `ALE` dadas como POL). **Investigação:** 2,3 medidas por amostra (sempre `alfabeto` e `entropia`; `coincidencia` em 17, `kasiski` em 5; **nunca** `dependencia`, `zipf`, `posicional`, `palavras`).
+
+**Previsões:** P1 confirmada (49 ≥ 43); P2 confirmada (13 < 49); P3 confirmada (1,7% ≤ 5%); P4 confirmada (2 ≤ 7); P5 confirmada (72/72).
+
+**Leitura.** (1) A cadeia é credível: as medidas, as transformações e o verificador funcionam, e o verificador apanha e faz corrigir as afirmações falsas (7% → 1,7%). (2) O agente não investiga: pára ao fim de duas medidas e responde "indeterminada" em 60% dos casos, mesmo quando a medida que distinguia estava disponível e não foi pedida. É a mesma falha da V4 (§17, §24): o problema é recolher a evidência, não lê-la. (3) A regra simples falha NUL e TAB (dá SUB a todos) e metade de BAR: as medidas atuais não chegam para essas três famílias, o que é um limite das medidas, não do agente.

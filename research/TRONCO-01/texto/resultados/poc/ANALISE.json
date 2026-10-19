@@ -1,148 +1,166 @@
 {
- "episodios": 11,
+ "episodios": 72,
  "relatorios_validos": [
-  11,
-  11,
+  72,
+  72,
   [
-   0.741,
+   0.949,
    1.0
   ]
  ],
  "erros": {},
  "acerto_agente": [
-  2,
-  11,
+  13,
+  72,
   [
-   0.051,
-   0.477
+   0.109,
+   0.285
   ]
  ],
  "acerto_regra": [
-  9,
-  11,
+  49,
+  72,
   [
-   0.523,
-   0.949
+   0.566,
+   0.777
   ]
  ],
- "indeterminada_agente": 8,
- "afirmacoes_numericas_finais": 25,
+ "indeterminada_agente": 43,
+ "afirmacoes_numericas_finais": 174,
  "falsas_finais": [
-  0,
-  25,
+  3,
+  174,
   [
-   0.0,
-   0.133
+   0.006,
+   0.049
   ]
  ],
  "falsas_primeira_ronda": [
-  0,
-  25
+  13,
+  180
  ],
  "verdadeira_rejeitada": [
-  0,
-  11
+  2,
+  72
  ],
  "medidas_pedidas": {
-  "alfabeto": 11,
-  "entropia": 11
+  "alfabeto": 72,
+  "entropia": 72,
+  "coincidencia": 17,
+  "kasiski": 5
  },
- "medidas_por_episodio": 2.0,
+ "medidas_por_episodio": 2.31,
  "por_familia": {
   "LN": {
-   "n": 2,
-   "agente": 2,
-   "regra": 2,
+   "n": 8,
+   "agente": 8,
+   "regra": 8,
    "agente_disse": {
-    "LN": 2
+    "LN": 8
    },
    "regra_disse": {
-    "LN": 2
+    "LN": 8
    }
   },
   "SUB": {
-   "n": 2,
-   "agente": 0,
-   "regra": 1,
+   "n": 8,
+   "agente": 2,
+   "regra": 7,
    "agente_disse": {
-    "indeterminada": 2
+    "indeterminada": 6,
+    "SUB": 2
    },
    "regra_disse": {
     "LN": 1,
-    "SUB": 1
+    "SUB": 7
    }
   },
   "POL": {
-   "n": 2,
-   "agente": 0,
-   "regra": 2,
+   "n": 8,
+   "agente": 2,
+   "regra": 8,
    "agente_disse": {
-    "indeterminada": 2
+    "indeterminada": 6,
+    "POL": 2
    },
    "regra_disse": {
-    "POL": 2
+    "POL": 8
    }
   },
   "TRA": {
-   "n": 1,
+   "n": 8,
    "agente": 0,
-   "regra": 1,
+   "regra": 8,
    "agente_disse": {
-    "indeterminada": 1
+    "indeterminada": 7,
+    "SUB": 1
    },
    "regra_disse": {
-    "TRA": 1
+    "TRA": 8
    }
   },
   "VER": {
-   "n": 1,
+   "n": 8,
    "agente": 0,
-   "regra": 1,
+   "regra": 6,
    "agente_disse": {
-    "indeterminada": 1
+    "indeterminada": 7,
+    "POL": 1
    },
    "regra_disse": {
-    "VER": 1
+    "VER": 6,
+    "ALE": 2
    }
   },
   "NUL": {
-   "n": 1,
+   "n": 8,
    "agente": 0,
    "regra": 0,
    "agente_disse": {
-    "indeterminada": 1
+    "indeterminada": 6,
+    "SUB": 2
    },
    "regra_disse": {
-    "SUB": 1
+    "SUB": 8
    }
   },
   "BAR": {
-   "n": 1,
+   "n": 8,
    "agente": 0,
-   "regra": 1,
+   "regra": 4,
    "agente_disse": {
-    "LN": 1
-   },
-   "regra_disse": {
-    "BAR": 1
-   }
-  },
-  "TAB": {
-   "n": 0,
-   "agente": 0,
-   "regra": 0,
-   "agente_disse": {},
-   "regra_disse": {}
-  },
-  "ALE": {
-   "n": 1,
-   "agente": 0,
-   "regra": 1,
-   "agente_disse": {
+    "LN": 7,
     "indeterminada": 1
    },
    "regra_disse": {
+    "BAR": 4,
+    "TAB": 4
+   }
+  },
+  "TAB": {
+   "n": 8,
+   "agente": 0,
+   "regra": 0,
+   "agente_disse": {
+    "SUB": 2,
+    "indeterminada": 5,
+    "POL": 1
+   },
+   "regra_disse": {
+    "SUB": 8
+   }
+  },
+  "ALE": {
+   "n": 8,
+   "agente": 1,
+   "regra": 8,
+   "agente_disse": {
+    "indeterminada": 5,
+    "POL": 2,
     "ALE": 1
+   },
+   "regra_disse": {
+    "ALE": 8
    }
   }
  }
