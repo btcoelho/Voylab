@@ -325,3 +325,56 @@ O que dá mais evidência é tirar a comparação de números ao LLM.
 **Nota:** a linha 5 (StatQA) sugere que exemplos rotulados por família melhoram só uns 5–10 pontos. Num teste de 18 amostras isso é cerca de 1–2 amostras, dentro do ruído. Por isso não entra entre as três. O raciocínio ligado não tem números próprios nesta pesquisa; o vosso resultado noutra tarefa já é o indício mais direto.
 
 Fontes: [PoT](https://arxiv.org/abs/2211.12588), [Chain-of-Table](https://arxiv.org/html/2401.04398v2), [TableBench](https://arxiv.org/html/2408.09174v2), [StatQA](https://arxiv.org/html/2406.07815v1), [StatQA GitHub](https://github.com/derrickzhuyz/StatQA), [BLADE](https://huggingface.co/papers/2408.09667), [Number Cookbook](https://arxiv.org/abs/2411.03766v1), [Kliegr et al.](https://arxiv.org/abs/2409.07132v1), [Huang et al.](https://arxiv.org/abs/2310.01798v2), [Tyen et al.](https://arxiv.org/html/2311.08516v3), [PCN](https://arxiv.org/abs/2509.06902v1)
+
+
+---
+
+## Modelos Qwen recentes e personalizações (pesquisa de 19/10, 07:16)
+
+PC do Bruno: AMD Ryzen 5 7600X, NVIDIA RTX 4070 12 GB (dos registos M15/M16), 32 GB de RAM (dito pelo Bruno).
+
+Encontrei bastante coisa nova. Há modelos Qwen abertos, todos Apache 2.0, até agosto de 2026: Qwen3.5 (fev.–mar.), Qwen3.6 (abr.) e Qwen3.8-27B (ago.). O Qwen4 foi só anunciado em setembro, ainda sem data. Não consegui abrir diretamente as fichas oficiais da Qwen no Hugging Face (o acesso foi bloqueado). Por isso muitos números vêm de páginas secundárias e estão marcados I. Nada foi descarregado nem executado.
+
+## Tabela
+
+| Item | Fonte | Data | Tamanho / contexto | Licença | O que reporta | Requisitos | Utilidade | V/I |
+|---|---|---|---|---|---|---|---|---|
+| **Qwen3.8-27B** | [HF (citado)](https://huggingface.co/Qwen/Qwen3.8-27B), [DataNorth](https://datanorth.ai/news/alibaba-releases-qwen3-8-27b), [eWeek](https://www.eweek.com/news/alibaba-qwen3-8-27b-license-apac-china/) | 14/08/2026 | 27B denso, com visão; 262K de contexto (1M com YaRN) | Apache 2.0 | LiveCodeBench v6 90,3; GPQA-D 89,2; SWE-bench Pro 61,7 (avaliação da própria Alibaba, algumas tarefas alteradas). Raciocínio ligado por omissão, com `reasoning_effort` | 4-bit ≈14–17 GB; Q4 no Ollama ≈18 GB ([Yotta](https://www.yottalabs.ai/post/qwen-3-8-27b-specs-hardware-requirements-how-to-run-2026)) | Alta via API, baixa em local (não cabe em 8–12 GB) | I |
+| Qwen3.8-Max (2,4T-A95B) | eWeek / DataNorth | 12/08/2026 | MoE | Licença própria (exige licença extra acima de 50 M$ de receita) | — | Só via API | Baixa | I |
+| **Qwen3.6-27B** | [NYU RITS](https://rits.shanghai.nyu.edu/ai/qwen3-6-27b-a-dense-27b-model-that-beats-a-397b-moe-on-coding) | 22/04/2026 | 27B denso; 262K | Apache 2.0 | SWE-bench V 77,2; Terminal-Bench 2.0 59,3; MMLU-Pro 86,2 | Q4_K_M 16,8 GB; precisa de GPU de 24 GB | Média | I |
+| **Qwen3.6-35B-A3B** | [NYU RITS](https://rits.shanghai.nyu.edu/ai/qwen3-6-35b-a3b-alibaba-open-sources-a-frontier-class-agentic-coder/) | 02/04/2026 | MoE com 3B ativos; 262K | Apache 2.0 | AIME26 92,7; HMMT fev. 26 83,6; SWE-bench V 73,4 | Pesos Q4 ≈20 GB (estimativa minha). Numa GPU de 12 GB só corre com os "experts" na RAM do sistema | Média-alta, se o PC tiver 32 GB de RAM | I |
+| Qwen3.6-Plus (preview) | [OpenRouter](https://openrouter.ai/qwen/qwen3.6-plus-preview:free) | 30/03/2026 | 1M de contexto, pesos fechados | — | — | API `:free` | Alta como API gratuita (ver riscos) | V (página) |
+| **Qwen3.5-27B** (família 35B-A3B, 122B-A10B, 397B-A17B) | [Ficha HF (espelho Dell)](https://dell.huggingface.co/models/Qwen/Qwen3.5-27B) | fev. 2026 | 27B; 262K | Apache 2.0 | HMMT fev. 25 92,0; LiveCodeBench v6 80,7; BFCL-V4 68,5; TAU2 79,0. Raciocínio ligado por omissão; desliga-se com `enable_thinking: False` (não aceita `/think` nem `/nothink`) | ≈17 GB em Q4 | Média | V (espelho da ficha) |
+| **Qwen3.5-9B / 4B / 2B / 0.8B** | [InsiderLLM](https://insiderllm.com/guides/qwen-3-5-small-models-9b-beats-30b/), [Gigazine](https://gigazine.net/gsc_news/en/20260303-qwen-3-5-small) | 02/03/2026 | Densos, multimodais; 262K | Apache 2.0 | 9B: GPQA-D 81,7 (contra 77,2 do Qwen3-30B), IFEval 91,5. 4B: GPQA-D 76,2. Não encontrei números de AIME nem LiveCodeBench | Ollama: 9B ≈6,6 GB (8 GB mín.); 4B ≈3,4 GB (6 GB mín.); 2B ≈2,7 GB. GGUF da Unsloth de 3 a 8 bits | **Alta** | I |
+| Qwen3-4B-Thinking-2507 | [Featherless](https://featherless.ai/models/unsloth/Qwen3-4B-Thinking-2507/readme) | 06/08/2025 | 4B; 262K | Apache 2.0 | A página só diz que melhora no AIME25 e HMMT25, sem números | ≈2,5–3 GB em Q4 (estimativa minha) | Média: alternativa de reserva para CPU | I |
+| DeepSeek-R1-0528-Qwen3-8B | [Featherless](https://featherless.ai/models/unsloth/DeepSeek-R1-0528-Qwen3-8B/readme) | 29/05/2025 | 8B, destilado do R1 | MIT | AIME24 +10 pontos sobre o Qwen3-8B; segundo a página, iguala o Qwen3-235B-thinking no AIME24 | ≈5–6 GB em Q4 (estimativa minha) | Média: mesma "escola" do DeepSeek que deu 15/18 | I |
+| OpenReasoning-Nemotron 1.5B/7B/14B/32B (base Qwen2.5) | [HF NVIDIA](https://huggingface.co/nvidia/OpenReasoning-Nemotron-1.5B/blob/0826173984c85d6fbbf90b0416e70035cbb15812/README.md) | 16/07/2025 | 1,5–32B | CC-BY-4.0 | AIME25: 45,6 / 78,2 / 82,0 / 84,0; LiveCodeBench v6: 28,6 / 63,3 / 67,8 / 70,2 | 7B ≈5 GB em Q4 (estimativa minha) | Média: forte em matemática, mas sem uso de ferramentas | V |
+| AceReason-Nemotron-1.1-7B (base Qwen2.5-Math-7B) | [HF](https://huggingface.co/nvidia/AceReason-Nemotron-1.1-7B) | 16/06/2025 | 7B | NVIDIA Open Model License | AIME25 64,8 (ponto de partida SFT: 48,4); LiveCodeBench v6 52,1 | ≈5 GB em Q4 | Baixa-média | V |
+| Skywork-OR1-7B / 32B (base R1-Distill-Qwen) | [arXiv 2505.22312](https://arxiv.org/pdf/2505.22312) | mai. 2025 | 7B / 32B | Não confirmada | 32B: AIME25 73,3, LiveCodeBench 63,0. 7B: 54,6 e 47,6 | — | Baixa: ultrapassado | V |
+| OpenThinker3-7B (base Qwen2.5-7B) | [HF](https://huggingface.co/open-thoughts/OpenThinker3-7B) | jun. 2025 | 7B | Apache 2.0 | AIME25 53,3; LiveCodeBench 51,7; MATH500 90,0 | ≈5 GB em Q4 | Baixa: ultrapassado pelo Qwen3.5 | V |
+| s1, Sky-T1, DeepScaleR, AReaL, Light-R1, ToolACE, Qwen-Agent | — | — | — | — | Não verifiquei | — | Provavelmente baixa (base Qwen2.5, de 2025) | Não verificado |
+| Qwen4 (Max, Flash, Plus, 27B) | [nocode.mba](https://www.nocode.mba/ai-release-tracker/providers/qwen) | anunciado 22/09/2026 | — | — | Ainda em treino | — | A vigiar | I |
+
+Nota sobre os fine-tunes: quase todos (OpenThinker, Skywork, AceReason, OpenReasoning) assentam no Qwen2.5 e são de 2025. Os Qwen3.5 e 3.6 oficiais já os igualam ou superam em matemática e código. Além disso, nenhum deles foi treinado para uso de ferramentas.
+
+**APIs gratuitas**
+
+| Fornecedor | Modelos Qwen | Limites | Uso dos dados para treino |
+|---|---|---|---|
+| OpenRouter `:free` | `qwen/qwen3.6-plus-preview:free`, `qwen/qwen3-coder:free` | 20 pedidos/min; 50/dia, ou 1000/dia depois de carregar 10 $ ([OpenRouter, abr. 2026](https://openrouter.ai/blog/tutorials/free-llm-apis-compared/)) | No 3.6-Plus, **sim**: a página diz que os prompts e respostas podem ser usados para melhorar o modelo (V) |
+| Alibaba Model Studio | Vários modelos Qwen | ≈1 M tokens por modelo, válidos 90 dias, só na região de Singapura ([doc. oficial](https://www.alibabacloud.com/help/en/model-studio/new-free-quota.md)) | A documentação não diz (V) |
+| OVHcloud AI Endpoints | Qwen3.8-27B, Qwen3.6-27B, Qwen3.5-9B, entre outros | Limites não indicados ([freellm changelog](https://freellm.net/changelog)) | Não verificado (I) |
+| Groq | qwen3.8-27b | Marcado ora "Paid" ora "Free"; estatuto ambíguo (I) | Indicado como sem treino (I) |
+| Cerebras, SambaNova, HF | Não encontrei Qwen gratuito atual. A HF tem só o Qwen2.5-7B e o Coder-7B | — | — |
+
+## Recomendações
+
+1. **PC com GPU de 8–12 GB: Qwen3.5-9B em Q4 (≈6,6 GB), com raciocínio ligado.** É o maior modelo Qwen recente que cabe todo na GPU, e o raciocínio é o que fez o DeepSeek passar de 9/18 para 15/18. Se o PC tiver 32 GB de RAM, vale a pena testar também o Qwen3.6-35B-A3B com os "experts" descarregados para a RAM. **Risco:** não encontrei números de raciocínio numérico ou de código para o 9B, só GPQA e IFEval. Para um texto de ~100 medidas, as respostas podem ser longas e lentas, e a função gerada pode ter erros de comparação. Convém limitar o contexto (por exemplo a 16–32K) para a memória do KV cache não estourar.
+
+2. **CPU com 7 GB de RAM: Qwen3.5-4B em Q4 (≈3,4 GB), com raciocínio ligado.** Como alternativa, o Qwen3-4B-Thinking-2507. O 9B em Q4 (6,6 GB) não cabe com o sistema operativo e o contexto. **Risco:** vai ser muito lento em CPU com raciocínio longo (minutos por caso), e um 4B fica bem atrás de um DeepSeek grande. Não é de esperar um resultado perto de 15/18.
+
+3. **API gratuita: Qwen3.6-Plus via OpenRouter `:free`, ou o Qwen3.8-27B através da quota gratuita da Alibaba Model Studio (Singapura).** O Qwen3.8-27B é o modelo aberto mais forte da família e tem `reasoning_effort` ajustável, o que se aproxima da configuração que deu 15/18. **Risco:** no OpenRouter os dados podem ser usados para treino, e com 50 pedidos por dia só se fazem uns dois ciclos de 18 casos. Na Alibaba a quota de 1 M tokens acaba em 90 dias e a política de dados não está documentada. Os dois servem para testar com textos não sensíveis, não para uso contínuo.
+
+**Bloqueado ou não verificado:** não consegui abrir as fichas Hugging Face de Qwen/Qwen3.6-27B, Qwen3.5-9B, Qwen3-4B-Thinking-2507 e Qwen3.8-27B (este último aparece citado no eWeek). Também falharam a página llmlearner do Qwen3.6-35B-A3B e o artigo dev.to sobre usar o Qwen3.8 de graça. Os números oficiais de AIME e BFCL do Qwen3.5-9B e do Qwen3.8-27B devem ser confirmados aí.
+
+Fontes principais: [Qwen3.5-27B (espelho)](https://dell.huggingface.co/models/Qwen/Qwen3.5-27B), [Qwen3.6-27B](https://rits.shanghai.nyu.edu/ai/qwen3-6-27b-a-dense-27b-model-that-beats-a-397b-moe-on-coding), [Qwen3.6-35B-A3B](https://rits.shanghai.nyu.edu/ai/qwen3-6-35b-a3b-alibaba-open-sources-a-frontier-class-agentic-coder/), [Qwen3.8-27B](https://datanorth.ai/news/alibaba-releases-qwen3-8-27b), [Qwen3.5 pequenos](https://insiderllm.com/guides/qwen-3-5-small-models-9b-beats-30b/), [OpenReasoning-Nemotron](https://huggingface.co/nvidia/OpenReasoning-Nemotron-1.5B/blob/0826173984c85d6fbbf90b0416e70035cbb15812/README.md), [AceReason 1.1](https://huggingface.co/nvidia/AceReason-Nemotron-1.1-7B), [Skywork-OR1](https://arxiv.org/pdf/2505.22312), [OpenThinker3](https://huggingface.co/open-thoughts/OpenThinker3-7B), [APIs gratuitas](https://openrouter.ai/blog/tutorials/free-llm-apis-compared/), [quota Alibaba](https://www.alibabacloud.com/help/en/model-studio/new-free-quota.md), [freellm changelog](https://freellm.net/changelog).
