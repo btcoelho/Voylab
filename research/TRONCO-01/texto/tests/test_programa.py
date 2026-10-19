@@ -46,5 +46,22 @@ class Ciclo(unittest.TestCase):
         self.assertEqual(len(log["rondas"]), 2)
 
 
+
+class Canarios(unittest.TestCase):
+    """Tentativas conhecidas de escapar do sandbox (PYSEC-2026-3533, qdash): todas têm de ser recusadas."""
+    CANARIOS = [
+        "def classificar(m):\n    return '{0.__class__}'.format(m)",
+        "def classificar(m):\n    return m.__class__.__name__",
+        "def classificar(m):\n    return ().__class__.__bases__[0].__subclasses__()",
+        "def classificar(m):\n    return getattr(m, '__class__')",
+        "def classificar(m):\n    return __import__('os')",
+        "def classificar(m):\n    while True:\n        pass",
+    ]
+
+    def test_todos_recusados(self):
+        for c in self.CANARIOS:
+            with self.assertRaises(ValueError, msg=c):
+                P.executar(c, M)
+
 if __name__ == "__main__":
     unittest.main()

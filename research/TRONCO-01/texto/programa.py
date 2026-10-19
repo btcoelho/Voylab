@@ -63,13 +63,33 @@ def _seguro(src, modo):
     return tree
 
 
-def executar(codigo, m):
-    tree = _seguro(codigo, "exec")
-    env = {"__builtins__": {}, **FUNCOES}
-    exec(compile(tree, "<classificar>", "exec"), env)  # noqa: S102  ambiente restrito por AST
-    if "classificar" not in env:
-        raise ValueError("falta classificar(m)")
-    r = env["classificar"](dict(m))
+_CHILD = r"""
+import json, sys
+d = json.load(sys.stdin)
+ns = {"__builtins__": {"abs": abs, "min": min, "max": max, "round": round, "len": len}}
+exec(compile(d["codigo"], "<classificar>", "exec"), ns)
+if "classificar" not in ns:
+    raise ValueError("falta classificar(m)")
+print(json.dumps({"r": ns["classificar"](d["m"])}))
+"""
+
+
+def executar(codigo, m, timeout=10):
+    """Corre classificar(m) num processo filho isolado (-I), com tempo limite. Funciona em Windows (sem SIGALRM).
+    A análise AST é feita antes: sem atributos, sem imports, só as funções de FUNCOES."""
+    import subprocess
+    import sys
+    _seguro(codigo, "exec")
+    try:
+        p = subprocess.run([sys.executable, "-I", "-c", _CHILD],
+                           input=json.dumps({"codigo": codigo, "m": dict(m)}),
+                           capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        raise ValueError("tempo limite excedido") from None
+    if p.returncode != 0:
+        linhas = (p.stderr or "falhou").strip().splitlines()
+        raise ValueError(linhas[-1][:200] if linhas else "falhou")
+    r = json.loads(p.stdout)["r"]
     if r not in FAMILIAS:
         raise ValueError(f"resposta fora das famílias: {r!r}")
     return r

@@ -45,7 +45,49 @@ class Ollama:
         with urllib.request.urlopen(req, timeout=1200) as r:
             d = json.loads(r.read())
         self.last_meta = {"done_reason": d.get("done_reason"), "tokens_saida": d.get("eval_count")}
-        return extrair_json(d["message"]["content"])
+        if d.get("done_reason") == "length":
+            raise RuntimeError("resposta cortada pelo limite de tokens")
+        conteudo = (d.get("message") or {}).get("content", "")
+        if not conteudo.strip():
+            raise RuntimeError("resposta vazia (só raciocínio)")
+        return extrair_json(conteudo)
+
+
+def verificar_ollama():
+    """Verificações da pesquisa de 19/10 (Ollama #14645, #14493, #14745; Hermes #46131; InsiderLLM):
+    versão, modelo instalado, resposta não vazia, sem corte por limite, e uso da GPU registado."""
+    import subprocess
+    notas = []
+    try:
+        v = subprocess.run(["ollama", "--version"], capture_output=True, text=True, timeout=20).stdout.strip()
+    except (OSError, subprocess.TimeoutExpired):
+        sys.exit("Não encontro o comando 'ollama'. Reinstala o Ollama e abre um PowerShell novo.")
+    notas.append(f"versão: {v}")
+    if any(f"0.{m}." in v or v.endswith(f"0.{m}") for m in range(17, 22)):
+        notas.append("AVISO: versão na faixa com problemas conhecidos com qwen3.5 (0.17 a 0.21). Se o teste "
+                     "falhar, instala a 0.17.5 ou a versão mais recente com correções e diz-me qual usaste.")
+    try:
+        ps = subprocess.run(["ollama", "ps"], capture_output=True, text=True, timeout=30).stdout.strip()
+        notas.append("ollama ps (verifica '100% GPU'):\n" + ps)
+    except (OSError, subprocess.TimeoutExpired):
+        notas.append("ollama ps: indisponível")
+    print("\n".join(notas), flush=True)
+    # pedido de controlo: resposta não vazia e sem corte
+    try:
+        body = {"model": MODEL, "stream": False, "think": True,
+                "messages": [{"role": "user", "content": 'Responde só com JSON: {"ok": true}'}],
+                "options": {"temperature": 0, "num_ctx": 4096, "num_predict": 4000}}
+        req = urllib.request.Request(f"{BASE}/api/chat", data=json.dumps(body).encode(),
+                                     headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=600) as r:
+            d = json.loads(r.read())
+    except (urllib.error.URLError, OSError) as ex:
+        sys.exit(f"Pedido de controlo falhou: {ex}")
+    if d.get("done_reason") == "length":
+        sys.exit("O pedido de controlo foi cortado pelo limite de tokens (num_predict). Diz-me antes de continuar.")
+    if not (d.get("message") or {}).get("content", "").strip():
+        sys.exit("A resposta de controlo veio vazia (só raciocínio). Não corro o teste; diz-me a versão do Ollama.")
+    print("Pedido de controlo OK.", flush=True)
 
 
 def verificar_servidor():
@@ -60,6 +102,7 @@ def verificar_servidor():
 
 def main():
     verificar_servidor()
+    verificar_ollama()
     amostras = [json.loads(l) for l in (HERE / "amostras.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     sub = [a for a in amostras if a["uid"].split("-")[0] in SUBCONJUNTO]
     feitas = set()
