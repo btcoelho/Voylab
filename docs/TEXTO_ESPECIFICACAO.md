@@ -225,3 +225,7 @@ Separação completa (8 contra 8): língua vs artificial em 4 métricas; língua
 **Previsões:** G1 **confirmada** (0,63 < 0,95); **G2 refutada** (0,63 < 0,83: pior do que a melhor métrica deles); **G3 refutada** (o sentido é o oposto).
 **Leitura.** A separação de 10.4–10.5 era **específica dos geradores** (Timm e Naibbe têm h2/h1 baixo por construção), e não se transfere para texto sem significado escrito por pessoas, que é menos previsível de letra para letra do que a língua. Isto confirma o aviso de Gaskell & Bowern: o gibberish humano varia muito e pode imitar ou ultrapassar a língua. Também mostra o valor deste tipo de teste: um resultado limpo em dados gerados (separação completa) desaparece em dados reais.
 **Estado da fase 1.** Nenhuma métrica testada, isolada ou em combinação de até 3, dá uma resposta determinante entre língua, cifra e texto artificial em dados publicados. O melhor resultado em dados reais continua a ser a combinação de 3 métricas de Gaskell & Bowern entre cifrado e gibberish (AUC 0,92) e entre língua e gibberish (0,87).
+
+### 10.7 Fase 1 fechada (decisão do Bruno, 20/10, 07:01)
+
+Aceite a resposta graduada: as medidas entram na fase 2 como evidência com a sua taxa de erro medida, não como veredicto. Relatório da fase 1 no documento "TEXTO-01: relatório da fase 1" (Claude Docs).
