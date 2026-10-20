@@ -1,0 +1,638 @@
+{
+ "lingua_vs_artificial": [
+  [
+   0.829,
+   "charbias_mean",
+   "maior em artificial"
+  ],
+  [
+   0.803,
+   "wordlen_autocorr",
+   "maior em artificial"
+  ],
+  [
+   0.799,
+   "wordbias_mean",
+   "maior em artificial"
+  ],
+  [
+   0.782,
+   "wordbias_skew",
+   "maior em lingua"
+  ],
+  [
+   0.781,
+   "wordbias_std",
+   "maior em lingua"
+  ],
+  [
+   0.765,
+   "unique_chars",
+   "maior em artificial"
+  ],
+  [
+   0.75,
+   "charbias_std",
+   "maior em artificial"
+  ],
+  [
+   0.748,
+   "repeated_chars",
+   "maior em artificial"
+  ],
+  [
+   0.736,
+   "chardist_shape",
+   "maior em lingua"
+  ],
+  [
+   0.702,
+   "worddist_shape",
+   "maior em lingua"
+  ],
+  [
+   0.697,
+   "wordbias_lines_std",
+   "maior em lingua"
+  ],
+  [
+   0.696,
+   "chardist_max",
+   "maior em lingua"
+  ],
+  [
+   0.665,
+   "compression",
+   "maior em lingua"
+  ],
+  [
+   0.662,
+   "wordunique_mean",
+   "maior em lingua"
+  ],
+  [
+   0.641,
+   "entropy",
+   "maior em lingua"
+  ],
+  [
+   0.636,
+   "wordunique_std",
+   "maior em lingua"
+  ],
+  [
+   0.629,
+   "zipf",
+   "maior em artificial"
+  ],
+  [
+   0.625,
+   "wordchange_skew",
+   "maior em artificial"
+  ],
+  [
+   0.621,
+   "wordlen_unique_std",
+   "maior em lingua"
+  ],
+  [
+   0.62,
+   "worddist_max",
+   "maior em lingua"
+  ],
+  [
+   0.616,
+   "charbias_words_skew",
+   "maior em artificial"
+  ],
+  [
+   0.611,
+   "wordunique_skew",
+   "maior em artificial"
+  ],
+  [
+   0.608,
+   "flipped_pairs",
+   "maior em lingua"
+  ],
+  [
+   0.604,
+   "charbias_words_mean",
+   "maior em artificial"
+  ],
+  [
+   0.597,
+   "wordlen_mean",
+   "maior em artificial"
+  ],
+  [
+   0.596,
+   "wordlen_std",
+   "maior em lingua"
+  ],
+  [
+   0.596,
+   "wordchange_std",
+   "maior em lingua"
+  ],
+  [
+   0.592,
+   "charbias_skew",
+   "maior em lingua"
+  ],
+  [
+   0.588,
+   "wordchange_mean",
+   "maior em lingua"
+  ],
+  [
+   0.581,
+   "wordlen_skew",
+   "maior em lingua"
+  ],
+  [
+   0.553,
+   "unique_ngrams",
+   "maior em artificial"
+  ],
+  [
+   0.548,
+   "wordbias_lines_mean",
+   "maior em lingua"
+  ],
+  [
+   0.548,
+   "unique_words",
+   "maior em artificial"
+  ],
+  [
+   0.539,
+   "repeated_words",
+   "maior em artificial"
+  ],
+  [
+   0.535,
+   "ngramdist_max",
+   "maior em lingua"
+  ],
+  [
+   0.532,
+   "wordbias_lines_skew",
+   "maior em artificial"
+  ],
+  [
+   0.517,
+   "tripled_chars",
+   "maior em lingua"
+  ],
+  [
+   0.512,
+   "charbias_words_std",
+   "maior em lingua"
+  ],
+  [
+   0.51,
+   "wordlen_unique_skew",
+   "maior em artificial"
+  ],
+  [
+   0.51,
+   "tripled_words",
+   "maior em lingua"
+  ],
+  [
+   0.51,
+   "ngramdist_shape",
+   "maior em artificial"
+  ],
+  [
+   0.507,
+   "wordlen_unique_mean",
+   "maior em lingua"
+  ]
+ ],
+ "lingua_vs_cifrado": [
+  [
+   0.742,
+   "wordunique_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.727,
+   "tripled_chars",
+   "maior em cifrado"
+  ],
+  [
+   0.72,
+   "ngramdist_max",
+   "maior em cifrado"
+  ],
+  [
+   0.716,
+   "charbias_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.712,
+   "wordchange_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.679,
+   "wordlen_unique_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.675,
+   "wordlen_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.671,
+   "ngramdist_shape",
+   "maior em cifrado"
+  ],
+  [
+   0.665,
+   "unique_words",
+   "maior em cifrado"
+  ],
+  [
+   0.659,
+   "wordlen_std",
+   "maior em cifrado"
+  ],
+  [
+   0.655,
+   "wordlen_unique_std",
+   "maior em cifrado"
+  ],
+  [
+   0.649,
+   "tripled_words",
+   "maior em cifrado"
+  ],
+  [
+   0.641,
+   "wordchange_std",
+   "maior em cifrado"
+  ],
+  [
+   0.627,
+   "charbias_words_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.623,
+   "wordlen_autocorr",
+   "maior em cifrado"
+  ],
+  [
+   0.62,
+   "wordunique_mean",
+   "maior em lingua"
+  ],
+  [
+   0.618,
+   "repeated_chars",
+   "maior em cifrado"
+  ],
+  [
+   0.608,
+   "chardist_max",
+   "maior em cifrado"
+  ],
+  [
+   0.604,
+   "wordbias_skew",
+   "maior em lingua"
+  ],
+  [
+   0.604,
+   "wordbias_lines_skew",
+   "maior em lingua"
+  ],
+  [
+   0.601,
+   "charbias_words_std",
+   "maior em cifrado"
+  ],
+  [
+   0.596,
+   "unique_chars",
+   "maior em cifrado"
+  ],
+  [
+   0.591,
+   "wordunique_std",
+   "maior em cifrado"
+  ],
+  [
+   0.583,
+   "wordbias_lines_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.577,
+   "wordbias_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.577,
+   "chardist_shape",
+   "maior em lingua"
+  ],
+  [
+   0.576,
+   "charbias_words_mean",
+   "maior em lingua"
+  ],
+  [
+   0.574,
+   "charbias_mean",
+   "maior em lingua"
+  ],
+  [
+   0.553,
+   "wordbias_lines_std",
+   "maior em lingua"
+  ],
+  [
+   0.55,
+   "repeated_words",
+   "maior em cifrado"
+  ],
+  [
+   0.548,
+   "wordchange_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.546,
+   "compression",
+   "maior em lingua"
+  ],
+  [
+   0.542,
+   "zipf",
+   "maior em lingua"
+  ],
+  [
+   0.54,
+   "charbias_std",
+   "maior em cifrado"
+  ],
+  [
+   0.533,
+   "wordlen_skew",
+   "maior em lingua"
+  ],
+  [
+   0.523,
+   "unique_ngrams",
+   "maior em lingua"
+  ],
+  [
+   0.523,
+   "flipped_pairs",
+   "maior em lingua"
+  ],
+  [
+   0.518,
+   "entropy",
+   "maior em cifrado"
+  ],
+  [
+   0.511,
+   "worddist_max",
+   "maior em cifrado"
+  ],
+  [
+   0.504,
+   "wordbias_std",
+   "maior em cifrado"
+  ],
+  [
+   0.503,
+   "wordlen_unique_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.501,
+   "worddist_shape",
+   "maior em lingua"
+  ]
+ ],
+ "cifrado_vs_artificial": [
+  [
+   0.786,
+   "wordbias_std",
+   "maior em cifrado"
+  ],
+  [
+   0.781,
+   "charbias_mean",
+   "maior em artificial"
+  ],
+  [
+   0.765,
+   "wordbias_mean",
+   "maior em artificial"
+  ],
+  [
+   0.764,
+   "charbias_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.747,
+   "wordlen_unique_std",
+   "maior em cifrado"
+  ],
+  [
+   0.746,
+   "ngramdist_max",
+   "maior em cifrado"
+  ],
+  [
+   0.737,
+   "wordlen_std",
+   "maior em cifrado"
+  ],
+  [
+   0.722,
+   "wordbias_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.714,
+   "tripled_chars",
+   "maior em cifrado"
+  ],
+  [
+   0.703,
+   "wordlen_autocorr",
+   "maior em artificial"
+  ],
+  [
+   0.701,
+   "wordunique_std",
+   "maior em cifrado"
+  ],
+  [
+   0.699,
+   "worddist_shape",
+   "maior em cifrado"
+  ],
+  [
+   0.699,
+   "wordchange_std",
+   "maior em cifrado"
+  ],
+  [
+   0.694,
+   "chardist_max",
+   "maior em cifrado"
+  ],
+  [
+   0.686,
+   "wordlen_unique_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.663,
+   "ngramdist_shape",
+   "maior em cifrado"
+  ],
+  [
+   0.661,
+   "wordbias_lines_std",
+   "maior em cifrado"
+  ],
+  [
+   0.647,
+   "zipf",
+   "maior em artificial"
+  ],
+  [
+   0.643,
+   "tripled_words",
+   "maior em cifrado"
+  ],
+  [
+   0.639,
+   "charbias_std",
+   "maior em artificial"
+  ],
+  [
+   0.634,
+   "wordchange_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.628,
+   "worddist_max",
+   "maior em cifrado"
+  ],
+  [
+   0.628,
+   "entropy",
+   "maior em cifrado"
+  ],
+  [
+   0.628,
+   "charbias_words_mean",
+   "maior em artificial"
+  ],
+  [
+   0.625,
+   "wordlen_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.612,
+   "wordunique_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.603,
+   "wordbias_lines_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.589,
+   "wordbias_lines_skew",
+   "maior em artificial"
+  ],
+  [
+   0.589,
+   "charbias_words_std",
+   "maior em cifrado"
+  ],
+  [
+   0.587,
+   "flipped_pairs",
+   "maior em cifrado"
+  ],
+  [
+   0.585,
+   "compression",
+   "maior em cifrado"
+  ],
+  [
+   0.574,
+   "unique_words",
+   "maior em cifrado"
+  ],
+  [
+   0.571,
+   "unique_ngrams",
+   "maior em artificial"
+  ],
+  [
+   0.564,
+   "wordlen_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.545,
+   "wordchange_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.529,
+   "unique_chars",
+   "maior em cifrado"
+  ],
+  [
+   0.519,
+   "charbias_words_skew",
+   "maior em cifrado"
+  ],
+  [
+   0.513,
+   "wordunique_mean",
+   "maior em cifrado"
+  ],
+  [
+   0.512,
+   "repeated_chars",
+   "maior em artificial"
+  ],
+  [
+   0.507,
+   "repeated_words",
+   "maior em artificial"
+  ],
+  [
+   0.507,
+   "chardist_shape",
+   "maior em cifrado"
+  ],
+  [
+   0.506,
+   "wordlen_unique_skew",
+   "maior em artificial"
+  ]
+ ]
+}
