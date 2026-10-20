@@ -1,0 +1,98 @@
+{
+ "lingua_vs_artificial": {
+  "auc_teste": 0.873,
+  "n": 112,
+  "grupos": 71,
+  "metricas_por_parte": [
+   [
+    "repeated_chars",
+    "wordbias_std",
+    "worddist_max"
+   ],
+   [
+    "charbias_mean",
+    "wordbias_skew",
+    "compression"
+   ],
+   [
+    "wordbias_mean",
+    "wordbias_lines_mean",
+    "repeated_words"
+   ],
+   [
+    "charbias_mean",
+    "wordlen_autocorr",
+    "wordbias_skew"
+   ],
+   [
+    "charbias_mean",
+    "wordlen_autocorr",
+    "charbias_words_skew"
+   ]
+  ]
+ },
+ "lingua_vs_cifrado": {
+  "auc_teste": 0.763,
+  "n": 888,
+  "grupos": 62,
+  "metricas_por_parte": [
+   [
+    "wordunique_skew",
+    "charbias_words_std",
+    "ngramdist_max"
+   ],
+   [
+    "tripled_chars",
+    "tripled_words",
+    "unique_chars"
+   ],
+   [
+    "wordchange_skew",
+    "ngramdist_max",
+    "compression"
+   ],
+   [
+    "ngramdist_max",
+    "unique_chars",
+    "charbias_skew"
+   ],
+   [
+    "wordunique_skew",
+    "charbias_words_std",
+    "ngramdist_max"
+   ]
+  ]
+ },
+ "cifrado_vs_artificial": {
+  "auc_teste": 0.917,
+  "n": 852,
+  "grupos": 67,
+  "metricas_por_parte": [
+   [
+    "wordbias_std",
+    "wordbias_lines_mean",
+    "chardist_max"
+   ],
+   [
+    "charbias_mean",
+    "unique_chars",
+    "wordlen_autocorr"
+   ],
+   [
+    "wordbias_std",
+    "wordbias_lines_mean",
+    "chardist_max"
+   ],
+   [
+    "charbias_skew",
+    "chardist_max",
+    "compression"
+   ],
+   [
+    "wordbias_std",
+    "unique_words",
+    "chardist_max"
+   ]
+  ]
+ }
+}
