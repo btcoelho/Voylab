@@ -1,0 +1,805 @@
+{
+ "resultado": {
+  "h2_h1_fluxo": {
+   "auc": 0.631,
+   "lingua_maior": false,
+   "n": [
+    71,
+    38
+   ],
+   "lingua_mediana": 0.756,
+   "gib_mediana": 0.778,
+   "lingua_intervalo": [
+    0.496,
+    0.843
+   ],
+   "gib_intervalo": [
+    0.666,
+    0.915
+   ]
+  },
+  "h2_h1_palavra": {
+   "auc": 0.626,
+   "lingua_maior": false,
+   "n": [
+    71,
+    38
+   ],
+   "lingua_mediana": 0.652,
+   "gib_mediana": 0.677,
+   "lingua_intervalo": [
+    0.337,
+    0.806
+   ],
+   "gib_intervalo": [
+    0.581,
+    0.906
+   ]
+  }
+ },
+ "valores": [
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DA_01.txt",
+   "palavras": 215,
+   "h2_h1_fluxo": 0.72478403999901,
+   "h2_h1_palavra": 0.6270636865424123
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DA_02.txt",
+   "palavras": 356,
+   "h2_h1_fluxo": 0.7069025235032163,
+   "h2_h1_palavra": 0.6237011380504701
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_01.txt",
+   "palavras": 364,
+   "h2_h1_fluxo": 0.727079958067283,
+   "h2_h1_palavra": 0.6027113313637664
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_03.txt",
+   "palavras": 251,
+   "h2_h1_fluxo": 0.7513159461712516,
+   "h2_h1_palavra": 0.6252471120638323
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_04.txt",
+   "palavras": 270,
+   "h2_h1_fluxo": 0.7256302725898475,
+   "h2_h1_palavra": 0.6039888818452236
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_05.txt",
+   "palavras": 200,
+   "h2_h1_fluxo": 0.7917630945071552,
+   "h2_h1_palavra": 0.7086619751570395
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_06.txt",
+   "palavras": 372,
+   "h2_h1_fluxo": 0.7981674344081714,
+   "h2_h1_palavra": 0.7064390146204687
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_08.txt",
+   "palavras": 247,
+   "h2_h1_fluxo": 0.7663584191664786,
+   "h2_h1_palavra": 0.6040899180512743
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_09.txt",
+   "palavras": 218,
+   "h2_h1_fluxo": 0.8082251607424481,
+   "h2_h1_palavra": 0.7224554167172146
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_10.txt",
+   "palavras": 221,
+   "h2_h1_fluxo": 0.7710610144572408,
+   "h2_h1_palavra": 0.6666993383974515
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_11.txt",
+   "palavras": 223,
+   "h2_h1_fluxo": 0.8253190634107125,
+   "h2_h1_palavra": 0.764973369510602
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_12.txt",
+   "palavras": 207,
+   "h2_h1_fluxo": 0.794845636279725,
+   "h2_h1_palavra": 0.7194491000510093
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_15.txt",
+   "palavras": 480,
+   "h2_h1_fluxo": 0.8238459217539978,
+   "h2_h1_palavra": 0.7281001709745549
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_16.txt",
+   "palavras": 338,
+   "h2_h1_fluxo": 0.8141755416819685,
+   "h2_h1_palavra": 0.7717820418655894
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_18.txt",
+   "palavras": 421,
+   "h2_h1_fluxo": 0.7816782522343596,
+   "h2_h1_palavra": 0.6701837140019862
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_20.txt",
+   "palavras": 274,
+   "h2_h1_fluxo": 0.7033779028852921,
+   "h2_h1_palavra": 0.6046933362204299
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_21.txt",
+   "palavras": 322,
+   "h2_h1_fluxo": 0.7004842236801,
+   "h2_h1_palavra": 0.5826564615224409
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_22.txt",
+   "palavras": 150,
+   "h2_h1_fluxo": 0.7777072011668666,
+   "h2_h1_palavra": 0.7174818265226903
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_23.txt",
+   "palavras": 120,
+   "h2_h1_fluxo": 0.7562338334195551,
+   "h2_h1_palavra": 0.6211846870150025
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_24.txt",
+   "palavras": 79,
+   "h2_h1_fluxo": 0.7227818208106415,
+   "h2_h1_palavra": 0.6484649862643983
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_25.txt",
+   "palavras": 157,
+   "h2_h1_fluxo": 0.7645024439730701,
+   "h2_h1_palavra": 0.6632389560084847
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_26.txt",
+   "palavras": 228,
+   "h2_h1_fluxo": 0.8732494871108732,
+   "h2_h1_palavra": 0.8474712336098474
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_27.txt",
+   "palavras": 332,
+   "h2_h1_fluxo": 0.8544799927080485,
+   "h2_h1_palavra": 0.7808084951235075
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_28.txt",
+   "palavras": 215,
+   "h2_h1_fluxo": 0.7594020495473087,
+   "h2_h1_palavra": 0.6502586807282857
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_29.txt",
+   "palavras": 184,
+   "h2_h1_fluxo": 0.8066126159902521,
+   "h2_h1_palavra": 0.7512184834567439
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_30.txt",
+   "palavras": 322,
+   "h2_h1_fluxo": 0.8009413798900121,
+   "h2_h1_palavra": 0.6907855238827117
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_31.txt",
+   "palavras": 355,
+   "h2_h1_fluxo": 0.8519547054176342,
+   "h2_h1_palavra": 0.7804697038615307
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_32.txt",
+   "palavras": 281,
+   "h2_h1_fluxo": 0.7611769379980836,
+   "h2_h1_palavra": 0.6450022201967796
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_33.txt",
+   "palavras": 188,
+   "h2_h1_fluxo": 0.6657884171434307,
+   "h2_h1_palavra": 0.5811502559470039
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_34.txt",
+   "palavras": 276,
+   "h2_h1_fluxo": 0.7534771501561169,
+   "h2_h1_palavra": 0.6423029614911534
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_35.txt",
+   "palavras": 267,
+   "h2_h1_fluxo": 0.8348190994669389,
+   "h2_h1_palavra": 0.7821027560394692
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_36.txt",
+   "palavras": 199,
+   "h2_h1_fluxo": 0.9150895843834487,
+   "h2_h1_palavra": 0.9063831737158043
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_37.txt",
+   "palavras": 317,
+   "h2_h1_fluxo": 0.8666522636708436,
+   "h2_h1_palavra": 0.8162417782898843
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_38.txt",
+   "palavras": 292,
+   "h2_h1_fluxo": 0.755096453018046,
+   "h2_h1_palavra": 0.6224019912881146
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_39.txt",
+   "palavras": 312,
+   "h2_h1_fluxo": 0.8224796718716268,
+   "h2_h1_palavra": 0.7058597778897124
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_40.txt",
+   "palavras": 330,
+   "h2_h1_fluxo": 0.8245520625954905,
+   "h2_h1_palavra": 0.7648965229871754
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_41.txt",
+   "palavras": 150,
+   "h2_h1_fluxo": 0.7644172668825832,
+   "h2_h1_palavra": 0.676874365543578
+  },
+  {
+   "classe": "gibberish",
+   "texto": "Gibberish - DC_42.txt",
+   "palavras": 342,
+   "h2_h1_fluxo": 0.7110034742474578,
+   "h2_h1_palavra": 0.6054066391093754
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Esperanto - Literary - NT.txt",
+   "palavras": 215,
+   "h2_h1_fluxo": 0.7583208177898358,
+   "h2_h1_palavra": 0.6380747056828643
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Esperanto - Technical - Voynich Wiki.txt",
+   "palavras": 356,
+   "h2_h1_fluxo": 0.7996827228151139,
+   "h2_h1_palavra": 0.7151235458129026
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Interlingua - Literary - NT.txt",
+   "palavras": 364,
+   "h2_h1_fluxo": 0.8000765013387735,
+   "h2_h1_palavra": 0.6786178758128267
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Interlingua - Technical - EU Wiki.txt",
+   "palavras": 251,
+   "h2_h1_fluxo": 0.7917847393734564,
+   "h2_h1_palavra": 0.7054465098141167
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Klingon - Literary - NT - Mark.txt",
+   "palavras": 270,
+   "h2_h1_fluxo": 0.7586385097836554,
+   "h2_h1_palavra": 0.6268351694815719
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Klingon - Technical - Proxima Centauri B Wikia.txt",
+   "palavras": 200,
+   "h2_h1_fluxo": 0.717804196466632,
+   "h2_h1_palavra": 0.5805427935395254
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - LOLCat - Literary - NT - Matthew.txt",
+   "palavras": 372,
+   "h2_h1_fluxo": 0.8234168203356599,
+   "h2_h1_palavra": 0.71447912046871
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Lojban - Literary - Alice in Wonderland.txt",
+   "palavras": 247,
+   "h2_h1_fluxo": 0.7923804337063075,
+   "h2_h1_palavra": 0.6522675512426973
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Lojban - Technical - Science News.txt",
+   "palavras": 218,
+   "h2_h1_fluxo": 0.7322419326748438,
+   "h2_h1_palavra": 0.55402682059065
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Neo-Quenya - Literary - NT.txt",
+   "palavras": 221,
+   "h2_h1_fluxo": 0.7602570564516129,
+   "h2_h1_palavra": 0.6665574596774193
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Neo-Quenya - Technical - Europe-Taipei Wikia.txt",
+   "palavras": 223,
+   "h2_h1_fluxo": 0.7327900545725964,
+   "h2_h1_palavra": 0.6498788635195655
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Toki Pona - Literary - NT - Sermon on the Mount.txt",
+   "palavras": 207,
+   "h2_h1_fluxo": 0.7147514023083023,
+   "h2_h1_palavra": 0.48533082728847904
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Toki Pona - Technical - Turkey-Mexico Wikia.txt",
+   "palavras": 480,
+   "h2_h1_fluxo": 0.7138684979082801,
+   "h2_h1_palavra": 0.5712105664745968
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Volapuk - Literary - NT.txt",
+   "palavras": 338,
+   "h2_h1_fluxo": 0.7878399544354264,
+   "h2_h1_palavra": 0.6952631828753144
+  },
+  {
+   "classe": "lingua",
+   "texto": "Conlangs - Volapuk - Technical - History Wiki.txt",
+   "palavras": 421,
+   "h2_h1_fluxo": 0.748434309834599,
+   "h2_h1_palavra": 0.6297400839622858
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Anglo-Saxon - Literary - NT - Hatton Gospels.txt",
+   "palavras": 274,
+   "h2_h1_fluxo": 0.7338387679437208,
+   "h2_h1_palavra": 0.6067116646069017
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Anglo-Saxon - Technical - Leechbook.txt",
+   "palavras": 322,
+   "h2_h1_fluxo": 0.8086510962821736,
+   "h2_h1_palavra": 0.682602478551001
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Arabic - Literary - Quran.txt",
+   "palavras": 150,
+   "h2_h1_fluxo": 0.5844866812020096,
+   "h2_h1_palavra": 0.5743198407431984
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Arabic - Technical - Avicenna.txt",
+   "palavras": 120,
+   "h2_h1_fluxo": 0.6510871272466174,
+   "h2_h1_palavra": 0.5586196064352548
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - English - Literary - NT (KJV).txt",
+   "palavras": 79,
+   "h2_h1_fluxo": 0.6643578858518904,
+   "h2_h1_palavra": 0.5568878627640823
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - English - Technical - Secreta Alberti.txt",
+   "palavras": 157,
+   "h2_h1_fluxo": 0.7097863860604147,
+   "h2_h1_palavra": 0.5889329023791587
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Flemish - Literary - NT.txt",
+   "palavras": 228,
+   "h2_h1_fluxo": 0.7342651942234921,
+   "h2_h1_palavra": 0.6071253893479548
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Flemish - Technical - Cruydeboeck.txt",
+   "palavras": 332,
+   "h2_h1_fluxo": 0.7483094300364123,
+   "h2_h1_palavra": 0.6435064774219118
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - French - Literary - NT - Martin.txt",
+   "palavras": 215,
+   "h2_h1_fluxo": 0.7426292309184367,
+   "h2_h1_palavra": 0.6093249927262148
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - German - Literary - NT - Luther.txt",
+   "palavras": 184,
+   "h2_h1_fluxo": 0.7258095792127206,
+   "h2_h1_palavra": 0.6058997479154546
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - German - Technical - German Herbarium.txt",
+   "palavras": 322,
+   "h2_h1_fluxo": 0.7126674478987155,
+   "h2_h1_palavra": 0.6102571172537395
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Greek - Literary - NT - Textus Receptus.txt",
+   "palavras": 355,
+   "h2_h1_fluxo": 0.7984385229008559,
+   "h2_h1_palavra": 0.729723831922993
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Greek - Technical - De odoribus.txt",
+   "palavras": 281,
+   "h2_h1_fluxo": 0.617299820040738,
+   "h2_h1_palavra": 0.5627978721300453
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Italian - Literary - NT - Diodati.txt",
+   "palavras": 188,
+   "h2_h1_fluxo": 0.7950576606260296,
+   "h2_h1_palavra": 0.7072867824103409
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Italian - Technical - Della Pittura.txt",
+   "palavras": 276,
+   "h2_h1_fluxo": 0.7928541152417283,
+   "h2_h1_palavra": 0.7053880868676291
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Latin (Abbreviated) - Literary - NT (Vulgate).txt",
+   "palavras": 267,
+   "h2_h1_fluxo": 0.8433007546702956,
+   "h2_h1_palavra": 0.7484349870097735
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Latin (Abbreviated) - Technical - Pliny's Natural History.txt",
+   "palavras": 199,
+   "h2_h1_fluxo": 0.8184706371123439,
+   "h2_h1_palavra": 0.7412204599330384
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Latin - Literary - NT (Vulgate).txt",
+   "palavras": 317,
+   "h2_h1_fluxo": 0.836508095643892,
+   "h2_h1_palavra": 0.756128126723144
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Latin - Technical - Pliny's Natural History.txt",
+   "palavras": 292,
+   "h2_h1_fluxo": 0.8343438392543969,
+   "h2_h1_palavra": 0.7623139750463497
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Mayan (Kaqchikel) - Literary - Annals of the Cakchiquels.txt",
+   "palavras": 312,
+   "h2_h1_fluxo": 0.7408271105708403,
+   "h2_h1_palavra": 0.6162891661911732
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Mayan (Yucatec) - Technical - Chilam Balam.txt",
+   "palavras": 330,
+   "h2_h1_fluxo": 0.827020202020202,
+   "h2_h1_palavra": 0.6980004122861266
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Nahuatl - Literary - Nican Mopohua.txt",
+   "palavras": 150,
+   "h2_h1_fluxo": 0.7125310370331237,
+   "h2_h1_palavra": 0.6370384066775847
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Nahuatl - Technical - Florentine Codex.txt",
+   "palavras": 342,
+   "h2_h1_fluxo": 0.7693723895361617,
+   "h2_h1_palavra": 0.7358760167069684
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Portuguese - Technical - Coloquios dos simples.txt",
+   "palavras": 215,
+   "h2_h1_fluxo": 0.7469329940220393,
+   "h2_h1_palavra": 0.6376251410462631
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Russian - Literary - NT - Codex Marianus.txt",
+   "palavras": 356,
+   "h2_h1_fluxo": 0.709801193262075,
+   "h2_h1_palavra": 0.6221407037294711
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Sanskrit - Literary - Mahabharata.txt",
+   "palavras": 364,
+   "h2_h1_fluxo": 0.7371580582889967,
+   "h2_h1_palavra": 0.47450444936202274
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Sanskrit - Technical - Charaka Samhita.txt",
+   "palavras": 251,
+   "h2_h1_fluxo": 0.6907814478075728,
+   "h2_h1_palavra": 0.4110254344573599
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Spanish - Literary - NT - Sagradas Escrituras.txt",
+   "palavras": 270,
+   "h2_h1_fluxo": 0.7196144174350377,
+   "h2_h1_palavra": 0.5643459395493319
+  },
+  {
+   "classe": "lingua",
+   "texto": "Historical - Spanish - Technical - De Materia Medica.txt",
+   "palavras": 200,
+   "h2_h1_fluxo": 0.7635311143270622,
+   "h2_h1_palavra": 0.6743367100820067
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Arabic - Literary - NT.txt",
+   "palavras": 372,
+   "h2_h1_fluxo": 0.7748249447812398,
+   "h2_h1_palavra": 0.7185488039851496
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Arabic - Technical - Voynich Wiki.txt",
+   "palavras": 247,
+   "h2_h1_fluxo": 0.7253454561822028,
+   "h2_h1_palavra": 0.6687221497051808
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Chinese (Pinyin) - Literary - NT - Matthew.txt",
+   "palavras": 218,
+   "h2_h1_fluxo": 0.49615353632994996,
+   "h2_h1_palavra": 0.35425729015627516
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Chinese (Pinyin) - Technical - Voynich Wiki.txt",
+   "palavras": 221,
+   "h2_h1_fluxo": 0.5018621220094726,
+   "h2_h1_palavra": 0.33684167914828156
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - English - Literary - NT.txt",
+   "palavras": 223,
+   "h2_h1_fluxo": 0.7263292854032609,
+   "h2_h1_palavra": 0.5949489573757801
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - English - Technical - Voynich Wiki.txt",
+   "palavras": 207,
+   "h2_h1_fluxo": 0.7722795831945567,
+   "h2_h1_palavra": 0.6786648903268782
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - French - Literary - NT.txt",
+   "palavras": 480,
+   "h2_h1_fluxo": 0.7914278776104905,
+   "h2_h1_palavra": 0.6694269062651772
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - French - Technical - Voynich Wiki.txt",
+   "palavras": 338,
+   "h2_h1_fluxo": 0.7851243768755736,
+   "h2_h1_palavra": 0.6976265469606409
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - German - Literary - NT.txt",
+   "palavras": 421,
+   "h2_h1_fluxo": 0.7795051456098097,
+   "h2_h1_palavra": 0.6718730992871568
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - German - Technical - Voynich Wiki.txt",
+   "palavras": 274,
+   "h2_h1_fluxo": 0.8046836884046187,
+   "h2_h1_palavra": 0.7168180656552751
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Hebrew - Literary - NT.txt",
+   "palavras": 322,
+   "h2_h1_fluxo": 0.8376171030506846,
+   "h2_h1_palavra": 0.8056930098486668
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Hebrew - Technical - Voynich Wiki.txt",
+   "palavras": 150,
+   "h2_h1_fluxo": 0.779249237804878,
+   "h2_h1_palavra": 0.7305402057926829
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Italian - Literary - NT.txt",
+   "palavras": 120,
+   "h2_h1_fluxo": 0.7165121325705267,
+   "h2_h1_palavra": 0.6212763858749261
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Italian - Technical - Voynich Wiki.txt",
+   "palavras": 79,
+   "h2_h1_fluxo": 0.7378581589107904,
+   "h2_h1_palavra": 0.6676996545417598
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Maori - Literary - NT.txt",
+   "palavras": 157,
+   "h2_h1_fluxo": 0.7561441597915762,
+   "h2_h1_palavra": 0.6391084093211754
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Maori - Technical - Polandball Wiki.txt",
+   "palavras": 228,
+   "h2_h1_fluxo": 0.7342465062307654,
+   "h2_h1_palavra": 0.6292316230260835
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Portuguese - Technical - Voynich Wiki.txt",
+   "palavras": 332,
+   "h2_h1_fluxo": 0.773339339054573,
+   "h2_h1_palavra": 0.6915746052818736
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Russian - Technical - Voynich Wiki.txt",
+   "palavras": 215,
+   "h2_h1_fluxo": 0.7710055409210645,
+   "h2_h1_palavra": 0.716118630211645
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Spanish - Technical - Voynich Wiki.txt",
+   "palavras": 184,
+   "h2_h1_fluxo": 0.777739983964625,
+   "h2_h1_palavra": 0.6806773731140213
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Swahili - Literary - NT.txt",
+   "palavras": 322,
+   "h2_h1_fluxo": 0.7490041862235189,
+   "h2_h1_palavra": 0.6844348598249398
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Swahili - Technical - Lung Cancer Wiki.txt",
+   "palavras": 355,
+   "h2_h1_fluxo": 0.7720819795051237,
+   "h2_h1_palavra": 0.6980754811297175
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Tagalog - Literary - NT - Ang Dating Biblia.txt",
+   "palavras": 281,
+   "h2_h1_fluxo": 0.7477040037734802,
+   "h2_h1_palavra": 0.6286729003079826
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Tagalog - Technical - Tuberculosis Wiki.txt",
+   "palavras": 188,
+   "h2_h1_fluxo": 0.7640765469743968,
+   "h2_h1_palavra": 0.6786183691709163
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Turkish - Literary - NT.txt",
+   "palavras": 276,
+   "h2_h1_fluxo": 0.758279520295203,
+   "h2_h1_palavra": 0.6517066420664206
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Turkish - Technical - Middle Ages Wiki.txt",
+   "palavras": 267,
+   "h2_h1_fluxo": 0.7858909190822916,
+   "h2_h1_palavra": 0.7005312084993359
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Wolof - Technical - Senegal Wiki.txt",
+   "palavras": 199,
+   "h2_h1_fluxo": 0.7349607469689228,
+   "h2_h1_palavra": 0.6244715938124217
+  },
+  {
+   "classe": "lingua",
+   "texto": "Modern - Yoruba - Technical - Jupiter Wiki.txt",
+   "palavras": 317,
+   "h2_h1_fluxo": 0.7381759640949337,
+   "h2_h1_palavra": 0.6187525916530477
+  }
+ ]
+}
