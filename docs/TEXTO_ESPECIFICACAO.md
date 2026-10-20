@@ -191,3 +191,14 @@ Por família (raciocínio | regra): LN 2|2, SUB 2|1, POL 2|2, TRA 2|2, VER 2|2, 
 **Métricas (só relativas, para não separar pelo alfabeto):** h2/h1 (palavra e fluxo); IC por período máximo / IC; razões de Amancio (bigramas repetidos, entropia da palavra seguinte); informação mútua entre palavras contra o baralhado (razão); decaimento da informação mútua entre glifos, I(8)/I(1) (Lin & Tegmark); declive e R² de Zipf; autocorrelação do comprimento de palavra; compressão. Excluídas: tamanho do alfabeto, h0, h1 em valor absoluto.
 **Critério:** AUC por métrica e par de classes; determinante = 1,0 ou 0,0 com 8 contra 8 (separação completa). **Previsões. E1:** pelo menos uma métrica separa completamente língua e artificial. **E2:** pelo menos uma separa completamente língua e cifrado. **E3:** nenhuma separa completamente cifrado e artificial (os dois geradores foram feitos para imitar o Voynich).
 **Ressalvas:** 8 por classe; os cifrados vêm das mesmas 4 obras latinas que estão na classe língua (excertos diferentes); um só gerador por classe.
+**Resultados de 10.4** (`texto/resultados/fase1/relativas.json`; 24 amostras de 5000 palavras).
+| Métrica | Língua | Artificial (Timm) | Cifrado (Naibbe) |
+|---|---|---|---|
+| h2/h1 dentro da palavra | 0,73–0,80 | 0,48–0,50 | 0,52 |
+| h2/h1 no fluxo | 0,84–0,87 | 0,56–0,59 | 0,60–0,61 |
+| bigramas de palavras repetidos / baralhado (Amancio) | 1,55–4,60 | 1,00–1,27 | 1,20–1,38 |
+| informação mútua entre palavras / baralhado | 1,72–4,06 | 1,62–5,27 | **0,93–1,37** |
+| compressão | 0,36–0,43 | 0,29–0,31 | 0,32–0,33 |
+Separação completa (8 contra 8): língua vs artificial em 4 métricas; língua vs cifrado em 7; cifrado vs artificial em 7.
+**Previsões:** E1 **confirmada**; E2 **confirmada**; **E3 refutada** (cifrado e artificial também se separam).
+**Leitura, com cautela.** (1) h2/h1 separa a língua dos dois geradores com uma margem grande (0,73 contra ≤ 0,52): é o resultado mais forte. Mas os dois geradores foram feitos para imitar o Voynich, que tem h2 baixo; o que se separa aqui é "língua" de "texto tipo Voynich", não "língua" de "artificial" em geral. (2) A separação entre cifrado e artificial assenta em margens pequenas (h2/h1 0,50 contra 0,52; compressão 0,31 contra 0,32) e em classes muito homogéneas (um gerador por classe, 8 sementes): diz que estes dois geradores se distinguem, não que cifras e textos artificiais se distinguem. A exceção é a informação mútua entre palavras: no Naibbe fica perto de 1 (a ordem das palavras do texto original não passa para as "palavras" cifradas), no Timm sobe até 5 (a autocópia cria dependência entre vizinhas). (3) Comparado com 10.2, mudaram ao mesmo tempo o comprimento, as métricas e as classes; ainda não se sabe qual destas mudanças explica a diferença.

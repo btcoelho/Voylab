@@ -279,3 +279,15 @@ def amancio(words, versoes=10, semente=0):
     mr, mh = sum(rs) / versoes, sum(hs) / versoes
     return {"bigramas_repetidos_razao": round(rep / mr, 4) if mr else None,
             "h_palavra_seguinte_razao": round(h / mh, 4) if mh else None}
+
+
+def mi_decaimento(words, distancias=(1, 2, 4, 8, 16)):
+    """Informação mútua entre glifos à distância d no fluxo (sem espaços), à Lin & Tegmark 2016/17
+    (arXiv 1606.06737): em língua natural decai devagar (lei de potência); em processos de Markov, depressa."""
+    seq = flat(words)
+    out = {}
+    for d in distancias:
+        out[f"I{d}"] = round(_mi(list(zip(seq, seq[d:]))), 5)
+    i1 = out.get("I1") or 0.0
+    out["razao_I8_I1"] = round(out["I8"] / i1, 5) if i1 and "I8" in out else None
+    return out
